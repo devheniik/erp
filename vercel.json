@@ -1,9 +1,9 @@
 {
     "redirects": [ 
       {
-        "source": "/:path*", 
-        "destination": "/:path*",
-        "permanent": false
+        "source": "/login", 
+        "destination": "/",
+        "permanent": true
       }
     ]
   }
