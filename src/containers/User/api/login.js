@@ -1,12 +1,12 @@
 import axios from 'axios'
 import  FormData from 'form-data'
 
-export default async function (email, password) {
+export default async function (email, password) { 
     let data = new FormData()
     data.append('username', email)
     data.append('password', password)
-    data.append('client_id', '9')
-    data.append('client_secret', 'NOSfTfrcUIKdGLrtL3uKWSQHWWM2Ry8zlgHFbAPp')
+    data.append('client_id', '4')
+    data.append('client_secret', 'EOENeShZgmX5s84x9oHcvmAE44mT5VzriH9Y26Yk')
     data.append('grant_type', 'password') 
     console.log(import.meta.env);
     let config = {
@@ -19,6 +19,7 @@ export default async function (email, password) {
         xhrFields: {withCredentials: true},
         data: data
     }
+
 
     await axios(config)
         .then(async function (response) { 

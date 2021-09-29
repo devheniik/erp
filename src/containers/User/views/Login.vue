@@ -15,10 +15,10 @@
       .rounded-md.shadow-sm.-space-y-px
         div
           label.sr-only(for="email-address") Email address
-          input#email-address.appearance-none.rounded-none.relative.block.w-full.px-3.py-2.border.border-gray-300.placeholder-gray-500.text-gray-900.rounded-t-md(name="email" type="email" autocomplete="email" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address")
+          input#email-address.appearance-none.rounded-none.relative.block.w-full.px-3.py-2.border.border-gray-300.placeholder-gray-500.text-gray-900.rounded-t-md(v-model="email" name="email" type="email" autocomplete="email" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address")
         div
           label.sr-only(for="password") Password
-          input#password.appearance-none.rounded-none.relative.block.w-full.px-3.py-2.border.border-gray-300.placeholder-gray-500.text-gray-900.rounded-b-md(name="password" type="password" autocomplete="current-password" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password")
+          input#password.appearance-none.rounded-none.relative.block.w-full.px-3.py-2.border.border-gray-300.placeholder-gray-500.text-gray-900.rounded-b-md(v-model="password" name="password" type="password" autocomplete="current-password" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password")
       .flex.items-center.justify-between
         .flex.items-center
           input#remember-me.h-4.w-4.text-indigo-600.border-gray-300.rounded(name="remember-me" type="checkbox" class="focus:ring-indigo-500")
@@ -35,8 +35,10 @@
 </template>
 
 <script setup> 
-    import login from '../api/login'
+    import login from '../api/login' 
     import { ref } from 'vue'
+
+    
 
     const email = ref()
     const password = ref()
