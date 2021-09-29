@@ -3,7 +3,7 @@
       {
         "source": "/:path((?!uk/).*)", 
         "destination": "/:path*",
-        "permanent": true
+        "permanent": false
       }
     ]
   }
