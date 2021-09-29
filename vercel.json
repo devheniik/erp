@@ -2,7 +2,7 @@
     "redirects": [ 
       {
         "source": "/:path((?!uk/).*)", 
-        "destination": "/uk/:path*",
+        "destination": "/:path*",
         "permanent": true
       }
     ]
