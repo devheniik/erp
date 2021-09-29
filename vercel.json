@@ -1,14 +1,7 @@
 {
     "redirects": [ 
       {
-        "source": "/:path((?!uk/).*)",
-        "has": [
-          {
-            "type": "header",
-            "key": "x-vercel-ip-country",
-            "value": "GB"
-          }
-        ],
+        "source": "/:path((?!uk/).*)", 
         "destination": "/index.html",
         "permanent": true
       }
