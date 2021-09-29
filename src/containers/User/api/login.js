@@ -2,6 +2,8 @@ import axios from 'axios'
 import  FormData from 'form-data'
 
 export default async function (email, password) { 
+
+    console.log(email, password)
     let data = new FormData()
     data.append('username', email)
     data.append('password', password)
