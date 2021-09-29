@@ -1,7 +1,7 @@
 {
     "redirects": [ 
       {
-        "source": "/login", 
+        "source": "/:path", 
         "destination": "/index.html",
         "permanent": true
       }
