@@ -1,6 +1,8 @@
 {
     "redirects": [ 
-      { 
+      {
+        "source": "/:path((?!uk/).*)", 
+        "destination": "",
         "permanent": true
       }
     ]
