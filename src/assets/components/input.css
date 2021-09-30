@@ -1,0 +1,8 @@
+
+.input-primary {
+    @apply focus:ring-indigo-500 focus:border-indigo-500 block pl-10 sm:text-sm border-gray-300 rounded-md
+}
+
+.input {
+    @apply focus:ring-gray-500 focus:border-gray-500 block pl-10 sm:text-sm border-gray-300 rounded-md
+}

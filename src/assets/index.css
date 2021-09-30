@@ -1,3 +1,5 @@
 @import './tailwind.css';
 @import './custom/multiselect.css';
 @import './global.css';
+
+@import './components/input.css'
