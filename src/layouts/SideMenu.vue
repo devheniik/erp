@@ -118,7 +118,7 @@
                           </div>
                           <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
                             <div v-if="subItem.current && subItem.child.length" class="transform duration-300 ease-out mt-2 space-y-2">
-                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 bg-gray-300 hover:bg-gray-300 hover:text-gray-900', 'pl-10 group flex items-center px-4 py-2 text-md font-medium rounded-md']">
+                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 bg-gray-300 hover:bg-gray-300 hover:text-gray-900', 'pl-10 group flex items-center px-4 py-2 text-md font-medium rounded-md  whitespace-nowrap truncate']">
                                 <component :is="thItem.icon" :class="[thItem.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'mr-4 h-4 w-4']" aria-hidden="true" />
                                 {{ thItem.name }}
                               </div>
