@@ -31,13 +31,15 @@ export default [{
     child: [{
         name: 'Список',
         icon: 'HomeIcon',
+        href: 'PersonsView',
         current: false,
-        uname: 'text',
+        uname: 'persons-view',
         child: []
       },
       {
         name: 'Карточки',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -45,6 +47,7 @@ export default [{
       {
         name: 'Блокнот',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -52,6 +55,7 @@ export default [{
       {
         name: 'Свойства',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -59,6 +63,7 @@ export default [{
       {
         name: 'Сотрудники',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -66,6 +71,7 @@ export default [{
       {
         name: 'Фин структура',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -73,6 +79,7 @@ export default [{
       {
         name: 'Вертикаль',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -80,6 +87,7 @@ export default [{
       {
         name: 'Учет',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -87,6 +95,7 @@ export default [{
       {
         name: 'Вакансии',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -94,6 +103,7 @@ export default [{
       {
         name: 'Натройки',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -101,6 +111,7 @@ export default [{
       {
         name: 'Отчеты',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -108,6 +119,7 @@ export default [{
       {
         name: 'По сотрудникам',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text',
         child: []
@@ -115,11 +127,13 @@ export default [{
       {
         name: 'Гос отчетность',
         icon: 'HomeIcon',
+        href: '',
         current: false,
         uname: 'text', 
         child: [{
             name: 'Список',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -127,6 +141,7 @@ export default [{
           {
             name: 'Карточки',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -134,6 +149,7 @@ export default [{
           {
             name: 'Блокнот',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -141,6 +157,7 @@ export default [{
           {
             name: 'Свойства',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -148,6 +165,7 @@ export default [{
           {
             name: 'Сотрудники',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -155,6 +173,7 @@ export default [{
           {
             name: 'Фин структура',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -162,6 +181,7 @@ export default [{
           {
             name: 'Вертикаль',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -169,6 +189,7 @@ export default [{
           {
             name: 'Учет',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -176,6 +197,7 @@ export default [{
           {
             name: 'Вакансии',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -183,6 +205,7 @@ export default [{
           {
             name: 'Натройки',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -190,6 +213,7 @@ export default [{
           {
             name: 'Отчеты',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -197,6 +221,7 @@ export default [{
           {
             name: 'По сотрудникам',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'text',
             child: []
@@ -204,6 +229,7 @@ export default [{
           {
             name: 'Гос отчетность',
             icon: 'HomeIcon',
+            href: '',
             current: false,
             uname: 'personu-gos_otchetu-gos_otchetu'
           },

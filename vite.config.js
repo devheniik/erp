@@ -19,6 +19,7 @@ export default ({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '/src'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
+        '@person': path.resolve(__dirname, '/src/containers/Person'),
         '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard'),
         '@axios': path.resolve(__dirname, '/src/plugins/axios'),
       },

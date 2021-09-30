@@ -4,8 +4,9 @@ import store from "@/store"
 // * modules
 import dashboard from '@dashboard/router'
 import user from '@user/router'
+import person from '@person/router'
 
-const routes = [ ...dashboard, ...user ]
+const routes = [ ...dashboard, ...user, ...person ]
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,14 +21,14 @@ const router = createRouter({
 
 
 router.beforeEach(async (to, from, next) => {
-    if (/*!store.state.auth && */ to.meta.requireAuth) {
+    if (!store.state.auth && to.meta.requireAuth) {
         try { 
-
+            store.dispatch('auth')
         } catch {
             next('/login')
         }
     } else if (store.state.auth && to.meta.requireAuth) {
-        store.getters['permitions/permition'](to.meta.permition) ? next() : next('/login')
+       // store.getters['permitions/permition'](to.meta.permition) ? next() : next('/login')
     } else { 
         next()
     }

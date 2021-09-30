@@ -1,5 +1,5 @@
 import navigation_data from '../data/navigation'
-
+import router from '@/router'
 import { ref } from 'vue'
 export default function() {
     const navigation = ref(navigation_data)
@@ -28,6 +28,26 @@ export default function() {
         })
     }
 
+    const linkTo = (item, router) => { 
 
-    return { navigation, findActive }
+        navigation.value.forEach(first => {
+            first.current = false 
+            first.child.forEach(seconsd => {
+                seconsd.current = false 
+                seconsd.child.forEach(third => {
+                    third.current = false 
+                })
+            })
+        })
+
+ 
+        router.push({
+            name: item.href
+        })  
+
+
+      }
+
+
+    return { navigation, findActive, linkTo }
 }

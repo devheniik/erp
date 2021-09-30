@@ -1,13 +1,13 @@
 export default [
     {
-        path: '/login',
-        name: 'Login',
+        path: '/persons',
+        name: 'PersonsView',
         component: () => import('@user/views/Login.vue'),
         meta: {
-            layout: 'Empty',
+            layout: 'SideMenu',
             requreAuth: false,
             permition: null,
-            group: null
+            uname: 'persons-view'
         }
     },
 ]
