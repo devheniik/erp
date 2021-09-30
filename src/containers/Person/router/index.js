@@ -2,7 +2,7 @@ export default [
     {
         path: '/persons',
         name: 'PersonsView',
-        component: () => import('@user/views/Login.vue'),
+        component: () => import('@person/views/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,

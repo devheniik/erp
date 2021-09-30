@@ -1,6 +1,6 @@
 {
   "name": "starter-template",
-  "version": "0.0.0", 
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,6 +13,7 @@
     "dayjs": "^1.10.7",
     "form-data": "^4.0.0",
     "lodash": "^4.17.21",
+    "sass": "^1.42.1",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10",
     "vuex": "^4.0.2"
