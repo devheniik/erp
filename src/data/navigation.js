@@ -24,7 +24,7 @@ export default [{
   },
   {
     name: 'Персоны',
-    href: '#',
+    href: 'PersonsView',
     icon: 'UserGroupIcon',
     current: false,
     uname: 'text', 

@@ -22,20 +22,20 @@
               <nav aria-label="Sidebar" class="mt-5">
                 <div class="px-2 space-y-2">
                   <div v-for="(item, i) in navigation" :key="item.name" :href="i" >
-                    <div @click="item.current = true" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
+                    <div @click="handleClick(item)" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
                       <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'mr-4 h-6 w-6']" aria-hidden="true" />
                       {{ item.name }}
                     </div>
                     <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
                       <div v-if="item.current && item.child.length" class="transform duration-300 ease-out mt-2 space-y-2">
                         <div  v-for="(subItem, j) in item.child" :key="j"  >
-                          <div @click="subItem.current = true" :class="[subItem.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-3 py-2 text-base font-medium rounded-md']">
+                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-3 py-2 text-base font-medium rounded-md']">
                             <component :is="subItem.icon" :class="[subItem.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'mr-4 h-6 w-6']" aria-hidden="true" />
                             {{ subItem.name }}
                           </div>
                           <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
                             <div v-if="subItem.current && subItem.child.length" class="transform duration-300 ease-out mt-2 space-y-2">
-                              <div @click="thItem.current = true" v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-4 py-2 text-md font-medium rounded-md']">
+                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-4 py-2 text-md font-medium rounded-md']">
                                 <component :is="thItem.icon" :class="[thItem.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'mr-4 h-6 w-6']" aria-hidden="true" />
                                 {{ thItem.name }}
                               </div>
