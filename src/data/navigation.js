@@ -30,7 +30,7 @@ export default [{
     uname: 'text', 
     child: [{
         name: 'Список',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: 'PersonsView',
         current: false,
         uname: 'persons-view',
@@ -38,7 +38,7 @@ export default [{
       },
       {
         name: 'Карточки',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -46,7 +46,7 @@ export default [{
       },
       {
         name: 'Блокнот',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -54,7 +54,7 @@ export default [{
       },
       {
         name: 'Свойства',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -62,7 +62,7 @@ export default [{
       },
       {
         name: 'Сотрудники',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -70,7 +70,7 @@ export default [{
       },
       {
         name: 'Фин структура',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -78,7 +78,7 @@ export default [{
       },
       {
         name: 'Вертикаль',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -86,7 +86,7 @@ export default [{
       },
       {
         name: 'Учет',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -94,7 +94,7 @@ export default [{
       },
       {
         name: 'Вакансии',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -102,7 +102,7 @@ export default [{
       },
       {
         name: 'Натройки',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -110,7 +110,7 @@ export default [{
       },
       {
         name: 'Отчеты',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -118,7 +118,7 @@ export default [{
       },
       {
         name: 'По сотрудникам',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text',
@@ -126,13 +126,13 @@ export default [{
       },
       {
         name: 'Гос отчетность',
-        icon: 'HomeIcon',
+        icon: 'CheckCircleIcon',
         href: '',
         current: false,
         uname: 'text', 
         child: [{
             name: 'Список',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -140,7 +140,7 @@ export default [{
           },
           {
             name: 'Карточки',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -148,7 +148,7 @@ export default [{
           },
           {
             name: 'Блокнот',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -156,7 +156,7 @@ export default [{
           },
           {
             name: 'Свойства',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -164,7 +164,7 @@ export default [{
           },
           {
             name: 'Сотрудники',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -172,7 +172,7 @@ export default [{
           },
           {
             name: 'Фин структура',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -180,7 +180,7 @@ export default [{
           },
           {
             name: 'Вертикаль',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -188,7 +188,7 @@ export default [{
           },
           {
             name: 'Учет',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -196,7 +196,7 @@ export default [{
           },
           {
             name: 'Вакансии',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -204,7 +204,7 @@ export default [{
           },
           {
             name: 'Натройки',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -212,7 +212,7 @@ export default [{
           },
           {
             name: 'Отчеты',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -220,7 +220,7 @@ export default [{
           },
           {
             name: 'По сотрудникам',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'text',
@@ -228,7 +228,7 @@ export default [{
           },
           {
             name: 'Гос отчетность',
-            icon: 'HomeIcon',
+            icon: 'CheckCircleIcon',
             href: '',
             current: false,
             uname: 'personu-gos_otchetu-gos_otchetu'
