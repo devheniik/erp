@@ -108,9 +108,9 @@
                       <div v-if="item.current && item.child.length" class="transform duration-300 ease-out mt-2 space-y-2 ">
                         <div  v-for="(subItem, j) in item.child" :key="j" class=""  >
                           
-                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-gradient-to-r from-gray-500 to-gray-400 text-white shadow-2xl filter drop-shadow-lg ' : 'text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-900  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium rounded-md']">
+                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-gradient-to-r from-gray-500 to-gray-400 text-white shadow-2xl filter drop-shadow-lg ' : 'text-gray-600 bg-gray-200 hover:bg-gray-400 hover:text-gray-900  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium rounded-md']">
                             <div class="flex flex-wrap items-center"> 
-                              <component :is="subItem.icon" :class="[subItem.current ? 'text-white' : 'text-gray-400 group-hover:text-gray-500 ', 'mr-4 h-4 w-4']" aria-hidden="true" />
+                              <component :is="subItem.icon" :class="[subItem.current ? 'text-white' : 'text-gray-400 group-hover:text-gray-600 ', 'mr-4 h-4 w-4']" aria-hidden="true" />
                             {{ subItem.name }}
                              </div>
                               <ChevronDownIcon class="h-4 w-4" v-if="subItem.current && subItem.child.length > 0" />
