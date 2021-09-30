@@ -107,7 +107,7 @@
                       
                       <div v-if="item.current && item.child.length" class="transform duration-300 ease-out mt-2 space-y-2 ">
                         <div  v-for="(subItem, j) in item.child" :key="j"  > 
-                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-gradient-to-r from-green-300 to-green-200 text-gray-600 shadow-2xl filter drop-shadow-lg ' : 'text-gray-600 bg-gradient-to-r from-green-200 to-green-300 hover:bg-green-300 hover:text-gray-600  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium rounded-md']">
+                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-gradient-to-r from-green-300 to-green-200 text-gray-600 shadow-2xl filter drop-shadow-lg ' : 'text-gray-600 bg-gradient-to-r from-green-100 to-green-200 hover:bg-green-300 hover:text-gray-600  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium rounded-md']">
                             <div class="flex flex-wrap items-center"> 
                               <component :is="subItem.icon" :class="[subItem.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500 ', 'mr-4 h-4 w-4']" aria-hidden="true" />
                             {{ subItem.name }}
