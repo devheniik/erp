@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex overflow-hidden bg-white">
+  <div class="h-screen flex overflow-hidden bg-white ">
     <TransitionRoot as="template" :show="sidebarOpen">
       <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
@@ -86,17 +86,17 @@
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col" style="width: 280px;">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
+        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-100 ">
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <img class="h-50 w-auto flex flex-center" src="https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg" alt="Workflow" />
             </div>
             <nav class="mt-5 flex-1" aria-label="Sidebar">
-              <div class="px-2 space-y-2 ">
+              <div class="px-2">
                   <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="" >
-                    <div @click="handleClick(item) " :class="[item.current ? 'bg-green-200 text-gray-600' : 'text-gray-600 hover:bg-green-150 hover:text-gray-600 ', 'group flex justify-between items-center px-2 py-2 text-base font-medium rounded-md']">
+                    <div @click="handleClick(item) " :class="[item.current ? 'bg-secondary-200 text-gray-600' : 'bg-secondary-100  text-gray-600 hover:bg-secondary-150 hover:text-gray-600 ', 'group flex justify-between items-center px-2 py-2 text-base font-medium']">
                      <div class="flex flex-wrap">
-                        <component :is="item.icon" :class="[item.current ? 'text-green-500' : 'text-green-400 group-hover:text-green-500 hover:bg-green-150', 'mr-4 h-6 w-6 ']" aria-hidden="true" />
+                        <component :is="item.icon" :class="[item.current ? 'text-secondary-500' : 'text-secondary-400 group-hover:text-secondary-500 hover:bg-secondary-150', 'mr-4 h-6 w-6 ']" aria-hidden="true" />
                       {{ item.name }} 
                      </div>
                       <ChevronDownIcon class="h-4 w-4" v-if="item.current && item.child.length > 0" />
@@ -105,9 +105,9 @@
                     </div>
                     <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
                       
-                      <div v-if="item.current && item.child.length" class="transform duration-300 ease-out mt-2 space-y-2 ">
+                      <div v-if="item.current && item.child.length" class="transform duration-300 ease-out">
                         <div  v-for="(subItem, j) in item.child" :key="j"  > 
-                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-gradient-to-r from-green-300 to-green-200 text-gray-600 shadow-2xl filter drop-shadow-lg ' : 'text-gray-600 bg-gradient-to-r from-green-100 to-green-200 hover:bg-green-300 hover:text-gray-600  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium rounded-md']">
+                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-secondary-300 text-gray-600' : 'text-gray-600 bg-secondary-200 hover:bg-secondary-300 hover:text-gray-600  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium']">
                             <div class="flex flex-wrap items-center"> 
                               <component :is="subItem.icon" :class="[subItem.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500 ', 'mr-4 h-4 w-4']" aria-hidden="true" />
                             {{ subItem.name }}
@@ -116,8 +116,8 @@
                               <ChevronRightIcon class="h-4 w-4" v-else-if="subItem.child.length > 0"/>
                           </div>
                           <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
-                            <div v-if="subItem.current && subItem.child.length" class="transform duration-300 ease-out mt-2 space-y-2">
-                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-gradient-to-r from-green-200 to-green-150 text-gray-600' : 'text-gray-600 bg-gradient-to-r from-green-200 to-green-150   hover:text-gray-700', 'pl-10 group flex items-center px-4 py-2 text-md font-medium rounded-md  whitespace-nowrap truncate']">
+                            <div v-if="subItem.current && subItem.child.length" class="transform duration-300 ease-out ">
+                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-secondary-300 text-gray-600' : 'text-gray-600 bg-secondary-200   hover:text-gray-700', 'pl-10 group flex items-center px-4 py-2 text-md font-medium whitespace-nowrap truncate']">
                                 <component :is="thItem.icon" :class="[thItem.current ? 'text-gray-100' : 'text-gray-400 group-hover:text-gray-600', 'mr-4 h-4 w-4']" aria-hidden="true" />
                                 {{ thItem.name }}
                               </div>
@@ -168,7 +168,7 @@
         </div>
       </div>
       <div class="flex-1 relative z-0 flex overflow-hidden">
-        <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
+        <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last ml-2 mt-2">
           <!-- Start main area-->
           <slot></slot>
           <!-- End main area -->
