@@ -2,4 +2,6 @@
 @import './custom/multiselect.css';
 @import './global.css';
 
-@import './components/input.css'
+@import './components/input.css';
+@import './components/select.css';
+@import './components/badge.css';

@@ -7,23 +7,27 @@
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-gray-50">
+                                <thead class="bg-secondary-100">
                                     <tr>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Name
+                                            ФиО / ОГРАНИЗАЦИЯ / № 
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Title
+                                            ДОЛЖНОСТЬ / ОТДЕЛ
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Status
+                                            ТЕЛЕФОН
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Role
+                                            СТАТУС
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            ЛК
                                         </th>
                                         <th scope="col" class="relative px-6 py-3">
                                             <span class="sr-only">Edit</span>
@@ -41,14 +45,15 @@
                                                     <div class="text-sm font-medium text-gray-900">
                                                         {{ person.name }}
                                                     </div>
-                                                    <div class="text-sm text-gray-500 whitespace-nowrap ">
-                                                        {{ person.org }} <span>{{ person.uid }}</span>
+                                                    <div class="text-sm text-gray-500 whitespace-nowrap">
+                                                        <span class="mr-1 font-medium">{{ person.org }}</span> 
+                                                        <span class="text-primary-600 font-medium hover:underline">{{ person.uid }}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">{{ person.job }}</div>
+                                            <div class="text-sm font-medium text-gray-900">{{ person.job }}</div>
                                             <div class="text-sm text-gray-500">{{ person.otdel }}</div>
                                         </td>
 
@@ -57,12 +62,15 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <span
-                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                class="badge-primary">
                                                 {{ person.status }}
                                             </span>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <PencilIcon class="text-indigo-600 hover:text-indigo-900 h-4 w-4" />
+                                             
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <PencilIcon class="text-secondary-600 hover:text-secondary-900 h-4 w-4" />
                                         </td>
                                     </tr>
                                 </tbody>

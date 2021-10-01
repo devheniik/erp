@@ -30,9 +30,9 @@
                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
             </button>
-            <!-- bg-indigo-50 border-indigo-500 text-indigo-600  -->
+            <!-- bg-primary-50 border-primary-500 text-primary-600  -->
             <!-- bg-white border-gray-300 text-gray-500 hover:bg-gray-50 -->
-            <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+            <!-- Current: "z-10 bg-primary-50 border-primary-500 text-primary-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
             <div v-if="pagination.current_page - 2 > 1" @click="handle(false, 1)" aria-current="page" :class="['z-10 relative bg-white border-gray-300 text-gray-500 hover:bg-gray-50 inline-flex items-center px-4 py-2 border text-sm font-medium']">
             1
             </div>
@@ -48,7 +48,7 @@
             <div v-if="pagination.current_page - 1 > 0" @click="handle(true, -1)" aria-current="page" :class="['z-10 relative bg-white border-gray-300 text-gray-500 hover:bg-gray-50 inline-flex items-center px-4 py-2 border text-sm font-medium']">
             {{ pagination.current_page - 1 }}
             </div>
-            <div  class=" z-10 bg-indigo-50 border-indigo-500 text-indigo-600   hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
+            <div  class=" z-10 bg-primary-600 border-primary-500 text-gray-100 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
             {{ pagination.current_page }}
             </div> 
             <div  v-if="pagination.current_page + 1 < pagination.total" @click="handle(true, 1)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">

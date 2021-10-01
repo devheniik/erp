@@ -3,141 +3,64 @@
         <div class="flex justify-between">
             <div class="w-1/2">
                 <h1
-                    class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl text-gray-500
-                        ml-2
-                    "
-                >
-                    Общие сведения
-                </h1>
+                    class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500 ml-2"
+                >Общие сведения</h1>
                 <div class="flex">
-                    <div class="">
+                    <div class>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Фамилия:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Фамилия:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Фамилия"
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Имя:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Имя:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Имя"
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Отчество:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Отчество:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Отчество"
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Дата рождения:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Дата рождения:</label>
                             <div class="flex justify-between items-center">
                                 <input
                                     type="text"
                                     name="email"
                                     id="email"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-green-500
-                                        focus:border-green-500
-                                        block
-                                        w-auto
-                                        ml-2
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
+                                    class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                     placeholder="ДД. ММ. ГГ"
                                 />
-                                <CalendarIcon
-                                    class="h-6 w-6 text-green-400 ml-2"
-                                />
+                                <CalendarIcon class="h-6 w-6 text-green-400 ml-2" />
                             </div>
                         </div>
                     </div>
@@ -146,115 +69,46 @@
                         <div class="mt-4 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Телефон:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Телефон:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                 placeholder="+38 *** *** ** **"
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >E-mail:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >E-mail:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                 placeholder="email@example.com"
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Пол:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Пол:</label>
                             <div>
                                 <div class="relative">
                                     <button
                                         type="button"
-                                        class="
-                                            relative
-                                            w-full
-                                            bg-white
-                                            border border-gray-300
-                                            rounded-md
-                                            shadow-sm
-                                            pl-3
-                                            pr-10
-                                            py-2
-                                            text-left
-                                            cursor-default
-                                            focus:outline-none
-                                            focus:ring-1 focus:ring-green-500
-                                            focus:border-green-500
-                                            sm:text-sm
-                                        "
+                                        class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                         aria-haspopup="listbox"
                                         aria-expanded="true"
                                         aria-labelledby="listbox-label"
                                     >
+                                        <span class="block truncate text-gray-500">Мужской</span>
                                         <span
-                                            class="block truncate text-gray-500"
-                                        >
-                                            Мужской
-                                        </span>
-                                        <span
-                                            class="
-                                                absolute
-                                                inset-y-0
-                                                right-0
-                                                flex
-                                                items-center
-                                                pr-2
-                                                pointer-events-none
-                                            "
+                                            class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                         >
                                             <svg
                                                 class="h-5 w-5 text-gray-400"
@@ -277,55 +131,20 @@
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Регион:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Регион:</label>
                             <div>
                                 <div class="relative">
                                     <button
                                         type="button"
-                                        class="
-                                            relative
-                                            w-full
-                                            bg-white
-                                            border border-gray-300
-                                            rounded-md
-                                            shadow-sm
-                                            pl-3
-                                            pr-10
-                                            py-2
-                                            text-left
-                                            cursor-default
-                                            focus:outline-none
-                                            focus:ring-1 focus:ring-green-500
-                                            focus:border-green-500
-                                            sm:text-sm
-                                        "
+                                        class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                         aria-haspopup="listbox"
                                         aria-expanded="true"
                                         aria-labelledby="listbox-label"
                                     >
+                                        <span class="block truncate text-gray-500">Выбрать</span>
                                         <span
-                                            class="block truncate text-gray-500"
-                                        >
-                                            Выбрать
-                                        </span>
-                                        <span
-                                            class="
-                                                absolute
-                                                inset-y-0
-                                                right-0
-                                                flex
-                                                items-center
-                                                pr-2
-                                                pointer-events-none
-                                            "
+                                            class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                         >
                                             <svg
                                                 class="h-5 w-5 text-gray-400"
@@ -350,84 +169,32 @@
                 </div>
             </div>
             <div class="w-1/2 ml-2">
-                <h1
-                    class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl text-gray-500
-                    "
-                >
-                    Профиль
-                </h1>
+                <h1 class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500">Профиль</h1>
 
                 <div>
                     <div class="flex">
-                        <div class="">
+                        <div class>
                             <!--Первый блок-->
                             <div class="mt-2 ml-2">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Кандидат:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Кандидат:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -447,67 +214,23 @@
                             <div class="mt-2 ml-2">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Сотрудник:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Сотрудник:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -527,67 +250,23 @@
                             <div class="mt-2 ml-2">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >МОЛ:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >МОЛ:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -607,67 +286,23 @@
                             <div class="mt-2 ml-2">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Секретность:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Секретность:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -691,67 +326,23 @@
                             <div class="mt-2 ml-2">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Нотактер:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Нотактер:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -771,67 +362,23 @@
                             <div class="mt-2 ml-2">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Уволен:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Уволен:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -859,142 +406,64 @@
         <div class="flex justify-between mt-8">
             <div class="w-auto">
                 <h1
-                    class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl
-                        ml-2
-                        text-gray-500
-                    "
-                >
-                    Реквизиты
-                </h1>
+                    class="border-b-2 border-gray-600 font-sans text-2xl ml-2 text-gray-500"
+                >Реквизиты</h1>
                 <div class="flex">
-                    <div class="">
+                    <div class>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Серия Паспорта:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Серия Паспорта:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Номер:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Номер:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Кем выдан:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Кем выдан:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Дата:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Дата:</label>
                             <div class="flex justify-between items-center">
                                 <input
                                     type="text"
                                     name="email"
                                     id="email"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-green-500
-                                        focus:border-green-500
-                                        block
-                                        w-auto
-                                        ml-2
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
+                                    class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
                                     placeholder="ДД. ММ. ГГ"
                                 />
-                                <CalendarIcon
-                                    class="h-6 w-6 text-green-400 ml-2"
-                                />
+                                <CalendarIcon class="h-6 w-6 text-green-400 ml-2" />
                             </div>
                         </div>
                     </div>
@@ -1003,122 +472,54 @@
                         <div class="mt-4 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >ИНН:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >ИНН:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Адрес Регистр:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Адрес Регистр:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Адрес дом:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Адрес дом:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
 
                         <div class="mt-2 ml-2">
                             <label
                                 for="email"
-                                class="
-                                    block
-                                    text-sm
-                                    font-medium
-                                    text-gray-400
-                                    ml-2
-                                "
-                                >Место рождения:</label
-                            >
+                                class="block text-sm font-medium text-gray-400 ml-2"
+                            >Место рождения:</label>
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
-                                class="
-                                    shadow-sm
-                                    focus:ring-green-500
-                                    focus:border-green-500
-                                    block
-                                    w-auto
-                                    ml-2
-                                    sm:text-sm
-                                    border-gray-300
-                                    rounded-md
-                                "
-                                placeholder=""
+                                class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
+                                placeholder
                             />
                         </div>
                     </div>
@@ -1127,83 +528,33 @@
             </div>
             <div class="w-1/2 ml-2">
                 <h1
-                    class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl text-gray-500
-                    "
-                >
-                    Основное место работы
-                </h1>
+                    class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500"
+                >Основное место работы</h1>
 
                 <div>
                     <div class="flex">
-                        <div class="">
+                        <div class>
                             <!--Первый блок-->
                             <div class="mt-2 ml-2 w-full">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Отдел:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Отдел:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -1223,67 +574,23 @@
                             <div class="mt-2 ml-2 w-full">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Должность:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Должность:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -1303,67 +610,23 @@
                             <div class="mt-2 ml-2 w-full">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Организация:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Организация:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -1383,67 +646,23 @@
                             <div class="mt-2 ml-2 w-full">
                                 <label
                                     for="email"
-                                    class="
-                                        block
-                                        text-sm
-                                        font-medium
-                                        text-gray-400
-                                        ml-2
-                                    "
-                                    >Инспектор:</label
-                                >
+                                    class="block text-sm font-medium text-gray-400 ml-2"
+                                >Инспектор:</label>
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="
-                                                relative
-                                                w-full
-                                                bg-white
-                                                border border-gray-300
-                                                rounded-md
-                                                shadow-sm
-                                                pl-3
-                                                pr-10
-                                                py-2
-                                                text-left
-                                                cursor-default
-                                                focus:outline-none
-                                                focus:ring-1
-                                                focus:ring-green-500
-                                                focus:border-green-500
-                                                sm:text-sm
-                                            "
+                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
+                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="
-                                                    block
-                                                    truncate
-                                                    text-gray-500
-                                                "
-                                            >
-                                                Выбрать
-                                            </span>
-                                            <span
-                                                class="
-                                                    absolute
-                                                    inset-y-0
-                                                    right-0
-                                                    flex
-                                                    items-center
-                                                    pr-2
-                                                    pointer-events-none
-                                                "
+                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                                             >
                                                 <svg
-                                                    class="
-                                                        h-5
-                                                        w-5
-                                                        text-gray-400
-                                                    "
+                                                    class="h-5 w-5 text-gray-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -1467,28 +686,18 @@
         </div>
         <div class="w-2/3 mt-6">
             <h1
-                class="
-                    border-b-2 border-gray-600
-                    font-sans
-                    text-2xl text-gray-500
-                    ml-2
-                "
-            >
-                Дополнительная Информация
-            </h1>
+                class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500 ml-2"
+            >Дополнительная Информация</h1>
             <div>
                 <div class="ml-4 mt-4">
-                    <label
-                        for="email"
-                        class="block text-sm font-medium text-gray-400"
-                        >Примечания</label
-                    >
+                    <label for="email" class="block text-sm font-medium text-gray-400">Примечания</label>
                     <div class="mt-1 w-1/2">
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <textarea
                                 id="about"
                                 name="about"
                                 rows="3"
+<<<<<<< HEAD
                                 class="
                                     max-w-lg
                                     shadow-sm
@@ -1500,6 +709,9 @@
                                     border border-gray-300
                                     rounded-md
                                 "
+=======
+                                class="max-w-lg shadow-sm block w-full focus:ring-green-500 focus:border-green-500 sm:text-sm border border-gray-300 rounded-md"
+>>>>>>> d0c52bf1fb4bd36a909b23795ad5c8507dc20d7f
                             ></textarea>
                         </div>
                     </div>
@@ -1509,29 +721,13 @@
         <div class="w-full flex justify-center mt-6">
             <button
                 type="button"
-                class="
-                    inline-flex
-                    items-center
-                    px-5
-                    py-2
-                    border border-transparent
-                    text-base
-                    font-medium
-                    rounded-full
-                    shadow-sm
-                    text-white
-                    bg-green-500
-                    hover:bg-green-700
-                    focus:outline-none
-                    focus:ring-2 focus:ring-offset-2 focus:ring-green-500
-                "
-            >
-                Добавить
-            </button>
+                class="inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            >Добавить</button>
         </div>
     </div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
