@@ -685,7 +685,21 @@
                                 id="about"
                                 name="about"
                                 rows="3"
+<<<<<<< HEAD
+                                class="
+                                    max-w-lg
+                                    shadow-sm
+                                    block
+                                    w-full
+                                    focus:ring-green-500
+                                    focus:border-green-500
+                                    sm:text-sm
+                                    border border-gray-300
+                                    rounded-md
+                                "
+=======
                                 class="max-w-lg shadow-sm block w-full focus:ring-green-500 focus:border-green-500 sm:text-sm border border-gray-300 rounded-md"
+>>>>>>> d0c52bf1fb4bd36a909b23795ad5c8507dc20d7f
                             ></textarea>
                         </div>
                     </div>
