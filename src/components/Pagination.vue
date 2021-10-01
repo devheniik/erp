@@ -78,13 +78,17 @@
 </template>
 
 <script setup>  
+
+import { defineEmit } from 'vue'
+  const emit = defineEmit(['action'])
+
 const props = defineProps({
   pagination: Object
 })
 
 const handle = (isIncrement, value) => { 
     console.log(props.pagination.current_page, value)
-    if (!isIncrement) {
+    if (!isIncrement) { 
         props.pagination.current_page = value
     } else {
         props.pagination.current_page = props.pagination.current_page + value 

@@ -12,10 +12,12 @@
     "@tailwindcss/forms": "^0.3.4",
     "axios": "^0.21.4",
     "dayjs": "^1.10.7",
+    "flatpickr": "^4.6.9",
     "form-data": "^4.0.0",
     "lodash": "^4.17.21",
     "sass": "^1.42.1",
     "vue": "^3.1.5",
+    "vue-flatpickr-component": "^9.0.5",
     "vue-router": "^4.0.10",
     "vuex": "^4.0.2"
   },

@@ -53,13 +53,7 @@
                                 class="block text-sm font-medium text-gray-400 ml-2"
                             >Дата рождения:</label>
                             <div class="flex justify-between items-center">
-                                <input
-                                    type="text"
-                                    name="email"
-                                    id="email"
-                                    class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
-                                    placeholder="ДД. ММ. ГГ"
-                                />
+                                <flat-pickr :locale="'ru'" class="input-primary" ></flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-green-400 ml-2" />
                             </div>
                         </div>
@@ -456,13 +450,7 @@
                                 class="block text-sm font-medium text-gray-400 ml-2"
                             >Дата:</label>
                             <div class="flex justify-between items-center">
-                                <input
-                                    type="text"
-                                    name="email"
-                                    id="email"
-                                    class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-auto ml-2 sm:text-sm border-gray-300 rounded-md"
-                                    placeholder="ДД. ММ. ГГ"
-                                />
+                                <flat-pickr class="input-primary" ></flat-pickr> 
                                 <CalendarIcon class="h-6 w-6 text-green-400 ml-2" />
                             </div>
                         </div>

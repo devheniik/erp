@@ -1,6 +1,9 @@
 <template>
-    <div v-if="!isLoad" class="w-full">
-        <filters> </filters>
+    <div v-if="!isLoad" class="w-full"> 
+            <filters> </filters>  
+            <modal  v-model="newPersonRef" width="w-8/12">
+                <create></create>
+            </modal>
         <div class="mt-5">
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -90,7 +93,9 @@
 </template>
 
 <script setup>
+    import { ref, provide, watchEffect } from 'vue'
     import Filters from '../components/filters.vue'
+    import Create from '../components/create.vue'
     import hooks from '../hooks/list'
 
     const {
@@ -98,8 +103,17 @@
         isLoad
     } = hooks()
 
+    const newPersonRef = ref(false)
 
-    console.log(data);
+    provide('ref', newPersonRef)
+    provide('refChange', () => newPersonRef.value = true)
+
+    watchEffect(() => {
+      console.log(newPersonRef.value);
+    });
+ 
+
+ 
 </script>
 
 <style lang="scss" scoped>

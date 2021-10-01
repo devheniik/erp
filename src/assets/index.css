@@ -1,7 +1,9 @@
 @import './tailwind.css';
 @import './custom/multiselect.css';
+@import './custom/flatpickr.css';
 @import './global.css';
 
 @import './components/input.css';
 @import './components/select.css';
 @import './components/badge.css';
+@import './components/button-circle.css';
