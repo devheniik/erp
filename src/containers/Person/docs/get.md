@@ -1,37 +1,40 @@
 # [GET] /persons
 
-
 ## Structure
+
+### Example
 
 ```
     {
-        filtersRequest: { 
-            search: null,
-            filial: null,
-            jobId: null,
-            color: null
-        },
-        filtersResponse: { 
-            filials: [ 
-                {
-                    label: 'Текущий фииал',
-                    value: 1
-                },
-                ...
-            ],
-            jobs: '/jobs',
-            colors: [ 
-                {
-                    label: 'Красный',
-                    color: '#b00000',
-                    value: 'red'
-                },
-                ... 
-            ]
-        },
+        filters: {
+            filtersRequest: {
+                    search: null,
+                    filial: null,
+                    jobId: null,
+                    color: null
+                },
+                filtersResponse: {
+                    filials: [ 
+                        {
+                            label: 'Текущий фииал',
+                            value: 1
+                        },
+                        ...
+                    ],
+                    jobs: '/jobs',
+                    colors: [ 
+                        {
+                            label: 'Красный',
+                            color: '#b00000',
+                            value: 'red'
+                        },
+                        ... 
+                    ]
+                },
+        }
         result: [
             headers: [ 'ФИО', 'Отдел',  ... ],
-            body: [ 
+            body: [
                 {
                     uid: 102,
                     value: {
@@ -44,6 +47,62 @@
             ]
         ],
         pagination: {
+            "total": 50,
+            "per_page": 15,
+            "current_page": 1,
+            "last_page": 4,                      
+            "prev_page_url": null, 
+            "from": 1,
+            "to": 15
+        }
+    }
+```
+
+### Explaning
+
+```
+    {
+        filters: (Фильтры) {
+            filtersRequest: { (Объект фильтров запроса)
+                    search: 'Текст который пользователь вводит в поле поиска',
+                    filial: 'Выбраный филиал',
+                    jobId: 'id - проффесии выбрнаной пользователей',
+                    color: 'Выбраный цвет'
+                },
+                filtersResponse: { (Объект фильтров ответа)
+                    filials: [ (Список филиалов)
+                        {
+                            label: 'Название филиала',
+                            value: 'Значение которое отправляется на срвер при выборе этого филиала'
+                        },
+                        ...
+                    ],
+                    jobs: 'Ссылка на запрос на который отправляется при попытке выбрать професии ответ на этот запрос это список который открывается в отдельном окне',
+                    colors: [  (Фильтры цветов)
+                        {
+                            label: 'Название показываемое пользователям',
+                            color: 'Цвет фона',
+                            value: 'Значение которое отправляется на срвер при выборе цвета'
+                        },
+                        ... 
+                    ]
+                }
+        }
+        result: [
+            headers: (Список полей для шапки таблицы *примечание поле '№' - не нужно отправлять оно по умолчанию есть в таблице) [ 'ФИО', 'Отдел',  ... ],
+            body: [ (Тело таблицы)
+                {
+                    uid: 102 (Уникальный номер) ,
+                    value: { (ячейки должны быть в том порядке котором отправленны поля шапки, для того чтоб они совпали)
+                        name: 132 (имя полей и их значение),
+                        bio: 123,
+                        ...
+                    }
+                },
+                ...
+            ]
+        ],
+        pagination: (пагинация) {
             "total": 50,
             "per_page": 15,
             "current_page": 1,
