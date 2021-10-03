@@ -11,7 +11,7 @@
                 filial: null,
                 search: null,
                 job: null,
-                colorL null
+                color: null
             }
             filtersResponse: [
                 {
