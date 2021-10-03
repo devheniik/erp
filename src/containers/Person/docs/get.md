@@ -5,33 +5,39 @@
 ### Example
 
 ```
-    {
-        filters: {
-            filtersRequest: {
-                    search: null,
-                    filial: null,
-                    jobId: null,
-                    color: null
-                },
-                filtersResponse: {
-                    filials: [ 
+    { 
+        filters: {
+            filtersRequest: {
+                filial: null,
+                search: null,
+                job: null,
+                colorL null
+            }
+            filtersResponse: [
+                {
+                    valueName: "search",  label: "Поиск", component: "search"
+                },
+                {
+                    valueName: "filial",  label: "Текущий филиал", component: "list", list: [
                         {
-                            label: 'Текущий фииал',
-                            value: 1
-                        },
-                        ...
-                    ],
-                    jobs: '/jobs',
-                    colors: [ 
+                            label: 'Текущие',
+                            value: '*'
+                        }
+                    ]
+                },
+                {
+                    valueName: "job",  label: "Должность", component: "modalSelect", entityLink: '/jobs'
+                },
+                {
+                    valueName: "color",  label: "Цвета", component: "list", list: [
                         {
                             label: 'Красный',
-                            color: '#b00000',
                             value: 'red'
-                        },
-                        ... 
+                        }
                     ]
-                },
-        }
+                },
+            ]
+        },
         result: [
             headers: [ 'ФИО', 'Отдел',  ... ],
             body: [
@@ -63,31 +69,20 @@
 ```
     {
         filters: (Фильтры) {
-            filtersRequest: { (Объект фильтров запроса)
-                    search: 'Текст который пользователь вводит в поле поиска',
-                    filial: 'Выбраный филиал',
-                    jobId: 'id - проффесии выбрнаной пользователей',
-                    color: 'Выбраный цвет'
-                },
-                filtersResponse: { (Объект фильтров ответа)
-                    filials: [ (Список филиалов)
+            filtersRequest: {
+                filial: null
+            }
+            filtersResponse: [
+                {
+                    valueName (Название переменной в объекте filterRequest): "filial",  label: "Текущий филиал", component (компонент): "list", entityLink (ссылка на сущьность нужно только в modal(compornnt)): null, list (список опций для выбора): [
                         {
-                            label: 'Название филиала',
-                            value: 'Значение которое отправляется на срвер при выборе этого филиала'
-                        },
-                        ...
-                    ],
-                    jobs: 'Ссылка на запрос на который отправляется при попытке выбрать професии ответ на этот запрос это список который открывается в отдельном окне',
-                    colors: [  (Фильтры цветов)
-                        {
-                            label: 'Название показываемое пользователям',
-                            color: 'Цвет фона',
-                            value: 'Значение которое отправляется на срвер при выборе цвета'
-                        },
-                        ... 
+                            label (название option): 'text',
+                            value (значение которое запишится про выборе): x
+                        }
                     ]
-                }
-        }
+                }
+            ]
+        },
         result: [
             headers: (Список полей для шапки таблицы *примечание поле '№' - не нужно отправлять оно по умолчанию есть в таблице) [ 'ФИО', 'Отдел',  ... ],
             body: [ (Тело таблицы)

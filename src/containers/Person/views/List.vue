@@ -1,10 +1,11 @@
 <template>
     <div v-if="!isLoad" class="w-full"> 
-            <filters> </filters>  
+            <filters v-model="data.filters" > </filters>  
             <modal v-model="newPersonRef" width="w-8/12">
                 <create></create>
             </modal>
         <div class="mt-5">
+            {{data}}
             <utable @select="[]" :data="data.result"></utable>
         </div>
         <div>
@@ -28,6 +29,10 @@
 
     provide('ref', newPersonRef)
     provide('refChange', () => newPersonRef.value = true) 
+
+    watchEffect(() => {
+      console.log(data.value)
+    });
  
 
  

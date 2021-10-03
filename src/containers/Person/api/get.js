@@ -10,19 +10,36 @@ export default async function (params) {
   }
 
   return {
-    filtersRequest: {
-      searchByText: null,
-      filialId: null,
-      jobId: null,
-      statusId: null
+    filters: {
+      filtersRequest: { 
+        search: null,
+        filial: null,
+        jobId: null,
+        color: null
+      },
+      filtersResponse: {
+        search: null,
+        filials: [
+          {
+            label: 'Текущий филиал',
+            value: 'current'
+          }
+        ],
+        job: '/jobs',
+        colors: [
+          {
+            label: 'Красный',
+            color: '#b00000',
+            value: 'red'
+          },
+          {
+            label: 'Черный',
+            color: '#fff',
+            value: 'black'
+          }
+        ]
+      },
     },
-    filtersResponse: {
-      search: null,
-      filials: [],
-      job: [],
-      status: []
-    },
-
     result: {
       headers: [
         'Имя', 'Должность', 'Отдел', 'Номер', 'Департамент', 'Статус', 'Организация'
