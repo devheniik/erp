@@ -7,13 +7,13 @@
 ```
     { 
         filters: {
-            filtersRequest: {
+            request: {
                 filial: null,
                 search: null,
                 job: null,
                 color: null
             }
-            filtersResponse: [
+            response: [
                 {
                     valueName: "search",  label: "Поиск", component: "search"
                 },
@@ -69,10 +69,10 @@
 ```
     {
         filters: (Фильтры) {
-            filtersRequest: {
-                filial: null
+            request: {
+                filial (имя переменной): null
             }
-            filtersResponse: [
+            response: [
                 {
                     valueName (Название переменной в объекте filterRequest): "filial",  label: "Текущий филиал", component (компонент): "list", entityLink (ссылка на сущьность нужно только в modal(compornnt)): null, list (список опций для выбора): [
                         {
