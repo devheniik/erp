@@ -15,10 +15,10 @@
             }
             response: [
                 {
-                    valueName: "search",  label: "Поиск", component: "search"
+                    entity: "search",  label: "Поиск", component: "search"
                 },
                 {
-                    valueName: "filial",  label: "Текущий филиал", component: "list", list: [
+                    entity: "filial",  label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -26,10 +26,10 @@
                     ]
                 },
                 {
-                    valueName: "job",  label: "Должность", component: "modalSelect", entityLink: '/jobs'
+                    entity: "job",  label: "Должность", component: "modalSelect", entityLink: '/jobs'
                 },
                 {
-                    valueName: "color",  label: "Цвета", component: "list", list: [
+                    entity: "color",  label: "Цвета", component: "list", list: [
                         {
                             label: 'Красный',
                             value: 'red'
@@ -74,7 +74,7 @@
             }
             response: [
                 {
-                    valueName (Название переменной в объекте filterRequest): "filial",  label: "Текущий филиал", component (компонент): "list", entityLink (ссылка на сущьность нужно только в modal(compornnt)): null, list (список опций для выбора): [
+                    entity (Название переменной в объекте filterRequest): "filial",  label: "Текущий филиал", component (компонент): "list", entityLink (ссылка на сущьность нужно только в modal(compornnt)): null, list (список опций для выбора): [
                         {
                             label (название option): 'text',
                             value (значение которое запишится про выборе): x
