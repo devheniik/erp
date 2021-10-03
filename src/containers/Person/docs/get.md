@@ -3,8 +3,9 @@
 
 ## Structure
 
-`{
-        filtersRequest: {
+```
+    {
+        filtersRequest: { 
             search: null,
             filial: null,
             jobId: null,
@@ -52,4 +53,4 @@
             "to": 15
         }
     }
-`
+```
