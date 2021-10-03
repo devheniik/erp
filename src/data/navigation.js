@@ -27,7 +27,7 @@ export default [{
     href: 'PersonsView',
     icon: 'UserGroupIcon',
     current: false,
-    uname: 'text', 
+    uname: 'persons-view', 
     child: [{
         name: 'Список',
         icon: 'CheckCircleIcon',

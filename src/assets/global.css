@@ -1,3 +1,9 @@
 #app{
     @apply font-body
 }
+
+
+.hide-scroll{
+    scrollbar-width: none;
+}
+   

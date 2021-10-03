@@ -87,12 +87,12 @@
       <div class="flex flex-col" style="width: 280px;">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-100 ">
-          <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <div class="flex items-center flex-shrink-0 px-4">
+          <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+            <div class="flex items-center flex-shrink-0 ">
               <img class="h-50 w-auto flex flex-center" src="https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg" alt="Workflow" />
             </div>
             <nav class="mt-5 flex-1" aria-label="Sidebar">
-              <div class="px-2">
+              <div>
                   <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="" >
                     <div @click="handleClick(item) " :class="[item.current ? 'bg-secondary-200 text-gray-600' : 'bg-secondary-100  text-gray-600 hover:bg-secondary-150 hover:text-gray-600 ', 'group flex justify-between items-center px-2 py-2 text-base font-medium']">
                      <div class="flex flex-wrap">
@@ -168,7 +168,7 @@
         </div>
       </div>
       <div class="flex-1 relative z-0 flex overflow-hidden">
-        <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last ml-2 mt-2">
+        <main class="flex-1 hide-scroll relative z-0 overflow-y-auto focus:outline-none xl:order-last ml-2 mt-2">
           <!-- Start main area-->
           <slot></slot>
           <!-- End main area -->
@@ -198,7 +198,7 @@ findActive(route.meta.uname)
 
 const handleClick = item => {
   linkTo(item, router)
-  findActive(route.meta.uname) 
+  findActive(item.uname) 
 }
 
 
@@ -210,3 +210,10 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 </script>
+
+<style lang="css" scoped>
+      #scroll {   
+        scrollbar-width: none;
+      }  
+ 
+</style>

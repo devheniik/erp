@@ -4,18 +4,9 @@ import { ref } from 'vue'
 export default function() {
     const navigation = ref(navigation_data)
 
-    const findActive = name => { 
-        navigation.value.forEach(first => {
-            if (first.uname == name) {
-                first.current = true
-                return
-            }
+    const findActive = name => {  
+        navigation.value.forEach(first => { 
             first.child.forEach(seconsd => {
-                if (seconsd.uname == name) {
-                    seconsd.current = true
-                    first.current = true
-                    return
-                }
                 seconsd.child.forEach(third => {
                     if (third.uname == name) {
                         third.current = true
@@ -23,12 +14,21 @@ export default function() {
                         first.current = true
                         return
                     } 
-                })
+                }) 
+                if (seconsd.uname == name) {
+                    seconsd.current = true
+                    first.current = true
+                    return
+                } 
             })
+            if (first.uname == name) {
+                first.current = true
+                return
+            } 
         })
     }
 
-    const linkTo = (item, router, name) => { 
+    const linkTo = (item, router) => { 
 
         navigation.value.forEach(first => {
             first.current = false 

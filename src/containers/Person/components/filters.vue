@@ -19,14 +19,14 @@
         </div> 
 
         <div class="flex items-center bg-primary-600 rounded-lg border-2 border-primary-600">
-            <label class="block text-sm font-medium text-white mx-2">Филиал</label>
+            <label class="block text-sm font-medium text-white mx-2">Должность</label>
             <select class="select-primary">
                 <option v-for="option in 10" :key="option">{{option}}</option> 
             </select>
         </div> 
 
         <div class="flex items-center bg-primary-600 rounded-lg border-2 border-primary-600">
-            <label class="block text-sm font-medium text-white mx-2">Филиал</label>
+            <label class="block text-sm font-medium text-white mx-2">Статус</label>
             <select class="select-primary">
                 <option v-for="option in 10" :key="option">{{option}}</option> 
             </select>

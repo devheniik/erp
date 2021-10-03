@@ -7,3 +7,5 @@
 @import './components/select.css';
 @import './components/badge.css';
 @import './components/button-circle.css';
+
+@import './custom/scrollbar.scss';
