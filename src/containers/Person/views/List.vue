@@ -1,7 +1,10 @@
 <template>
     <div>
-        <uviewer :container="'person'" :api="'/persons'">
+        <uviewer :api="'/persons'">
             <template v-slot:create>
+                <create></create>
+            </template>
+            <template v-slot:edit>
                 <create></create>
             </template>
         </uviewer>

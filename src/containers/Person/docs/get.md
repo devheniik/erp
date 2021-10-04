@@ -18,7 +18,7 @@
                     entity: "search",  label: "Поиск", component: "search"
                 },
                 {
-                    entity: "filial",  label: "Текущий филиал", component: "list", list: [
+                    entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -74,7 +74,7 @@
             }
             response: [
                 {
-                    entity (Название переменной в объекте filterRequest): "filial",  label: "Текущий филиал", component (компонент): "list", entityLink (ссылка на сущьность нужно только в modal(compornnt)): null, list (список опций для выбора): [
+                    entity (Название переменной в объекте filterRequest): "filial", meanKey (Главный ключ к примеру имя пользователя или название филиала этот ключ не отправится на сервер он просто будет выделен для пользователя): 'name', label: "Текущий филиал", component (компонент): "list", entityLink (ссылка на сущьность нужно только в modal(compornnt)): null, list (список опций для выбора): [
                         {
                             label (название option): 'text',
                             value (значение которое запишится про выборе): x

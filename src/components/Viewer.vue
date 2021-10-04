@@ -5,7 +5,7 @@
                 <component v-model="data.filters.request[filter.entity]" :data="filter" :is="filter.component"></component>
             </div>
         </div>
-        <div class="fixed flex items-center mr-5 right-3 bottom-16"> 
+        <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16"> 
             <button @click="createOpen = true" class="btn-circle-primary">
                 <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
             </button>
@@ -13,8 +13,11 @@
         <modal v-model="createOpen" width="w-8/12">
             <slot name="create"></slot>
         </modal>
+        <modal v-model="editOpen" width="w-8/12">
+            <slot name="edit"></slot>
+        </modal>
         <div class="mt-5">
-            <utable @select="[]" :data="data.result"></utable>
+            <utable @select="!modalSelect ? editOpen = true : select($event)" :data="data.result"></utable>
         </div>
         <div>
             <pagination v-model:pagination="data.pagination"></pagination>
@@ -26,12 +29,15 @@
         import { ref, provide, watchEffect, defineAsyncComponent } from 'vue'
         import hooks from 'h_list'
 
-        const props = defineProps({
-            container: String,
-            api: String
+        const props = defineProps({ 
+            api: String,
+            modalSelect: Boolean 
         })
 
         const createOpen = ref(false)
+        const editOpen = ref(false)
+
+        const select = e => console.log(e)
 
         const {
             data,

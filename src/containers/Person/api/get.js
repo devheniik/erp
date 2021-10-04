@@ -34,7 +34,7 @@ export default async function (params) {
                   ]
               },
               {
-                  entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs'
+                  entity: "job", meanKey: 'name',  label: "Должность", component: "modal-select", entityLink: '/jobs'
               },
               {
                   entity: "color",  label: "Цвета", component: "list", list: [
