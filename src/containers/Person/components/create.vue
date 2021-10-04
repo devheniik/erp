@@ -3,16 +3,22 @@
         <div class="flex justify-between">
             <div class="w-1/2">
                 <h1
-                    class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500 ml-2"
-                >Общие сведения</h1>
+                    class="
+                        border-b-2 border-gray-600
+                        font-sans
+                        text-2xl text-gray-500
+                        ml-2
+                    "
+                >
+                    Общие сведения
+                </h1>
                 <div class="flex">
                     <div class>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Фамилия:</label>
+                            <label for="email" class="label-primary"
+                                >Фамилия:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -23,10 +29,9 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Имя:</label>
+                            <label for="email" class="label-primary"
+                                >Имя:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -37,10 +42,9 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Отчество:</label>
+                            <label for="email" class="label-primary"
+                                >Отчество:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -51,23 +55,27 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Дата рождения:</label>
+                            <label for="email" class="label-primary"
+                                >Дата рождения:</label
+                            >
                             <div class="flex justify-between items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="userData.birthday" ></flat-pickr>
-                                <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                <flat-pickr
+                                    :locale="'ru'"
+                                    class="input-primary"
+                                    v-model="userData.birthday"
+                                ></flat-pickr>
+                                <CalendarIcon
+                                    class="h-6 w-6 text-primary-400 ml-2"
+                                />
                             </div>
                         </div>
                     </div>
                     <div class="ml-4">
                         <!--Второй блок-->
                         <div class="mt-4 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Телефон:</label>
+                            <label for="email" class="label-primary"
+                                >Телефон:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -78,10 +86,9 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >E-mail:</label>
+                            <label for="email" class="label-primary"
+                                >E-mail:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -92,303 +99,316 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Пол:</label>
+                            <label for="email" class="label-primary"
+                                >Пол:</label
+                            >
                             <div>
-                                <div class="relative">
-                                    <button
-                                        type="button"
-                                        class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                        aria-haspopup="listbox"
-                                        aria-expanded="true"
-                                        aria-labelledby="listbox-label"
-                                    >
-                                        <span class="block truncate text-gray-500">Мужской</span>
-                                        <span
-                                            class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-                                        >
-                                            <svg
-                                                class="h-5 w-5 text-gray-400"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </div>
+                               <select  class=" block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" v-model="userData.sex">
+                                <option>М</option>
+                                <option selected="">Ж</option>
+                                
+                                </select>
                             </div>
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Регион:</label>
+                            <label for="email" class="label-primary"
+                                >Регион:</label
+                            >
                             <div>
-                                <div class="relative">
-                                    <button
-                                        type="button"
-                                        class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                        aria-haspopup="listbox"
-                                        aria-expanded="true"
-                                        aria-labelledby="listbox-label"
-                                    >
-                                        <span class="block truncate text-gray-500">Выбрать</span>
-                                        <span
-                                            class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-                                        >
-                                            <svg
-                                                class="h-5 w-5 text-gray-400"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </div>
+                           
+    <select  class=" block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" v-model="userData.region">
+      <option>USA</option>
+      <option selected="">Canada</option>
+      <option>EU</option>
+    </select>
                             </div>
                         </div>
                     </div>
                     <!--Конец второго блока-->
                 </div>
             </div>
-            <div class="w-1/2 ml-2">
-                <h1 class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500">Профиль</h1>
+            <div class="w-1/2 ml-3">
+                <h1
+                    class="
+                        border-b-2 border-gray-600
+                        font-sans
+                        text-2xl text-gray-500
+                    "
+                >
+                    Профиль
+                </h1>
 
                 <div>
                     <div class="flex">
                         <div class>
                             <!--Первый блок-->
-                            <div class="mt-2 ml-2">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Кандидат:</label>
+                            <div class="mt-4 ml-2">
+                                <label for="email" class="label-primary"
+                                    >Кандидат:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Сотрудник:</label>
+                                <label for="email" class="label-primary"
+                                    >Сотрудник:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >МОЛ:</label>
+                                <label for="email" class="label-primary"
+                                    >МОЛ:</label
+                                >
                                 <div>
-                                    <div class="relative">
-                                        <button
-                                            type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                            aria-haspopup="listbox"
-                                            aria-expanded="true"
-                                            aria-labelledby="listbox-label"
-                                        >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
-                                            <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-                                            >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </div>
+                                    <select  class="dropdown-primary" v-model="userData.mol">
+                                    <option>USA</option>
+                                    <option selected="">Canada</option>
+                                    <option>EU</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Секретность:</label>
+                                <label for="email" class="label-primary"
+                                    >Секретность:</label
+                                >
                                 <div>
-                                    <div class="relative">
-                                        <button
-                                            type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                            aria-haspopup="listbox"
-                                            aria-expanded="true"
-                                            aria-labelledby="listbox-label"
-                                        >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
-                                            <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-                                            >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </div>
+                                  <select  class="dropdown-primary" v-model="userData.isSecret">
+                                    <option>USA</option>
+                                    <option selected="">Canada</option>
+                                    <option>EU</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="ml-4">
                             <!--Второй блок-->
 
-                            <div class="mt-2 ml-2">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Нотактер:</label>
+                            <div class="mt-4 ml-2">
+                                <label for="email" class="label-primary"
+                                    >Нотактер:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Уволен:</label>
+                                <label for="email" class="label-primary"
+                                    >Уволен:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
@@ -405,16 +425,23 @@
         <div class="flex justify-between mt-8">
             <div class="w-auto">
                 <h1
-                    class="border-b-2 border-gray-600 font-sans text-2xl ml-2 text-gray-500"
-                >Реквизиты</h1>
+                    class="
+                        border-b-2 border-gray-600
+                        font-sans
+                        text-2xl
+                        ml-2
+                        text-gray-500
+                    "
+                >
+                    Реквизиты
+                </h1>
                 <div class="flex">
                     <div class>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Серия Паспорта:</label>
+                            <label for="email" class="label-primary"
+                                >Серия Паспорта:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -424,10 +451,9 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Номер:</label>
+                            <label for="email" class="label-primary"
+                                >Номер:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -437,10 +463,9 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Кем выдан:</label>
+                            <label for="email" class="label-primary"
+                                >Кем выдан:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -450,49 +475,50 @@
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Дата:</label>
+                            <label for="email" class="label-primary"
+                                >Дата:</label
+                            >
                             <div class="flex justify-between items-center">
-                                <flat-pickr class="input-primary" v-model="userData.dataGet" ></flat-pickr> 
-                                <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                <flat-pickr
+                                    class="input-primary"
+                                    v-model="userData.dataGet"
+                                ></flat-pickr>
+                                <CalendarIcon
+                                    class="h-6 w-6 text-primary-400 ml-2"
+                                />
                             </div>
                         </div>
                     </div>
                     <div class="ml-4">
                         <!--Второй блок-->
                         <div class="mt-4 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >ИНН:</label>
+                            <label for="email" class="label-primary"
+                                >ИНН:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
                                 class="input-primary"
-                               v-model="userData.inn"
+                                v-model="userData.inn"
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Адрес Регистр:</label>
+                            <label for="email" class="label-primary"
+                                >Адрес Регистр:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
                                 id="email"
                                 class="input-primary"
-                              v-model="userData.adressReg"
+                                v-model="userData.adressReg"
                             />
                         </div>
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Адрес дом:</label>
+                            <label for="email" class="label-primary"
+                                >Адрес дом:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -503,10 +529,9 @@
                         </div>
 
                         <div class="mt-2 ml-2">
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-400 ml-2"
-                            >Место рождения:</label>
+                            <label for="email" class="label-primary"
+                                >Место рождения:</label
+                            >
                             <input
                                 type="text"
                                 name="email"
@@ -521,153 +546,258 @@
             </div>
             <div class="w-1/2 ml-2">
                 <h1
-                    class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500"
-                >Основное место работы</h1>
+                    class="
+                        border-b-2 border-gray-600
+                        font-sans
+                        text-2xl text-gray-500
+                    "
+                >
+                    Основное место работы
+                </h1>
 
                 <div>
                     <div class="flex">
                         <div class>
                             <!--Первый блок-->
-                            <div class="mt-2 ml-2 w-full">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Отдел:</label>
+                            <div class="mt-4 ml-2 w-full">
+                                <label for="email" class="label-primary"
+                                    >Отдел:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2 w-full">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Должность:</label>
+                                <label for="email" class="label-primary"
+                                    >Должность:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2 w-full">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Организация:</label>
+                                <label for="email" class="label-primary"
+                                    >Организация:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2 w-full">
-                                <label
-                                    for="email"
-                                    class="block text-sm font-medium text-gray-400 ml-2"
-                                >Инспектор:</label>
+                                <label for="email" class="label-primary"
+                                    >Инспектор:</label
+                                >
                                 <div>
                                     <div class="relative">
                                         <button
                                             type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                            class="
+                                                relative
+                                                w-full
+                                                bg-white
+                                                border border-gray-300
+                                                rounded-md
+                                                shadow-sm
+                                                pl-3
+                                                pr-10
+                                                py-2
+                                                text-left
+                                                cursor-default
+                                                focus:outline-none
+                                                focus:ring-1
+                                                focus:ring-green-500
+                                                focus:border-green-500
+                                                sm:text-sm
+                                            "
                                             aria-haspopup="listbox"
                                             aria-expanded="true"
                                             aria-labelledby="listbox-label"
                                         >
-                                            <span class="block truncate text-gray-500">Выбрать</span>
                                             <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                                                class="
+                                                    block
+                                                    truncate
+                                                    text-gray-500
+                                                "
+                                                >Выбрать</span
                                             >
-                                                <!-- <svg
-                                                    class="h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                    aria-hidden="true"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg> -->
-                                                <ChevronDownIcon class="h-5 w-5 text-gray-400 "/>
+                                            <span
+                                                class="
+                                                    absolute
+                                                    inset-y-0
+                                                    right-0
+                                                    flex
+                                                    items-center
+                                                    pr-2
+                                                    pointer-events-none
+                                                "
+                                            >
+                                                <ChevronDownIcon
+                                                    class="
+                                                        h-5
+                                                        w-5
+                                                        text-gray-400
+                                                    "
+                                                />
                                             </span>
                                         </button>
                                     </div>
@@ -680,18 +810,39 @@
         </div>
         <div class="w-2/3 mt-6">
             <h1
-                class="border-b-2 border-gray-600 font-sans text-2xl text-gray-500 ml-2"
-            >Дополнительная Информация</h1>
+                class="
+                    border-b-2 border-gray-600
+                    font-sans
+                    text-2xl text-gray-500
+                    ml-2
+                "
+            >
+                Дополнительная Информация
+            </h1>
             <div>
                 <div class="ml-4 mt-4">
-                    <label for="email" class="block text-sm font-medium text-gray-400">Примечания</label>
+                    <label
+                        for="email"
+                        class="block text-sm font-medium text-gray-400"
+                        >Примечания</label
+                    >
                     <div class="mt-1 w-1/2">
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <textarea
                                 id="about"
                                 name="about"
                                 rows="3"
-                                class="max-w-lg shadow-sm block w-full focus:ring-green-500 focus:border-green-500 sm:text-sm border border-gray-300 rounded-md"
+                                class="
+                                    max-w-lg
+                                    shadow-sm
+                                    block
+                                    w-full
+                                    focus:ring-green-500
+                                    focus:border-green-500
+                                    sm:text-sm
+                                    border border-gray-300
+                                    rounded-md
+                                "
                             ></textarea>
                         </div>
                     </div>
@@ -699,37 +850,34 @@
             </div>
         </div>
         <div class="w-full flex justify-center mt-6">
-            <button
-                type="button"
-                class="btn-circle-primary"
-            >Добавить</button>
+            <button type="button" class="btn-circle-primary">Добавить</button>
         </div>
     </div>
 </template>
 
 <script setup>
 const userData = {
-firstName: "",
-lastName: "",
-patronymic: "",
-birthday: 0,
-phoneNumber: 0,
-email:"",
-sex:"",
-region:"",
-passportSeria: 0,
-passportNumber: 0,
-whoGive: "",
-dataGet: 0,
-inn: 0,
-adressReg: "",
-adressHome: "",
-birthPlace: "",
-add: ""
-
+    firstName: '',
+    lastName: '',
+    patronymic: '',
+    birthday: 0,
+    phoneNumber: 0,
+    email: '',
+    sex: '',
+    region: '',
+    passportSeria: 0,
+    passportNumber: 0,
+    whoGive: '',
+    dataGet: 0,
+    inn: 0,
+    adressReg: '',
+    adressHome: '',
+    birthPlace: '',
+    add: '',
+    mol: '',
+    isSecret: "",
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
