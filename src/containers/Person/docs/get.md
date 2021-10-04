@@ -26,7 +26,7 @@
                     ]
                 },
                 {
-                    entity: "job",  label: "Должность", component: "modalSelect", entityLink: '/jobs'
+                    entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs'
                 },
                 {
                     entity: "color",  label: "Цвета", component: "list", list: [
