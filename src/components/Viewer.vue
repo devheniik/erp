@@ -1,0 +1,35 @@
+<template>
+    <div v-if="!isLoad" class="w-full"> 
+        <div class="fixed flex items-center mr-5 right-3 bottom-16"> 
+            <button @click="createOpen = true" class="btn-circle-primary">
+                <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
+            </button>
+        </div>  
+        <modal v-model="createOpen" width="w-8/12">
+            <slot name="create"></slot>
+        </modal>
+        <div class="mt-5">
+            <utable @select="[]" :data="data.result"></utable>
+        </div>
+        <div>
+            <pagination v-model:pagination="data.pagination"></pagination>
+        </div>
+    </div>
+</template>
+
+<script setup>
+        import { ref, provide, watchEffect, defineAsyncComponent } from 'vue'
+        import hooks from 'h_list'
+
+        const props = defineProps({
+            container: String,
+            api: String
+        });
+
+        const createOpen = ref(false)
+
+        const {
+            data,
+            isLoad
+        } = hooks(props.api)
+</script>

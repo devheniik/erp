@@ -18,6 +18,7 @@ export default ({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '/src'),
+        'h_list': path.resolve(__dirname, '/src/hooks/list.js'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
         '@person': path.resolve(__dirname, '/src/containers/Person'),
         '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard'),
