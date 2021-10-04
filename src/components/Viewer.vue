@@ -1,5 +1,10 @@
 <template>
-    <div v-if="!isLoad" class="w-full"> 
+    <div v-if="!isLoad" class="w-full mr-5"> 
+        <div class="w-full flex justify-between m-1">
+            <div v-for="(filter, i) in data.filters.response" :key="i">  
+                <component v-model="data.filters.request[filter.entity]" :data="filter" :is="filter.component"></component>
+            </div>
+        </div>
         <div class="fixed flex items-center mr-5 right-3 bottom-16"> 
             <button @click="createOpen = true" class="btn-circle-primary">
                 <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
@@ -24,7 +29,7 @@
         const props = defineProps({
             container: String,
             api: String
-        });
+        })
 
         const createOpen = ref(false)
 
@@ -32,4 +37,6 @@
             data,
             isLoad
         } = hooks(props.api)
+        
+ 
 </script>

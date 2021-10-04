@@ -9,37 +9,43 @@ export default async function (params) {
 
   }
 
-  return {
-    filters: {
-      filtersRequest: { 
-        search: null,
-        filial: null,
-        jobId: null,
-        color: null
-      },
-      filtersResponse: {
-        search: null,
-        filials: [
-          {
-            label: 'Текущий филиал',
-            value: 'current'
-          }
-        ],
-        job: '/jobs',
-        colors: [
-          {
-            label: 'Красный',
-            color: '#b00000',
-            value: 'red'
+  return { 
+      filters: {
+          request: {
+              filial: null,
+              checkbox: null,
+              search: '123',
+              job: null,
+              color: null
           },
-          {
-            label: 'Черный',
-            color: '#fff',
-            value: 'black'
-          }
-        ]
+          response: [
+              {
+                  entity: "search",  label: "Поиск", component: "search"
+              },
+              {
+                entity: "checkbox",  label: "Label", component: "checkbox"
+              },
+              {
+                  entity: "filial",  label: "Текущий филиал", component: "list", list: [
+                      {
+                          label: 'Текущие',
+                          value: '*'
+                      }
+                  ]
+              },
+              {
+                  entity: "job",  label: "Должность", component: "modalSelect", entityLink: '/jobs'
+              },
+              {
+                  entity: "color",  label: "Цвета", component: "list", list: [
+                      {
+                          label: 'Красный',
+                          value: 'red'
+                      }
+                  ]
+              },
+          ]
       },
-    },
     result: {
       headers: [
         'Имя', 'Должность', 'Отдел', 'Номер', 'Департамент', 'Статус', 'Организация'

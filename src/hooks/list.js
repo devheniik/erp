@@ -17,6 +17,7 @@ export default function (route) {
     })
 
     watchEffect(() => get(data.value))
+ 
 
     return { data, load, isLoad }
 
