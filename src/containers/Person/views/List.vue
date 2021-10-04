@@ -17,8 +17,9 @@
 <script setup>
     import { ref, provide, watchEffect } from 'vue'
     import Filters from '../components/filters.vue'
-    import Create from '../components/create.vue'
+    import Create from '@dashboard/components/create.vue'
     import hooks from '../hooks/list'
+    
 
     const {
         data,
