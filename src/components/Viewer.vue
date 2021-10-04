@@ -1,9 +1,11 @@
 <template>
     <div v-if="!isLoad" class="w-full mr-5"> 
+        {{data.filters.request}}
         <div class="w-full flex justify-between m-1">
             <div v-for="(filter, i) in data.filters.response" :key="i">  
                 <component v-model="data.filters.request[filter.entity]" :data="filter" :is="filter.component"></component>
             </div>
+            
         </div>
         <div class="fixed flex items-center mr-5 right-3 bottom-16"> 
             <button @click="createOpen = true" class="btn-circle-primary">
