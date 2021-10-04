@@ -4,6 +4,7 @@
             <div v-for="(filter, i) in data.filters.response" :key="i">  
                 <component v-model="data.filters.request[filter.entity]" :data="filter" :is="filter.component"></component>
             </div>
+            
         </div>
         <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16"> 
             <button @click="createOpen = true" class="btn-circle-primary">
