@@ -18,7 +18,7 @@
             <slot name="edit"></slot>
         </modal>
         <div class="mt-5">
-            <utable @select="!modalSelect ? editOpen = true : select($event)" :data="data.result"></utable>
+            <utable @select="!modalSelect ? editOpen = true : $emit('select', $event)" :data="data.result"></utable>
         </div>
         <div>
             <pagination v-model:pagination="data.pagination"></pagination>
