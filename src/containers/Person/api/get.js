@@ -15,7 +15,7 @@ export default async function (params) {
               filial: null,
               checkbox: null,
               search: '123',
-              job: null,
+              job: '12',
               color: null
           },
           response: [
