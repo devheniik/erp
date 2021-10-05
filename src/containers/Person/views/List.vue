@@ -4,7 +4,7 @@
             <template v-slot:create>
                 <create></create>
             </template>
-            <template v-slot:edit>
+            <template v-slot:update>
                 <update></update>
             </template>
         </uviewer>

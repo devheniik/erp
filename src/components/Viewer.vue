@@ -15,7 +15,7 @@
             <slot name="create"></slot>
         </modal>
         <modal v-model="editOpen" width="w-8/12">
-            <slot name="edit"></slot>
+            <slot name="update"></slot>
         </modal>
         <div class="mt-5">
             <utable @select="!modalSelect ? editOpen = true : $emit('select', $event)" :data="data.result"></utable>
