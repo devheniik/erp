@@ -2,12 +2,7 @@
     <div class=" ">
         <div class="flex justify-between">
             <div class="w-1/2">
-                <h1 class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl text-gray-500
-                        ml-2
-                    ">
+                <h1 class="label-big ">
                     Общие сведения
                 </h1>
                 <div class="flex">
@@ -72,11 +67,7 @@
                 </div>
             </div>
             <div class="w-1/2 ml-3">
-                <h1 class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl text-gray-500
-                    ">
+                <h1 class="label-big ">
                     Профиль
                 </h1>
 
@@ -221,11 +212,7 @@
                 </div>
             </div>
             <div class="w-1/2 ml-2">
-                <h1 class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl text-gray-500
-                    ">
+                <h1 class="label-big ">
                     Основное место работы
                 </h1>
 
