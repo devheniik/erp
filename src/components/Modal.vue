@@ -21,6 +21,7 @@
 <script setup>
 const props = defineProps({
     modelValue: Boolean,
+   
     width: {
       type: String,
       default: 'w-auto',
