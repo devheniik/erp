@@ -23,9 +23,6 @@ export default async function (params) {
                   entity: "search",  label: "Поиск", component: "search"
               },
               {
-                entity: "checkbox",  label: "Label", component: "checkbox"
-              },
-              {
                   entity: "filial",  label: "Текущий филиал", component: "list", list: [
                       {
                           label: 'Текущие',
