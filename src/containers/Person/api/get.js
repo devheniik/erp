@@ -45,7 +45,7 @@ export default async function (params) {
       },
     result: {
       headers: [
-        'Имя', 'Должность', 'Отдел', 'Номер', 'Департамент', 'Статус', 'Организация'
+        'Имя', 'Должность', 'Отдел', 'Номер', 'Департамент', 'Статус', 'Организация', 'Кантидат','Стажер','Работник'
       ],
       body:
         [{
@@ -57,7 +57,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -69,7 +72,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -81,7 +87,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -93,7 +102,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -105,7 +117,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -117,7 +132,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -129,7 +147,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -141,7 +162,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -153,7 +177,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -165,7 +192,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -177,7 +207,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -189,7 +222,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -201,7 +237,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         },
         {
@@ -213,7 +252,10 @@ export default async function (params) {
             number: '+3807456376',
             department: 'Optimization',
             status: 'Активен',
-            org: 'мизол'
+            org: 'мизол',
+            kandidat: '+',
+            recrut: '-',
+            worker: '-'
           }
         }
         ]
