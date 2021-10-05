@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class=" ">
         <div class="flex justify-between">
             <div class="w-1/2">
                 <h1 class="
@@ -13,7 +13,7 @@
                 <div class="flex">
                     <div class>
                         <!--Первый блок-->
-                        <div class="mt-4 ml-2">
+                        <div class="mt-4 ml-2 ">
                             <label for="email" class="label-primary">Фамилия:</label>
                             <input type="text" class="input-primary" placeholder="Фамилия" v-model="data.lastName" />
                         </div>
@@ -89,9 +89,9 @@
                                 <div>
                                 <div>
                                     <select class="dropdown-primary" v-model="data.candidate">
-                                        <option>USA</option>
-                                        <option selected="">Canada</option>
-                                        <option>EU</option>
+                                        <option>Нет</option>
+                                        <option selected="">Да</option>
+                                        
                                     </select>
                                 </div>
                                 </div>
@@ -100,9 +100,9 @@
                                 <label for="email" class="label-primary" >Сотрудник:</label>
                                 <div>
                                     <select class="dropdown-primary" v-model="data.personal">
-                                        <option>USA</option>
-                                        <option selected="">Canada</option>
-                                        <option>EU</option>
+                                        <option>Да</option>
+                                        <option selected="">Нет</option>
+                                       
                                     </select>
                                 </div>
                             </div>
@@ -110,9 +110,9 @@
                                 <label for="email" class="label-primary">МОЛ:</label>
                                 <div>
                                     <select class="dropdown-primary" v-model="data.mol">
-                                        <option>USA</option>
-                                        <option selected="">Canada</option>
-                                        <option>EU</option>
+                                        <option>Да</option>
+                                        <option selected="">Нет</option>
+                                     
                                     </select>
                                 </div>
                             </div>
@@ -135,9 +135,9 @@
                                 <label for="email" class="label-primary">Нотактер:</label>
                                 <div>
                                   <select class="dropdown-primary" v-model="data.notakter">
-                                        <option>USA</option>
-                                        <option selected="">Canada</option>
-                                        <option>EU</option>
+                                        <option>Да</option>
+                                        <option selected="">Нет</option>
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -145,9 +145,9 @@
                                 <label for="email" class="label-primary">Уволен:</label>
                                 <div>
                                     <select class="dropdown-primary" v-model="data.isFired">
-                                        <option>USA</option>
-                                        <option selected="">Canada</option>
-                                        <option>EU</option>
+                                        <option>Да</option>
+                                        <option selected="">Нет</option>
+                                      
                                     </select>
                                 </div>
                             </div>
@@ -297,14 +297,7 @@
                     <div class="mt-1 w-1/2">
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <textarea rows="3" class="
-                                    max-w-lg
-                                    shadow-sm
-                                    block
-                                    w-full
-                                    focus:ring-green-500 focus:border-green-500
-                                    sm:text-sm
-                                    border border-gray-300
-                                    rounded-md
+                                  textarea-primary
                                 " v-model="data.add"></textarea>
                         </div>
                     </div>

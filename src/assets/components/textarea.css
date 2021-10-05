@@ -1,0 +1,5 @@
+@layer components{
+    .textarea-primary{
+        @apply   max-w-lg shadow-sm block w-full  sm:text-sm border border-gray-300  rounded-md
+    }
+}
