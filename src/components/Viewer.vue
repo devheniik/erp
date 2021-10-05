@@ -1,12 +1,11 @@
 <template>
     <div v-if="!isLoad" class="w-full mr-5">  
-        <div class="w-full flex justify-between m-1">
+        <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
             <div v-for="(filter, i) in data.filters.response" :key="i">  
                 <component v-model="data.filters.request[filter.entity]" :data="filter" :is="filter.component"></component>
-            </div>
-            
+            </div> 
         </div>
-        <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16"> 
+        <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-50"> 
             <button @click="createOpen = true" class="btn-circle-primary">
                 <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
             </button>
@@ -18,7 +17,7 @@
             <slot name="update"></slot>
         </modal>
         <div class="mt-5">
-            <utable @select="!modalSelect ? editOpen = true : $emit('select', $event)" :data="data.result"></utable>
+            <utable @select="!modalSelect ? [editOpen = true, editId = $event.uid] : $emit('select', $event)" :data="data.result"></utable>
         </div>
         <div>
             <pagination v-model:pagination="data.pagination"></pagination>
@@ -37,6 +36,7 @@
 
         const createOpen = ref(false)
         const editOpen = ref(false)
+        const editId = ref(null) 
 
         const select = e => console.log(e)
 

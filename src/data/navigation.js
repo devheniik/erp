@@ -24,14 +24,14 @@ export default [{
   },
   {
     name: 'Персоны',
-    href: 'PersonsView',
+    href:  { name: 'persons-view' },
     icon: 'UserGroupIcon',
     current: false,
     uname: 'persons-view', 
     child: [{
         name: 'Список',
         icon: 'CheckCircleIcon',
-        href: 'PersonsView',
+        href: { name: 'persons-view' },
         current: false,
         uname: 'persons-view',
         child: []
@@ -39,9 +39,9 @@ export default [{
       {
         name: 'Карточки',
         icon: 'CheckCircleIcon',
-        href: '',
+        href: { name: 'persons-update', params: { id: 'first'} },
         current: false,
-        uname: 'text',
+        uname: 'persons-update',
         child: []
       },
       {

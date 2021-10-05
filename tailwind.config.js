@@ -23,8 +23,20 @@ module.exports = {
         },
     },
     variants: {
-        extend: {},
-    },
+        extend: {
+          zIndex: ["responsive", "hover"],
+          position: ["responsive", "hover"],
+          padding: ["responsive", "last"],
+          margin: ["responsive", "last"],
+          borderWidth: ["responsive", "last"],
+          backgroundColor: ["last", "first", "odd", "responsive", "hover", "dark"],
+          borderColor: ["last", "first", "odd", "responsive", "hover", "dark"],
+          textColor: ["last", "first", "odd", "responsive", "hover", "dark"],
+          boxShadow: ["last", "first", "odd", "responsive", "hover", "dark"],
+          borderOpacity: ["last", "first", "odd", "responsive", "hover", "dark"],
+          backgroundOpacity: ["last", "first", "odd", "responsive", "hover", "dark"]
+        }
+      },
     plugins: [
         require('@tailwindcss/forms'),
     ],

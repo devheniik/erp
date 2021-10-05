@@ -28,7 +28,7 @@ export default function() {
         })
     }
 
-    const linkTo = (item, router) => { 
+    const linkTo = (route, router) => { 
 
         navigation.value.forEach(first => {
             first.current = false 
@@ -41,9 +41,7 @@ export default function() {
         })
 
  
-        router.push({
-            name: item.href
-        })   
+        router.push(route.href)   
  
       }
 
