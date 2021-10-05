@@ -1,12 +1,12 @@
 <template>
-    <div class=" ">
-        <div class="flex justify-between">
-            <div class="w-1/2">
+    <div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>
                 <h1 class="label-big ">
                     Общие сведения
                 </h1>
-                <div class="flex">
-                    <div class>
+                <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2 ">
                             <label for="email" class="label-primary">Фамилия:</label>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ml-4">
+                    <div>
                         <!--Второй блок-->
                         <div class="mt-4 ml-2">
                             <label for="email" class="label-primary">Телефон:</label>
@@ -66,34 +66,34 @@
                     <!--Конец второго блока-->
                 </div>
             </div>
-            <div class="w-1/2 ml-3">
+            <div>
                 <h1 class="label-big ">
                     Профиль
                 </h1>
 
                 <div>
-                    <div class="flex">
-                        <div class>
+                    <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div >
                             <!--Первый блок-->
                             <div class="mt-4 ml-2">
                                 <label for="email" class="label-primary">Кандидат:</label>
                                 <div>
-                                <div>
-                                    <select class="dropdown-primary" v-model="data.candidate">
-                                        <option>Нет</option>
-                                        <option selected="">Да</option>
-                                        
-                                    </select>
-                                </div>
+                                    <div>
+                                        <select class="dropdown-primary" v-model="data.candidate">
+                                            <option :value="false">Нет</option>
+                                            <option :value="true">Да</option>
+
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="mt-2 ml-2">
-                                <label for="email" class="label-primary" >Сотрудник:</label>
+                                <label for="email" class="label-primary">Сотрудник:</label>
                                 <div>
                                     <select class="dropdown-primary" v-model="data.personal">
                                         <option>Да</option>
                                         <option selected="">Нет</option>
-                                       
+
                                     </select>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                     <select class="dropdown-primary" v-model="data.mol">
                                         <option>Да</option>
                                         <option selected="">Нет</option>
-                                     
+
                                     </select>
                                 </div>
                             </div>
@@ -119,16 +119,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ml-4">
+                        <div>
                             <!--Второй блок-->
 
                             <div class="mt-4 ml-2">
                                 <label for="email" class="label-primary">Нотактер:</label>
                                 <div>
-                                  <select class="dropdown-primary" v-model="data.notakter">
+                                    <select class="dropdown-primary" v-model="data.notakter">
                                         <option>Да</option>
                                         <option selected="">Нет</option>
-                                        
+
                                     </select>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                     <select class="dropdown-primary" v-model="data.isFired">
                                         <option>Да</option>
                                         <option selected="">Нет</option>
-                                      
+
                                     </select>
                                 </div>
                             </div>
@@ -147,22 +147,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!--end first part-->
+            <!--TRIRD block-->
 
-        <div class="flex justify-between mt-8">
-            <div class="w-auto">
-                <h1 class="
-                        border-b-2 border-gray-600
-                        font-sans
-                        text-2xl
-                        ml-2
-                        text-gray-500
-                    ">
+            <div>
+                <h1 class="label-big">
                     Реквизиты
                 </h1>
-                <div class="flex">
-                    <div class>
+                <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div >
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
                             <label for="email" class="label-primary">Серия Паспорта:</label>
@@ -186,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ml-4">
+                    <div >
                         <!--Второй блок-->
                         <div class="mt-4 ml-2">
                             <label for="email" class="label-primary">ИНН:</label>
@@ -211,7 +203,7 @@
                     <!--Конец второго блока-->
                 </div>
             </div>
-            <div class="w-1/2 ml-2">
+            <div>
                 <h1 class="label-big ">
                     Основное место работы
                 </h1>
@@ -268,24 +260,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="w-2/3 mt-6">
-            <h1 class="
-                    border-b-2 border-gray-600
-                    font-sans
-                    text-2xl text-gray-500
-                    ml-2
-                ">
-                Дополнительная Информация
-            </h1>
             <div>
-                <div class="ml-4 mt-4">
-                    <label for="email" class="block text-sm font-medium text-gray-400">Примечания</label>
-                    <div class="mt-1 w-1/2">
-                        <div class="mt-1 sm:mt-0 sm:col-span-2">
-                            <textarea rows="3" class="
+                <h1 class="label-big">
+                    Дополнительная информация
+                </h1>
+                <div>
+                    <div class="ml-4 mt-4">
+                        <label for="email" class="block text-sm font-medium text-gray-400">Примечания</label>
+                        <div class="mt-1 w-1/2">
+                            <div class="mt-1 sm:mt-0 col-span-1 lg:col-span-2 ">
+                                <textarea rows="3" class="
                                   textarea-primary
                                 " v-model="data.add"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
                 <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
             </button>
         </div>  
-        <modal v-model="createOpen" width="w-8/12">
+        <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
             <slot name="create"></slot>
         </modal>
         <modal v-model="editOpen" width="w-8/12">
