@@ -11,7 +11,8 @@ flatpickr.setDefaults(
   {
     locale: Russian,
     dateFormat: 'd.m.Y',
-    time_24hr: true
+    time_24hr: true,
+    static : true
   }
 )
 

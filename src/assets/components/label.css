@@ -1,4 +1,4 @@
-@layer components{
+@layer components {
     .label-primary{
         display: block;
         font-size: 0.875rem/* 14px */;
@@ -8,6 +8,6 @@
         margin-left: 0.5rem/* 8px */;
     }
     .label-big{
-        @apply   underline font-sans text-2xl text-gray-500 whitespace-nowrap
+        @apply font-sans text-lg text-gray-600 whitespace-nowrap w-full bg-primary-100 pl-2 rounded-t-lg
     }
 }

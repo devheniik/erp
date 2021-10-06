@@ -10,7 +10,7 @@ module.exports = {
             secondary: colors.sky,
             gray: colors.gray,
             black: colors.black,
-            white: colors.white, 
+            white: colors.white,
             indigo: colors.indigo,
             red: colors.red,
             yellow: colors.yellow,
@@ -19,24 +19,27 @@ module.exports = {
         extend: {
             fontFamily: {
                 body: ['Montserrat']
-              }
+            },
+            width: {
+                'fixed': 'calc(100% - 280px)'
+            }
         },
     },
     variants: {
-        extend: {
-          zIndex: ["responsive", "hover"],
-          position: ["responsive", "hover"],
-          padding: ["responsive", "last"],
-          margin: ["responsive", "last"],
-          borderWidth: ["responsive", "last"],
-          backgroundColor: ["last", "first", "odd", "responsive", "hover", "dark"],
-          borderColor: ["last", "first", "odd", "responsive", "hover", "dark"],
-          textColor: ["last", "first", "odd", "responsive", "hover", "dark"],
-          boxShadow: ["last", "first", "odd", "responsive", "hover", "dark"],
-          borderOpacity: ["last", "first", "odd", "responsive", "hover", "dark"],
-          backgroundOpacity: ["last", "first", "odd", "responsive", "hover", "dark"]
+        extend: { 
+            zIndex: ["responsive", "hover"],
+            position: ["responsive", "hover"],
+            padding: ["responsive", "last"],
+            margin: ["responsive", "last"],
+            borderWidth: ["responsive", "last"],
+            backgroundColor: ["last", "first", "odd", "responsive", "hover", "dark"],
+            borderColor: ["last", "first", "odd", "responsive", "hover", "dark"],
+            textColor: ["last", "first", "odd", "responsive", "hover", "dark"],
+            boxShadow: ["last", "first", "odd", "responsive", "hover", "dark"],
+            borderOpacity: ["last", "first", "odd", "responsive", "hover", "dark"],
+            backgroundOpacity: ["last", "first", "odd", "responsive", "hover", "dark"]
         }
-      },
+    },
     plugins: [
         require('@tailwindcss/forms'),
     ],

@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
-            <div>
-                <h1 class="label-big ">
+            <div class=" rounded-lg">
+                <h1 class="label-big">
                     Общие сведения
                 </h1>
-                <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="grid-2-2-1 section">
                     <div>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2 ">
@@ -56,7 +56,7 @@
                             <div>
                                 <modal-select :data="{
                                     label:'Регион',
-                                    api: '/reg'     ,
+                                    api: '/reg',
                                     meanKey: 'name',
 
                                 }" v-model="data.region"></modal-select>
@@ -72,7 +72,7 @@
                 </h1>
 
                 <div>
-                    <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div  class="grid-2-2-1 section">
                         <div >
                             <!--Первый блок-->
                             <div class="mt-4 ml-2">
@@ -153,7 +153,7 @@
                 <h1 class="label-big">
                     Реквизиты
                 </h1>
-                <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div  class="grid-2-2-1 section">
                     <div >
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
@@ -204,12 +204,12 @@
                 </div>
             </div>
             <div>
-                <h1 class="label-big ">
+                <h1 class="label-big">
                     Основное место работы
                 </h1>
 
                 <div>
-                    <div class="flex">
+                    <div class="section">
                         <div class>
                             <!--Первый блок-->
                             <div class="mt-4 ml-2 w-full">
@@ -260,19 +260,15 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="col-span-1 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
                     Дополнительная информация
                 </h1>
                 <div>
-                    <div class="ml-4 mt-4">
+                    <div class="mx-4 mt-4">
                         <label for="email" class="block text-sm font-medium text-gray-400">Примечания</label>
-                        <div class="mt-1 w-1/2">
-                            <div class="mt-1 sm:mt-0 col-span-1 lg:col-span-2 ">
-                                <textarea rows="3" class="
-                                  textarea-primary
-                                " v-model="data.add"></textarea>
-                            </div>
+                        <div class="mt-1"> 
+                                <textarea rows="3" class="textarea-primary" v-model="data.add"></textarea> 
                         </div>
                     </div>
                 </div>
@@ -320,4 +316,9 @@
     })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+ 
+    .section{
+        @apply shadow-sm pb-3 px-2 rounded-b-lg  
+    } 
+</style>
