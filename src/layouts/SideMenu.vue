@@ -17,7 +17,7 @@
             </TransitionChild>
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
               <div class="flex-shrink-0 flex items-center px-4">
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-900-text.svg" alt="Workflow" />
+                <img class="h-8 w-auto" :src="logo" alt="Workflow" />
               </div>
               <nav aria-label="Sidebar" class="mt-5">
                 <div class="px-2 space-y-2">
@@ -89,7 +89,8 @@
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-100 ">
           <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 ">
-              <img class="h-50 w-auto flex flex-center" src="https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg" alt="Workflow" />
+              <!-- https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg -->
+              <img class="h-50 w-auto flex flex-center" :src="logo" />
             </div>
             <nav class="mt-5 flex-1" aria-label="Sidebar">
               <div>
@@ -183,6 +184,8 @@
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import useNavigation from '../hooks/navigation'
+
+import logo from '../assets/images/logo.jpg'
 
 
 const { navigation, findActive, linkTo } = useNavigation()

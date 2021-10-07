@@ -1,19 +1,20 @@
 <template>
     <layout v-model:config="config">
-        <create></create>
+        <component :is="'create'"></component>  
     </layout>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Create from '../components/create.vue'
-import layout from '@/layouts/Cart.vue'
+import { ref, computed } from 'vue'
+import create from '../components/create.vue'
+import layout from '@/layouts/Cart.vue' 
+
 
 const config = ref([
     {
         label: 'Карточка',
         active: true,
-        component: '',
+        component: create,
         link: '/link'
     },
     {
@@ -66,6 +67,7 @@ const config = ref([
     }
 ])
 
+const comoponent = computed(() => config.value.find(e => e.active == true).component)
 
 
 
