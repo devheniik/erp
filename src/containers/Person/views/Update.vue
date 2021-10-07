@@ -1,12 +1,13 @@
 <template>
     <layout v-model:config="config">
-        <create></create>
+        <update></update>
+
     </layout>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import Create from '../components/create.vue'
+import update from '../components/update.vue'
 import layout from '@/layouts/Cart.vue'
 
 const config = ref([
