@@ -1,219 +1,305 @@
 <template>
     <div v-if="!isLoading">
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 gap-4">
             <div class=" rounded-lg">
                 <h1 class="label-big">
-                    Общие сведения
+                    Общие данные
                 </h1>
                 <div class="grid-2-2-1 section">
-                    
-                <div>
-                            <!--Первый блок-->
-                            <div class="mt-4 ml-2">
-                                <label for="email" class="label-primary">Операция:</label>
-                                <div>
-                                    <div>
-                                        <select class="dropdown-primary" v-model="data.candidate">
-                                            <option >Отгрузка товаров по заказу</option>
-                                            <option >Да</option>
 
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4 ml-2">
-                            <label for="email" class="label-primary">Дата:</label>
-                              <div class="flex justify-between items-center ">
-                                   
-                                <flat-pickr class="input-primary" v-model="data.dataGet"></flat-pickr>
-                                <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
-                            </div>
-                            </div>
-                            <div class="mt-2 ml-2">
-                                <label for="email" class="label-primary">Заказ:</label>
-                                <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
-                                   <h1 class="text-blue-400"> 123</h1>
-                                </div>
-                            </div>
-                            <div class="mt-2 ml-2">
-                             <label for="email" class="label-primary">Доставка:</label>
-                             <div class="flex justify-between">
-                               
-                                <div class="border border-primary-400 rounded h-9 flex items-center justify-center w-full">
-                                   <h1 class="text-blue-400">Нет доставки</h1>
-                                  
-                                </div> 
-                                
-                                <button class="button-hover-primary ml-2">Создать </button>
-                            </div>
-                            
-                            </div>
-                                <div class="mt-4 ml-2">
-                                <label for="email" class="label-primary">Состояние:</label>
-                                <div>
-                                    <div>
-                                        <select class="dropdown-primary" v-model="data.candidate">
-                                            <option >-</option>
-                                            <option >-</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="mt-4 ml-2">
-                                <label for="email" class="label-primary">Категория расходов:</label>
-                                <div>
-                                    <div>
-                                        <select class="dropdown-primary" v-model="data.candidate">
-                                            <option >*Постпуление от</option>
-                                            <option >-</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="mt-4 ml-2">
-                                <label for="email" class="label-primary">Ресурс:</label>
-                                <div>
-                                    <div>
-                                        <select class="dropdown-primary" v-model="data.candidate">
-                                            <option >ИТ-отдел</option>
-                                            <option >-</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                 
-                </div>
-            </div>
-            
-            <!--TRIRD block-->
-
-            <div>
-                <h1 class="label-big">
-                    Реквизиты
-                </h1>
-                <div class="grid-2-2-1 section">
                     <div>
                         <!--Первый блок-->
                         <div class="mt-4 ml-2">
-                            <label for="email" class="label-primary">Серия Паспорта:</label>
-                            <input type="text" name="email" id="email" class="input-primary"
-                                v-model="data.passportSeria" />
+                            <label for="email" class="label-primary">Операция:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.operation">
+                                        <option>Отгрузка товаров по заказу</option>
+                                        <option>Да</option>
+
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mt-2 ml-2">
-                            <label for="email" class="label-primary">Номер:</label>
-                            <input type="text" name="email" id="email" class="input-primary"
-                                v-model="data.passportNumber" />
-                        </div>
-                        <div class="mt-2 ml-2">
-                            <label for="email" class="label-primary">Кем выдан:</label>
-                            <input type="text" name="email" id="email" class="input-primary" v-model="data.whoGive" />
-                        </div>
-                        <div class="mt-2 ml-2">
+                        <div class="mt-4 ml-2">
                             <label for="email" class="label-primary">Дата:</label>
-                            <div class="flex justify-between items-center">
-                                <flat-pickr class="input-primary" v-model="data.dataGet"></flat-pickr>
+                            <div class="flex items-center ">
+
+                                <flat-pickr class="input-primary" v-model="data.dataSelect"></flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <!--Второй блок-->
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Заказ:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400" > {{ data.order }}</h1>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Доставка:</label>
+                            <div class="flex justify-between">
+
+                                <div
+                                    class="border border-primary-400 rounded h-9 flex items-center justify-center w-full">
+                                    <h1 class="text-blue-400">{{ data.delivery }}</h1>
+
+                                </div>
+
+                                <button class="button-hover-primary ml-2">Создать </button>
+                            </div>
+
+                        </div>
                         <div class="mt-4 ml-2">
-                            <label for="email" class="label-primary">ИНН:</label>
-                            <input type="text" name="email" id="email" class="input-primary" v-model="data.inn" />
-                        </div>
-                        <div class="mt-2 ml-2">
-                            <label for="email" class="label-primary">Адрес Регистр:</label>
-                            <input type="text" name="email" id="email" class="input-primary" v-model="data.adressReg" />
-                        </div>
-                        <div class="mt-2 ml-2">
-                            <label for="email" class="label-primary">Адрес дом:</label>
-                            <input type="text" name="email" id="email" class="input-primary"
-                                v-model="data.adressHome" />
-                        </div>
+                            <label for="email" class="label-primary">Состояние:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.status">
+                                        <option>-</option>
+                                        <option>-</option>
 
-                        <div class="mt-2 ml-2">
-                            <label for="email" class="label-primary">Место рождения:</label>
-                            <input type="text" name="email" id="email" class="input-primary"
-                                v-model="data.birthPlace" />
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Категория расходов:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.ctgCost">
+                                        <option>*Постпуление от</option>
+                                        <option>-</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Ресурс:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.candidate">
+                                        <option>ИТ-отдел</option>
+                                        <option>-</option>
+
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!--Конец второго блока-->
+                    <!--Second блок-->
+                    <div>
+
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Организация:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model=" data.organisation">
+                                        <option>Мизол</option>
+                                        <option>Евроизол</option>
+                                        <option>Другое</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Персона:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.person">
+                                        <option>Иванов Иван Иванович</option>
+                                        <option>Дмитриев Дмитрий Дмитреивич</option>
+                                        <option>Другое</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Менеджер:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.manager }}</h1>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Филиал:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.filial }}</h1>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Слой:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.layer }} </h1>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Проект:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.project">
+                                        <option>-</option>
+                                        <option>-</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Добавил:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.whoAdd }} </h1>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--End Second block-->
                 </div>
             </div>
-            <div>
-                <h1 class="label-big">
-                    Основное место работы
-                </h1>
+
+
+            <!--TRIRD block-->
+
+            <h1 class="label-big">
+               Документ 
+            </h1>
+            <div class="grid-2-2-1 section">
 
                 <div>
-                    <div class="section">
-                        <div class>
-                            <!--Первый блок-->
-                            <div class="mt-4 ml-2 w-full">
-                                <label for="email" class="label-primary">Отдел:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Отдел',
-                                    api: '/dep'     ,
-                                    meanKey: 'name',
+                    <!--start-->
 
-                                }" v-model="data.departament"></modal-select>
-                                </div>
-                            </div>
-                            <div class="mt-2 ml-2 w-full">
-                                <label for="email" class="label-primary">Должность:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Должность',
-                                    api: '/pos'     ,
-                                    meanKey: 'name',
+                    <div class="mt-4 ml-2">
+                        <label for="email" class="label-primary">Тип документов:</label>
+                        <div>
+                            <div>
+                                <select class="dropdown-primary" v-model="data.typeofDoc">
+                                    <option>Накладная расходная</option>
+                                    <option>Накладная доходня</option>
+                                    <option>Выписка</option>
 
-                                }" v-model="data.position"></modal-select>
-                                </div>
+                                </select>
                             </div>
-                            <div class="mt-2 ml-2 w-full">
-                                <label for="email" class="label-primary">Организация:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Организация',
-                                    api: '/org'     ,
-                                    meanKey: 'name',
+                        </div>
+                    </div>
 
-                                }" v-model="data.organisatiom"></modal-select>
-                                </div>
-                            </div>
-                            <div class="mt-2 ml-2 w-full">
-                                <label for="email" class="label-primary">Инспектор:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Инспектор',
-                                    api: '/insp'     ,
-                                    meanKey: 'name',
-
-                                }" v-model="data.inspector"></modal-select>
-                                </div>
-                            </div>
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">№ Докумета:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.whoAdd }} </h1>
+                        </div>
+                    </div>
+                </div>
+                <!--end-->
+                <div>
+                    <div class="mt-4 ml-2">
+                        <label for="email" class="label-primary">Основание:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.base }} </h1>
+                        </div>
+                    </div>
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Штрихкод:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.barcode }} </h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 lg:col-span-2 md:col-span-2">
-                <h1 class="label-big">
-                    Дополнительная информация
-                </h1>
+
+
+            <h1 class="label-big">
+                Суммы подробнее
+            </h1>
+            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3">
+
                 <div>
-                    <div class="mx-4 mt-4">
-                        <label for="email" class="block text-sm font-medium text-gray-400">Примечания</label>
-                        <div class="mt-1">
-                            <textarea rows="3" class="textarea-primary" v-model="data.add"></textarea>
+                    <!--start-->
+
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Сумма:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.sum }} </h1>
+                        </div>
+                    </div>
+
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Сумма баланса:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.sumBal }} </h1>
                         </div>
                     </div>
                 </div>
+                <!--end-->
+
+                <!--start-->
+                <div>
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Сумма в грн:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.suminGrn }} </h1>
+                        </div>
+                    </div>
+
+                     <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Тип валюты:</label>
+                        <div>
+                            <div>
+                                <select class="dropdown-primary" v-model="data.currency">
+                                    <option>Грн</option>
+                                    <option>Доллар</option>
+                                    <option>Евро</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end-->
+
+                <div>
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Курс банка:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.currencyValue }} </h1>
+                        </div>
+                    </div>
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">Курс к грн:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.currencyValueGrn }} </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <h1 class="label-big ">
+               Налоги подробнее
+            </h1>
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2">
+
+               
+                    <!--start-->
+
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">НДС,%:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.ndcprocent }} </h1>
+                        </div>
+                    </div>
+
+                    <div class="mt-2 ml-2">
+                        <label for="email" class="label-primary">НДС:</label>
+                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                            <h1 class="text-blue-400"> {{ data.ndc }} </h1>
+                        </div>
+                    </div>
+               
+                <!--end-->
+
+               
+              
+
+               
             </div>
         </div>
         <div class="w-full flex justify-center mt-6">
@@ -228,15 +314,51 @@
         onMounted
     } from 'vue'
     import {
-      
+
         useRoute
     } from 'vue-router'
     import find from '@person/api/find.js'
-   import load from '@/hooks/load'
-   
+    import load from '@/hooks/load'
 
-const {data, isLoading, id} = load(find)
+// const data = {
+//     operation: null,
+//     dataSelect: null,
+//     order: null,
+//     delivery: null,
+//     status: null,
+//     ctgCost: null,
+//     resource: null,
+//     organisation: null,
+//     person: null,
+//     resource: null,
+//     filial: null,
+//     manager: null,
+//     layer: null,
+//     project: null,
+//     whoAdd: null,
+//     typeofDoc: null,
+//     numDoc: null,
+//     base: null,
+//     barcode: null,
+//     sum: null,
+//     sumBal: null,
+//     suminGrn: null,
+//     currency: null,
+//     currencyValue: null,
+//     currencyValueGrn: null,
+//     ndcprocent: null,
+//     ndc: null
 
+
+
+
+
+// }
+    const {
+        data,
+        isLoading,
+        id
+    } = load(find)
 </script>
 
 <style lang="scss" scoped>
