@@ -1,12 +1,13 @@
 <template>
     <layout v-model:config="config">
-        <update></update> 
+        <component :is="comoponent"></component> 
     </layout>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import update from '../components/update.vue'
+import properties from '../components/properties.vue'
 import layout from '@/layouts/Cart.vue'
 
 const config = ref([
@@ -19,7 +20,7 @@ const config = ref([
     {
         label: 'Свойства',
         active: false,
-        component: '',
+        component: properties,
         link: '/link'
     },
     {
