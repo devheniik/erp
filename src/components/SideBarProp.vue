@@ -12,7 +12,7 @@
                     <Disclosure as="div" v-else class="space-y-1" v-slot="{ open }">
 
                         <DisclosureButton
-                            :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group w-full flex items-center pr-2 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500']">
+                            :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-primary-50 text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center pr-2 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500']">
                             <StopIcon class="h-3 w-3 text-primary-400 mr-2" />
                             {{ item.name }}
 
@@ -23,11 +23,11 @@
 
                         <DisclosurePanel class="space-y-1">
                             <a v-for="subItem in item.children" :key="subItem.name" :href="subItem.href"
-                                class="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                class="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-primary-200 hover:bg-gradient-to-r from-primary-100 to-primary-50">
                                 <StopIcon class="h-2 w-2 text-primary-600 mr-2" />
                                 {{ subItem.name }}
                                 <span v-if="subItem.count"
-                                    :class="[subItem.current ? 'bg-gray-800' : 'bg-primary-100 group-hover:bg-primary-300', 'ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full']">
+                                    :class="[subItem.current ? ' bg-gray-800' : 'text-gray-100 bg-secondary-400 group-hover:bg-primary-300', 'ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full']">
                                     {{ subItem.count }}
                                 </span>
                             </a>
