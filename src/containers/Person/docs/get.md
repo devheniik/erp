@@ -105,7 +105,6 @@
 
 
 
-// Example response
 { 
         filters: {
             request: {
