@@ -1,17 +1,19 @@
 <template>
     <div>
         <div> 
-            <input type="text" @input="$emit('update:modelValue', $event.target.value)" class="input-primary" :placeholder="data.label" :value="modelValue" />
+            <input type="text" @input="$emit('update:modelValue', $event.target.value); $emit('change')"  class="input-primary" :placeholder="data.label" :value="modelValue" />
         </div>
     </div>
 </template>
 
-<script setup>
-
+<script setup> 
 const props = defineProps({
     data: Object,
     modelValue: [String, Number]
 })
+
+const emit = defineEmits(['update:modelValue','change'])
+ 
 
 
 </script>

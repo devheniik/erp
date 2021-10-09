@@ -1,6 +1,12 @@
-import get from '../containers/Person/api/get'
-import { onMounted, ref, watchEffect } from 'vue'
-export default function (route) {
+import {
+    onMounted,
+    ref,
+    watch,
+    computed,
+    watchEffect,
+    onUpdated
+} from 'vue'
+export default function (get) {
     const isLoad = ref(true)
 
     const data = ref()
@@ -9,6 +15,7 @@ export default function (route) {
     const load = async () => {
         isLoad.value = true
         data.value = await get(data.value)
+        console.log('load')
         isLoad.value = false
     }
 
@@ -16,10 +23,11 @@ export default function (route) {
         await load()
     })
 
-    watchEffect(() => get(data.value))
- 
-
-    return { data, load, isLoad }
+    return {
+        data,
+        load: async () => [data.value = await get(data.value), console.log('short load')],
+        isLoad
+    }
 
 
 

@@ -18,11 +18,11 @@ export default ({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '/src'),
+        '@axios': path.resolve(__dirname, '/src/plugins/axios.js'), 
         'h_list': path.resolve(__dirname, '/src/hooks/list.js'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
         '@person': path.resolve(__dirname, '/src/containers/Person'),
-        '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard'),
-        '@axios': path.resolve(__dirname, '/src/plugins/axios'),
+        '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard')
       },
     }
   });

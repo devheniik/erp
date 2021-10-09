@@ -4,9 +4,9 @@
             <div
                 @click="isOpen = true"
                 class="flex items-center justify-between bg-primary-600 text-white rounded-lg border-2 border-primary-600 w-auto px-3"
-                style="height: 40.8px;"
+                style="height:  37.6px;"
             >
-                <label class="block text-sm font-medium mx-2">{{  label }}</label>
+                <label class="block text-sm font-medium mx-2">{{ label }}</label>
                 <SearchIcon class="h-5 w-5" />
             </div>
         </div>
@@ -21,15 +21,16 @@
 import { ref } from 'vue'
 const props = defineProps({
     data: Object,
-    modelValue: String
+    modelValue: [String, Number]
 })
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const label = ref(props.data.label)
 
 const select = e => { 
     emit('update:modelValue', e.uid)
-    label.value = e.values[props.data.meanKey]
+    emit('change') 
+    label.value = e.value[props.data.meanKey]
 }
 
 const isOpen = ref(false) 

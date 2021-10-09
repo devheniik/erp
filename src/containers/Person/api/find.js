@@ -1,12 +1,14 @@
+import axios from '@axios'
 // import toast
-export default async function(params) {
+export default async function (id) {
     try {
-        // axios.get('route/route')
+        const data = await axios.get(`personas/${id}`)
+        console.log(data.data)
     } catch (error) {
-        
-    } finally{
-        
-      return  {
+        console.log(error)
+    } finally { 
+
+        return {
             firstName: 'djddijdij',
             lastName: null,
             patronymic: null,

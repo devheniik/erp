@@ -7,6 +7,7 @@ import './assets/index.css'
 // global, utils, pluguins, helpers
 import global from "@/global"
 import helpers from "@/helpers"
+import utils from "@/utils"
 import components from "@/components"
 
 
@@ -15,6 +16,7 @@ const app = createApp(App).use(router).use(store)
 global(app)
 components(app)
 helpers(app)
+utils(app)
 
 
 app.mount('#app')
