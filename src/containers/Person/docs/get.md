@@ -4,19 +4,12 @@
 ``` 
 (Example request)
     {  
-        filters: {
-            request: {
-                filial: null,
-                search: null,
-                job: null,
-                color: null
-            },
-            response: [
+        filters: [
                 {
-                    entity: "search",  label: "Поиск", component: "search"
+                    entity: "search",  label: "Поиск", component: "search", value: null
                 },
                 {
-                    entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                    entity: "filial", value: null,  label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -36,10 +29,10 @@
                     ]
                 },
                 {
-                    entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs *'
+                    entity: "job", value: null,  label: "Должность", meanKey: 'name', component: "modal-select", entityLink: '/jobs *'
                 },
                 {
-                    entity: "color",  label: "Цвета", component: "list", list: [
+                    entity: "color",  value: null, label: "Цвета", component: "list", list: [
                         {
                             label: 'Красный',
                             value: '*'
@@ -82,8 +75,7 @@
                         }
                     ]
                 },
-            ]
-        },
+            ],
         meta: {
             "include": [],
             "custom": [],
@@ -103,19 +95,12 @@
 
 (Example response)
 { 
-        filters: {
-            request: {
-                filial: null,
-                search: null,
-                job: null,
-                color: null
-            },
-            response: [
+        filters: [
                 {
-                    entity: "search",  label: "Поиск", component: "search"
+                    entity: "search", value: null, label: "Поиск", component: "search"
                 },
                 {
-                    entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                    entity: "filial", value: null, label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -135,10 +120,10 @@
                     ]
                 },
                 {
-                    entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs *'
+                    entity: "job", value: null, label: "Должность", meanKey: 'name', component: "modal-select", entityLink: '/jobs *'
                 },
                 {
-                    entity: "color",  label: "Цвета", component: "list", list: [
+                    entity: "color", value: null, label: "Цвета", component: "list", list: [
                         {
                             label: 'Красный',
                             value: '*'
@@ -181,8 +166,7 @@
                         }
                     ]
                 },
-            ]
-        },
+            ],
         headers: [ 'ФИО', 'Отдел',  ... ],
         data: [  
                 {
