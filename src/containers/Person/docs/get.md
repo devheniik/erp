@@ -2,7 +2,8 @@
 [GET] / persons
  
 ``` 
-    {  (Example request)
+(Example request)
+    {  
         filters: {
             request: {
                 filial: null,
@@ -100,8 +101,8 @@
     }
 
 
-
-{ (Example response)
+(Example response)
+{ 
         filters: {
             request: {
                 filial: null,
