@@ -16,6 +16,39 @@
                   job: null,
                   color: null,
                 }
+            }, 
+        },
+        meta: {
+            "include": [],
+            "custom": [],
+            pagination: {
+                "total": 50,
+                "per_page": 15,
+                "current_page": 1,
+                "last_page": 4,                      
+                "prev_page_url": null, 
+                "from": 1,
+                "to": 15
+            }
+        }
+        
+    }
+
+
+(Example response)
+{ 
+        filters: {
+            request: {
+                filial: null,
+                search: null,
+                job: null,
+                color: null,
+                methods: {
+                  filial: null,
+                  search: null,
+                  job: null,
+                  color: null,
+                }
             },
             response: [
                 {
@@ -89,39 +122,6 @@
                     ]
                 },
             ]
-        },
-        meta: {
-            "include": [],
-            "custom": [],
-            pagination: {
-                "total": 50,
-                "per_page": 15,
-                "current_page": 1,
-                "last_page": 4,                      
-                "prev_page_url": null, 
-                "from": 1,
-                "to": 15
-            }
-        }
-        
-    }
-
-
-(Example response)
-{ 
-        filters: {
-            request: {
-                filial: null,
-                search: null,
-                job: null,
-                color: null,
-                methods: {
-                  filial: null,
-                  search: null,
-                  job: null,
-                  color: null,
-                }
-            }
         },
         headers: [ 'ФИО', 'Отдел',  ... ],
         data: [  
