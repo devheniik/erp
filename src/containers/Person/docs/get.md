@@ -4,58 +4,12 @@
 ``` 
 (Example request)
     {  
-        filters: {
-            request: {
-                filial: null,
-                search: null,
-                job: null,
-                color: null,
-                methods: {
-                  filial: null,
-                  search: null,
-                  job: null,
-                  color: null,
-                }
-            }, 
-        },
-        meta: {
-            "include": [],
-            "custom": [],
-            pagination: {
-                "total": 50,
-                "per_page": 15,
-                "current_page": 1,
-                "last_page": 4,                      
-                "prev_page_url": null, 
-                "from": 1,
-                "to": 15
-            }
-        }
-        
-    }
-
-
-(Example response)
-{ 
-        filters: {
-            request: {
-                filial: null,
-                search: null,
-                job: null,
-                color: null,
-                methods: {
-                  filial: null,
-                  search: null,
-                  job: null,
-                  color: null,
-                }
-            },
-            response: [
+        filters: [
                 {
-                    entity: "search",  label: "Поиск", component: "search"
+                    entity: "search",  label: "Поиск", component: "search", value: null
                 },
                 {
-                    entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                    entity: "filial", value: null, meanKey: 'name', label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -75,10 +29,10 @@
                     ]
                 },
                 {
-                    entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs *'
+                    entity: "job", value: null,  label: "Должность", component: "modal-select", entityLink: '/jobs *'
                 },
                 {
-                    entity: "color",  label: "Цвета", component: "list", list: [
+                    entity: "color",  value: null, label: "Цвета", component: "list", list: [
                         {
                             label: 'Красный',
                             value: '*'
@@ -121,8 +75,98 @@
                         }
                     ]
                 },
-            ]
-        },
+            ],
+        meta: {
+            "include": [],
+            "custom": [],
+            pagination: {
+                "total": 50,
+                "per_page": 15,
+                "current_page": 1,
+                "last_page": 4,                      
+                "prev_page_url": null, 
+                "from": 1,
+                "to": 15
+            }
+        }
+        
+    }
+
+
+(Example response)
+{ 
+        filters: [
+                {
+                    entity: "search", value: null, label: "Поиск", component: "search"
+                },
+                {
+                    entity: "filial", value: null, meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                        {
+                            label: 'Текущие',
+                            value: '*'
+                        },
+                        {
+                            label: 'Корпорация',
+                            value: '*'
+                        },
+                        {
+                            label: 'Все организации',
+                            value: '*'
+                        },
+                        {
+                            label: 'Все сотрудники',
+                            value: '*'
+                        }
+                    ]
+                },
+                {
+                    entity: "job", value: null, label: "Должность", component: "modal-select", entityLink: '/jobs *'
+                },
+                {
+                    entity: "color", value: null, label: "Цвета", component: "list", list: [
+                        {
+                            label: 'Красный',
+                            value: '*'
+                        },
+                        {
+                            label: 'Желтый',
+                            value: '*'
+                        },
+                        {
+                            label: 'Зеленый',
+                            value: '*'
+                        },
+                        {
+                            label: 'Коричневый',
+                            value: '*'
+                        },
+                        {
+                            label: 'Красный',
+                            value: '*'
+                        },
+                        {
+                            label: 'Оранжевый',
+                            value: '*'
+                        },
+                        {
+                            label: 'Розовый',
+                            value: '*'
+                        },
+                        {
+                            label: 'Синий',
+                            value: '*'
+                        },
+                        {
+                            label: 'Фиолетовый',
+                            value: '*'
+                        },
+                        {
+                            label: 'Черный',
+                            value: '*'
+                        }
+                    ]
+                },
+            ],
         headers: [ 'ФИО', 'Отдел',  ... ],
         data: [  
                 {
