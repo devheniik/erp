@@ -1,12 +1,8 @@
 #
 [GET] / persons
-
-## Structure
-
-### Example request
-
+ 
 ``` 
-    { 
+    {  (Example request)
         filters: {
             request: {
                 filial: null,
@@ -105,7 +101,7 @@
 
 
 
-{ 
+{ (Example response)
         filters: {
             request: {
                 filial: null,
@@ -216,7 +212,7 @@
 
 
 
-    {
+    {   (Explane)
         filters: (Фильтры) {
             request: {
                 filial (имя переменной): null
