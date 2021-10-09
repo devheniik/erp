@@ -5,7 +5,7 @@
 
 ### Example request
 
-    ```
+    ``` 
     { 
         filters: {
             request: {
@@ -102,19 +102,18 @@
         }
         
     }
-        ```
+```
 
 
 
 
-
-### Example response
-
+ 
 
 
 
-
-        ``` { 
+``` 
+// Example response
+{ 
         filters: {
             request: {
                 filial: null,
