@@ -9,7 +9,7 @@
                     entity: "search",  label: "Поиск", component: "search", value: null
                 },
                 {
-                    entity: "filial", value: null, meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                    entity: "filial", value: null,  label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -29,7 +29,7 @@
                     ]
                 },
                 {
-                    entity: "job", value: null,  label: "Должность", component: "modal-select", entityLink: '/jobs *'
+                    entity: "job", value: null,  label: "Должность", meanKey: 'name', component: "modal-select", entityLink: '/jobs *'
                 },
                 {
                     entity: "color",  value: null, label: "Цвета", component: "list", list: [
@@ -100,7 +100,7 @@
                     entity: "search", value: null, label: "Поиск", component: "search"
                 },
                 {
-                    entity: "filial", value: null, meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                    entity: "filial", value: null, label: "Текущий филиал", component: "list", list: [
                         {
                             label: 'Текущие',
                             value: '*'
@@ -120,7 +120,7 @@
                     ]
                 },
                 {
-                    entity: "job", value: null, label: "Должность", component: "modal-select", entityLink: '/jobs *'
+                    entity: "job", value: null, label: "Должность", meanKey: 'name', component: "modal-select", entityLink: '/jobs *'
                 },
                 {
                     entity: "color", value: null, label: "Цвета", component: "list", list: [
