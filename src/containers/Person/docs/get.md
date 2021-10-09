@@ -114,80 +114,14 @@
                 filial: null,
                 search: null,
                 job: null,
-                color: null
-            },
-            response: [
-                {
-                    entity: "search",  label: "Поиск", component: "search"
-                },
-                {
-                    entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
-                        {
-                            label: 'Текущие',
-                            value: '*'
-                        },
-                        {
-                            label: 'Корпорация',
-                            value: '*'
-                        },
-                        {
-                            label: 'Все организации',
-                            value: '*'
-                        },
-                        {
-                            label: 'Все сотрудники',
-                            value: '*'
-                        }
-                    ]
-                },
-                {
-                    entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs *'
-                },
-                {
-                    entity: "color",  label: "Цвета", component: "list", list: [
-                        {
-                            label: 'Красный',
-                            value: '*'
-                        },
-                        {
-                            label: 'Желтый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Зеленый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Коричневый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Красный',
-                            value: '*'
-                        },
-                        {
-                            label: 'Оранжевый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Розовый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Синий',
-                            value: '*'
-                        },
-                        {
-                            label: 'Фиолетовый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Черный',
-                            value: '*'
-                        }
-                    ]
-                },
-            ]
+                color: null,
+                methods: {
+                  filial: null,
+                  search: null,
+                  job: null,
+                  color: null,
+                }
+            }
         },
         headers: [ 'ФИО', 'Отдел',  ... ],
         data: [  
