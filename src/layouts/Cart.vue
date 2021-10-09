@@ -1,5 +1,5 @@
 <template>
-    <div> 
+    <div v-if="!isLoad"> 
         <!-- TABS -->
         <div class="sm:hidden">
             <select  class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
@@ -17,6 +17,7 @@
 
 
         <main class="my-5">
+            {{ data }}
             <div class="mr-5 mb-24">
                 <slot>
 
@@ -39,17 +40,20 @@
                 <button class="button-hover-box-primary">
                     <SearchIcon class="h-4 w-4" />
                 </button>
-                <button class="button-hover-box-primary">
+                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.first } })">
                     <ChevronDoubleLeftIcon class="h-4 w-4" />
                 </button>
-                <button class="button-hover-box-primary">
+                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.prev } })">
                     <ChevronLeftIcon class="h-4 w-4" />
                 </button> 
-                <input class="input w-36" type="text" /> 
-                <button class="button-hover-box-primary">
+                <div class="relative border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-primary-600 focus-within:border-primary-600">
+                    <label  class="absolute -top-2 left-2 -mt-px inline-block px-1 bg-white text-xs font-medium text-gray-900 uppercase">{{entity.name}}</label>
+                    <input type="text"  class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="№" v-model="entityId" @keyup.enter="$router.push({ name: 'person-update', params: { id: entityId } })" />
+                </div>
+                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.next } })">
                     <ChevronRightIcon class="h-4 w-4" />
                 </button>
-                <button class="button-hover-box-primary">
+                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.last } })">
                     <ChevronDoubleRightIcon class="h-4 w-4" />
                 </button>
                 <button class="button-hover-box-primary">
@@ -65,31 +69,46 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+import { ref, watch, computed } from 'vue'
+import dataLoad from '.././hooks/reload'
 const props = defineProps({
-    config: Array
+    config: Array,
+    entity: Object
 })
 
-const emit = defineEmits(['update:config'])
-
+// * tabs ux
 const buttons = ref(props.config)
 
-// const handleClear = () => {
-//     buttons.value.forEach(e => {
-//         e.active = false
-//     })
-// }
+const emit = defineEmits(['update:config'])
 
 const handleClick = (i) => {
     buttons.value.forEach(e => {
         e.active = false
-    })
-
-    buttons.value[i].active = true                                                                  
-
-
+    }) 
+    buttons.value[i].active = true      
     emit('update:config', buttons.value)
 }
+
+
+// * firstly data logic 
+const entityId = ref(route.params.id)
+
+const { data, isLoad, id, load } = dataLoad(props.entity.api) 
+
+
+
+
+// * runtime logic
+watch(computed(() => route.params.id), async () =>{
+  await load(route.params.id) 
+  entityId.value = route.params.id
+  
+})
+
+
+
 
 </script>
 

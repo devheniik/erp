@@ -1,11 +1,16 @@
 <template>
-    <layout v-model:config="config">
-        <component :is="comoponent"></component> 
+    <layout v-model:config="config" :entity="{
+            name: 'персона',
+            api: pagination
+        }">
+        <update v-show="comoponent == 'update'"></update> 
+        <properties v-show="comoponent == 'properties'"></properties> 
     </layout>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
+import pagination from '../api/pagination'
 import update from '../components/update.vue'
 import properties from '../components/properties.vue'
 import layout from '@/layouts/Cart.vue'
@@ -14,13 +19,13 @@ const config = ref([
     {
         label: 'Карточка',
         active: true,
-        component: update,
+        component: 'update',
         link: '/link'
     },
     {
         label: 'Свойства',
         active: false,
-        component: properties,
+        component: 'properties',
         link: '/link'
     },
     {

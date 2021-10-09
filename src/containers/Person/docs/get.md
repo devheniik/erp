@@ -38,7 +38,7 @@
                 },
             ]
         },
-        result: [
+        data: [
             headers: [ 'ФИО', 'Отдел',  ... ],
             body: [
                 {
@@ -52,15 +52,20 @@
                 ...
             ]
         ],
-        pagination: {
-            "total": 50,
-            "per_page": 15,
-            "current_page": 1,
-            "last_page": 4,                      
-            "prev_page_url": null, 
-            "from": 1,
-            "to": 15
-        }
+        meta: {
+            "include": [],
+            "custom": [],
+            pagination: {
+                "total": 50,
+                "per_page": 15,
+                "current_page": 1,
+                "last_page": 4,                      
+                "prev_page_url": null, 
+                "from": 1,
+                "to": 15
+            }
+        }
+        
     }
 ```
 
@@ -83,7 +88,7 @@
                 }
             ]
         },
-        result: [
+        data: [
             headers: (Список полей для шапки таблицы *примечание поле '№' - не нужно отправлять оно по умолчанию есть в таблице) [ 'ФИО', 'Отдел',  ... ],
             body: [ (Тело таблицы)
                 {
@@ -97,14 +102,18 @@
                 ...
             ]
         ],
-        pagination: (пагинация) {
-            "total": 50,
-            "per_page": 15,
-            "current_page": 1,
-            "last_page": 4,                      
-            "prev_page_url": null, 
-            "from": 1,
-            "to": 15
-        }
+        meta: {
+            "include": [],
+            "custom": [],
+            pagination: {
+                "total": 50,
+                "per_page": 15,
+                "current_page": 1,
+                "last_page": 4,                      
+                "prev_page_url": null, 
+                "from": 1,
+                "to": 15
+            }
+        }
     }
 ```

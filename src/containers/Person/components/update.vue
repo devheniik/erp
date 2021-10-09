@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoading">
+    <div v-if="!isLoad">
         <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div class=" rounded-lg">
                 <h1 class="label-big">
@@ -293,7 +293,7 @@
    import load from '@/hooks/load'
    
 
-const {data, isLoading, id} = load(find)
+const {data, isLoad, id} = load(find)
 
 </script>
 

@@ -11,20 +11,22 @@ export default function (findById) {
 
     const data = ref({})
 
-    const load = async () => {
+    const load = async (id) => {
         isLoad.value = true  
-        data.value = await findById(entityId) 
+        data.value = await findById(id) 
+        console.log(data.value);
         isLoad.value = false
     }
 
     onMounted(async () => {
-        await load() 
+        await load(entityId) 
         
     })
 
     return {
         data,
         isLoad,
-        id: entityId
+        id: entityId,
+        load
     }
 }

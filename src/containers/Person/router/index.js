@@ -1,24 +1,24 @@
 export default [
     {
         path: '/persons',
-        name: 'persons-view',
+        name: 'person-view',
         component: () => import('@person/views/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
             permition: null,
-            uname: 'persons-view'
+            uname: 'person-view'
         }
     },
     {
         path: '/persons/:id',
-        name: 'persons-update',
+        name: 'person-update',
         component: () => import('@person/views/Update.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
             permition: null,
-            uname: 'persons-update'
+            uname: 'person-update'
         }
     },
 ]
