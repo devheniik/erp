@@ -5,7 +5,7 @@
 
 ### Example request
 
-    ``` 
+``` 
     { 
         filters: {
             request: {
@@ -213,14 +213,9 @@
         }
         
     }
-```
 
 
 
-
-### Explaning
-
-    ```
     {
         filters: (Фильтры) {
             request: {
