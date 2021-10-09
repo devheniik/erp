@@ -15,7 +15,7 @@
             }
             response: [
                 {
-                    entity: "search",  label: "Поиск", component: "search"
+                    entity: "search",  label: "Поиск", component: "search", method: "euqal"
                 },
                 {
                     entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
