@@ -3,7 +3,61 @@
 
 ## Structure
 
-### Example
+### Example request
+
+    ```
+    { 
+        filters: {
+            request: {
+                filial: null,
+                search: null,
+                job: null,
+                color: null
+            }
+            response: [
+                {
+                    entity: "search",  label: "Поиск", component: "search", method: "euqal"
+                },
+                {
+                    entity: "filial", meanKey: 'name', label: "Текущий филиал", component: "list", list: [
+                        {
+                            label: 'Текущие',
+                            value: '*'
+                        }
+                    ]
+                },
+                {
+                    entity: "job",  label: "Должность", component: "modal-select", entityLink: '/jobs'
+                },
+                {
+                    entity: "color",  label: "Цвета", component: "list", list: [
+                        {
+                            label: 'Красный',
+                            value: 'red'
+                        }
+                    ]
+                },
+            ]
+        },
+        meta: {
+            "include": [],
+            "custom": [],
+            pagination: {
+                "total": 50,
+                "per_page": 15,
+                "current_page": 1,
+                "last_page": 4,                      
+                "prev_page_url": null, 
+                "from": 1,
+                "to": 15
+            }
+        }
+        
+    }
+```
+
+### Example response
+
 
     ```
     { 
