@@ -9,7 +9,13 @@
                 filial: null,
                 search: null,
                 job: null,
-                color: null
+                color: null,
+                methods: {
+                  filial: null,
+                  search: null,
+                  job: null,
+                  color: null,
+                }
             },
             response: [
                 {
