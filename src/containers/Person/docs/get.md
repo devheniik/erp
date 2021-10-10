@@ -6,7 +6,7 @@
 const response = {
     data: [{
         uid: "83",
-        color: [1 - 9] // null default
+        color: [1 - 9], // null default
         object: "Persona",
         tableColor: "-",
         value: {
