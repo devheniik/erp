@@ -1,7 +1,7 @@
-import * as root_axios from 'axios'
+import axios from 'axios'
 
 
-const axios = root_axios.create({
+const fetch = axios.create({
    baseURL: import.meta.env.VITE_PORT,
    headers: {
       Authorization: "Bearer " + localStorage.access_token,
@@ -10,4 +10,4 @@ const axios = root_axios.create({
    }
 })
 
-export default axios
+export default fetch

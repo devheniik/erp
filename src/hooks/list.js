@@ -25,7 +25,7 @@ export default function (get) {
 
     return {
         data,
-        load: async () => [data.value = await get(data.value), console.log('short load')],
+        load,
         isLoad
     }
 
