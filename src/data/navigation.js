@@ -39,7 +39,7 @@ export default [{
       {
         name: 'Карточки',
         icon: 'CheckCircleIcon',
-        href: { name: 'person-update', params: { id: 'first'} },
+        href: { name: 'person-update', params: { id: '83'} },
         current: false,
         uname: 'person-update',
         child: []

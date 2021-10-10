@@ -66,16 +66,11 @@
                                 <label class="label-primary">Кого (Винит.падеж)</label>
                                 <input type="text" class="input-primary" placeholder="Фамилия"
                                     v-model="data.general.full.kogo" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Кого (Винит.падеж)</label>
-                                <input type="text" class="input-primary" placeholder="Фамилия"
-                                    v-model="data.general.full.rkogo" />
-                            </div>
+                            </div> 
                             <div class="tl">
                                 <label class="label-primary">У кого (Родит.падеж)</label>
                                 <input type="text" class="input-primary" placeholder="Фамилия"
-                                    v-model="data.general.full.familiaukr" />
+                                    v-model="data.general.full.rkogo" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Пенсионый возраст</label>
@@ -92,9 +87,8 @@
                                     <modal-select :data="{
                                         label:'Инвалидность',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.base.region"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.base.region"></modal-select>
                                 </div>
                             </div>
                         </div>
@@ -126,9 +120,8 @@
                                 <modal-select :data="{
                                     label:'Регион',
                                     api: '/reg',
-                                    meanKey: 'name',
-
-                                }" v-model="data.general.base.region"></modal-select>
+                                    meanKey: 'name'
+                                    }" v-model="data.general.base.region"></modal-select>
                             </div>
                         </div>
                         <div v-show="full">
@@ -138,9 +131,8 @@
                                     <modal-select :data="{
                                         label:'Обазование',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.obraz"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.obraz"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -149,9 +141,8 @@
                                     <modal-select :data="{
                                         label:'Категория',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.category"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.category"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -160,9 +151,8 @@
                                     <modal-select :data="{
                                         label:'Профессия',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.special"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.special"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -171,9 +161,8 @@
                                     <modal-select :data="{
                                         label:'Семейное положение',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.sempol"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.sempol"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -182,9 +171,8 @@
                                     <modal-select :data="{
                                         label:'Национальность',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.nation"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.nation"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -193,9 +181,8 @@
                                     <modal-select :data="{
                                         label:'Ресурс',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.resurs"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.resurs"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -204,9 +191,8 @@
                                     <modal-select :data="{
                                         label:'Раскраска',
                                         api: '/reg',
-                                        meanKey: 'name',
-
-                                    }" v-model="data.general.full.cvet"></modal-select>
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.cvet"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -350,7 +336,7 @@
                 </div>
             </div>
             <div>
-                <h1 class="label-big mb-4">
+                <h1 class="label-big">
                     Основное место работы
                 </h1>
                 <div>
@@ -363,9 +349,8 @@
                                     <modal-select :data="{
                                     label:'Отдел',
                                     api: '/dep'     ,
-                                    meanKey: 'name',
-
-                                }" v-model="data.job.otdel"></modal-select>
+                                    meanKey: 'name'
+                                    }" v-model="data.job.otdel"></modal-select>
                                 </div>
                             </div>
                             <div class="tl w-full">
@@ -374,9 +359,8 @@
                                     <modal-select :data="{
                                     label:'Должность',
                                     api: '/pos'     ,
-                                    meanKey: 'name',
-
-                                }" v-model="data.job.dolvnost"></modal-select>
+                                    meanKey: 'name'
+                                    }" v-model="data.job.dolvnost"></modal-select>
                                 </div>
                             </div>
                             <div class="tl w-full">
@@ -385,9 +369,8 @@
                                     <modal-select :data="{
                                     label:'Организация',
                                     api: '/org'     ,
-                                    meanKey: 'name',
-
-                                }" v-model="data.job.organisatiom"></modal-select>
+                                    meanKey: 'name'
+                                    }" v-model="data.job.organisatiom"></modal-select>
                                 </div>
                             </div>
                             <div class="tl w-full">
@@ -396,9 +379,8 @@
                                     <modal-select :data="{
                                     label:'Инспектор',
                                     api: '/insp'     ,
-                                    meanKey: 'name',
-
-                                }" v-model="data.job.manager"></modal-select>
+                                    meanKey: 'name'
+                                    }" v-model="data.job.manager"></modal-select>
                                 </div>
                             </div>
                         </div>

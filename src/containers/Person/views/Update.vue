@@ -1,7 +1,8 @@
 <template>
     <layout v-model:config="config" :entity="{
             name: 'персона',
-            api: pagination
+            pagination_api: pagination,
+            api: get
         }">
         <update v-show="comoponent == 'update'"></update> 
         <properties v-show="comoponent == 'properties'"></properties> 
@@ -10,10 +11,11 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import get from '../api/get'
 import pagination from '../api/pagination'
 import update from '../components/update.vue'
 import properties from '../components/properties.vue'
-import layout from '@/layouts/Cart.vue'
+import layout from '@/layouts/Card.vue'
 
 const config = ref([
     {

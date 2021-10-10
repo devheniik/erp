@@ -1,8 +1,5 @@
 <template>
-    <div class="flex flex-col flex-grow  border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto w-1/4">
-        <div class="flex items-center flex-shrink-0 px-4">
-            <img class="w-auto" src="@/assets/images/logo.jpg" alt="Workflow" />
-        </div>
+    <div class="flex flex-col flex-grow  border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto w-1/4"> 
         <div class="mt-5 flex-grow flex flex-col">
             <nav class="flex-1 px-2 space-y-1 bg-white">
                 <template v-for="item in navigation" :key="item.name">
@@ -15,10 +12,8 @@
                             :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-primary-50 text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center pr-2 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500']">
                             <StopIcon class="h-3 w-3 text-primary-400 mr-2" />
                             {{ item.name }}
-
                             <ChevronDownIcon
                                 :class="[open ? 'text-gray-400 rotate-90' : 'text-gray-300', 'mr-2 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150']" />
-                          
                         </DisclosureButton>
 
                         <DisclosurePanel class="space-y-1">
@@ -31,7 +26,6 @@
                                     {{ subItem.count }}
                                 </span>
                             </a>
-
                         </DisclosurePanel>
                     </Disclosure>
                 </template>
@@ -99,8 +93,8 @@
                     name: 'Воинский учёт',
                     href: '#'
                 },
-               
-              
+
+
             ],
         },
         {

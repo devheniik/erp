@@ -1,19 +1,12 @@
+import axios from '@axios'
 // import toast
-
-export default async function(id) { 
-        try {
-            // axios.patch('route/route')
-        } catch (error) {
-            
-        } finally {
-    
-            return {
-                entityLink: '/link',
-                first: 1,
-                last: 999,
-                prev: Number(id) - Number(1),
-                next: Number(id) + Number(1)
-            }
-        } 
-    
+export default async function (id) {
+    try { 
+        const data = await axios.get(`person-links/${id}`)
+        return data.data
+    } catch (error) {
+        console.log(error)
+    } finally { 
+        console.log('Get links for ' + id)
+    }
 }

@@ -13,7 +13,8 @@ export default function (findById) {
 
     const load = async () => {
         isLoad.value = true  
-        data.value = await findById(entityId) 
+        data.value = await findById(entityId)  
+        console.log('load by id');
         isLoad.value = false
     }
 

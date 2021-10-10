@@ -16,8 +16,7 @@
         </div>
 
 
-        <main class="my-5">
-            {{ data }}
+        <main class="my-5"> 
             <div class="mr-5 mb-24">
                 <slot>
 
@@ -36,24 +35,25 @@
                     Сущьность
                     <span class="text-secondary-600 ml-2">№</span>
                 </button> -->
-
-                <button class="button-hover-box-primary">
-                    <SearchIcon class="h-4 w-4" />
-                </button>
-                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.first } })">
+                <modal-select :data="{ entityLink: entity.api }" custom>
+                    <button class="button-hover-box-primary">
+                        <SearchIcon class="h-4 w-4" />
+                    </button>
+                </modal-select> 
+                <button :disabled="data.first == null" class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.first } })">
                     <ChevronDoubleLeftIcon class="h-4 w-4" />
                 </button>
-                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.prev } })">
+                <button :disabled="data.prev == null" class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.prev } })">
                     <ChevronLeftIcon class="h-4 w-4" />
                 </button> 
                 <div class="relative border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-primary-600 focus-within:border-primary-600">
                     <label  class="absolute -top-2 left-2 -mt-px inline-block px-1 bg-white text-xs font-medium text-gray-900 uppercase">{{entity.name}}</label>
                     <input type="text"  class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="№" v-model="entityId" @keyup.enter="$router.push({ name: 'person-update', params: { id: entityId } })" />
                 </div>
-                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.next } })">
+                <button :disabled="data.next == null" class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.next } })">
                     <ChevronRightIcon class="h-4 w-4" />
                 </button>
-                <button class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.last } })">
+                <button :disabled="data.last == null" class="button-hover-box-primary" @click="$router.push({ name: 'person-update', params: { id: data.last } })">
                     <ChevronDoubleRightIcon class="h-4 w-4" />
                 </button>
                 <button class="button-hover-box-primary">
@@ -95,7 +95,7 @@ const handleClick = (i) => {
 // * firstly data logic 
 const entityId = ref(route.params.id)
 
-const { data, isLoad, id, load } = dataLoad(props.entity.api) 
+const { data, isLoad, id, load } = dataLoad(props.entity.pagination_api) 
 
 
 
