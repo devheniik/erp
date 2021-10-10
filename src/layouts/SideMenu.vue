@@ -169,7 +169,7 @@
         </div>
       </div>
       <div class="flex-1 relative z-0 flex overflow-hidden">
-        <main class="flex-1 hide-scroll relative z-0 overflow-y-auto focus:outline-none xl:order-last ml-2 mt-2">
+        <main class="flex-1 hide-scroll relative z-0 overflow-y-auto focus:outline-none xl:order-last ml-2 mt-2 h-full">
           <!-- Start main area-->
           <slot></slot>
           <!-- End main area -->

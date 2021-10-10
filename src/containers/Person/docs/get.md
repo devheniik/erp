@@ -1,202 +1,214 @@
-#
-[GET] / persons
+# [GET] / persons
  
+## Example response
+
+```javascript
+const response = {
+    data: [{
+        uid: "83",
+        color: [1 - 9] // null default
+        object: "Persona",
+        tableColor: "-",
+        value: {
+            fio: "-CORP- ФИО 83",
+            dolvnost: "менеджер зі збуту по роботі з проектними організаціями",
+            otdel: "відділ збуту по роботі з проектними організаціями",
+            tel: "380900000083",
+            filial: null,
+            kandidat: "-",
+            uvolen: "+",
+            iscont: "-"
+        }
+    }],
+    meta: {
+        include: [],
+        custom: [],
+        pagination: {
+            total: 45794,
+            count: 10,
+            per_page: 10,
+            current_page: 1,
+            total_pages: 4580,
+            links: {
+                next: "https://api.megatree.de/v1/persons?page=2"
+            }
+        }
+    },
+    filters: [{
+        entity: "search",
+        label: "Поиск",
+        component: "search",
+        value: null,
+        searchOptions: [{
+            entity: "fio",
+            value: null,
+            method: "like"
+        }
+    ]
+    }, {
+        entity: "filial",
+        value: null,
+        label: "Текущий филиал",
+        component: "list",
+        list: [{
+            label: "Текущие",
+            value: "1"
+        }, {
+            label: "Корпорация",
+            value: "2"
+        }, {
+            label: "Все организации",
+            value: "3"
+        }, {
+            label: "Все сотрудники",
+            value: "4"
+        }]
+    }, {
+        entity: "job",
+        value: null,
+        label: "Должность",
+        meanKey: "name",
+        component: "modal-select",
+        entityLink: "/jobs *"
+    }, {
+        entity: "color",
+        value: null,
+        label: "Цвета",
+        component: "list",
+        list: [{
+            label: "Желтый",
+            value: "1"
+        }, {
+            label: "Зеленый",
+            value: "2"
+        }, {
+            label: "Коричневый",
+            value: "3"
+        }, {
+            label: "Красный",
+            value: "4"
+        }, {
+            label: "Оранжевый",
+            value: "5"
+        }, {
+            label: "Розовый",
+            value: "6"
+        }, {
+            label: "Синий",
+            value: "7"
+        }, {
+            label: "Фиолетовый",
+            value: "8"
+        }, {
+            label: "Черный",
+            value: "9"
+        }],
+    }],
+    headers: ["Ф.И.О.", "Должность", "Отдел", "Тел.", "Организация", "Канд.", "Увол.", "Примечание", "ЛПР", "к ЛК"],
+    sort: null
+}
+```
+
+
+
+## Example request
+
+
+```javascript
+const request = {
+    page: 1,
+    limit: 10,
+    data: [],
+    meta: {
+        include: [],
+        custom: [],
+        pagination: {
+            total: 45794,
+            count: 10,
+            per_page: 10,
+            current_page: 1,
+            total_pages: 4580,
+            links: {
+                next: "https://api.megatree.de/v1/persons?page=2"
+            }
+        }
+    },
+    filters: [{
+        entity: "search",
+        label: "Поиск",
+        component: "search",
+        value: null,
+        searchOptions: [{
+            entity: "fio",
+            value: null,
+            method: "like"
+        }
+    ]
+    }, {
+        entity: "filial",
+        value: null,
+        label: "Текущий филиал",
+        component: "list",
+        list: [{
+            label: "Текущие",
+            value: "1"
+        }, {
+            label: "Корпорация",
+            value: "2"
+        }, {
+            label: "Все организации",
+            value: "3"
+        }, {
+            label: "Все сотрудники",
+            value: "4"
+        }]
+    }, {
+        entity: "job",
+        value: null,
+        label: "Должность",
+        meanKey: "name",
+        component: "modal-select",
+        entityLink: "/jobs *"
+    }, {
+        entity: "color",
+        value: null,
+        label: "Цвета",
+        component: "list",
+        list: [{
+            label: "Желтый",
+            value: "1"
+        }, {
+            label: "Зеленый",
+            value: "2"
+        }, {
+            label: "Коричневый",
+            value: "3"
+        }, {
+            label: "Красный",
+            value: "4"
+        }, {
+            label: "Оранжевый",
+            value: "5"
+        }, {
+            label: "Розовый",
+            value: "6"
+        }, {
+            label: "Синий",
+            value: "7"
+        }, {
+            label: "Фиолетовый",
+            value: "8"
+        }, {
+            label: "Черный",
+            value: "9"
+        }],
+    }],
+    headers: ["Ф.И.О.", "Должность", "Отдел", "Тел.", "Организация", "Канд.", "Увол.", "Примечание", "ЛПР", "к ЛК"],
+    sort: 'Ф.О.И'
+}
+```
+
 ``` 
-(Example request)
-    {  
-        filters: [
-                {
-                    entity: "search",  label: "Поиск", component: "search", value: null
-                },
-                {
-                    entity: "filial", value: null,  label: "Текущий филиал", component: "list", list: [
-                        {
-                            label: 'Текущие',
-                            value: '*'
-                        },
-                        {
-                            label: 'Корпорация',
-                            value: '*'
-                        },
-                        {
-                            label: 'Все организации',
-                            value: '*'
-                        },
-                        {
-                            label: 'Все сотрудники',
-                            value: '*'
-                        }
-                    ]
-                },
-                {
-                    entity: "job", value: null,  label: "Должность", meanKey: 'name', component: "modal-select", entityLink: '/jobs *'
-                },
-                {
-                    entity: "color",  value: null, label: "Цвета", component: "list", list: [
-                        {
-                            label: 'Красный',
-                            value: '*'
-                        },
-                        {
-                            label: 'Желтый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Зеленый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Коричневый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Красный',
-                            value: '*'
-                        },
-                        {
-                            label: 'Оранжевый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Розовый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Синий',
-                            value: '*'
-                        },
-                        {
-                            label: 'Фиолетовый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Черный',
-                            value: '*'
-                        }
-                    ]
-                },
-            ],
-        meta: {
-            "include": [],
-            "custom": [],
-            pagination: {
-                "total": 50,
-                "per_page": 15,
-                "current_page": 1,
-                "last_page": 4,                      
-                "prev_page_url": null, 
-                "from": 1,
-                "to": 15
-            }
-        }
-        
-    }
-
-
-(Example response)
-{ 
-        filters: [
-                {
-                    entity: "search", value: null, label: "Поиск", component: "search"
-                },
-                {
-                    entity: "filial", value: null, label: "Текущий филиал", component: "list", list: [
-                        {
-                            label: 'Текущие',
-                            value: '*'
-                        },
-                        {
-                            label: 'Корпорация',
-                            value: '*'
-                        },
-                        {
-                            label: 'Все организации',
-                            value: '*'
-                        },
-                        {
-                            label: 'Все сотрудники',
-                            value: '*'
-                        }
-                    ]
-                },
-                {
-                    entity: "job", value: null, label: "Должность", meanKey: 'name', component: "modal-select", entityLink: '/jobs *'
-                },
-                {
-                    entity: "color", value: null, label: "Цвета", component: "list", list: [
-                        {
-                            label: 'Красный',
-                            value: '*'
-                        },
-                        {
-                            label: 'Желтый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Зеленый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Коричневый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Красный',
-                            value: '*'
-                        },
-                        {
-                            label: 'Оранжевый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Розовый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Синий',
-                            value: '*'
-                        },
-                        {
-                            label: 'Фиолетовый',
-                            value: '*'
-                        },
-                        {
-                            label: 'Черный',
-                            value: '*'
-                        }
-                    ]
-                },
-            ],
-        headers: [ 'ФИО', 'Отдел',  ... ],
-        data: [  
-                {
-                    uid: 102,
-                    value: {
-                        name: 132,
-                        bio: 123,
-                        ...
-                    }
-                },
-                ... 
-        ],
-        meta: {
-            "include": [],
-            "custom": [],
-            pagination: {
-                "total": 50,
-                "per_page": 15,
-                "current_page": 1,
-                "last_page": 4,                      
-                "prev_page_url": null, 
-                "from": 1,
-                "to": 15
-            }
-        }
-        
-    }
-
-
-
     {   (Explane)
         filters: (Фильтры) {
             request: {

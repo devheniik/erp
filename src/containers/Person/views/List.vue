@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="h-full">
         <uviewer :api="get">
             <template v-slot:create>
                 <create></create>

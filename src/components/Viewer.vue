@@ -2,7 +2,7 @@
     <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
         <slot name="create"></slot>
     </modal>
-    <div v-if="!isLoad" class="w-full mr-5">
+    <div v-if="!isLoad" class="w-full h-full mr-5">
         <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
             <div v-for="(filter, i) in data.filters" :key="i">
                 <component @change="[pagination_reload, load]" v-model="filter.value" :data="filter" :is="filter.component"></component>
@@ -17,9 +17,8 @@
             <utable @select="!modalSelect ? [editOpen = true, editId = $event.uid] : $emit('select', $event)"
                 :data="{ headers: data.headers, body: data.data}" r_update="person-update"></utable>
         </div>
-        <div>
-
-            <pagination @change="load" v-model:pagination="data.meta.pagination"></pagination>
+        <div> 
+            <pagination class="fixed bottom-0 w-full lg:w-fixed"  @change="load" v-model:pagination="data.meta.pagination"></pagination>
         </div>
     </div>
 </template>
