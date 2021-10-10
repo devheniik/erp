@@ -1,11 +1,8 @@
 <template>
     <div class="h-full">
-        <uviewer :api="get">
+        <uviewer :api="get" route_card="person-update">
             <template v-slot:create>
                 <create></create>
-            </template>
-            <template v-slot:update>
-                <update></update>
             </template>
         </uviewer>
     </div>
@@ -14,6 +11,5 @@
 <script setup>
     import Create from '../components/create.vue'
     import Update from '../components/update.vue'
-    import get from '../api/get'
-
+    import get from '../api/get' 
 </script>

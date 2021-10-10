@@ -16,7 +16,7 @@
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     <tr v-for="col in data.body" :key="col.uid"> 
-                                        <td @click="$router.push({ name: r_update, params: { id: col.uid }})" class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer">
+                                        <td @click="$emit('select', col)" class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer">
                                             {{ col.uid }}
                                         </td> 
                                         <td  v-for="(field, i) in col.value" :key="i" class="px-6 py-4 whitespace-nowrap text-sm text-left">
@@ -34,9 +34,11 @@
 
 <script setup>
 const props = defineProps({
-    data: Object,
-    r_update: String
-});
+    data: Object
+})
+
+    const emits = defineEmits(['select'])
+
 </script>
 
 

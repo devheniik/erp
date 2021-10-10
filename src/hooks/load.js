@@ -1,8 +1,8 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import find from '@api_base/find'
 
-
-export default function (findById) {
+export default function (_route) {
     const isLoad = ref(true)
 
     const route = useRoute()
@@ -13,7 +13,7 @@ export default function (findById) {
 
     const load = async () => {
         isLoad.value = true  
-        data.value = await findById(entityId)  
+        data.value = await find(_route, entityId)  
         console.log('load by id');
         isLoad.value = false
     }

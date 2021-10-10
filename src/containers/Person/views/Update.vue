@@ -1,7 +1,8 @@
 <template>
-    <layout v-model:config="config" :entity="{
+    <layout v-model:config="config" v-bind="{
             name: 'персона',
             pagination_api: pagination,
+            route_name: 'person-update',
             api: get
         }">
         <update v-show="comoponent == 'update'"></update> 
@@ -11,68 +12,22 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+
+// * api import 
 import get from '../api/get'
 import pagination from '../api/pagination'
+
+// * component import
 import update from '../components/update.vue'
 import properties from '../components/properties.vue'
+
+// * layout import
 import layout from '@/layouts/Card.vue'
 
-const config = ref([
-    {
-        label: 'Карточка',
-        active: true,
-        component: 'update',
-        link: '/link'
-    },
-    {
-        label: 'Свойства',
-        active: false,
-        component: 'properties',
-        link: '/link'
-    },
-    {
-        label: 'Фото',
-        active: false,
-        component: '',
-        link: '/link'
-    },
-    {
-        label: 'Задачи',
-        active: false,
-        component: '',
-        link: '/link'
-    },
-    {
-        label: 'Активность',
-        active: false,
-        component: '',
-        link: '/link'
-    },
-    {
-        label: 'Печать',
-        active: false,
-        component: '',
-        link: '/link'
-    },
-    {
-        label: '#',
-        active: false,
-        component: '',
-        link: '/link'
-    },
-    {
-        label: 'БП',
-        active: false,
-        component: '',
-        link: '/link'
-    },
-    {
-        label: 'ИКП',
-        active: false,
-        component: '',
-        link: '/link'
-    }
-])
+// * data import 
+import d_config from '../config/card'
+
+const config = ref(d_config)
 
 const comoponent = computed(() => config.value.find(e => e.active == true).component)
 

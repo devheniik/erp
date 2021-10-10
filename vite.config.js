@@ -19,6 +19,7 @@ export default ({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '/src'),
         '@axios': path.resolve(__dirname, '/src/plugins/axios.js'), 
+        '@api_base': path.resolve(__dirname, '/src/api/base'), 
         'h_list': path.resolve(__dirname, '/src/hooks/list.js'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
         '@person': path.resolve(__dirname, '/src/containers/Person'),

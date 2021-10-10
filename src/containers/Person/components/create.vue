@@ -403,13 +403,14 @@
             </div>
         </div>
         <div class="w-full flex justify-center mt-6">
-            <button @click="create(data)" type="button" class="button-hover-primary">Добавить</button>
+            <button @click="create(route_create, data)" type="button" class="button-hover-primary">Добавить</button>
         </div>
     </div>
 </template>
 
 <script setup>
-    import create from '../api/create'
+    import route_create from '../api/create'
+    import create from '@api_base/create'
     import {
         ref
     } from 'vue'
