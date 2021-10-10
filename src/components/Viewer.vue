@@ -5,7 +5,7 @@
     <div v-if="!isLoad" class="w-full mr-5">
         <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
             <div v-for="(filter, i) in data.filters" :key="i">
-                <component @change="load" v-model="filter.value" :data="filter" :is="filter.component"></component>
+                <component @change="[pagination_reload, load]" v-model="filter.value" :data="filter" :is="filter.component"></component>
             </div>
         </div>
         <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-50">
@@ -44,6 +44,10 @@
     const editId = ref(null)
 
     const select = e => console.log(e)
+
+    const pagination_reload = () => {
+        data.value.meta.pagination.current_page = 1 
+    }
 
     const {
         data,

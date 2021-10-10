@@ -17,7 +17,7 @@
             по
             <span class="font-medium">{{ pagination.to }}</span>
             из
-            <span class="font-medium">{{ pagination.total }}</span>
+            <span class="font-medium">{{ pagination.total_pages }}</span>
             всего
         </p>
         </div>
@@ -51,19 +51,19 @@
             <div  class=" z-10 bg-primary-600 border-primary-500 text-gray-100 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">
             {{ pagination.current_page }}
             </div> 
-            <div  v-if="pagination.current_page + 1 < pagination.total" @click="handle(true, 1)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+            <div  v-if="pagination.current_page + 1 < pagination.total_pages" @click="handle(true, 1)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
             {{ pagination.current_page + 1 }}
             </div> 
-            <span v-if="pagination.total > pagination.current_page + 2" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+            <span v-if="pagination.total_pages > pagination.current_page + 2" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
             ...
             </span> 
-            <div v-if="pagination.total - 1 > pagination.current_page" @click="handle(false, pagination.total - 1)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
-                {{ pagination.total - 1 }}  
+            <div v-if="pagination.total_pages - 1 > pagination.current_page" @click="handle(false, pagination.total_pages - 1)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                {{ pagination.total_pages - 1 }}  
             </div>
-            <div  v-if="pagination.total > pagination.current_page" @click="handle(false, pagination.total)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
-                {{ pagination.total }} 
+            <div  v-if="pagination.total_pages > pagination.current_page" @click="handle(false, pagination.total_pages)" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                {{ pagination.total_pages }} 
             </div>
-            <button :disabled="pagination.current_page + 1 > pagination.total" @click="handle(true, +1)" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+            <button :disabled="pagination.current_page + 1 > pagination.total_pages" @click="handle(true, +1)" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
             <span class="sr-only">Следующий</span>
             <!-- Heroicon name: solid/chevron-right -->
             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
