@@ -16,10 +16,10 @@ export default [{
   },
   {
     name: 'Документы',
-    href: '#',
+    href: { name: 'Home' },
     icon: 'PhotographIcon',
     current: false,
-    uname: 'text',
+    uname: 'dashboard',
     child: []
   },
   {
@@ -127,9 +127,9 @@ export default [{
       {
         name: 'Гос отчетность',
         icon: 'CheckCircleIcon',
-        href: '',
+        href: { name: 'Home2' },
         current: false,
-        uname: 'text', 
+        uname: 'dashboard-2', 
         child: [{
             name: 'Список',
             icon: 'CheckCircleIcon',
@@ -229,9 +229,9 @@ export default [{
           {
             name: 'Гос отчетность',
             icon: 'CheckCircleIcon',
-            href: '',
+            href: { name: 'Home2' },
             current: false,
-            uname: 'personu-gos_otchetu-gos_otchetu'
+            uname: 'dashboard-2'
           },
         ]
       },

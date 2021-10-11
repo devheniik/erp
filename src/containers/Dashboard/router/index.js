@@ -7,7 +7,18 @@ export default [
             layout: 'SideMenu',
             requreAuth: true,
             permition: 'dashboard-view',
-            uname: 'personu-gos_otchetu-gos_otchetu'
+            uname: 'dashboard'
+        }
+    },
+    {
+        path: '/d',
+        name: 'Home2',
+        component: () => import('@dashboard/views/List.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: true,
+            permition: 'dashboard-view',
+            uname: 'dashboard-2'
         }
     },
 ]

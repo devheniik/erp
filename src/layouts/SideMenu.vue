@@ -40,7 +40,7 @@
                             {{ subItem.name }}
                             </div>
                               <ChevronDownIcon class="h-4 w-4" v-if="subItem.current && subItem.child.length > 0" />
-                      <ChevronRightIcon class="h-4 w-4" v-else-if="subItem.child.length > 0"/>
+                              <ChevronRightIcon class="h-4 w-4" v-else-if="subItem.child.length > 0"/>
                           </div>
                           <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
                             <div v-if="subItem.current && subItem.child.length" class="transform duration-300 ease-out mt-2 space-y-2">
@@ -86,40 +86,38 @@
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col" style="width: 280px;">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-100 ">
+        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-800  ">
           <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 ">
               <!-- https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg -->
-              <img class="h-50 w-auto flex flex-center" :src="logo" />
+              <!-- <img class="h-50 w-auto flex flex-center" :src="logo" /> -->
             </div>
             <nav class="mt-5 flex-1" aria-label="Sidebar">
-              <div>
+              <div class="px-2 space-y-1">
                   <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="" >
-                    <div @click="handleClick(item) " :class="[item.current ? 'bg-secondary-200 text-gray-600' : 'bg-secondary-100  text-gray-600 hover:bg-secondary-150 hover:text-gray-600 ', 'group flex justify-between items-center px-2 py-2 text-base font-medium']">
-                     <div class="flex flex-wrap">
-                        <component :is="item.icon" :class="[item.current ? 'text-secondary-500' : 'text-secondary-400 group-hover:text-secondary-500 hover:bg-secondary-150', 'mr-4 h-6 w-6 ']" aria-hidden="true" />
+                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-between px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
+                     <div class="flex flex-wrap items-center">
+                        <component :is="item.icon" :class="[item.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']" aria-hidden="true"  />
                       {{ item.name }} 
                      </div>
                       <ChevronDownIcon class="h-4 w-4" v-if="item.current && item.child.length > 0" />
-                      <ChevronRightIcon class="h-4 w-4" v-else-if="item.child.length > 0"/>
-                     
+                      <ChevronRightIcon class="h-4 w-4" v-else-if="item.child.length > 0"/> 
                     </div>
-                    <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
-                      
-                      <div v-if="item.current && item.child.length" class="transform duration-300 ease-out">
+                    <transition enter-active-class="translate-y-full" leave-active-class="translate-y-full">
+                      <div v-show="item.current && item.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
                         <div  v-for="(subItem, j) in item.child" :key="j"  > 
-                          <div @click="handleClick(subItem)"  :class="[subItem.current ? 'bg-secondary-300 text-gray-600' : 'text-gray-600 bg-secondary-200 hover:bg-secondary-300 hover:text-gray-600  whitespace-nowrap truncate', 'pl-5 group flex  justify-between items-center px-3 py-2 text-base font-medium']">
+                          <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-between pl-4 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                             <div class="flex flex-wrap items-center"> 
-                              <component :is="subItem.icon" :class="[subItem.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500 ', 'mr-4 h-4 w-4']" aria-hidden="true" />
-                            {{ subItem.name }}
+                              <component :is="subItem.icon"  :class="[subItem.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']" aria-hidden="true"   />
+                              {{ subItem.name }}
                              </div>
                               <ChevronDownIcon class="h-4 w-4" v-if="subItem.current && subItem.child.length > 0" />
                               <ChevronRightIcon class="h-4 w-4" v-else-if="subItem.child.length > 0"/>
                           </div>
-                          <transition enter-active-class="opacity-0 -translate-y-6 h-0" leave-active-class="opacity-0 -translate-y-6">
-                            <div v-if="subItem.current && subItem.child.length" class="transform duration-300 ease-out ">
-                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-secondary-300 text-gray-600' : 'text-gray-600 bg-secondary-200   hover:text-gray-700', 'pl-10 group flex items-center px-4 py-2 text-md font-medium whitespace-nowrap truncate']">
-                                <component :is="thItem.icon" :class="[thItem.current ? 'text-gray-100' : 'text-gray-400 group-hover:text-gray-600', 'mr-4 h-4 w-4']" aria-hidden="true" />
+                          <transition enter-active-class="translate-y-full" leave-active-class="translate-y-full">
+                            <div v-if="subItem.current && subItem.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
+                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-start pl-6 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
+                                <component :is="thItem.icon" :class="[thItem.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']" aria-hidden="true" />
                                 {{ thItem.name }}
                               </div>
                             </div>

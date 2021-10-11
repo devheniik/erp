@@ -1,8 +1,11 @@
 import navigation_data from '../data/navigation'
 import router from '@/router'
-import { ref } from 'vue'
+import {useRoute} from 'vue-router'
+import { ref, watch } from 'vue'
 export default function() {
     const navigation = ref(navigation_data)
+
+    const route = useRoute()
 
     const findActive = name => {  
         navigation.value.forEach(first => { 
@@ -27,6 +30,22 @@ export default function() {
             } 
         })
     }
+
+    watch(
+      () => route.fullPath,
+      (count, prevCount) => {
+        navigation.value.forEach(first => {
+            first.current = false 
+            first.child.forEach(seconsd => {
+                seconsd.current = false 
+                seconsd.child.forEach(third => {
+                    third.current = false 
+                })
+            })
+        })
+        findActive(route.meta.uname)
+      }
+    )
 
     const linkTo = (route, router) => { 
 
