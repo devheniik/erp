@@ -8,7 +8,6 @@ const response = {
         uid: "83",
         color: [1 - 9], // null default
         object: "Persona",
-        color: "-",
         value: {
             fio: "-CORP- ФИО 83",
             dolvnost: "менеджер зі збуту по роботі з проектними організаціями",

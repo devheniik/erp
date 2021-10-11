@@ -1,6 +1,8 @@
 <template>
     <div>
-        <barprop :data="navigation"></barprop>
+        <barprop :data="navigation">
+            
+        </barprop>
     </div>
 </template>
 
