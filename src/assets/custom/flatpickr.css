@@ -562,11 +562,11 @@
   .flatpickr-day.selected.nextMonthDay,
   .flatpickr-day.startRange.nextMonthDay,
   .flatpickr-day.endRange.nextMonthDay {
-    background: #059669;
+    background: #2563eb;
     -webkit-box-shadow: none;
             box-shadow: none;
     color: #fff;
-    border-color: #059669;
+    border-color: #2563eb;
   }
   .flatpickr-day.selected.startRange,
   .flatpickr-day.startRange.startRange,
@@ -581,8 +581,8 @@
   .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),
   .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),
   .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
-    -webkit-box-shadow: -10px 0 0 #059669;
-            box-shadow: -10px 0 0 #059669;
+    -webkit-box-shadow: -10px 0 0 #2563eb;
+            box-shadow: -10px 0 0 #2563eb;
   }
   .flatpickr-day.selected.startRange.endRange,
   .flatpickr-day.startRange.startRange.endRange,
@@ -613,8 +613,8 @@
   }
   .flatpickr-day.week.selected {
     border-radius: 0;
-    -webkit-box-shadow: -5px 0 0 #059669, 5px 0 0 #059669;
-            box-shadow: -5px 0 0 #059669, 5px 0 0 #059669;
+    -webkit-box-shadow: -5px 0 0 #2563eb, 5px 0 0 #2563eb;
+            box-shadow: -5px 0 0 #2563eb, 5px 0 0 #2563eb;
   }
   .flatpickr-day.hidden {
     visibility: hidden;

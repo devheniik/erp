@@ -30,7 +30,7 @@ export default [{
     uname: 'person-view', 
     child: [{
         name: 'Список',
-        icon: 'CheckCircleIcon',
+        icon: 'ViewListIcon',
         href: { name: 'person-view' },
         current: false,
         uname: 'person-view',
@@ -38,7 +38,7 @@ export default [{
       },
       {
         name: 'Карточки',
-        icon: 'CheckCircleIcon',
+        icon: 'CollectionIcon',
         href: { name: 'person-update', params: { id: '83'} },
         current: false,
         uname: 'person-update',
@@ -343,11 +343,28 @@ export default [{
   },
   {
     name: 'Права',
-    href: '#',
+    href: { name: 'roles-view' },
     icon: 'AcademicCapIcon',
     current: false,
-    uname: 'text',
-    child: []
+    uname: 'roles-view',
+    child: [
+      {
+        name: 'Пользователи',
+        href: { name: 'roles-view' },
+        icon: 'UsersIcon',
+        current: false,
+        uname: 'roles-view',
+        child: [
+          {
+            name: 'Роли',
+            href: { name: 'roles-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'roles-view'
+          },
+        ]
+      }
+    ]
   },
   {
     name: 'Служебные',

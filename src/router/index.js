@@ -5,8 +5,9 @@ import store from "@/store"
 import dashboard from '@dashboard/router'
 import user from '@user/router'
 import person from '@person/router'
+import permitions from '@permitions/router'
 
-const routes = [ ...dashboard, ...user, ...person ]
+const routes = [ ...dashboard, ...user, ...person, ...permitions ]
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

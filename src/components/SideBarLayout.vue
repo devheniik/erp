@@ -35,10 +35,10 @@
 import find from '.././hooks/load'
 
 const props = defineProps({
-    api: Strind
+    api: String
 })
 
-const items = porps.data
+const items = props.data
 
 // ui 
 const handle = item => {

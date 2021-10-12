@@ -46,6 +46,6 @@ const props = defineProps({
 <style lang="scss" scoped> 
     .bottom-scroll{
         scrollbar-width: thin;
-        scrollbar-color: #10B981 #A7F3D0;
+        scrollbar-color: #2563eb #eff6ff;
     }
 </style>

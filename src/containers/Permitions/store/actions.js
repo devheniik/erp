@@ -1,6 +1,6 @@
 export default {
-    async update({ commit }, payload) { 
-        // const roles = axios.get('roles')
-        // commit('update', await roles) 
+    async auth({ commit }) {
+        const userData = axios.get(/* route */)
+        commit('updateData', await userData)
     }
 }

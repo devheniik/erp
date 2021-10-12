@@ -5,7 +5,8 @@ import mutations from "./mutations"
 export default {
     namespased: true,
     state:  () => ({
-        permitions: []
+        auth: false,
+        data: {}
     }),
     getters: getters,
     mutations: mutations,
