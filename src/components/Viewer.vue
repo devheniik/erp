@@ -14,7 +14,7 @@
             </button>
         </div>
         <div class="mt-5">
-            <utable @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)" :data="{ headers: data.headers, body: data.data}"></utable>
+            <utable @sort="sort($event)" @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)" :data="{ headers: data.headers, body: data.data}" :sort="{ sort: data.sort, sort_order: data.sort_order}"></utable>
         </div>
         <div> 
             <pagination class="fixed bottom-0 w-full lg:w-fixed"  @change="load" v-model:pagination="data.meta.pagination"></pagination>
@@ -46,6 +46,17 @@
 
     // * create ref
     const createOpen = ref(false) 
+
+    // * sort 
+
+    const sort = name => {
+        data.value.sort = name
+        if (data.value.sort_order == 'asc') {
+            data.value.sort_order == 'desc'
+            return
+        }
+        data.value.sort_order == 'asc' 
+    }
  
  
 

@@ -104,6 +104,7 @@ const response = {
         }],
     }],
     headers: ["Ф.И.О.", "Должность", "Отдел", "Тел.", "Организация", "Канд.", "Увол.", "Примечание", "ЛПР", "к ЛК"],
+    sort_order: 'acs',
     sort: null
 }
 ```
@@ -116,6 +117,8 @@ const response = {
 ```javascript
 const request = {
     page: 1,
+    sort: '',
+    sort_order: 'acs',
     limit: 10,
     data: [],
     meta: {
@@ -202,8 +205,12 @@ const request = {
             value: "9"
         }],
     }],
-    headers: ["Ф.И.О.", "Должность", "Отдел", "Тел.", "Организация", "Канд.", "Увол.", "Примечание", "ЛПР", "к ЛК"],
-    sort: 'Ф.О.И'
+    headers: [
+        {
+            name: 'bio',
+            label: 'Ф.И.О.'
+        }
+    ],
 }
 ```
 

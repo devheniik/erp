@@ -9,8 +9,8 @@
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             №                             
                                         </th>
-                                        <th v-for="(name, i) in data.headers" :key="i" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            {{ name }}
+                                        <th v-for="(header, i) in data.headers" :key="i" @click="$emit('sort', col.name)" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ header.label }}
                                         </th> 
                                     </tr>
                                 </thead>
