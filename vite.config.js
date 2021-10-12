@@ -22,7 +22,7 @@ export default ({ mode }) => {
         '@api_base': path.resolve(__dirname, '/src/api/base'), 
         'h_list': path.resolve(__dirname, '/src/hooks/list.js'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
-        '@permitions': path.resolve(__dirname, '/src/containers/permitions'),
+        '@permitions': path.resolve(__dirname, '/src/containers/Permitions'),
         '@person': path.resolve(__dirname, '/src/containers/Person'),
         '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard')
       },
