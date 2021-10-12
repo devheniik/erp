@@ -17,7 +17,7 @@
             <utable @sort="sort($event)" @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)" :data="{ headers: data.headers, body: data.data}" :sort="{ sort: data.sort, sort_order: data.sort_order}"></utable>
         </div>
         <div> 
-            <pagination class="fixed bottom-0 w-full lg:w-fixed"  @change="load" v-model:pagination="data.meta.pagination"></pagination>
+            <pagination class="w-full"  @change="load" :pagination="data.meta.pagination" v-model:page="data.page"></pagination> 
         </div>
     </div>
 </template>
@@ -26,6 +26,7 @@
     import {
         ref,
         provide,
+        inject,
         watchEffect,
         watch,
         onUpdated
@@ -49,6 +50,10 @@
 
     // * sort 
 
+
+    
+
+
     const sort = name => {
         data.value.sort = name
         if (data.value.sort_order == 'asc') {
@@ -57,13 +62,25 @@
         }
         data.value.sort_order == 'asc' 
     }
- 
- 
- 
 
     const {
         data,
         load,
         isLoad
     } = table(props.api)
+
+    // watchEffect(() => {
+    //     console.log('view', props.api);
+    //     load()
+    // });
+
+
+
+    
+ 
+ 
+ 
+
+    
+
 </script>

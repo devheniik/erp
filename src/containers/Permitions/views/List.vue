@@ -1,13 +1,34 @@
 <template>
     <div class="h-full"> 
-        <side-table :api="get">
-
-        </side-table>
+        <double-table :api="get" :link="link" :options="options"></double-table>
     </div>
 </template>
 
 <script setup>
-    import Create from '../components/create.vue'
-    import Update from '../components/update.vue'
     import get from '../api/get'  
+
+    const options = [
+        {
+            label: 'Пользователи',
+            value: 'users'
+        },
+        {
+            label: 'Права',
+            value: 'permissions'
+        },
+        {
+            label: 'Бизнес операции',
+            value: 'business-operations'
+        },
+        {
+            label: 'Инструкции',
+            value: 'instructions'
+        }
+    ]
+
+    const link = (id, entity) => {
+        return `access/role/${id}/${entity}`
+    }
+
+
 </script>

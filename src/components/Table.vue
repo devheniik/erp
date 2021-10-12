@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-                <div class="-my-2 overflow-x-auto bottom-scroll sm:-mx-6 lg:-mx-8">
+                <div class="-my-2 overflow-x-auto h-max bottom-scroll  sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                         <div class="border-b border-gray-200 sm:rounded-lg">
                             <table class="w-full divide-y divide-gray-200">
@@ -47,5 +47,9 @@ const props = defineProps({
     .bottom-scroll{
         scrollbar-width: thin;
         scrollbar-color: #2563eb #eff6ff;
+    }
+
+    .scroll-left{
+        direction: rtl;
     }
 </style>

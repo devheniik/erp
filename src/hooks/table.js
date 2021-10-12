@@ -16,6 +16,8 @@ export default function (_route) {
     const load = async () => {
         isLoad.value = true
         data.value = await list(data.value, _route)
+        data.value.page = data.value.meta.pagination.current_page
+        data.value.limit = 10
         console.log('load')
         isLoad.value = false
     }
@@ -26,7 +28,7 @@ export default function (_route) {
 
     return {
         data,
-        load: async () => [data.value = await list(data.value, _route), console.log('short load')],
+        load,//: async () => [data.value = await list(data.value, _route), console.log('short load')],
         isLoad
     }
 

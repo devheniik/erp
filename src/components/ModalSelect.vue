@@ -12,7 +12,7 @@
             </slot>
         </div>
         <modal v-model="isOpen" width="w-10/12">
-            <uviewer modalSelect @select="select($event)" :api="data.api"></uviewer>
+            <viewer modalSelect @select="select($event)" :api="data.api"></viewer>
         </modal>
     </div>
     <!--[$emit('update:modelvalue', $event.uid), label = $event.values[data.meanKey]]--> 

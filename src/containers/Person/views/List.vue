@@ -1,10 +1,10 @@
 <template>
     <div class="h-full">
-        <uviewer :api="get" route_card="person-update">
+        <viewer :api="get" route_card="person-update">
             <template v-slot:create>
                 <create></create>
             </template>
-        </uviewer>
+        </viewer>
     </div>
 </template>
 

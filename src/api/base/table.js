@@ -4,10 +4,9 @@ import transformer from '@/functions/t_pagination'
 // import toast
 
 export default async function (response, link) {
-  if (response) {
-    response = transformer(response)
+  if (response) { 
     response.data = []
-    response.headers = []
+    response.headers = [] 
   } 
   
   try {

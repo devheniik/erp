@@ -84,7 +84,7 @@
 
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:flex lg:flex-shrink-0">
-      <div class="flex flex-col" style="width: 280px;">
+      <div class="flex flex-col" style="min-width: 240px;">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-800  ">
           <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -136,13 +136,13 @@
                   <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" />
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+                  <p class="text-sm font-medium text-gray-200 group-hover:text-gray-100">
                     Whitney Francis
                   </p>
                   <!-- <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
                     View profile 
                   </p>  -->
-                  <router-link as="p" :to="'/login'" class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
+                  <router-link as="p" :to="'/login'" class="text-xs font-medium text-gray-300 group-hover:text-gray-200">
                     Logout
                   </router-link> 
                 </div>
