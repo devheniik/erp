@@ -9,14 +9,20 @@
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             №                             
                                         </th>
-                                        <th v-for="(header, i) in data.headers" :key="i" @click="$emit('sort', col.name)" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            {{ header.label }}
+                                        <th v-for="(header, i) in data.headers" :key="i" @click="$emit('sort', header.value)" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <div class="flex flex-row items-center">
+                                                <span> 
+                                                    {{ header.label }}
+                                                </span>
+                                                <arrow-narrow-up-icon v-if="sort.field == header.value && sort.order == 'asc'" class="h-3 w-3"></arrow-narrow-up-icon>
+                                                <arrow-narrow-down-icon v-else-if="sort.field == header.value && sort.order == 'desc'" class="h-3 w-3"></arrow-narrow-down-icon>
+                                            </div>
                                         </th> 
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr v-for="col in data.body" :key="col.uid"> 
-                                        <td @click="$emit('select', col)" class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer">
+                                    <tr v-for="col in data.body" :key="col.uid" :class="t_color(col.color)"> 
+                                        <td @click="$emit('select', col)" class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer"> 
                                             {{ col.uid }}
                                         </td> 
                                         <td  v-for="(field, i) in col.value" :key="i" class="px-6 py-4 whitespace-nowrap text-sm text-left">
@@ -33,11 +39,13 @@
 
 
 <script setup>
+import t_color from '@/functions/t_color'
 const props = defineProps({
-    data: Object
+    data: Object,
+    sort: Object
 })
 
-    const emits = defineEmits(['select'])
+    const emits = defineEmits(['select', 'sort'])
 
 </script>
 

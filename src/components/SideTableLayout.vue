@@ -6,19 +6,17 @@
                 <ChevronRightIcon v-else class="h-4 w-4" />
             </div>
             <!-- <transition enter-active-class="opacity-0 -translate-x-6 h-0" leave-active-class="opacity-0 -translate-x-6"> -->
-                <div v-if="sideRef" class="w-12/12"> 
+                <div v-show="sideRef" class="w-12/12"> 
                     <viewer modalSelect @select="$emit('select', $event.uid)" :api="api" route_card=""> 
                     </viewer>
                 </div>
-            <!-- </transition> -->
-
+            <!-- </transition> --> 
         </div>
         <div :class="[sideRef ? 'w-6/12' : 'w-full', 'pl-4']">
             <slot>
 
             </slot>
-        </div>
-
+        </div> 
     </div>
 </template>
 
