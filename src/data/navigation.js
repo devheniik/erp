@@ -1,4 +1,13 @@
-export default [{
+export default [
+  {
+    name: 'Филиал',
+    href: { name: 'filial' },
+    icon: 'LibraryIcon',
+    current: false,
+    uname: 'filial',
+    child: []
+  },
+  {
     name: 'Справка',
     href: '#',
     icon: 'BookOpenIcon',
@@ -295,11 +304,37 @@ export default [{
   },
   {
     name: 'Продажи',
-    href: '#',
+    href: { name: 'order-view' },
     icon: 'CurrencyDollarIcon',
     current: false,
-    uname: 'text',
-    child: []
+    uname: 'order-view',
+    child: [
+      {
+        name: 'Список заказов',
+        href: { name: 'order-view' },
+        icon: 'ViewListIcon',
+        current: false,
+        uname: 'order-view',
+        child: []
+      },
+      {
+        name: 'Продукты',
+        href: { name: 'product-view' },
+        icon: 'ArchiveIcon',
+        current: false,
+        uname: 'product-view',
+        child: [
+          {
+            name: 'Каталог',
+            href: { name: 'product-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'product-view',
+            child: []
+          },
+        ]
+      },
+    ]
   },
   {
     name: 'Консигнация',
@@ -307,7 +342,16 @@ export default [{
     icon: 'BeakerIcon',
     current: false,
     uname: 'text',
-    child: []
+    child: [
+      // {
+      //   name: 'Список заказов',
+      //   href: { name: 'orser-view' },
+      //   icon: 'ViewListIcon',
+      //   current: false,
+      //   uname: 'order-view',
+      //   child: []
+      // },
+    ]
   },
   {
     name: 'Закупки',

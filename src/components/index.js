@@ -8,10 +8,12 @@ import ModalSelect from "./ModalSelect.vue"
 import List from "./List.vue"
 import SideTableLayout from "./SideTableLayout.vue"
 import DoubleTable from "./DoubleTable.vue"
+import Date from "./Date.vue"
 
 
 
 export default app => {
+  app.component("date", Date)
   app.component("double-table", DoubleTable)
   app.component("side-table", SideTableLayout)
   app.component("list", List)

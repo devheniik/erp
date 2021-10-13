@@ -23,6 +23,7 @@ export default ({ mode }) => {
         'h_list': path.resolve(__dirname, '/src/hooks/list.js'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
         '@permitions': path.resolve(__dirname, '/src/containers/Permitions'),
+        '@sale': path.resolve(__dirname, '/src/containers/Sale'),
         '@person': path.resolve(__dirname, '/src/containers/Person'),
         '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard')
       },

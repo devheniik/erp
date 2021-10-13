@@ -14,12 +14,12 @@
                     <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
                 </button>
             </div>
-            <div class="mt-5  mr-5">
+            <div class="my-5 mr-5">
                 <utable @sort="sort($event)" @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)" :data="{ headers: data.headers, body: data.data}" :sort="data.sort"></utable>
             </div>
         </div> 
         <div class="w-full mb-1.5"> 
-            <pagination   @change="load" :pagination="data.meta.pagination" v-model:page="data.page"></pagination> 
+            <pagination @change="load" :pagination="data.meta.pagination" v-model:page="data.page"></pagination> 
         </div>
     </div>
 </template>
