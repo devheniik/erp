@@ -251,8 +251,8 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Секретность',
-                                    api: '/sec'     ,
-                                    meanKey: 'name'
+                                    api: 'uniprops/secrecy',
+                                    meanKey: 'pkod'
                                      }" v-model="data.profile.sekret"></modal-select>
                                 </div>
                             </div>

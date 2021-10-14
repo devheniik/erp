@@ -36,6 +36,7 @@ const select = e => {
     emit('update:modelValue', e.uid)
     emit('change', e.uid) 
     label.value = e.value[props.data.meanKey]
+    isOpen.value = false
 }
 
 const isOpen = ref(false) 

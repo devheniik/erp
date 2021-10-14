@@ -1,11 +1,20 @@
 <template>
     <div class="h-full"> 
-        <double-table :api="get" :link="link" :options="options"></double-table>
+        <div class="flex w-full justify-end mr-5">
+            <list v-model="entity" :data="{ list: options}"></list> 
+        </div>
+        <double-table :api="get" :link="link" :options="options" @select="id = $event"> 
+            <viewer :key="render" ref="viewer" :api="link">  
+            </viewer>  
+        </double-table>
     </div>
 </template>
 
 <script setup>
+    import {computed, ref, getCurrentInstance, watch} from 'vue'
     import get from '../api/get'  
+
+    const render = ref(0) 
 
     const options = [
         {
@@ -26,9 +35,17 @@
         }
     ]
 
-    const link = (id, entity) => {
-        return `access/role/${id}/${entity}`
-    }
+    
+
+    const  entity = ref('users')
+    const  id = ref(null)
+
+    const link = computed(() => `access/role/${id.value}/${entity.value}`)
+
+    watch(() => entity.value,
+    () => {
+      render.value++
+    })
 
 
 </script>

@@ -1,12 +1,16 @@
 <template>
-    <div class="w-full flex flex-wrap"> 
-        <div class="flex w-full justify-end mr-5">
-            <list v-model="entity" :data="{ list: options}"></list>
+    <div class="w-full flex flex-wrap">  
+        
+        <div  :class="[sideRef && !tree ? 'w-6/12' : sideRef && tree ? 'w-4/12' : 'w-1/12', 'h-screen overflow-y-auto hide-scroll']">
+            <component :is="!tree ? 'side-table' : 'side-bar'" class="relative" :api="api" @select="selected = $event">
+                
+            </component> 
         </div>
-            <side-table class="relative" :api="api" @select="selected = $event">
-                <viewer :key="render" v-if="selected" :api="request"> 
-                </viewer> 
-            </side-table>   
+        <div :class="[sideRef && !tree ? 'w-6/12' : sideRef && tree ? 'w-8/12' : 'w-full', 'pl-4']">
+            <slot :key="render" v-if="selected" >
+
+            </slot> 
+        </div> 
     </div>  
 </template>
 
@@ -14,21 +18,24 @@
 import {  computed, ref, watchEffect  } from 'vue'
 const props = defineProps({
     api: String,
-    options: Array,
-    link: Function
+    tree: Boolean,
+    
 }) 
+
+const emit = defineEmits(['select'])
 
 const selected = ref(null) 
 
-const render = ref(1)
+const render = ref(1) 
 
-const entity = ref("users")
+const updateRender = () =>  render.value++
 
-const request = ref('access/role/null/users')
+const sideRef = ref(true)
+
 
 watchEffect(() => {
-  request.value = props.link(selected.value, entity.value)
-  render.value++
+  emit('select', selected.value)
+  updateRender()
 })
   
 
