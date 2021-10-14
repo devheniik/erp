@@ -12,13 +12,13 @@ export default [
     },
     {
         path: '/sales/products',
-        name: 'product-view',
+        name: 'sales-product-view',
         component: () => import('@sale/views/Product/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
             permition: null,
-            uname: 'product-view'
+            uname: 'sales-product-view'
         }
     },
     // {

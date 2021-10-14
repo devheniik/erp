@@ -280,11 +280,20 @@ export default [
   },
   {
     name: 'Товары',
-    href: '#',
+    href: { name: 'product-view' },
     icon: 'TagIcon',
     current: false,
     uname: 'text',
-    child: []
+    child: [
+      {
+        name: 'Список заказов',
+        href: { name: 'product-view' },
+        icon: 'ViewListIcon',
+        current: false,
+        uname: 'product-view',
+        child: []
+      },
+    ]
   },
   {
     name: 'Курсы',
@@ -319,17 +328,17 @@ export default [
       },
       {
         name: 'Продукты',
-        href: { name: 'product-view' },
+        href: { name: 'sales-product-view' },
         icon: 'ArchiveIcon',
         current: false,
-        uname: 'product-view',
+        uname: 'sales-product-view',
         child: [
           {
             name: 'Каталог',
-            href: { name: 'product-view' },
+            href: { name: 'sales-product-view' },
             icon: 'ViewListIcon',
             current: false,
-            uname: 'product-view',
+            uname: 'sales-product-view',
             child: []
           },
         ]

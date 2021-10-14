@@ -34,7 +34,7 @@
 
 
 <script setup> 
-
+import get from '@/hooks/get'
 const props = defineProps({
     api: String
 })

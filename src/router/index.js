@@ -7,8 +7,9 @@ import user from '@user/router'
 import person from '@person/router'
 import permitions from '@permitions/router'
 import sale from '@sale/router'
+import product from '@product/router'
 
-const routes = [ ...dashboard, ...user, ...person, ...permitions, ...sale ]
+const routes = [ ...dashboard, ...user, ...person, ...permitions, ...sale, ...product ]
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
