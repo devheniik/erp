@@ -8,10 +8,7 @@
 <script setup>
 import {
     ref
-} from 'vue'
-import find from '.././hooks/load'
-import get from '.././hooks/table'
-
+} from 'vue' 
 const props = defineProps({
     api: String
 })

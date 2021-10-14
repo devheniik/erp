@@ -33,8 +33,7 @@
 </template>
 
 
-<script setup>
-import get from '.././hooks/get'
+<script setup> 
 
 const props = defineProps({
     api: String
