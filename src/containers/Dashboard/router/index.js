@@ -2,7 +2,7 @@ export default [
     {
         path: '/',
         name: 'Home',
-        component: () => import('@sale/components/Create.vue'),
+        component: () => import('@dashboard/views/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: true,
