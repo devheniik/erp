@@ -1,27 +1,38 @@
 <template>
-    <div>
+    <div> 
         <div class="flex justify-center w-full">
-            <description :data="{
-                zakkode: '2125779',
-                zakdate: '2021-09-21T00:00:00.000000Z',
-                srokopl: '2021-09-22T00:00:00.000000Z',
-                reservdo: '2021-09-24T00:00:00.000000Z',
-                manager: 'Чернявська  Надія Іванівна',
-                contacter: 0,
-                zakaztip: 'Предоплата',
-                contract: 0,
-                zakstatus: '-',
-                oplachen: true,
-                otgruven: true,
-                closed: true,
-                a_b8: true
-                }" />
+            <description :api="top_bar_api" />
+        </div>
+        <div class="w-full mt-5 border-t-2 pt-5 border-b-2 pb-5  ">
+            <viewer :api="table_api">
+
+            </viewer>
+        </div>
+        <div class="w-full mt-5">
+            <sub-table :api="sub_bar_api">
+
+            </sub-table>
         </div>
     </div>
 </template>
 
 <script setup>
+import get from '@/hooks/get'
 import description from './specifications/description.vue'
+import SubTable from './specifications/sub-table.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
+
+ 
+const table_api = `sales/orders/${route.params.id}/specifications/data-table`
+
+const top_bar_api = `sales/orders/${route.params.id}/specifications/top-table`
+
+const sub_bar_api = `sales/orders/${route.params.id}/specifications/sub-table`
+
+ 
 
 
 

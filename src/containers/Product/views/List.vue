@@ -9,6 +9,9 @@
 </template>
 
 <script setup> 
+
+
+
 import get from '../api/get'
  
  

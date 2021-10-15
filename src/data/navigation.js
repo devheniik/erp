@@ -351,6 +351,23 @@ export default [
           },
         ]
       },
+      {
+        name: 'Отгрузки',
+        href: { name: 'sales-shipment-view' },
+        icon: 'ArchiveIcon',
+        current: false,
+        uname: 'sales-shipment-view',
+        child: [
+          {
+            name: 'Спосок',
+            href: { name: 'sales-shipment-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sales-shipment-view',
+            child: []
+          },
+        ]
+      },
     ]
   },
   {

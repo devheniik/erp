@@ -1,5 +1,5 @@
 <template>
-    <div class="mr-5">
+    <div class="mr-5" v-if="!isLoad">
           <div class="md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
@@ -13,15 +13,22 @@
             </div>
         </div>
         <ul role="list" class=" grid grid-cols-4 divide-y divide-y-reverse divide-gray-200 mt-4">
-            <li v-for="filial in filials" :key="filial.uid" class="py-1.5 flex">
-                <p class="text-sm text-primary-500 w-full text-center" >{{ filial.name }}</p>
+            <li v-for="filial in data" :key="filial.uid" class="py-1.5 flex">
+                <p class="text-sm text-primary-500 w-full text-center" @click="set(`system/filial/${filial.uid}`)" >{{ filial.sokrash }}</p>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
+import get from '@/hooks/get'
+import set from '@/api/index'
+
+import api from '../api/filial'
+
+const { data, isLoad } = get(api)
+
     const layers = [
         {
             label: 'Основной',
