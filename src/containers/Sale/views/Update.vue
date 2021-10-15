@@ -1,12 +1,12 @@
 <template>
     <layout v-model:config="config" v-bind="{
-            name: 'персона',
+            name: 'заказ',
             pagination_api: pagination,
-            route_name: 'person-update',
+            route_name: 'sale-update',
             api: get
         }">
         <update v-show="comoponent == 'update'"></update> 
-        <properties v-show="comoponent == 'properties'"></properties> 
+        <specifications v-show="comoponent == 'specifications'"></specifications> 
     </layout>
 </template>
 
@@ -19,7 +19,7 @@ import pagination from '../api/pagination'
 
 // * component import
 import update from '../components/update.vue'
-import properties from '../components/properties.vue'
+import specifications from '../components/specifications.vue'
 
 // * layout import
 import layout from '@/layouts/Card.vue'

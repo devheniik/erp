@@ -1,14 +1,13 @@
 <template>
     <div>
-        <barprop :data="navigation">
+        <!-- <barprop :data="navigation">
             
-        </barprop>
+        </barprop> -->
     </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
-import barprop from "@/components/table/SideBarLayout.vue"
+import {ref} from 'vue' 
 
 const navigation = ref([
         {

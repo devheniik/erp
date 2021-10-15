@@ -14,7 +14,7 @@
 <script setup>
 const props = defineProps({
     data: Object,
-    modelValue: [String, Number]
+    modelValue: [String, Number, Boolean, Array, Object]
 })
 
 

@@ -83,13 +83,13 @@
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">Регион:</label>
+                                <label class="label-primary">Инвалидность:</label>
                                 <div>
                                     <modal-select :data="{
                                         label:'Инвалидность',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.base.region"></modal-select>
+                                        api: 'uniprops/disability',
+                                        meanKey: 'pkod'
+                                             }" v-model="data.general.full.disability"></modal-select>
                                 </div>
                             </div>
                         </div>
@@ -120,19 +120,19 @@
                             <div>
                                 <modal-select :data="{
                                     label:'Регион',
-                                    api: '/reg',
-                                    meanKey: 'name'
+                                    api: 'uniprops/regions',
+                                    meanKey: 'pkod'
                                      }" v-model="data.general.base.region"></modal-select>
                             </div>
                         </div>
                         <div v-show="full">
                             <div class="tl">
-                                <label class="label-primary">Обазование:</label>
+                                <label class="label-primary">Образование:</label>
                                 <div>
                                     <modal-select :data="{
-                                        label:'Обазование',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        label:'Образование',
+                                        api: 'uniprops/education',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.obraz"></modal-select>
                                 </div>
                             </div>
@@ -141,8 +141,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Категория',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/education_category',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.category"></modal-select>
                                 </div>
                             </div>
@@ -151,8 +151,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Профессия',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/profession',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.special"></modal-select>
                                 </div>
                             </div>
@@ -161,8 +161,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Семейное положение',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/marital_status',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.sempol"></modal-select>
                                 </div>
                             </div>
@@ -171,8 +171,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Национальность',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/nationality',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.nation"></modal-select>
                                 </div>
                             </div>
@@ -181,8 +181,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Ресурс',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/resource',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.resurs"></modal-select>
                                 </div>
                             </div>
@@ -191,8 +191,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Раскраска',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/color',
+                                        meanKey: 'pkod'
                                              }" v-model="data.general.full.cvet"></modal-select>
                                 </div>
                             </div>
@@ -348,8 +348,8 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Отдел',
-                                    api: '/dep'     ,
-                                    meanKey: 'name'
+                                    api: 'uniprops/department',
+                                    meanKey: 'pkod'
                                      }" v-model="data.job.otdel"></modal-select>
                                 </div>
                             </div>
@@ -358,8 +358,8 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Должность',
-                                    api: '/pos'     ,
-                                    meanKey: 'name'
+                                    api: 'uniprops/post'     ,
+                                    meanKey: 'pkod'
                                      }" v-model="data.job.dolvnost"></modal-select>
                                 </div>
                             </div>
@@ -369,7 +369,7 @@
                                     <modal-select :data="{
                                     label:'Организация',
                                     api: '/org'     ,
-                                    meanKey: 'name'
+                                    meanKey: 'pkod'
                                      }" v-model="data.job.organisatiom"></modal-select>
                                 </div>
                             </div>
@@ -378,8 +378,8 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Инспектор',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
+                                    api: 'uniprops/manager',
+                                    meanKey: 'pkod'
                                      }" v-model="data.job.manager"></modal-select>
                                 </div>
                             </div>

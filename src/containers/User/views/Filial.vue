@@ -1,30 +1,28 @@
 <template>
-    <div>
+    <div class="mr-5">
           <div class="md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-                Back End Developer
+                Выбор филиала
             </h2>
             </div>
             <div class="mt-4 flex md:mt-0 md:ml-4">
-            <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Edit
-            </button>
-            <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Publish
-            </button>
+                <list v-model=layer :data="{ list: layers, label: 'Слой'}">
+
+                </list>
             </div>
         </div>
         <ul role="list" class="divide-y divide-gray-200">
             <li v-for="filial in filials" :key="filial.uid" class="py-4 flex">
-                <p class="text-sm text-gray-500">{{ filial.name }}</p>
+                <p class="text-sm text-primary-500 w-full text-center" >{{ filial.name }}</p>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
-    const layer = [
+import {ref} from 'vue'
+    const layers = [
         {
             label: 'Основной',
             value: true
@@ -35,19 +33,144 @@
         },
     ]
 
+    const layer = ref(true)
+
     const filials = [
             {
-                name: 'Calvin Hawkins',
+                name: 'Киев',
                 uid: 123
             },
             {
-                name: 'Kristen Ramos',
+                name: 'Одесса',
                 uid: 124
             },
             {
-                name: 'Ted Fox',
+                name: 'Харьков',
                 uid: 125
             },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            
         ]
 </script>
 

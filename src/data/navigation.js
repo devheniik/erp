@@ -286,7 +286,7 @@ export default [
     uname: 'text',
     child: [
       {
-        name: 'Список заказов',
+        name: 'Каталог товаров',
         href: { name: 'product-view' },
         icon: 'ViewListIcon',
         current: false,
@@ -324,6 +324,14 @@ export default [
         icon: 'ViewListIcon',
         current: false,
         uname: 'order-view',
+        child: []
+      },
+      {
+        name: 'Карточки',
+        icon: 'CollectionIcon',
+        href: { name: 'sale-update', params: { id: '83'} },
+        current: false,
+        uname: 'sale-update',
         child: []
       },
       {
