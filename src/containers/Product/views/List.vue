@@ -1,22 +1,17 @@
 <template>
     <div>
         <div class="h-full"> 
-            <double-table tree @select="link = `/products/catalog/category/${$event}`" :api="catalog" :link="link">
-                <viewer :api="link"> 
+            <viewer :api="get"> 
 
-                </viewer>  
-            </double-table>
+            </viewer>  
         </div>
     </div>
 </template>
 
 <script setup> 
-import catalog from '../api/products/catalog'
+import get from '../api/get'
  
-
-const link = (...params) => {
-    //return `product`
-}
+ 
 
 </script>
 

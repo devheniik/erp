@@ -1,1 +1,1 @@
-export default 'sales/orders'
+export default 'products'
