@@ -12,8 +12,8 @@
                 </list>
             </div>
         </div>
-        <ul role="list" class="divide-y divide-gray-200">
-            <li v-for="filial in filials" :key="filial.uid" class="py-4 flex">
+        <ul role="list" class=" grid grid-cols-4 divide-y divide-y-reverse divide-gray-200 mt-4">
+            <li v-for="filial in filials" :key="filial.uid" class="py-1.5 flex">
                 <p class="text-sm text-primary-500 w-full text-center" >{{ filial.name }}</p>
             </li>
         </ul>
@@ -36,6 +36,148 @@ import {ref} from 'vue'
     const layer = ref(true)
 
     const filials = [
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
+            {
+                name: 'Киев',
+                uid: 123
+            },
+            {
+                name: 'Одесса',
+                uid: 124
+            },
+            {
+                name: 'Харьков',
+                uid: 125
+            },
             {
                 name: 'Киев',
                 uid: 123

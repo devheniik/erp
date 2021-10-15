@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoad">
+    <div v-if="!isLoad" class="w-full">
         <!-- TABS -->
         <div class="sm:hidden">
             <select class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
@@ -31,9 +31,8 @@
 
 
         <!-- NAVIGATION -->
-        <div class="bg-gray-100">
-            <div
-                class="fixed bottom-0 overflow-y-auto border-t border-gray-300 hide-scroll z-0 inline-flex items-center -ml-2 space-x-2 justify-center w-full lg:w-fixed bg-white py-3">
+        <div class="bg-gray-100  w-full">
+            <div class="fixed bottom-0 overflow-y-auto border-t border-gray-300 hide-scroll z-0 inline-flex items-center -ml-2 space-x-2 justify-center w-full lg:w-fixed bg-white py-3">
                 <!-- <button class="inline-flex items-center px-1 text-xs font-medium">
                     Сущьность
                     <span class="text-secondary-600 ml-2">№</span>

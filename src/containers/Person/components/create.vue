@@ -86,7 +86,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Инвалидность',
-                                        api: '/reg',
+                                        api: 'uniprops/regions',
                                         meanKey: 'name'
                                             }" v-model="data.general.base.region"></modal-select>
                                 </div>
@@ -190,8 +190,8 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Раскраска',
-                                        api: '/reg',
-                                        meanKey: 'name'
+                                        api: 'uniprops/color',
+                                        meanKey: 'a_s1'
                                             }" v-model="data.general.full.cvet"></modal-select>
                                 </div>
                             </div>

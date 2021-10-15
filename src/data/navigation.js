@@ -329,7 +329,7 @@ export default [
       {
         name: 'Карточки',
         icon: 'CollectionIcon',
-        href: { name: 'sale-update', params: { id: '83'} },
+        href: { name: 'sale-update', params: { id: '2125780'} },
         current: false,
         uname: 'sale-update',
         child: []

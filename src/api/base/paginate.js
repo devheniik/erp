@@ -2,7 +2,7 @@ import axios from '@axios'
 // import toast
 export default async function (route, id) {
     try { 
-        const data = await axios.get(`${route}/${id}`)
+        const data = await axios.post(`${route}/${id}`)
         return data.data
     } catch (error) {
         console.log(error)

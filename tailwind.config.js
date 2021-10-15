@@ -27,7 +27,7 @@ module.exports = {
                 body: ['Montserrat']
             },
             width: {
-                'fixed': 'calc(100% - 280px)'
+                'fixed': 'calc(100% - 240px)'
             }
         },
     },

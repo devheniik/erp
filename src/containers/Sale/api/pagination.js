@@ -1,1 +1,1 @@
-export default 'person-links'
+export default 'sales/order-links'
