@@ -1,4 +1,5 @@
 <template>
+<div> 
     <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
         <slot name="create"></slot>
     </modal>
@@ -21,7 +22,9 @@
         <div class="w-full mb-1.5"> 
             <pagination @change="load" :pagination="data.meta.pagination" v-model:page="data.page"></pagination> 
         </div>
-    </div>
+    </div> 
+    <loading v-if="isReload"></loading>  
+</div>
 </template>
 
 <script setup>
@@ -40,7 +43,8 @@
     const {
         data,
         load,
-        isLoad
+        isLoad,
+        isReload
     } = table(props.api)
 
 

@@ -10,10 +10,12 @@ import SideTableLayout from "./table/SideTableLayout.vue"
 import SideBarLayout from "./table/SideBarLayout.vue"
 import DoubleTable from "./table/DoubleTable.vue"
 import Date from "./filters/Date.vue"
+import Loading from "./loading/Loading.vue"
 
 
 
 export default app => {
+  app.component("loading", Loading)
   app.component("date", Date)
   app.component("double-table", DoubleTable)
   app.component("side-table", SideTableLayout)

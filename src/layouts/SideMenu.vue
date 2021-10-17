@@ -88,14 +88,18 @@
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-800  ">
           <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <div class="flex items-center flex-shrink-0 ">
+            <div class="flex items-center justify-start ml-2 flex-shrink-0 text-gray-200">
               <!-- https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg -->
-              <!-- <img class="h-50 w-auto flex flex-center" :src="logo" /> -->
+               <CogIcon class="h-12 w-12 mr-3" />
+               <div class="flex flex-col">
+                 <span class="font-extrabold text-2xl">EUROZOL</span>
+                 <span class="font-medium text-sm">BUILD IT</span>
+               </div>
             </div>
-            <nav class="mt-5 flex-1" aria-label="Sidebar">
+            <nav class="mt-1 flex-1" aria-label="Sidebar">
               <div class="px-2 space-y-1">
                   <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="" >
-                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-between px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
+                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-between px-2 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                      <div class="flex flex-wrap items-center">
                         <component :is="item.icon" :class="[item.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']" aria-hidden="true"  />
                       {{ item.name }} 
@@ -103,10 +107,10 @@
                       <ChevronDownIcon class="h-4 w-4" v-if="item.current && item.child.length > 0" />
                       <ChevronRightIcon class="h-4 w-4" v-else-if="item.child.length > 0"/> 
                     </div>
-                    <transition enter-active-class="translate-y-full" leave-active-class="translate-y-full">
+                    <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                       <div v-show="item.current && item.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
                         <div  v-for="(subItem, j) in item.child" :key="j"  > 
-                          <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-between pl-4 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
+                          <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 bg-gradient-to-r from-secondary-800 to-secondary-700 hover:bg-secondary-800 hover:text-white', 'group flex items-center justify-between ml-2.5 pl-2 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                             <div class="flex flex-wrap items-center"> 
                               <component :is="subItem.icon"  :class="[subItem.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']" aria-hidden="true"   />
                               {{ subItem.name }}
@@ -114,9 +118,9 @@
                               <ChevronDownIcon class="h-4 w-4" v-if="subItem.current && subItem.child.length > 0" />
                               <ChevronRightIcon class="h-4 w-4" v-else-if="subItem.child.length > 0"/>
                           </div>
-                          <transition enter-active-class="translate-y-full" leave-active-class="translate-y-full">
+                          <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                             <div v-if="subItem.current && subItem.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
-                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-start pl-6 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
+                              <div @click="handleClick(thItem)"  v-for="(thItem, k) in subItem.child" :key="k"  :class="[thItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 bg-gradient-to-r from-secondary-800 to-secondary-600 hover:bg-secondary-800 hover:text-white', 'group flex items-center justify-start ml-5 pl-2 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                                 <component :is="thItem.icon" :class="[thItem.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']" aria-hidden="true" />
                                 {{ thItem.name }}
                               </div>
@@ -183,7 +187,7 @@ import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import useNavigation from '../hooks/navigation'
 
-import logo from '../assets/images/logo.jpg'
+import logo from '../assets/images/logo.png'
 
 
 const { navigation, findActive, linkTo } = useNavigation()
