@@ -8,7 +8,7 @@
         <CogIcon class="h-16 w-16 animate-spin" />
         <div class="flex flex-col">
           <span class="font-extrabold text-3xl">EUROZOL</span>
-          <span class="font-medium text-sm">BUILD IT</span>
+          <span class="font-bold text-sm -mt-2">BUILD IT</span>
         </div>
       </div>
     </div>

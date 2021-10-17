@@ -1,5 +1,5 @@
 <template>
-<div> 
+<div class="h-full"> 
     <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
         <slot name="create"></slot>
     </modal>

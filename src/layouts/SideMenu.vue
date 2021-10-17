@@ -93,7 +93,7 @@
                <CogIcon class="h-12 w-12 mr-3" />
                <div class="flex flex-col">
                  <span class="font-extrabold text-2xl">EUROZOL</span>
-                 <span class="font-medium text-sm">BUILD IT</span>
+                 <span class="font-medium text-sm -mt-2">BUILD IT</span>
                </div>
             </div>
             <nav class="mt-1 flex-1" aria-label="Sidebar">
