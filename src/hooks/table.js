@@ -6,6 +6,7 @@ import {
     watchEffect,
     onUpdated
 } from 'vue'
+import _ from 'lodash'
 import list from '@api_base/table'
 export default function (_route) {
     const isLoad = ref(true)
