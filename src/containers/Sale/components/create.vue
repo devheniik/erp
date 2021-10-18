@@ -10,8 +10,7 @@
                         <!--Первый блок-->
                         <div class="tl">
                             <label class="label-primary">Код заказа:</label>
-                            <input type="text" class="input-primary" placeholder="Фамилия"
-                                v-model="data.general.base.zakkode" />
+                            <input type="text" class="input-primary"  v-model="data.general.base.zakkode" />
                         </div>
                         <div class="tl">
                             <div>
@@ -50,17 +49,11 @@
                                 </modal-select>
                         </div>
                         <div class="tl">
-                            <label class="label-primary">Источник Заказ (9)</label>
-                            <div class="field">
-                                <h1 class="text-blue-400" > {{ 2125779 }}</h1>
-                            </div>
+                            <field label="Источник Заказ (9) ">123123</field>
                         </div>
                         <div class="tl">
-                            <label class="label-primary"> Через ЛК?</label>
-                            <div class="field">
-                                <h1 class="text-blue-400" > {{ data.general.base.project ? 'Да' : 'Нет' }}</h1>
-                            </div>
-                        </div>    
+                            <field label=" Через ЛК?">{{ data.general.base.project ? 'Да' : 'Нет' }}</field>
+                        </div> 
 
 
                         <!-- FULL -->
@@ -103,13 +96,11 @@
                         </div>
                     </div>
                     <div>
-                        <!--Второй блок-->
+                        <!--Второй блок--> 
                         <div class="tl">
                             <label class="label-primary">Менеджер</label>
-                            <div class="field">
-                                <h1 class="text-blue-400" > {{ data.general.base.manager }}</h1>
-                            </div>
-                        </div>  
+                            <input type="text" disabled class="input-primary" placeholder="Менеджер" v-model="data.general.base.manager" />
+                        </div> 
                         <div class="tl">
                                 <modal-select :data="{
                                     label:'Тип заказа',
@@ -214,14 +205,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="tl">
-                                <label class="label-primary">Раскраска</label>
+                            <div class="tl"> 
                                 <div>
                                     <modal-select :data="{
                                         label:'Раскраска',
                                         api: 'uniprops/color',
-                                        meanKey: 'a_s1'
-                                            }" v-model="data.general.full.cvet"></modal-select>
+                                        meanKey: 'a_s1' }" v-model="data.general.full.cvet"></modal-select>
                                 </div>
                             </div>
                         </div>
@@ -233,19 +222,70 @@
             </div>
             <div>
                 <h1 class="label-big ">
-                    Профиль
+                    Состояние
                 </h1>
 
                 <div>
                     <div class="grid-2-2-1 section">
                         <div>
                             <!--Первый блок-->
-                            певый
+                            <div class="tl"> 
+                                <div>
+                                    <modal-select :data="{
+                                        label:'Состояние',
+                                        api: 'uniprops/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.general.status.zakstatus"></modal-select>
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Поставщик:</label>
+                                <input type="text" class="input-primary"  v-model="data.general.status.a_s1" />
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Ориентировочная дата отгрузки:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.general.status.a_d3"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Отгрузка со склада поставщика?</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.general.status.a_b4">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="tl">
+                                <label class="label-primary">Отгрузка с филиала:</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.general.status.a_b7">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="tl">
+                                <label class="label-primary">Ждем с РЦ</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.general.status.a_b8">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="tl">
+                                <field label=" Оплачено -">0</field>
+                            </div>
+                            <div class="tl">
+                                <field label="Отгружено -">0</field>
+                            </div>
                         </div>
                         <div>
                             <!--Второй блок-->
-
-                            Второй
+                            2
                         </div>
                         <!--Конец второго блока-->
                     </div>
@@ -254,19 +294,59 @@
             <!--TRIRD block-->
 
             <div>
-                <h1 class="label-big">
-                    Реквизиты
+                <h1 class="label-big ">
+                    Сроки
                 </h1>
-                <div class="grid-2-2-1 section">
-                    <div>
-                        <!--Первый блок-->
-                        Первый
+
+                <div>
+                    <div class="grid-2-2-1 section">
+                        <div>
+                            <!--Первый блок-->
+                            <div class="tl">
+                                <label class="label-primary">Дата заказа:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.zakdate"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Срок оплаты:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.srokopl"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Срок поставки:</label>
+                                <input type="text" class="input-primary"  v-model="data.general.timing.srokpostavz" />
+                            </div>
+                        </div>
+                        <div>
+                            <!--Второй блок-->
+                            <div class="tl">
+                                <label class="label-primary">Окончание:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.okonch" :config="{enableTime: true}"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Оконч. факт:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.closedate"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Резерв до:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.reservdo"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--Конец второго блока-->
                     </div>
-                    <div>
-                        <!--Второй блок-->
-                        Второй
-                    </div>
-                    <!--Конец второго блока-->
                 </div>
             </div>
             <div>

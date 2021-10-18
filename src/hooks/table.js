@@ -8,7 +8,7 @@ import {
     watchEffect,
     onUpdated
 } from 'vue'
-import _ from 'lodash'
+import * as  lodash from 'lodash'
 import list from '@api_base/table'
 export default function (_route) {
     const isLoad = ref(true)
@@ -32,7 +32,7 @@ export default function (_route) {
 
     return {
         data,
-        load: async () => [isReload.value = true, data.value = await list(_.cloneDeep(data.value), _route), isReload.value = false],
+        load: async () => [isReload.value = true, data.value = await list(lodash.cloneDeep(data.value), _route), isReload.value = false],
         isReload,
         isLoad
     }

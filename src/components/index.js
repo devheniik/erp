@@ -11,10 +11,12 @@ import SideBarLayout from "./table/SideBarLayout.vue"
 import DoubleTable from "./table/DoubleTable.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
+import Field from "./forms/Field.vue"
 
 
 
 export default app => {
+  app.component("field", Field)
   app.component("loading", Loading)
   app.component("date", Date)
   app.component("double-table", DoubleTable)
