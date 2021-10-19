@@ -4,7 +4,10 @@
             <list v-model="entity" :data="{ list: options}"></list> 
         </div> -->
         <double-table :api="get" tree :options="[]" @select="link = `transactions/operation-types/show?operationTypes=${$event}`"> 
-            <viewer  :api="link">  
+            <viewer  :api="link"> 
+                <template v-slot:create>
+                    <create></create>
+                </template>
             </viewer>  
         </double-table>
     </div>

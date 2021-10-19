@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoading">
+    <div>
         <div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 gap-4">
             <div class=" rounded-lg">
                 <h1 class="label-big">
@@ -35,7 +35,7 @@
                                 <h1 class="text-blue-400" > {{ data.general.base.zakaz }}</h1>
                             </div>
                         </div>
-                        <div class="mt-2 ml-2">
+                        <!-- <div class="mt-2 ml-2">
                             <label for="email" class="label-primary">Доставка:</label>
                             <div class="flex justify-between">
 
@@ -48,7 +48,7 @@
                                 <button class="button-hover-primary ml-2">Создать </button>
                             </div>
 
-                        </div>
+                        </div> -->
                         <div class="mt-4 ml-2">
                             <label for="email" class="label-primary">Состояние:</label>
                             <div>
@@ -93,7 +93,7 @@
                             <label for="email" class="label-primary">Организация:</label>
                             <div>
                                 <div>
-                                    <select class="dropdown-primary" v-model=" data.organisation">
+                                    <select class="dropdown-primary" v-model=" data.general.base.firmnaz">
                                         <option>Мизол</option>
                                         <option>Евроизол</option>
                                         <option>Другое</option>
