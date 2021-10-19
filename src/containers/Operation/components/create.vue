@@ -9,16 +9,16 @@
 
                     <div>
                         <!--Первый блок-->
-                         <div class="tl">
-                                <label class="label-primary">Операция:</label>
-                                <div>
-                                    <modal-select :data="{
+                        <div class="tl">
+                            <label class="label-primary">Операция:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Операция',
                                         api: '/opertipnaz',
                                         meanKey: 'name'
-                                            }"  v-model="data.general.base.opertipnaz"></modal-select>
-                                </div>
+                                            }" v-model="data.general.base.opertipnaz"></modal-select>
                             </div>
+                        </div>
                         <div class="mt-4 ml-2">
                             <label for="email" class="label-primary">Дата:</label>
                             <div class="flex items-center ">
@@ -30,7 +30,7 @@
                         <div class="mt-2 ml-2">
                             <label for="email" class="label-primary">Заказ:</label>
                             <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
-                                <h1 class="text-blue-400" > {{ data.general.base.zakaz }}</h1>
+                                <h1 class="text-blue-400"> {{ data.general.base.zakaz }}</h1>
                             </div>
                         </div>
                         <!-- <div class="mt-2 ml-2">
@@ -47,36 +47,36 @@
                             </div>
 
                         </div> -->
-                       <div class="tl">
-                                <label class="label-primary"> Состояние:</label>
-                                <div>
-                                    <modal-select :data="{
+                        <div class="tl">
+                            <label class="label-primary"> Состояние:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Состояние',
                                         api: '/sostnaz',
                                         meanKey: 'name'
                                             }" v-model="data.general.full.sostnaz"></modal-select>
-                                </div>
                             </div>
-                       <div class="tl">
-                                <label class="label-primary"> Категория расходов:</label>
-                                <div>
-                                    <modal-select :data="{
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Категория расходов:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Категория расходов',
                                         api: '/cash_flow_itemnaz',
                                         meanKey: 'name'
                                             }" v-model="data.general.full.cash_flow_itemnaz"></modal-select>
-                                </div>
                             </div>
+                        </div>
                         <div class="tl">
-                                <label class="label-primary"> Ресурс:</label>
-                                <div>
-                                    <modal-select :data="{
+                            <label class="label-primary"> Ресурс:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Ресурс',
                                         api: '/resursnaz',
                                         meanKey: 'name'
-                                            }"  v-model="data.general.full.resursnaz"></modal-select>
-                                </div>
+                                            }" v-model="data.general.full.resursnaz"></modal-select>
                             </div>
+                        </div>
                     </div>
                     <!--Second блок-->
                     <div>
@@ -94,16 +94,16 @@
                                 </div>
                             </div>
                         </div>
-                          <div class="tl">
-                                <label class="label-primary"> Персона:</label>
-                                <div>
-                                    <modal-select :data="{
+                        <div class="tl">
+                            <label class="label-primary"> Персона:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Персона',
                                         api: '/personanaz',
                                         meanKey: 'name'
                                             }" v-model="data.general.base.personanaz"></modal-select>
-                                </div>
                             </div>
+                        </div>
                         <div class="mt-2 ml-2">
                             <label for="email" class="label-primary">Менеджер:</label>
                             <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
@@ -124,15 +124,15 @@
                         </div>
 
                         <div class="tl">
-                                <label class="label-primary"> Проект:</label>
-                                <div>
-                                    <modal-select :data="{
+                            <label class="label-primary"> Проект:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Проект',
                                         api: '/projectnaz',
                                         meanKey: 'name'
-                                            }"  v-model="data.general.full.projectnaz"></modal-select>
-                                </div>
+                                            }" v-model="data.general.full.projectnaz"></modal-select>
                             </div>
+                        </div>
                         <div class="mt-2 ml-2">
                             <label for="email" class="label-primary">Добавил:</label>
                             <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
@@ -148,248 +148,230 @@
 
             <!--TRIRD block-->
             <div class="rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
-<h1 class="label-big">
-               Документ 
-            </h1>
-           
-            <div class="grid-2-2-1 section">
- 
-                <div>
-                    <!--start-->
+                <h1 class="label-big">
+                    Документ
+                </h1>
 
-                     <div class="tl">
-                                <label class="label-primary"> Тип Документа:</label>
-                                <div>
-                                    <modal-select :data="{
+                <div class="grid-2-2-1 section">
+
+                    <div>
+                        <!--start-->
+
+                        <div class="tl">
+                            <label class="label-primary"> Тип Документа:</label>
+                            <div>
+                                <modal-select :data="{
                                         label:'Тип документа',
                                         api: '/doktipnaz',
                                         meanKey: 'name'
-                                            }"  v-model="data.document.doktipnaz"></modal-select>
-                                </div>
+                                            }" v-model="data.document.doktipnaz"></modal-select>
                             </div>
+                        </div>
 
-                    <div class="">
-                        <label for="email" class="label-primary">№ Докумета:</label>
-                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
-                            <h1 class="text-blue-400"> {{ data.document.dokkode}} </h1>
+                        <div class="">
+                            <label for="email" class="label-primary">№ Докумета:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.document.dokkode}} </h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--end-->
-                <div>
-                    <div class=" ml-2">
-                        <label for="email" class="label-primary">Основание:</label>
-                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
-                            <h1 class="text-blue-400"> {{ data.document.osnovanie }} </h1>
+                    <!--end-->
+                    <div>
+                        <div class=" ml-2">
+                            <label for="email" class="label-primary">Основание:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.document.osnovanie }} </h1>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ml-2">
-                        <label for="email" class="label-primary">Штрихкод:</label>
-                        <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
-                            <h1 class="text-blue-400"> {{ data.document.barcode }} </h1>
+                        <div class="ml-2">
+                            <label for="email" class="label-primary">Штрихкод:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.document.barcode }} </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-</div>
-<!--начало-->
-             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
+            <!--начало-->
+            <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Суммы  <span class="cursor-pointer"
+                    Суммы <span class="cursor-pointer"
                         @click="ifull = !ifull">{{ ifull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section ">
                     <!--Первый блок-->
                     <div>
-                       
-                            <div class="tl">
-                                <label class="label-primary">Сумма</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.base.summa" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Сумма баланса</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.base.summafirma" />
-                            </div>
-                             <div class="tl">
-                                <label class="label-primary">Сумма в грн</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.base.summanat" />
-                            </div>
+
+                        <div class="tl">
+                            <label class="label-primary">Сумма</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.summa" />
                         </div>
-
-
-
-                        <div v-show="ifull">
-                          
-                            <div class="tl">
-                                <label class="label-primary">Сумма в у.е.</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.summasklad" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Сумма специф.</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.subtotal" />
-                            </div>
-                         <div class="tl">
-                                <label class="label-primary"> Скидка, %</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.discountp" />
-                            </div>
-                             <div class="tl">
-                                <label class="label-primary">Скидка</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.discsum" />
-                            </div>
-                             
-                            </div>
-                    </div><!--Первый блок конец-->
-                    <!--Второй блок-->
-                     <div>
                         <div class="tl">
-                                <label class="label-primary"> Валюта:</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Валюта',
-                                        api: '/doktipnaz',
-                                        meanKey: 'name'
-                                            }"  v-model="data.sum.base.valutanaz"></modal-select>
-                                </div>
-                            </div>
+                            <label class="label-primary">Сумма баланса</label>
+                            <input type="text" class="input-primary" placeholder=""
+                                v-model="data.sum.base.summafirma" />
+                        </div>
                         <div class="tl">
-                                <label class="label-primary"> Курс баланса</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.base.kursfirma" />
-                            </div>
-                             <div class="tl">
-                                <label class="label-primary"> Курс к грн</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.base.kurs" />
-                            </div>
-
-
-
-                        <div v-show="ifull">
-                            <div class="tl">
-                                <label class="label-primary">Курс у.е.</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.kurssklad" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary"> Себ-мость</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.sebest" />
-                            </div>
-                         <div class="tl">
-                                <label class="label-primary"> Себ-мость у.е.</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.sebestvalfact" />
-                            </div>
-                             <div class="tl">
-                                <label class="label-primary">  Курсовая разница у.е.</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.sum.full.kursdiff" />
-                            </div>
-                         
+                            <label class="label-primary">Сумма в грн</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.summanat" />
                         </div>
                     </div>
-                    <!--Второй блок конец-->
-                  
+
                     <div>
+                        <div class="tl">
+                            <label class="label-primary"> Валюта:</label>
+                            <div>
+                                <modal-select :data="{
+                                            label:'Валюта',
+                                            api: '/doktipnaz',
+                                            meanKey: 'name'
+                                                }" v-model="data.sum.base.valutanaz"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курс баланса</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.kursfirma" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курс к грн</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.kurs" />
+                        </div>
                     </div>
-                </div><!--конец-->
+
+
+
+                    <div v-show="ifull">
+                        <div class="tl">
+                            <label class="label-primary">Курс у.е.</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.kurssklad" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Себ-мость</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.sebest" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Себ-мость у.е.</label>
+                            <input type="text" class="input-primary" placeholder=""
+                                v-model="data.sum.full.sebestvalfact" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курсовая разница у.е.</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.kursdiff" />
+                        </div>
+
+                    </div> 
+
+
+
+                    <div v-show="ifull">
+
+                        <div class="tl">
+                            <label class="label-primary">Сумма в у.е.</label>
+                            <input type="text" class="input-primary" placeholder=""
+                                v-model="data.sum.full.summasklad" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Сумма специф.</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.subtotal" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Скидка, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.discountp" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Скидка</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.discsum" />
+                        </div>
+
+                    </div>
+                </div>
+                <!--Первый блок конец-->
+                <!--Второй блок-->
+                
+                <!--Второй блок конец-->
+
+                <div>
+                </div>
             </div>
-            <!--начало-->
-             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
+
+            <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Налоги  <span class="cursor-pointer"
-                        @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
+                    Налоги <span class="cursor-pointer" @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section ">
                     <!--Первый блок-->
                     <div>
-                       
-                            <div class="tl">
-                                <label class="label-primary">НДС,%</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.base.tax1pr" />
-                            </div>
-                           
+
+                        <div class="tl">
+                            <label class="label-primary">НДС,%</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.base.tax1pr" />
                         </div>
 
+                        
 
+                    </div>
 
-                        <div v-show="full">
-                          
-                            <div class="tl">
-                                <label class="label-primary"> Налог 2, %</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.full.tax2pr" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary"> ПФ, %</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.full.tax3pr" />
-                            </div>
-                         <div class="tl">
-                                <label class="label-primary">  Налог 4, %</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.full.tax4pr" />
-                            </div>
-                            
-                            </div>
-                    </div><!--Первый блок конец-->
-                    <!--Второй блок-->
-                     <div>
-                       
-                       
-                             <div class="tl">
-                                <label class="label-primary">НДС</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.base.tax1" />
-                            </div>
-
-
-
-                        <div v-show="full">
-                            <div class="tl">
-                                <label class="label-primary">Налог 2</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.full.tax2" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary"> ПФ</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.full.tax3" />
-                            </div>
-                         <div class="tl">
-                                <label class="label-primary">Налог 4</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.tax.full.tax4" />
-                            </div>
-                            
-                         
+                    <div>
+                        <div class="tl">
+                            <label class="label-primary">НДС</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.base.tax1" />
                         </div>
                     </div>
-                    <!--Второй блок конец-->
-                  
-                    
-                </div><!--конец-->
-               
-                <!--end-->
 
-               
-              
 
-               
-            </div>
+
+                    <div v-show="full">
+
+                        <div class="tl">
+                            <label class="label-primary"> Налог 2, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax2pr" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> ПФ, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax3pr" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Налог 4, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax4pr" />
+                        </div>
+
+                    </div>
+
+                    <div v-show="full">
+                        <div class="tl">
+                            <label class="label-primary">Налог 2</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax2" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> ПФ</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax3" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Налог 4</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax4" />
+                        </div>
+  
+                    </div>
+                </div>
+                <!--Первый блок конец--> 
+            <!--Второй блок конец-->
+
+
+        </div>
+            <!--конец-->
+        </div>
+        <!--начало-->
         
+        <!--конец-->
+
+        <!--end--> 
         <div class="w-full flex justify-center mt-6">
             <button type="button" class="btn-circle-primary">Добавить</button>
         </div>
-   
+    </div>
+
+    
+
 </template>
 
 <script setup>
@@ -403,9 +385,9 @@
     } from 'vue-router'
     import find from '../api/find.js'
     const ifull = ref(false)
-     const full = ref(false)
-   const isLoading = true
-   const data = {
+    const full = ref(false)
+    const isLoading = true
+    const data = {
         "general": {
             "base": {
                 "opertipnaz": "Остаток от компенсации наш",

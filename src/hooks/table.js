@@ -10,11 +10,14 @@ import {
 } from 'vue'
 import * as  lodash from 'lodash'
 import list from '@api_base/table'
-export default function (_route) {
+export default function (_route, start_data) {
     const isLoad = ref(true)
     const isReload = ref(true)
 
-    const data = ref()
+    console.log(start_data)
+
+    const data = ref(start_data ? start_data : null) 
+
 
 
     const load = async () => {

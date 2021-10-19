@@ -7,7 +7,7 @@
             <div>
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
                     <div v-for="(filter, i) in data.filters" :key="i">
-                        <component @change="load" v-model="filter.value" :data="filter" :is="filter.component">
+                        <component @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.component">
                         </component>
                     </div>
                 </div>
@@ -26,11 +26,11 @@
                 <pagination @change="load" :pagination="data.meta.pagination" v-model:page="data.page"></pagination>
             </div>
         </div>
-        <!-- <loading ></loading>  -->
+        <loading v-if="isReload"></loading> 
     </div>
 </template>
 
-<script setup>
+<script setup> 
     import {
         ref,
         provide,
@@ -43,26 +43,37 @@
     // * hooks
     import table from '@/hooks/table'
 
+
+    const props = defineProps({
+        api: String,
+        modalSelect: Boolean,
+        route_card: String,
+        start_data: Object
+    })
+
+    console.log('viewer', props.start_data);
+
     const {
         data,
         load,
         isLoad,
         isReload
-    } = table(props.api)
+    } = table(props.api, props.start_data)
 
 
     // * props & emits init
 
-    const props = defineProps({
-        api: String,
-        modalSelect: Boolean,
-        route_card: String
-    })
+    
+
+
+    
 
     const emits = defineEmits(['select'])
 
     // * create ref
     const createOpen = ref(false)
+
+
 
     // * sort 
 

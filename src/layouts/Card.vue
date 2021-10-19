@@ -1,4 +1,5 @@
 <template>
+<div  class="w-full"> 
     <div v-if="!isLoad" class="w-full">
         <!-- TABS -->
         <div class="sm:hidden">
@@ -74,6 +75,8 @@
         </div>
 
     </div>
+    <loading v-if="isReload"></loading> 
+</div>
 </template>
 
 <script setup> 
@@ -110,6 +113,7 @@
         buttons.value[i].active = true
         emit('update:config', buttons.value)
     }
+ 
 
 
     // * firstly data logic 
@@ -119,6 +123,7 @@
     const {
         data,
         isLoad,
+        isReload,
         id,
         load
     } = dataLoad(props.pagination_api)
@@ -129,8 +134,7 @@
     // * runtime logic
     watch(computed(() => route.params.id), async () => {
         await load(route.params.id)
-        entityId.value = route.params.id
-
+        entityId.value = route.params.id 
     })
 </script>
 

@@ -1,5 +1,5 @@
 <template>  
-            <viewer :api="`${get}/${route.params.id}`" route_card="firm-update"> 
+            <viewer :api="`${get}/${route.params.id}`" route_card="operation-update"> 
                 <template v-slot:create>
                     <create></create>
                 </template>

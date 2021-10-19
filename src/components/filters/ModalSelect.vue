@@ -11,8 +11,8 @@
 
             </slot>
         </div>
-        <modal v-model="isOpen" width="w-10/12">
-            <viewer modalSelect @select="select($event)" :api="data.api"></viewer>
+        <modal v-model="isOpen" width="w-10/12"> 
+            <viewer modalSelect :start_data="start_data" @select="select($event)" :api="data.api"></viewer>
         </modal>
     </div>
     <!--[$emit('update:modelvalue', $event.uid), label = $event.values[data.meanKey]]--> 
@@ -22,6 +22,7 @@
 import { ref } from 'vue'
 const props = defineProps({
     data: Object,
+    start_data: Object,
     custom: {
         type: Boolean,
         default: false
@@ -29,6 +30,8 @@ const props = defineProps({
     modelValue: [String, Number]
 })
 const emit = defineEmits(['update:modelValue', 'change'])
+ 
+ console.log(props.start_data);
 
 const label = ref(props.data.label)
 

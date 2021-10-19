@@ -1,409 +1,372 @@
 <template>
     <div v-if="!isLoad">
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 gap-4">
             <div class=" rounded-lg">
                 <h1 class="label-big">
-                    Общие сведения <span class="cursor-pointer"
-                        @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
+                    Общие данные
                 </h1>
                 <div class="grid-2-2-1 section">
+
                     <div>
                         <!--Первый блок-->
                         <div class="tl">
-                            <label class="label-primary">Фамилия:</label>
-                            <input type="text" class="input-primary" placeholder="Фамилия"
-                                v-model="data.general.base.familia" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Имя:</label>
-                            <input type="text" class="input-primary" placeholder="Имя"
-                                v-model="data.general.base.imia" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Отчество:</label>
-                            <input type="text" class="input-primary" placeholder="Отчество"
-                                v-model="data.general.base.otchest" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Дата рождения:</label>
-                            <div class="flex justify-between items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.general.base.rodils">
-                                </flat-pickr>
-                                <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
-                            </div>
-                        </div>
-                        <div v-show="full">
-                            <div class="tl">
-                                <label class="label-primary">Фамилия кратко</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.familiaukr" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Имя кратко</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.imiaukr" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Отчество кратко</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.otchestukr" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Firstname</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.firstname" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Lastname</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.lastname" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Кому (Дат.падеж)</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.komu" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Кого (Винит.падеж)</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.kogo" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">У кого (Родит.падеж)</label>
-                                <input type="text" class="input-primary" placeholder="..."
-                                    v-model="data.general.full.rkogo" />
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Пенсионый возраст</label>
-                                <div>
-                                    <select class="dropdown-primary" v-model="data.general.full.pensvoz">
-                                        <option value="+" selected="true">М</option>
-                                        <option value="-">Ж</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Регион:</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Инвалидность',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.base.region"></modal-select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <!--Второй блок-->
-                        <div class="tl">
-                            <label class="label-primary">Телефон:</label>
-                            <input type="text" class="input-primary" placeholder="+38 *** *** ** **"
-                                v-model="data.general.base.tel" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">E-mail:</label>
-                            <input type="text" class="input-primary" placeholder="email@example.com"
-                                v-model="data.general.base.email" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Пол:</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.general.base.pol">
-                                    <option value="+" selected="true">М</option>
-                                    <option value="-">Ж</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Регион:</label>
+                            <label class="label-primary">Операция:</label>
                             <div>
                                 <modal-select :data="{
-                                    label:'Регион',
-                                    api: '/reg',
-                                    meanKey: 'name'
-                                     }" v-model="data.general.base.region"></modal-select>
+                                        label:'Операция',
+                                        api: '/opertipnaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.general.base.opertipnaz"></modal-select>
                             </div>
                         </div>
-                        <div v-show="full">
-                            <div class="tl">
-                                <label class="label-primary">Обазование:</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Обазование',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.obraz"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Категория:</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Категория',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.category"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Профессия:</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Профессия',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.special"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Семейное положение</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Семейное положение',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.sempol"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Национальность</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Национальность',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.nation"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Ресурс</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Ресурс',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.resurs"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Раскраска</label>
-                                <div>
-                                    <modal-select :data="{
-                                        label:'Раскраска',
-                                        api: '/reg',
-                                        meanKey: 'name'
-                                             }" v-model="data.general.full.cvet"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Табельный номер</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    v-model="data.general.base.tabnum" />
-                            </div>
-                        </div>
-                    </div>
-                    <!--Конец второго блока-->
-                    <div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h1 class="label-big ">
-                    Профиль
-                </h1>
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Дата:</label>
+                            <div class="flex items-center ">
 
-                <div>
-                    <div class="grid-2-2-1 section">
-                        <div>
-                            <!--Первый блок-->
-                            <div class="tl">
-                                <label class="label-primary">Кандидат:</label>
-                                <div>
-                                    <div>
-                                        <select class="dropdown-primary" v-model="data.profile.kandidat">
-                                            <option value="-">Нет</option>
-                                            <option value="+">Да</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Сотрудник:</label>
-                                <div>
-                                    <select class="dropdown-primary" v-model="data.profile.issotrud">
-                                        <option value="-">Нет</option>
-                                        <option value="+">Да</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">МОЛ:</label>
-                                <div>
-                                    <select class="dropdown-primary" v-model="data.profile.mol">
-                                        <option value="-">Нет</option>
-                                        <option value="+">Да</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Секретность:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Секретность',
-                                    api: '/sec'     ,
-                                    meanKey: 'name'
-                                     }" v-model="data.profile.sekret"></modal-select>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <!--Второй блок-->
-
-                            <div class="tl">
-                                <label class="label-primary">Котактер:</label>
-                                <div>
-                                    <select class="dropdown-primary" v-model="data.profile.iscont">
-                                        <option value="-">Нет</option>
-                                        <option value="+">Да</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Уволен:</label>
-                                <div>
-                                    <select class="dropdown-primary" v-model="data.profile.uvolen">
-                                        <option value="-">Нет</option>
-                                        <option value="+">Да</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Конец второго блока-->
-                    </div>
-                </div>
-            </div>
-            <!--TRIRD block-->
-
-            <div>
-                <h1 class="label-big">
-                    Реквизиты
-                </h1>
-                <div class="grid-2-2-1 section">
-                    <div>
-                        <!--Первый блок-->
-                        <div class="tl">
-                            <label class="label-primary">Серия Паспорта:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.pasport_ser" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Номер:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.pasport_num" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Кем выдан:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.pasport_kemvyd" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Дата:</label>
-                            <div class="flex justify-between items-center">
-                                <flat-pickr class="input-primary" v-model="data.requisite.pasport_data"></flat-pickr>
+                                <flat-pickr class="input-primary" v-model="data.general.base.operdata"></flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
                         </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Заказ:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.general.base.zakaz }}</h1>
+                            </div>
+                        </div>
+                        <!-- <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Доставка:</label>
+                            <div class="flex justify-between">
+
+                                <div
+                                    class="border border-primary-400 rounded h-9 flex items-center justify-center w-full">
+                                    <h1 class="text-blue-400">{{ data.general.base.firmnaz }}</h1>
+
+                                </div>
+
+                                <button class="button-hover-primary ml-2">Создать </button>
+                            </div>
+
+                        </div> -->
+                        <div class="tl">
+                            <label class="label-primary"> Состояние:</label>
+                            <div>
+                                <modal-select :data="{
+                                        label:'Состояние',
+                                        api: '/sostnaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.sostnaz"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Категория расходов:</label>
+                            <div>
+                                <modal-select :data="{
+                                        label:'Категория расходов',
+                                        api: '/cash_flow_itemnaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.cash_flow_itemnaz"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Ресурс:</label>
+                            <div>
+                                <modal-select :data="{
+                                        label:'Ресурс',
+                                        api: '/resursnaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.resursnaz"></modal-select>
+                            </div>
+                        </div>
                     </div>
+                    <!--Second блок-->
                     <div>
-                        <!--Второй блок-->
-                        <div class="tl">
-                            <label class="label-primary">ИНН:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.idnum" />
+
+                        <div class="mt-4 ml-2">
+                            <label for="email" class="label-primary">Организация:</label>
+                            <div>
+                                <div>
+                                    <select class="dropdown-primary" v-model=" data.general.base.firmnaz">
+                                        <option>Мизол</option>
+                                        <option>Евроизол</option>
+                                        <option>Другое</option>
+
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="tl">
-                            <label class="label-primary">Адрес Регистр:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.adresreg" />
+                            <label class="label-primary"> Персона:</label>
+                            <div>
+                                <modal-select :data="{
+                                        label:'Персона',
+                                        api: '/personanaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.general.base.personanaz"></modal-select>
+                            </div>
                         </div>
-                        <div class="tl">
-                            <label class="label-primary">Адрес дом:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.adresdom" />
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Менеджер:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.general.base.managernaz }}</h1>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Филиал:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.general.full.filialnaz}}</h1>
+                            </div>
+                        </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Слой:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.general.full.colornaz }} </h1>
+                            </div>
                         </div>
 
                         <div class="tl">
-                            <label class="label-primary">Место рождения:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.adresrod" />
+                            <label class="label-primary"> Проект:</label>
+                            <div>
+                                <modal-select :data="{
+                                        label:'Проект',
+                                        api: '/projectnaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.general.full.projectnaz"></modal-select>
+                            </div>
                         </div>
+                        <div class="mt-2 ml-2">
+                            <label for="email" class="label-primary">Добавил:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.general.base.managernaz }} </h1>
+                            </div>
+                        </div>
+
                     </div>
-                    <!--Конец второго блока-->
+                    <!--End Second block-->
                 </div>
             </div>
-            <div>
+
+
+            <!--TRIRD block-->
+            <div class="rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Основное место работы
+                    Документ
                 </h1>
-                <div>
+
+                <div class="grid-2-2-1 section">
+
                     <div>
-                        <div class="section">
-                            <!--Первый блок-->
-                            <div class="tl w-full">
-                                <label class="label-primary">Отдел:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Отдел',
-                                    api: '/dep'     ,
-                                    meanKey: 'name'
-                                     }" v-model="data.job.otdel"></modal-select>
-                                </div>
+                        <!--start-->
+
+                        <div class="tl">
+                            <label class="label-primary"> Тип Документа:</label>
+                            <div>
+                                <modal-select :data="{
+                                        label:'Тип документа',
+                                        api: '/doktipnaz',
+                                        meanKey: 'name'
+                                            }" v-model="data.document.doktipnaz"></modal-select>
                             </div>
-                            <div class="tl w-full">
-                                <label class="label-primary">Должность:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Должность',
-                                    api: '/pos'     ,
-                                    meanKey: 'name'
-                                     }" v-model="data.job.dolvnost"></modal-select>
-                                </div>
+                        </div>
+
+                        <div class="">
+                            <label for="email" class="label-primary">№ Докумета:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.document.dokkode}} </h1>
                             </div>
-                            <div class="tl w-full">
-                                <label class="label-primary">Организация:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Организация',
-                                    api: '/org'     ,
-                                    meanKey: 'name'
-                                     }" v-model="data.job.organisatiom"></modal-select>
-                                </div>
+                        </div>
+                    </div>
+                    <!--end-->
+                    <div>
+                        <div class=" ml-2">
+                            <label for="email" class="label-primary">Основание:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.document.osnovanie }} </h1>
                             </div>
-                            <div class="tl w-full">
-                                <label class="label-primary">Инспектор:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Инспектор',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                     }" v-model="data.job.manager"></modal-select>
-                                </div>
+                        </div>
+                        <div class="ml-2">
+                            <label for="email" class="label-primary">Штрихкод:</label>
+                            <div class="border border-primary-400 rounded h-9 flex items-center justify-center">
+                                <h1 class="text-blue-400"> {{ data.document.barcode }} </h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 lg:col-span-2 md:col-span-2">
+            <!--начало-->
+            <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Дополнительная информация
+                    Суммы <span class="cursor-pointer"
+                        @click="ifull = !ifull">{{ ifull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
-                <div>
-                    <div class="mx-4 mt-4">
-                        <label class="block text-sm font-medium text-gray-400">Примечания</label>
-                        <div class="mt-1">
-                            <textarea rows="3" class="textarea-primary"
-                                v-model="data.additional.base.sotrprim"></textarea>
+                <div class="grid-2-2-1 section ">
+                    <!--Первый блок-->
+                    <div>
+
+                        <div class="tl">
+                            <label class="label-primary">Сумма</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.summa" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Сумма баланса</label>
+                            <input type="text" class="input-primary" placeholder=""
+                                v-model="data.sum.base.summafirma" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Сумма в грн</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.summanat" />
                         </div>
                     </div>
+
+                    <div>
+                        <div class="tl">
+                            <label class="label-primary"> Валюта:</label>
+                            <div>
+                                <modal-select :data="{
+                                            label:'Валюта',
+                                            api: '/doktipnaz',
+                                            meanKey: 'name'
+                                                }" v-model="data.sum.base.valutanaz"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курс баланса</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.kursfirma" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курс к грн</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.base.kurs" />
+                        </div>
+                    </div>
+
+
+
+                    <div v-show="ifull">
+                        <div class="tl">
+                            <label class="label-primary">Курс у.е.</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.kurssklad" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Себ-мость</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.sebest" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Себ-мость у.е.</label>
+                            <input type="text" class="input-primary" placeholder=""
+                                v-model="data.sum.full.sebestvalfact" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курсовая разница у.е.</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.kursdiff" />
+                        </div>
+
+                    </div> 
+
+
+
+                    <div v-show="ifull">
+
+                        <div class="tl">
+                            <label class="label-primary">Сумма в у.е.</label>
+                            <input type="text" class="input-primary" placeholder=""
+                                v-model="data.sum.full.summasklad" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Сумма специф.</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.subtotal" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Скидка, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.discountp" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Скидка</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.sum.full.discsum" />
+                        </div>
+
+                    </div>
+                </div>
+                <!--Первый блок конец-->
+                <!--Второй блок-->
+                
+                <!--Второй блок конец-->
+
+                <div>
                 </div>
             </div>
+
+            <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
+                <h1 class="label-big">
+                    Налоги <span class="cursor-pointer" @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
+                </h1>
+                <div class="grid-2-2-1 section ">
+                    <!--Первый блок-->
+                    <div>
+
+                        <div class="tl">
+                            <label class="label-primary">НДС,%</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.base.tax1pr" />
+                        </div>
+
+                        
+
+                    </div>
+
+                    <div>
+                        <div class="tl">
+                            <label class="label-primary">НДС</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.base.tax1" />
+                        </div>
+                    </div>
+
+
+
+                    <div v-show="full">
+
+                        <div class="tl">
+                            <label class="label-primary"> Налог 2, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax2pr" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> ПФ, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax3pr" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Налог 4, %</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax4pr" />
+                        </div>
+
+                    </div>
+
+                    <div v-show="full">
+                        <div class="tl">
+                            <label class="label-primary">Налог 2</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax2" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> ПФ</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax3" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Налог 4</label>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.tax.full.tax4" />
+                        </div>
+  
+                    </div>
+                </div>
+                <!--Первый блок конец--> 
+            <!--Второй блок конец-->
+
+
         </div>
+            <!--конец-->
+        </div>
+        <!--начало-->
+        
+        <!--конец-->
+
+        <!--end--> 
         <div class="w-full flex justify-center mt-6">
-            <button @click="update(id, data)" type="button" class="button-hover-primary">Сохранить</button>
+            <button type="button" class="btn-circle-primary">Изменить</button>
         </div>
     </div>
 </template>
@@ -421,6 +384,7 @@
     import find from '../api/find.js'
     import load from '@/hooks/load'
 
+    const ifull = ref(false)
     const full = ref(false)
 
     const {
