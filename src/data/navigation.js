@@ -24,6 +24,31 @@ export default [
     child: []
   },
   {
+    name: 'Организации',
+    href: { name: 'firm-view' },
+    icon: 'AdjustmentsIcon',
+    current: false,
+    uname: 'firm-view',
+    child: [
+      {
+        name: 'Список',
+        href: { name: 'firm-view' },
+        icon: 'ViewListIcon',
+        current: false,
+        uname: 'firm-view',
+        child: []
+      },
+      {
+        name: 'Карточки',
+        href: { name: 'firm-update', params: { id: 133920 } },
+        icon: 'CollectionIcon',
+        current: false,
+        uname: 'firm-update',
+        child: []
+      },
+    ]
+  },
+  {
     name: 'Документы',
     href: { name: 'Home' },
     icon: 'PhotographIcon',
@@ -293,6 +318,14 @@ export default [
         uname: 'product-view',
         child: []
       },
+      {
+        name: 'Карточки',
+        href: { name: 'product-update', params: { id: 125135 } },
+        icon: 'CollectionIcon',
+        current: false,
+        uname: 'product-update',
+        child: []
+      },
     ]
   },
   {
@@ -305,11 +338,28 @@ export default [
   },
   {
     name: 'Операции',
-    href: '#',
+    href: { name: 'operation-view' },
     icon: 'AdjustmentsIcon',
     current: false,
-    uname: 'text',
-    child: []
+    uname: 'operation-view',
+    child: [
+      {
+        name: 'Список',
+        href: { name: 'operation-view' },
+        icon: 'ViewListIcon',
+        current: false,
+        uname: 'operation-view',
+        child: []
+      },
+      {
+        name: 'Карточки',
+        href: { name: 'operation-update', params: { id: 0 } },
+        icon: 'CollectionIcon',
+        current: false,
+        uname: 'operation-update',
+        child: []
+      },
+    ]
   },
   {
     name: 'Продажи',
@@ -335,7 +385,7 @@ export default [
         child: []
       },
       {
-        name: 'Продукты',
+        name: 'Товары',
         href: { name: 'sales-product-view' },
         icon: 'ArchiveIcon',
         current: false,
@@ -359,7 +409,7 @@ export default [
         uname: 'sales-shipment-view',
         child: [
           {
-            name: 'Спосок',
+            name: 'Список',
             href: { name: 'sales-shipment-view' },
             icon: 'ViewListIcon',
             current: false,

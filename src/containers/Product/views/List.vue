@@ -1,13 +1,9 @@
-<template>
-    <div>
-        <div class="h-full"> 
-            <viewer :api="get"> 
+<template>  
+            <viewer :api="get" route_card="product-update"> 
                 <template v-slot:create>
                     <create></create>
                 </template>
-            </viewer>  
-        </div>
-    </div>
+            </viewer>   
 </template>
 
 <script setup> 

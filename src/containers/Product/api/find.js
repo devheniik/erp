@@ -1,2 +1,2 @@
  
-export default 'persons'
+export default 'product-card'

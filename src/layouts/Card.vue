@@ -3,8 +3,7 @@
         <!-- TABS -->
         <div class="sm:hidden">
             <select class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
-                <option v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" :value="b.active">{{ b.label }}
-                </option>
+                <option v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" :value="b.active" :selected="current == b.component" >{{ b.label }}  </option>
             </select>
         </div>
 
@@ -16,8 +15,7 @@
                 </nav>
             </div>
         </div>
-
-
+ 
         <main class="my-5">
             <div class="mr-5 mb-24">
                 <slot>
@@ -96,6 +94,7 @@
         route_name: String,
         pagination_api: String,
         api: String,
+        current: String
     })
 
     const emit = defineEmits(['update:config'])

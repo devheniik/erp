@@ -1,7 +1,5 @@
-<template>
-    <div>
-        <viewer modalSelect @select="$emit('select', $event.uid)" :api="api" route_card></viewer>
-    </div>
+<template> 
+        <viewer modalSelect @select="$emit('select', $event.uid)" :api="api" route_card></viewer> 
 </template>
 
 

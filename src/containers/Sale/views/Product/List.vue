@@ -1,13 +1,9 @@
-<template>
-    <div>
-        <div class="h-full"> 
+<template> 
             <double-table tree @select="link = `/products/catalog/category/${$event}`" :api="catalog" :link="link">
                 <viewer :api="link"> 
 
                 </viewer>  
-            </double-table>
-        </div>
-    </div>
+            </double-table> 
 </template>
 
 <script setup>

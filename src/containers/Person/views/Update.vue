@@ -3,7 +3,8 @@
             name: 'персона',
             pagination_api: pagination,
             route_name: 'person-update',
-            api: get
+            api: get,
+            current: comoponent
         }">
         <update v-show="comoponent == 'update'"></update> 
         <properties v-show="comoponent == 'properties'"></properties> 

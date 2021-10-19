@@ -317,7 +317,7 @@
 
         useRoute
     } from 'vue-router'
-    import find from '@person/api/find.js'
+    import find from '../api/find.js'
     import load from '@/hooks/load'
 
 // const data = {
