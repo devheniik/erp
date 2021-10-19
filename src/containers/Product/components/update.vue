@@ -1349,8 +1349,17 @@
     import update from '../api/update'
     import find from '../api/find.js'
     import load from '@/hooks/load'
-
+ 
     const full = ref(false)
+    const dfull = ref(false)
+    const tfull = ref(false)
+    const ffull = ref(false)
+    const ifull = ref(false)
+    const efull = ref(false)
+    const yfull = ref(false)
+    const xfull = ref(false)
+     const bfull = ref(false)
+      const сfull = ref(false)
 
     const {
         data,
