@@ -21,15 +21,15 @@ export default [
     //         uname: 'sales-product-view'
     //     }
     // },
-    // {
-    //     path: '/persons/:id',
-    //     name: 'person-update',
-    //     component: () => import('@person/views/Update.vue'),
-    //     meta: {
-    //         layout: 'SideMenu',
-    //         requreAuth: false,
-    //         permition: null,
-    //         uname: 'person-update'
-    //     }
-    // },
+    {
+        path: '/product/:id',
+        name: 'product-update',
+        component: () => import('@product/views/Update.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'product-update'
+        }
+    },
 ]

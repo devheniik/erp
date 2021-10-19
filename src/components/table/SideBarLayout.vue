@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto w-full">  
-        <div v-if="data" class="mt-5 flex-grow flex flex-col">
+        <div v-if="data" class="mt-1 flex-grow flex flex-col">
             <nav class="flex-1 px-2 bg-white">
                 <template v-for="item in data" :key="item.name"> 
                     <Disclosure v-if="item.category.data" as="div" class="space-y-1" v-slot="{ open }"> 

@@ -1,6 +1,6 @@
 <template>
     <div class="h-full">
-        <viewer :api="get" route_card="person-update">
+        <viewer :api="get" route_card="sale-update">
             <template v-slot:create>
                 <create></create>
             </template>

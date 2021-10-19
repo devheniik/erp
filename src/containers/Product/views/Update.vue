@@ -1,9 +1,10 @@
 <template>
     <layout v-model:config="config" v-bind="{
-            name: 'персона',
+            name: 'товвар',
             pagination_api: pagination,
             route_name: 'person-update',
-            api: get
+            api: get,
+            current: component 
         }">
         <update v-show="comoponent == 'update'"></update> 
         <properties v-show="comoponent == 'properties'"></properties> 

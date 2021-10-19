@@ -25,6 +25,8 @@ export default ({ mode }) => {
         '@permitions': path.resolve(__dirname, '/src/containers/Permitions'),
         '@sale': path.resolve(__dirname, '/src/containers/Sale'),
         '@product': path.resolve(__dirname, '/src/containers/Product'),
+        '@operation': path.resolve(__dirname, '/src/containers/Operation'),
+        '@firm': path.resolve(__dirname, '/src/containers/Firm'),
         '@person': path.resolve(__dirname, '/src/containers/Person'),
         '@dashboard': path.resolve(__dirname, '/src/containers/Dashboard')
       },
