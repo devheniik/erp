@@ -1,13 +1,7 @@
 export default [
     {
-        label: 'События',
-        active: true,
-        component: 'eventlist',
-        link: '/link'
-    },
-    {
         label: 'Карточка',
-        active: false,
+        active: true,
         component: 'update',
         link: '/link'
     },

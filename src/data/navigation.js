@@ -17,11 +17,20 @@ export default [
   },
   {
     name: 'Финансы',
-    href: '#',
+    href: { name: 'finance-expense-report-update', params: { id: 4577952  } },
     icon: 'CurrencyDollarIcon',
     current: false,
-    uname: 'text',
-    child: []
+    uname: 'finance-expense-report-update',
+    child: [
+      {
+        name: 'Карточки',
+        href: { name: 'finance-expense-report-update', params: { id: 4577952  } },
+        icon: 'CollectionIcon',
+        current: false,
+        uname: 'finance-expense-report-update',
+        child: []
+      },
+    ]
   },
   {
     name: 'Организации',

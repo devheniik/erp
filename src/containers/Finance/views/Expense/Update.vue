@@ -2,12 +2,12 @@
     <layout v-model:config="config" v-bind="{
             name: 'операция',
             pagination_api: pagination,
-            route_name: 'operation-update',
+            route_name: 'finance-expense-report-update',
             api: get,
-            current: component 
+            current: comoponent
         }">
         <update v-show="comoponent == 'update'"></update> 
-        <eventlist v-show="comoponent == 'eventlist'"></eventlist> 
+        <!-- <properties v-show="comoponent == 'properties'"></properties>  -->
     </layout>
 </template>
 
@@ -15,19 +15,18 @@
 import { ref, computed } from 'vue'
 
 // * api import 
-import get from '../api/get'
-import pagination from '../api/pagination'
+import get from '../../api/get'
+import pagination from '../../api/pagination'
 
 // * component import
-import update from '../components/update.vue'
-//import properties from '../components/properties.vue'
-import eventlist from '../components/eventlist.vue'
+import update from '../../components/update.vue'
+//import properties from '.././components/properties.vue'
 
 // * layout import
 import layout from '@/layouts/Card.vue'
 
 // * data import 
-import d_config from '../config/card'
+import d_config from '../../config/card'
 
 const config = ref(d_config)
 

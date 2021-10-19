@@ -1,13 +1,13 @@
 <template>
     <layout v-model:config="config" v-bind="{
-            name: 'товвар',
+            name: 'фирма',
             pagination_api: pagination,
-            route_name: 'person-update',
+            route_name: 'firm-update',
             api: get,
-            current: component 
+            current: comoponent
         }">
-        <update v-show="component == 'update'"></update> 
-        <properties v-show="component == 'properties'"></properties> 
+        <update v-show="comoponent == 'update'"></update> 
+        <properties v-show="comoponent == 'properties'"></properties> 
     </layout>
 </template>
 
@@ -30,7 +30,7 @@ import d_config from '../config/card'
 
 const config = ref(d_config)
 
-const component = computed(() => config.value.find(e => e.active == true).component)
+const comoponent = computed(() => config.value.find(e => e.active == true).component)
 
 
 
