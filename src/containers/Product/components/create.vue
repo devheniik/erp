@@ -292,45 +292,11 @@
                 <div class="grid-2-2-1 section">
                     <div>
                         <!--Первый блок-->
-                        <div class="tl">
-                            <label class="label-primary">Серия Паспорта:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.pasport_ser" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Номер:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.pasport_num" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Кем выдан:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.pasport_kemvyd" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Дата:</label>
-                            <div class="flex justify-between items-center">
-                                <flat-pickr class="input-primary" v-model="data.requisite.pasport_data"></flat-pickr>
-                                <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
-                            </div>
-                        </div>
+                        2
                     </div>
                     <div>
                         <!--Второй блок-->
-                        <div class="tl">
-                            <label class="label-primary">ИНН:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.idnum" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Адрес Регистр:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.adresreg" />
-                        </div>
-                        <div class="tl">
-                            <label class="label-primary">Адрес дом:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.adresdom" />
-                        </div>
-
-                        <div class="tl">
-                            <label class="label-primary">Место рождения:</label>
-                            <input type="text" class="input-primary" v-model="data.requisite.adresrod" />
-                        </div>
+                        2
                     </div>
                     <!--Конец второго блока-->
                 </div>
@@ -343,46 +309,7 @@
                     <div>
                         <div class="section">
                             <!--Первый блок-->
-                            <div class="tl w-full">
-                                <label class="label-primary">Отдел:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Отдел',
-                                    api: '/dep'     ,
-                                    meanKey: 'name'
-                                    }" v-model="data.job.otdel"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl w-full">
-                                <label class="label-primary">Должность:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Должность',
-                                    api: '/pos'     ,
-                                    meanKey: 'name'
-                                    }" v-model="data.job.dolvnost"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl w-full">
-                                <label class="label-primary">Организация:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Организация',
-                                    api: '/org'     ,
-                                    meanKey: 'name'
-                                    }" v-model="data.job.organisatiom"></modal-select>
-                                </div>
-                            </div>
-                            <div class="tl w-full">
-                                <label class="label-primary">Инспектор:</label>
-                                <div>
-                                    <modal-select :data="{
-                                    label:'Инспектор',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }" v-model="data.job.manager"></modal-select>
-                                </div>
-                            </div>
+                            1
                         </div>
                     </div>
                 </div>
