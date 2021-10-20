@@ -12,10 +12,12 @@ import DoubleTable from "./table/DoubleTable.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
 import Field from "./forms/Field.vue"
+import Bar from "./Bar.vue"
 
 
 
 export default app => {
+  app.component("bar", Bar)
   app.component("field", Field)
   app.component("loading", Loading)
   app.component("date", Date)

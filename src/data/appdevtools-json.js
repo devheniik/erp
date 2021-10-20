@@ -1,6 +1,7 @@
-[
+export default [
   {
     "name": "Коректировки",
+    "current": false,
     "child": [
       {
         "name": "Подогнать НДС под копейки",
@@ -645,6 +646,7 @@
   },
   {
     "name": "Резерв",
+    "current": false,
     "child": [
       {
         "name": "Резервировать все",
@@ -802,26 +804,32 @@
   },
   {
     "name": "Добавить",
+    "current": false,
     "child": []
   },
   {
     "name": "Удалить все",
+    "current": false,
     "child": []
   },
   {
     "name": "Информация",
+    "current": false,
     "child": []
   },
   {
     "name": "Провернить скидки",
+    "current": false,
     "child": []
   },
   {
     "name": "В корзину",
+    "current": false,
     "child": []
   },
   {
     "name": "Действия",
+    "current": false,
     "child": []
   }
 ]

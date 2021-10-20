@@ -1,5 +1,8 @@
 <template>
     <div> 
+        <div class="w-full flex items-center">
+            <bar></bar>
+        </div>
         <div class="flex justify-center w-full">
             <description :api="top_bar_api" />
         </div>
