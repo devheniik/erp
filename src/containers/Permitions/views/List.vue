@@ -4,7 +4,7 @@
             <list v-model="entity" :data="{ list: options}"></list> 
         </div>
         <double-table :api="get" :link="link" :options="options" @select="id = $event"> 
-            <viewer :key="render" ref="viewer" :api="link">  
+            <viewer :key="render"  :api="link">  
             </viewer>  
         </double-table>
     </div>
