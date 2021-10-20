@@ -402,13 +402,8 @@
                         </div>
 
                         <div v-show="ffull">
-
+cc
                         </div>
-
-
-                    
-                    <!--Второй блок-->
-                 
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-2 md:col-span-2">
