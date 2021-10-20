@@ -10,5 +10,11 @@ export default [
         active: false,
         component: 'specifications',
         link: '/link'
-    }
+    },
+    {
+        label: 'Операции',
+        active: false,
+        component: 'operation',
+        link: '/link'
+    },
 ]
