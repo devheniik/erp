@@ -3,14 +3,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div class=" rounded-lg">
                 <h1 class="label-big">
-                    Общие данные <span class="cursor-pointer" @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
+                    Общие данные <span class="cursor-pointer"
+                        @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section">
                     <div>
                         <!--Первый блок-->
                         <div class="tl">
                             <label class="label-primary">Код заказа:</label>
-                            <input type="text" class="input-primary"  v-model="data.general.base.zakkode" />
+                            <input type="text" class="input-primary" v-model="data.general.base.zakkode" />
                         </div>
                         <div class="tl">
                             <div>
@@ -30,34 +31,34 @@
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.contacter">
                                 </modal-select>
-                            </div> 
+                            </div>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Договор',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.contract">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Проект',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.project">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
                             <field label="Источник Заказ (9) ">123123</field>
                         </div>
                         <div class="tl">
                             <field label=" Через ЛК?">{{ data.general.base.project ? 'Да' : 'Нет' }}</field>
-                        </div> 
+                        </div>
 
 
                         <!-- FULL -->
-                        <div v-show="full"> 
+                        <div v-show="full">
                             <div class="tl">
                                 <label class="label-primary">Заявка клиента:</label>
                                 <input type="text" class="input-primary" placeholder="Фамилия"
@@ -74,9 +75,9 @@
                             <div class="tl">
                                 <label class="label-primary"> Через ЛК?</label>
                                 <div class="field">
-                                    <h1 class="text-blue-400" > {{ data.general.full.creater }}</h1>
+                                    <h1 class="text-blue-400"> {{ data.general.full.creater }}</h1>
                                 </div>
-                            </div>    
+                            </div>
                             <div class="tl">
                                 <modal-select :data="{
                                     label:'Ресурс',
@@ -96,66 +97,67 @@
                         </div>
                     </div>
                     <div>
-                        <!--Второй блок--> 
+                        <!--Второй блок-->
                         <div class="tl">
                             <label class="label-primary">Менеджер</label>
-                            <input type="text" disabled class="input-primary" placeholder="Менеджер" v-model="data.general.base.manager" />
-                        </div> 
+                            <input type="text" disabled class="input-primary" placeholder="Менеджер"
+                                v-model="data.general.base.manager" />
+                        </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Тип заказа',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.zakaztip">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Вид работ',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.type_of_work">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Производство для',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.manufacture_for ">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Тип доставки',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.frachttip">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Расч. счёт',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.account">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Направление продажи',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.a_r2">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
-                                <modal-select :data="{
+                            <modal-select :data="{
                                     label:'Тип заказа',
                                     api: '/reg',
                                     meanKey: 'a_s1'
                                     }" v-model="data.general.base.zakaztip">
-                                </modal-select>
+                            </modal-select>
                         </div>
                         <div class="tl">
                             <label class="label-primary">Дропшиппинг:</label>
@@ -165,7 +167,7 @@
                                     <option :value="true">Да</option>
                                 </select>
                             </div>
-                        </div>    
+                        </div>
                         <div class="tl">
                             <label class="label-primary">Клиент клиента:</label>
                             <div>
@@ -174,11 +176,11 @@
                                     <option :value="true">Да</option>
                                 </select>
                             </div>
-                        </div>   
+                        </div>
 
                         <!-- FULL -->
 
-                        <div v-show="full"> 
+                        <div v-show="full">
                             <div class="tl">
                                 <modal-select :data="{
                                     label:'Точка доставки',
@@ -195,8 +197,8 @@
                                         <option :value="true">Да</option>
                                     </select>
                                 </div>
-                            </div>    
-                            <div class="tl"> 
+                            </div>
+                            <div class="tl">
                                 <label class="label-primary">В плане производства:</label>
                                 <div>
                                     <select class="dropdown-primary" v-model="data.general.full.a_b2">
@@ -205,7 +207,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="tl"> 
+                            <div class="tl">
                                 <div>
                                     <modal-select :data="{
                                         label:'Раскраска',
@@ -216,7 +218,7 @@
                         </div>
                     </div>
                     <!--Конец второго блока-->
-                    <div> 
+                    <div>
                     </div>
                 </div>
             </div>
@@ -229,7 +231,7 @@
                     <div class="grid-2-2-1 section">
                         <div>
                             <!--Первый блок-->
-                            <div class="tl"> 
+                            <div class="tl">
                                 <div>
                                     <modal-select :data="{
                                         label:'Состояние',
@@ -240,7 +242,7 @@
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Поставщик:</label>
-                                <input type="text" class="input-primary"  v-model="data.general.status.a_s1" />
+                                <input type="text" class="input-primary" v-model="data.general.status.a_s1" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Ориентировочная дата отгрузки:</label>
@@ -257,7 +259,7 @@
                                         <option :value="true">Да</option>
                                     </select>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="tl">
                                 <label class="label-primary">Отгрузка с филиала:</label>
                                 <div>
@@ -266,7 +268,7 @@
                                         <option :value="true">Да</option>
                                     </select>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="tl">
                                 <label class="label-primary">Ждем с РЦ</label>
                                 <div>
@@ -275,7 +277,7 @@
                                         <option :value="true">Да</option>
                                     </select>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="tl">
                                 <field label=" Оплачено -">0</field>
                             </div>
@@ -285,7 +287,27 @@
                         </div>
                         <div>
                             <!--Второй блок-->
-                            2
+                            <div class="tl">
+                                <label class="label-primary">Закрыт</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.general.status.a_b8">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Оформлен</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.general.status.a_b8">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
+                                </div>
+                                <div class="tl">
+                                    <field label="Разреш. отгрузка ">Да</field>
+                                </div>
+                            </div>
                         </div>
                         <!--Конец второго блока-->
                     </div>
@@ -305,20 +327,22 @@
                             <div class="tl">
                                 <label class="label-primary">Дата заказа:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.zakdate"></flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.zakdate">
+                                    </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Срок оплаты:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.srokopl"></flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.srokopl">
+                                    </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Срок поставки:</label>
-                                <input type="text" class="input-primary"  v-model="data.general.timing.srokpostavz" />
+                                <input type="text" class="input-primary" v-model="data.general.timing.srokpostavz" />
                             </div>
                         </div>
                         <div>
@@ -326,21 +350,24 @@
                             <div class="tl">
                                 <label class="label-primary">Окончание:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.okonch" :config="{enableTime: true}"></flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.okonch"
+                                        :config="{enableTime: true}"></flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Оконч. факт:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.closedate"></flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.closedate">
+                                    </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Резерв до:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.reservdo"></flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.general.timing.reservdo">
+                                    </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
@@ -349,17 +376,34 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Основное место работы
+                    Налоги и суммы <span class="cursor-pointer"
+                        @click="ffull = !ffull">{{ ffull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
-                <div>
-                    <div>
-                        <div class="section">
-                            <!--Первый блок-->
-                            Первы
+                <div class="grid-2-2-1 section ">
+                    <!--Первый блок-->
+                    
+                        <div class="">
+                            <div class="tl">
+                                <field label="Итого">0</field>
+                            </div>
                         </div>
-                    </div>
+                        <div>
+                           <div class="tl">
+                                <div>
+                                    <modal-select :data="{
+                                        label:'Валюта грн',
+                                        api: 'uniprops/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.general.status.zakstatus"></modal-select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div v-show="ffull">
+cc
+                        </div>
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-2 md:col-span-2">
@@ -370,8 +414,7 @@
                     <div class="mx-4 mt-4">
                         <label class="block text-sm font-medium text-gray-400">Примечания</label>
                         <div class="mt-1">
-                            <textarea rows="3" class="textarea-primary"
-                                ></textarea>
+                            <textarea rows="3" class="textarea-primary"></textarea>
                         </div>
                     </div>
                 </div>
@@ -391,7 +434,7 @@
     } from 'vue'
 
     const full = ref(false)
-
+    const ffull = ref(false)
     const data = ref({
         "object": "Orders",
         "id": null,
@@ -521,11 +564,11 @@
         @apply shadow-sm pb-3 px-2 rounded-b-lg mt-2
     }
 
-    .tl{
+    .tl {
         @apply mt-2 ml-2
     }
 
-    .field{
+    .field {
         @apply border border-primary-400 rounded-md h-9 flex items-center justify-center
     }
 </style>

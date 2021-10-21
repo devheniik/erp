@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoad">
+    <div>
         <div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 gap-4">
             <div>
                 <h1 class="label-big">
@@ -196,6 +196,10 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <!--Основное1 конец-->
+                    <!--Основное2 начало-->
+                    <div>
                         <div class="tl">
                             <label class="label-primary"> Валюта закупок:</label>
                             <div>
@@ -816,7 +820,9 @@
                                 <textarea rows="3" class="textarea-primary" v-model="data.additional.full.prim2"></textarea>
                             </div>
                         </div>
-                    </div> 
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -824,20 +830,255 @@
 </template>
 
 <script setup>
+    import route_create from '../api/create'
+    import create from '@api_base/create'
     import {
-        ref,
-        onMounted
+        ref
     } from 'vue'
-    import {
+    const data = ref({
+        "general": {
 
-        useRoute
-    } from 'vue-router'
-    import update from '../api/update'
-    import get from '../api/get'
-    import load from '@/hooks/load'
+            "base": {
 
-    
- 
+                "sokrash": "133920-Сокращ",
+
+                "polnoe": "133920-Полное название",
+
+                "tel": "+38(067)470-03-61",
+
+                "tipnaz": "Физ. лицо"
+
+            },
+
+            "full": {
+
+                "nazeng": "133920-nazeng",
+
+                "nazukr": "133920-Укр. Назва",
+
+                "fathernaz": "0-Сокращ",
+
+                "ownernaz": "133920-Сокращ"
+
+            }
+
+        },
+
+        "profile": {
+
+            "base": {
+
+                "manager": "Кобзаренко Лілія Геннадіївна",
+
+                "gorod": "Киев",
+
+                "district": "-",
+
+                "sferad": "Конечный потребитель ",
+
+                "clientsrc": "1_НС_сайт_КОРЗИНА",
+
+                "sekret": "Euroizol",
+
+                "nasha": true,
+
+                "zakazch": true,
+
+                "postavsh": true,
+
+                "proizvod": true,
+
+                "a_r1naz": "-",
+
+                "a_r5naz": "Текущий"
+
+            },
+
+            "full": {
+
+                "artikul": "133920",
+
+                "zakrit": true,
+
+                "taxprofitnaz": "-",
+
+                "taxzonenaz": "-",
+
+                "abcnaz": "-",
+
+                "xyznaz": "-",
+
+                "cvetnaz": "-",
+
+                "resursnaz": "-",
+
+                "maxcreditour": 0,
+
+                "srokcreditour": 30,
+
+                "strana": "-",
+
+                "postavshacc": "-",
+
+                "zakazchacc": "-",
+
+                "datareg": "2021-08-25T21:00:00.000000Z"
+
+            }
+
+        },
+
+        "pricingProfile": {
+
+            "full": {
+
+                "valutanaz": "EURO",
+
+                "maxcredit": 0,
+
+                "srokcredit": 30,
+
+                "zapretotgr": true,
+
+                "ownerpay": true,
+
+                "tax1": true,
+
+                "ndsfizlic": true
+
+            }
+
+        },
+
+        "requisite": {
+
+            "base": {
+
+                "okpo": null,
+
+                "adrur": "  ",
+
+                "adrfiz": "Киев"
+
+            },
+
+            "full": {
+
+                "is_payer": true,
+
+                "www": "http://nasha-stroyka.com.ua/",
+
+                "adrcorr": "Киев",
+
+                "email": "133920@mail.com",
+
+                "rukfio": null,
+
+                "buhfio": null,
+
+                "rukdolvnnaz": "-",
+
+                "a_s10": null,
+
+                "a_s9": null,
+
+                "naosnov": null,
+
+                "fiskcode": "133920-fiskcode@mail.com",
+
+                "glncode": null,
+
+                "nalnomer": null,
+
+                "nalsvid": null,
+
+                "schet": null,
+
+                "vbanke": null,
+
+                "mfo": null,
+
+                "banknaz": "-"
+
+            }
+
+        },
+
+        "zprice": {
+
+            "full": []
+
+        },
+
+        "additional": {
+
+            "base": {
+
+                "prim": null
+
+            },
+
+            "full": {
+
+                "a_s1": null,
+
+                "a_s2": null,
+
+                "a_s3": null,
+
+                "a_s4": null,
+
+                "a_s6": null,
+
+                "a_f10": 0,
+
+                "a_d1": "2021-08-25T21:00:00.000000Z",
+
+                "a_d2": "1899-12-31T21:57:56.000000Z",
+
+                "a_d4": "2021-08-25T21:00:00.000000Z",
+
+                "a_d5": "2021-08-25T21:00:00.000000Z",
+
+                "a_b1": true,
+
+                "a_b2": true,
+
+                "a_b3": true,
+
+                "a_b4": true,
+
+                "a_b5": true,
+
+                "a_b6": true,
+
+                "a_b7": true,
+
+                "a_b8": true,
+
+                "a_b9": true,
+
+                "a_b10": true,
+
+                "a_r1naz": "-",
+
+                "a_r2naz": "-",
+
+                "a_r3naz": "-",
+
+                "a_r4naz": "-",
+
+                "a_r6naz": "Не проверено",
+
+                "a_r8naz": "-",
+
+                "a_r9naz": "-",
+
+                "prim2": " "
+
+            }
+        }
+    })
     const full = ref(false)
     const dfull = ref(false)
     const tfull = ref(false)
@@ -848,16 +1089,8 @@
     const xfull = ref(false)
     const bfull = ref(false)
     const сfull = ref(false)
-
-    const {
-        data,
-        isLoad,
-        id
-    } = load(get)
 </script>
 
 <style lang="scss" scoped>
-    .section {
-        @apply shadow-sm pb-3 px-2 rounded-b-lg
-    }
+
 </style>
