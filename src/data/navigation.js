@@ -17,19 +17,54 @@ export default [
   },
   {
     name: 'Финансы',
-    href: { name: 'finance-expense-report-update', params: { id: 4577952  } },
+    href: { name: 'finance-advance-reports-view' },
     icon: 'CurrencyDollarIcon',
     current: false,
-    uname: 'finance-expense-report-update',
+    uname: 'finance-advance-reports-view',
     child: [
       {
-        name: 'Карточки',
-        href: { name: 'finance-expense-report-update', params: { id: 4577952  } },
+        name: 'Авансы',
+        href: { name: 'finance-advance-reports-view' },
         icon: 'CollectionIcon',
         current: false,
-        uname: 'finance-expense-report-update',
-        child: []
+        uname: 'finance-advance-reports-view',
+        child: [
+          {
+            name: 'Список',
+            href: { name: 'finance-advance-reports-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'finance-advance-reports-view',
+            child: []
+          },
+          {
+            name: 'Карточки',
+            href: { name: 'finance-advance-reports-update', params: { id: 4577952  } },
+            icon: 'CollectionIcon',
+            current: false,
+            uname: 'finance-advance-reports-update',
+            child: []
+          },
+        ]
       },
+      {
+        name: 'Налоговая',
+        href: { name: 'finance-tax-invoices-view'},
+        icon: 'ViewListIcon',
+        current: false,
+        uname: 'finance-tax-invoices-view',
+        child: [
+          {
+            name: 'Карточки',
+            href: { name: 'finance-tax-invoices-view'},
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'finance-tax-invoices-view',
+            child: []
+          },
+        ]
+      },
+      
     ]
   },
   {

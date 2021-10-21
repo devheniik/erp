@@ -1,19 +1,21 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import find from '@api_base/find'
+import get from '@api'
 
 export default function (_route) {
     const isLoad = ref(true)
 
     const route = useRoute()
     const entityId = route.params.id
-
-
+ 
+ 
     const data = ref({})
 
     const load = async () => {
         isLoad.value = true  
-        data.value = await find(_route, entityId)  
+        console.log('----------', _route(entityId));
+        data.value = await get(_route(entityId))  
+        data.value = data.value.data  
         console.log('load by id');
         isLoad.value = false
     }

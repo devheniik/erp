@@ -29,9 +29,7 @@ const props = defineProps({
     },
     modelValue: [String, Number]
 })
-const emit = defineEmits(['update:modelValue', 'change'])
- 
- console.log(props.start_data);
+const emit = defineEmits(['update:modelValue', 'change']) 
 
 const label = ref(props.data.label)
 

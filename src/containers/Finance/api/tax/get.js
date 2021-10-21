@@ -1,0 +1,1 @@
+export default id => `finances/tax-invoices/get/${id}`

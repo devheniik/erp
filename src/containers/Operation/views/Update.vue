@@ -1,13 +1,13 @@
 <template>
     <layout v-model:config="config" v-bind="{
             name: 'операция',
-            pagination_api: pagination,
+            links: links,
             route_name: 'operation-update',
-            api: get,
+            api: list,
             current: component 
         }">
-        <update v-show="comoponent == 'update'"></update> 
-        <eventlist v-show="comoponent == 'eventlist'"></eventlist> 
+        <update v-show="component == 'update'"></update> 
+        <eventlist v-show="component == 'eventlist'"></eventlist> 
     </layout>
 </template>
 
@@ -15,8 +15,8 @@
 import { ref, computed } from 'vue'
 
 // * api import 
-import get from '../api/get'
-import pagination from '../api/pagination'
+import list from '../api/operation/list'
+import links from '../api/operation/links'
 
 // * component import
 import update from '../components/update.vue'
@@ -31,7 +31,7 @@ import d_config from '../config/card'
 
 const config = ref(d_config)
 
-const comoponent = computed(() => config.value.find(e => e.active == true).component)
+const component = computed(() => config.value.find(e => e.active == true).component)
 
 
 

@@ -381,7 +381,7 @@
         useRoute
     } from 'vue-router'
     import update from '../api/update'
-    import find from '../api/find.js'
+    import get from '../api/operation/get'
     import load from '@/hooks/load'
 
     const ifull = ref(false)
@@ -391,7 +391,7 @@
         data,
         isLoad,
         id
-    } = load(find)
+    } = load(get)
 </script>
 
 <style lang="scss" scoped>

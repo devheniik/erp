@@ -3,7 +3,7 @@
         <!-- <div class="flex w-full justify-end mr-5">
             <list v-model="entity" :data="{ list: options}"></list> 
         </div> -->
-        <double-table :api="get" tree :options="[]" @select="link = `transactions/operation-types/show?operationTypes=${$event}`"> 
+        <double-table :api="list" tree :options="[]" @select="link = table($event)"> 
             <viewer  :api="link" route_card="operation-update"> 
                 <template v-slot:create>
                     <create></create>
@@ -17,7 +17,10 @@
 import {ref} from 'vue'
 import create from '../components/create.vue'
 
-import get from '../api/get'
+import list from '../api/operation/list'
+import table from '../api/operation/table'
+
+
 
 const link = ref(null)
 

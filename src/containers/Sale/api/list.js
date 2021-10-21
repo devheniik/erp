@@ -1,0 +1,1 @@
+export default 'sales/orders/list'

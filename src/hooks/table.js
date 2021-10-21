@@ -9,33 +9,48 @@ import {
     onUpdated
 } from 'vue'
 import * as  lodash from 'lodash'
-import list from '@api_base/table'
+import list from '@api'
 export default function (_route, start_data) {
     const isLoad = ref(true)
     const isReload = ref(true)
-
-    console.log(start_data)
+ 
 
     const data = ref(start_data ? start_data : null) 
 
 
 
     const load = async () => {
+        isReload.value = true
+        if (data.value != null || data.value != undefined) {
+            data.value.data = []
+            data.value.headers = [] 
+        } 
+        console.log(list)
+        data.value = await list(_route, lodash.cloneDeep(data.value))
+        isReload.value = false
+    }
+
+    const start = async () => {
         isLoad.value = true
         isReload.value = true
-        data.value = await list(data.value, _route)
-        console.log('load')
+        if (data.value != null || data.value != undefined) {
+            data.value.data = []
+            data.value.headers = [] 
+        }  
+        data.value = await list(_route, data.value)
+        console.log('table load')
         isReload.value = false,
         isLoad.value = false
     }
+ 
 
     onMounted(async () => {
-        await load()
+        await start()
     })
 
     return {
         data,
-        load: async () => [isReload.value = true, data.value = await list(lodash.cloneDeep(data.value), _route), isReload.value = false],
+        load,
         isReload,
         isLoad
     }

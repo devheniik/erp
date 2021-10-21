@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-    import Create from '../components/create.vue'
-    import Update from '../components/update.vue'
-    import get from '../api/get' 
+    import Create from '../components/create.vue' 
+    import get from '../api/list' 
 </script>

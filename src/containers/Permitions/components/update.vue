@@ -418,7 +418,7 @@
         useRoute
     } from 'vue-router'
     import update from '../api/update'
-    import find from '../api/find.js'
+    import find from '../api/get.js'
     import load from '@/hooks/load'
 
     const full = ref(false)

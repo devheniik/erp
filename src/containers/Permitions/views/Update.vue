@@ -1,7 +1,7 @@
 <template>
     <layout v-model:config="config" v-bind="{
             name: 'персона',
-            pagination_api: pagination,
+            links: pagination,
             route_name: 'person-update',
             api: get
         }">

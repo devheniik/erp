@@ -1,1 +1,2 @@
-export default  'persons'
+export default  'persons/create'
+ 

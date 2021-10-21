@@ -1,9 +1,10 @@
 <template>
     <div class="h-full"> 
+        123
         <div class="flex w-full justify-end mr-5">
             <list v-model="entity" :data="{ list: options}"></list> 
         </div>
-        <double-table :api="get" :link="link" :options="options" @select="id = $event"> 
+        <double-table :api="roles" @select="id = $event; link = info($event, entity)"> 
             <viewer :key="render"  :api="link">  
             </viewer>  
         </double-table>
@@ -11,8 +12,9 @@
 </template>
 
 <script setup>
-    import {computed, ref, getCurrentInstance, watch} from 'vue'
-    import get from '../api/get'  
+    import {computed, ref, watch} from 'vue'
+    import roles from '../api/roles/list'  
+    import info from '../api/roles/info'  
 
     const render = ref(0) 
 
@@ -37,13 +39,13 @@
 
     
 
-    const  entity = ref('users')
-    const  id = ref(null)
-
-    const link = computed(() => `access/role/${id.value}/${entity.value}`)
+    const  entity = ref('users')  
+    const link = ref(null)
+    const id = ref(null)
 
     watch(() => entity.value,
     () => {
+      link.value = info(id.value, entity.value)
       render.value++
     })
 

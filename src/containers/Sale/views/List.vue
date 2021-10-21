@@ -1,6 +1,6 @@
 <template>
     <div class="h-full">
-        <viewer :api="get" route_card="sale-update">
+        <viewer :api="list" route_card="sale-update">
             <template v-slot:create>
                 <create></create>
             </template>
@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-    import Create from '../components/create.vue'
-    import Update from '../components/update.vue'
-    import get from '../api/get' 
+    import Create from '../components/create.vue' 
+    import list from '../api/list' 
 </script>

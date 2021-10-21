@@ -1,6 +1,6 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import paginate from '@api_base/paginate'
+import get from '@api'
 
 export default function (_route) {
     const isLoad = ref(true)
@@ -16,7 +16,7 @@ export default function (_route) {
     const load = async (id) => {
         isLoad.value = true  
         isReload.value = true 
-        data.value = await paginate(_route, id)  
+        data.value = await get(_route(id))  
         isLoad.value = false
         isReload.value = false
     }

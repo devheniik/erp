@@ -1,7 +1,7 @@
 <template>
     <layout v-model:config="config" v-bind="{
             name: 'фирма',
-            pagination_api: pagination,
+            links: links,
             route_name: 'firm-update',
             api: get,
             current: comoponent
@@ -16,7 +16,8 @@ import { ref, computed } from 'vue'
 
 // * api import 
 import get from '../api/get'
-import pagination from '../api/pagination'
+import links from '../api/links'
+ 
 
 // * component import
 import update from '../components/update.vue'

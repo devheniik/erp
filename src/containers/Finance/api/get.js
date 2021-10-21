@@ -1,1 +1,1 @@
-export default 'firms'
+export default id => `finances/get/${id}`

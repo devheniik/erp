@@ -15,8 +15,9 @@ export default function (_route) {
 
     const load = async () => {
         isLoad.value = true
-        data.value = await get(_route)
-        console.log('load')
+        data.value =  await get(_route)
+        console.log(data.value);
+        console.log('get')
         isLoad.value = false
     }
 

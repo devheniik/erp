@@ -1,0 +1,1 @@
+export default id => `transactions/event-log/get/${id}`

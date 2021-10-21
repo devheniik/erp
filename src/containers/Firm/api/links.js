@@ -1,0 +1,1 @@
+export default id => `firms/links/${id}`

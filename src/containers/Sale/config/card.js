@@ -2,13 +2,11 @@ export default [
     {
         label: 'Карточка',
         active: true,
-        component: 'update',
-        link: '/link'
+        component: 'update'
     },
     {
         label: 'Спецификации',
         active: false,
-        component: 'specifications',
-        link: '/link'
+        component: 'specifications'
     }
 ]

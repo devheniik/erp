@@ -1,18 +1,15 @@
 <template>  
-            <viewer :api="`${get}/${route.params.id}`" route_card="operation-update"> 
-                <template v-slot:create>
+            <viewer :api="get($route.params.id)" route_card="operation-update"> 
+                <!-- <template v-slot:create>
                     <create></create>
-                </template>
+                </template> -->
             </viewer>   
 </template>
 
-<script setup> 
-import {useRoute} from 'vue-router'
-import create from '../components/create.vue'
+<script setup>  
+//import create from '../components/create.vue'
 
-import get from '../api/eventlist'
-
-const route = useRoute()
+import get from '../api/eventlog' 
  
  
 

@@ -1,7 +1,9 @@
 <template>
     <div class="h-full">
         <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
-            <slot name="create"></slot>
+            <slot name="create">
+
+            </slot>
         </modal>
         <div v-if="!isLoad" class="w-full h-full mr-5 flex flex-col justify-between">
             <div>
@@ -23,7 +25,7 @@
                 </div>
             </div>
             <div class="w-full mb-1.5">
-                <pagination @change="load" :pagination="data.meta.pagination" v-model:page="data.page"></pagination>
+                <pagination @change="load" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
             </div>
         </div>
         <loading v-if="isReload"></loading> 

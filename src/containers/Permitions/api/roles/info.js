@@ -1,0 +1,1 @@
+export default (id, type) => `accesses/roles/get/${id}/${type}/list`

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="h-full">  
-                <viewer :api="get"> 
+                <viewer :api="list"> 
 
                 </viewer>   
         </div>
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import get from '../../api/shipments/get'
+import list from '../../api/shipments/list'
  
 </script>
 

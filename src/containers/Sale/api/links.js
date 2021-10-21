@@ -1,0 +1,1 @@
+export default id => `sales/order/links/${id}`

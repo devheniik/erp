@@ -380,8 +380,7 @@
     import {
 
         useRoute
-    } from 'vue-router'
-    import find from '../api/find.js'
+    } from 'vue-router' 
     const ifull = ref(false)
     const full = ref(false)
     const isLoading = true

@@ -1,0 +1,1 @@
+export default id => `transactions/operation-types/links/${id}`

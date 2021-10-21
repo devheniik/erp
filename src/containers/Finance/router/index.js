@@ -1,6 +1,6 @@
 export default [
     // {
-    //     path: '/finances/expense-report',
+    //     path: '/finances/advance-reports',
     //     name: 'finance-view',
     //     component: () => import('@finance/views/List.vue'),
     //     meta: {
@@ -13,7 +13,7 @@ export default [
     // {
     //     path: '/sales/finances',
     //     name: 'sales-finance-view',
-    //     component: () => import('@sale/views/finance/List.vue'),
+    //     component: () => import('@sale/views/finances/List.vue'),
     //     meta: {
     //         layout: 'SideMenu',
     //         requreAuth: false,
@@ -22,14 +22,36 @@ export default [
     //     }
     // },
     {
-        path: '/finance/expense-report/:id',
-        name: 'finance-expense-report-update',
-        component: () => import('@finance/views/Expense/Update.vue'),
+        path: '/finance/advance-reports',
+        name: 'finance-advance-reports-view',
+        component: () => import('@finance/views/Advance/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
             permition: null,
-            uname: 'finance-expense-report-update'
+            uname: 'finance-advance-reports-view'
+        }
+    },
+    {
+        path: '/finance/advance-reports/:id',
+        name: 'finance-advance-reports-update',
+        component: () => import('@finance/views/Advance/Update.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'finance-advance-reports-update'
+        }
+    },
+    {
+        path: '/finance/tax-invoices/:id',
+        name: 'finance-tax-invoices-view',
+        component: () => import('@finance/views/Tax/List.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'finance-tax-invoices-view'
         }
     },
 ]

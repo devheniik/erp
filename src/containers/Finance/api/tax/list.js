@@ -1,0 +1,1 @@
+export default 'finances/tax-invoices/list'

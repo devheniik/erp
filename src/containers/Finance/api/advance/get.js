@@ -1,0 +1,1 @@
+export default id => `finances/advance-reports/get/${id}`

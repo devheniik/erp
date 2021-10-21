@@ -1,1 +1,1 @@
-export default 'persons'
+export default id =>  `persons/get/${id}`

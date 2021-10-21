@@ -1,5 +1,5 @@
 <template>  
-            <viewer :api="get" route_card="firm-update"> 
+            <viewer :api="list" route_card="firm-update"> 
                 <template v-slot:create>
                     <create></create>
                 </template>
@@ -10,7 +10,7 @@
 
 import create from '../components/create.vue'
 
-import get from '../api/get'
+import list from '../api/list'
  
  
 

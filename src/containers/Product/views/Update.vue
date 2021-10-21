@@ -1,9 +1,9 @@
 <template>
     <layout v-model:config="config" v-bind="{
             name: 'товвар',
-            pagination_api: pagination,
+            links: links,
             route_name: 'product-update',
-            api: get,
+            api: list,
             current: component 
         }">
         <update v-show="component == 'update'"></update>  
@@ -14,8 +14,8 @@
 import { ref, computed } from 'vue'
 
 // * api import 
-import get from '../api/get'
-import pagination from '../api/pagination'
+import list from '../api/list'
+import links from '../api/links'
 
 // * component import
 import update from '../components/update.vue' 

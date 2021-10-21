@@ -1,0 +1,1 @@
+export default `finances/advance-reports/list`

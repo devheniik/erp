@@ -1,1 +1,1 @@
-export default  'persons'
+export default  'permition/list'

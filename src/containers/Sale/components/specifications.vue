@@ -20,7 +20,6 @@
 </template>
 
 <script setup>
-import get from '@/hooks/get'
 import description from './specifications/description.vue'
 import SubTable from './specifications/sub-table.vue'
 import { computed } from 'vue'

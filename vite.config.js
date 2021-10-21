@@ -20,6 +20,7 @@ export default ({ mode }) => {
         '@': path.resolve(__dirname, '/src'),
         '@axios': path.resolve(__dirname, '/src/plugins/axios.js'), 
         '@api_base': path.resolve(__dirname, '/src/api/base'), 
+        '@api': path.resolve(__dirname, '/src/api/index'), 
         'h_list': path.resolve(__dirname, '/src/hooks/list.js'),
         '@user': path.resolve(__dirname, '/src/containers/User'),
         '@permitions': path.resolve(__dirname, '/src/containers/Permitions'),

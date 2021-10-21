@@ -95,7 +95,7 @@
         config: Array,
         name: String,
         route_name: String,
-        pagination_api: String,
+        links: Function,
         api: String,
         current: String
     })
@@ -126,7 +126,7 @@
         isReload,
         id,
         load
-    } = dataLoad(props.pagination_api)
+    } = dataLoad(props.links)
 
 
 
