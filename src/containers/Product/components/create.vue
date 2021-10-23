@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 gap-4">
-
+            <!-- Начало Общие сведения -->
             <div class=" rounded-lg">
                 <h1 class="label-big">
                     Общие сведения <span class="cursor-pointer"
                         @click="full = !full">{{ full ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section">
+                    <!--Первый блок-->
                     <div>
-                        <!--Первый блок-->
                         <div class="tl">
                             <label class="label-primary">Название:</label>
                             <input type="text" class="input-primary" placeholder="Название"
@@ -152,8 +152,8 @@
                         </div>
 
                     </div>
-                    <div>
-                        <!--Второй блок-->
+                    <!--Конец Второго блока-->
+                    <div> 
                         <div class="tl">
                             <label class="label-primary">Категория:</label>
                             <input type="text" class="input-primary" placeholder=""
@@ -333,6 +333,7 @@
                     </div>
                 </div>
             </div>
+             <!-- Конец Общие сведения -->
             <!--Начало блока производители и поставщики -->
             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
@@ -430,17 +431,13 @@
                     <div>
                         <div class="tl">
                             <label class="label-primary">Вес</label>
-                            <input type="text" class="input-primary" placeholder=""
-                                v-model="data.quantity.base.ves" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.quantity.base.ves" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Объём(Было Мин. запас)</label>
                             <input type="text" class="input-primary" placeholder=""
                                 v-model="data.quantity.base.minzapas" />
                         </div>
-
-
-
                         <div v-show="tfull">
                             <div class="tl">
                                 <label class="label-primary">Объём Перевозки(Было Объём)</label>
@@ -491,9 +488,7 @@
                                             }" v-model="data.quantity.base.edizmernaz"></modal-select>
                             </div>
                         </div>
-
                         <div v-show="tfull">
-
                             <div class="tl">
                                 <label class="label-primary"> Норма брака</label>
                                 <input type="text" class="input-primary" placeholder="№"
@@ -565,9 +560,6 @@
                                 </select>
                             </div>
                         </div>
-
-
-
                         <div v-show="ffull">
                             <div class="tl">
                                 <label class="label-primary"> Время сборки</label>
@@ -627,7 +619,6 @@
                         </div>
 
                         <div v-show="ffull">
-
                             <div class="tl">
                                 <label class="label-primary">Материалы</label>
                                 <input type="text" class="input-primary" placeholder=""
@@ -675,7 +666,7 @@
                     <!--Первый блок-->
                     <div>
                         <div class="tl">
-                            <label class="label-primary">  Цена по запросу:</label>
+                            <label class="label-primary"> Цена по запросу:</label>
                             <div>
                                 <select class="dropdown-primary" v-model="data.cost.base.cenaoncall">
                                     <option value="+" selected="true">Да</option>
@@ -684,7 +675,7 @@
                             </div>
                         </div>
                         <div class="tl">
-                            <label class="label-primary">  Инд. ценообраз.:</label>
+                            <label class="label-primary"> Инд. ценообраз.:</label>
                             <div>
                                 <select class="dropdown-primary" v-model="data.cost.base.indprice">
                                     <option value="+" selected="true">Да</option>
@@ -692,11 +683,7 @@
                                 </select>
                             </div>
                         </div>
-
-
-
                         <div v-show="ifull">
-                          
                             <div class="tl">
                                 <label class="label-primary">Курс</label>
                                 <input type="text" class="input-primary" placeholder=""
@@ -707,60 +694,61 @@
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovsebestplan" />
                             </div>
-                         <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Рекомендуемая цена, ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenaplan1" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 2, ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenaplan2" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 3, ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenaplan3" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 4, ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenaplan4" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Себест., нац. ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovsebestgrnplan" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Рекомендуемая цена, нац. ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrnplan1" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 2, нац. ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrnplan2" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary">Цена 3, нац. ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrnplan3" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 4, нац. ред.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrnplan4" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Единица цены</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.priceunit" />
                             </div>
-                            </div>
-                    </div><!--Первый блок конец-->
+                        </div>
+                    </div>
+                    <!--Первый блок конец-->
                     <!--Второй блок-->
-                     <div>
+                    <div>
                         <div class="tl">
                             <label class="label-primary"> НДС</label>
                             <div>
@@ -779,9 +767,6 @@
                                 </select>
                             </div>
                         </div>
-
-
-
                         <div v-show="ifull">
                             <div class="tl">
                                 <label class="label-primary">Макс. скидка, %</label>
@@ -793,57 +778,57 @@
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovsebest" />
                             </div>
-                         <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Рекомендуемая цена</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcena1" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 2.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcena2" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 3</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcena3" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 4</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcena4" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Себест., нац.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovsebestgrn" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Рекомендуемая цена, нац.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrn1" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 2, нац.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrn2" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary">Цена 3, нац.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrn3" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Цена 4, нац.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.tovcenagrn4" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary">Закуп. цена</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.zakupcena" />
                             </div>
-                              <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Средняя себест.</label>
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.cost.full.averageseb" />
@@ -862,7 +847,7 @@
                                 </select>
                             </div>
                         </div>
-                         <div class="tl">
+                        <div class="tl">
                             <label class="label-primary"> Налог 4</label>
                             <div>
                                 <select class="dropdown-primary" v-model="data.cost.base.tax4">
@@ -874,7 +859,7 @@
 
                         <div v-show="ifull">
 
-                           </div>
+                        </div>
                     </div>
                     <!--Конец третьего блока-->
                     <div>
@@ -885,7 +870,7 @@
             <!--Начало Запасы-->
             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                   Запасы  <span class="cursor-pointer"
+                    Запасы <span class="cursor-pointer"
                         @click="efull = !efull">{{ efull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section ">
@@ -896,9 +881,6 @@
                             <input type="text" class="input-primary" placeholder=""
                                 v-model="data.stocks.base.tovtotal" />
                         </div>
-                      
-
-
                         <div v-show="efull">
                             <div class="tl">
                                 <label class="label-primary">Резервов</label>
@@ -930,20 +912,15 @@
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.stocks.full.stoyka" />
                             </div>
-                          
                         </div>
                     </div>
                     <!--Второй блок-->
                     <div>
                         <div class="tl">
                             <label class="label-primary"> В наличии:</label>
-                            <input type="text" class="input-primary" placeholder=""
-                                v-model="data.stocks.base.ves" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.stocks.base.ves" />
                         </div>
-
                         <div v-show="efull">
-
-                           
                             <div class="tl">
                                 <label class="label-primary"> Отложено</label>
                                 <input type="text" class="input-primary" placeholder="№"
@@ -956,13 +933,11 @@
                             </div>
                             <div class="tl">
                                 <label class="label-primary"> На консигнации ф.</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
+                                <input type="text" class="input-primary" placeholder="№" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Прогноз ф.</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                   />
+                                <input type="text" class="input-primary" placeholder="№" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Стеллаж</label>
@@ -974,12 +949,11 @@
                                 <input type="text" class="input-primary" placeholder="№"
                                     v-model="data.stocks.full.yacheyka" />
                             </div>
-                             <div class="tl">
+                            <div class="tl">
                                 <label class="label-primary"> Код ячейки</label>
                                 <input type="text" class="input-primary" placeholder="№"
                                     v-model="data.stocks.full.kodyach" />
                             </div>
-                           
                         </div>
                     </div>
                     <!--Конец второго блока-->
@@ -995,107 +969,83 @@
                         @click="yfull = !yfull">{{ yfull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class=" section ">
-                    
-                   
-                        <div v-show="yfull">
-
-                            <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                             <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                              <div class="tl">
-                                <label class="label-primary"> Характеристика 1</label>
-                                <input type="text" class="input-primary" placeholder="№"
-                                    />
-                            </div>
-                           
+                    <div v-show="yfull">
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Характеристика 1</label>
+                            <input type="text" class="input-primary" placeholder="№" />
+                        </div>
                     </div>
-                    
-                    
                 </div>
             </div>
             <!--Конец Характеристики-->
-             <!--Начало Описание-->
+            <!--Начало Описание-->
             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
                     Описание <span class="cursor-pointer"
                         @click="xfull = !xfull">{{ xfull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class=" section ">
-                    
-                   
-                        <div v-show="xfull">
-
-                         <div>
-                    <div class="mx-4 mt-4">
-                        <label class="block text-sm font-medium text-gray-400">Примечания</label>
-                        <div class="mt-1">
-                            <textarea rows="3" class="textarea-primary"></textarea>
+                    <div v-show="xfull">
+                        <div>
+                            <div class="mx-4 mt-4">
+                                <label class="block text-sm font-medium text-gray-400">Примечания</label>
+                                <div class="mt-1">
+                                    <textarea rows="3" class="textarea-primary"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                           
-                    </div>
-                    
-                    
-                </div>
             </div>
             <!--Конец Описание-->
-             <!--Начало Количество и вес-->
+            <!--Начало Количество и вес-->
             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Дополнительные данные  <span class="cursor-pointer"
+                    Дополнительные данные <span class="cursor-pointer"
                         @click="сfull = !сfull">{{ сfull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section ">
@@ -1106,10 +1056,6 @@
                             <input type="text" class="input-primary" placeholder=""
                                 v-model="data.sub_data.base.tovprim" />
                         </div>
-                    
-
-
-
                         <div v-show="сfull">
                             <div class="tl">
                                 <label class="label-primary"> Классы товаров:</label>
@@ -1122,7 +1068,7 @@
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">  Статусы товаров:</label>
+                                <label class="label-primary"> Статусы товаров:</label>
                                 <div>
                                     <modal-select :data="{
                                         label:'Статусы товаров',
@@ -1132,7 +1078,7 @@
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">   Наша стройка ТГ:</label>
+                                <label class="label-primary"> Наша стройка ТГ:</label>
                                 <div>
                                     <modal-select :data="{
                                         label:'Наша стройка ТГ',
@@ -1142,7 +1088,7 @@
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">  ТГ_для_ПК1_2:</label>
+                                <label class="label-primary"> ТГ_для_ПК1_2:</label>
                                 <div>
                                     <modal-select :data="{
                                         label:' ТГ_для_ПК1_2',
@@ -1182,7 +1128,7 @@
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">  ПланМизол:</label>
+                                <label class="label-primary"> ПланМизол:</label>
                                 <div>
                                     <modal-select :data="{
                                         label:'ПланМизол',
@@ -1192,7 +1138,7 @@
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">  ТГ:</label>
+                                <label class="label-primary"> ТГ:</label>
                                 <div>
                                     <modal-select :data="{
                                         label:'ТГ',
@@ -1261,62 +1207,60 @@
                                 <input type="text" class="input-primary" placeholder=""
                                     v-model="data.sub_data.full.a_b9" />
                             </div>
-                      <div class="tl">
-                            <label class="label-primary">Дубль товара ?</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.sub_data.full.a_r9naz">
-                                    <option value="+" selected="true">-</option>
-                                    <option value="-">-</option>
-                                </select>
+                            <div class="tl">
+                                <label class="label-primary">Дубль товара ?</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.sub_data.full.a_r9naz">
+                                        <option value="+" selected="true">-</option>
+                                        <option value="-">-</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                         <div class="tl">
-                            <label class="label-primary"> ROTO2014?</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.sub_data.full.a_s10">
-                                    <option value="+" selected="true">-</option>
-                                    <option value="-">-</option>
-                                </select>
+                            <div class="tl">
+                                <label class="label-primary"> ROTO2014?</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.sub_data.full.a_s10">
+                                        <option value="+" selected="true">-</option>
+                                        <option value="-">-</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                         <div class="tl">
-                            <label class="label-primary"> POS?</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.sub_data.full.a_f10">
-                                    <option value="+" selected="true">-</option>
-                                    <option value="-">-</option>
-                                </select>
+                            <div class="tl">
+                                <label class="label-primary"> POS?</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.sub_data.full.a_f10">
+                                        <option value="+" selected="true">-</option>
+                                        <option value="-">-</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                         <div class="tl">
-                            <label class="label-primary">Участвует в рассылке прайсов?</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.sub_data.full.a_b10">
-                                    <option value="+" selected="true">-</option>
-                                    <option value="-">-</option>
-                                </select>
+                            <div class="tl">
+                                <label class="label-primary">Участвует в рассылке прайсов?</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.sub_data.full.a_b10">
+                                        <option value="+" selected="true">-</option>
+                                        <option value="-">-</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                         <div class="tl">
-                            <label class="label-primary"> НС?</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.sub_data.full.a_r10naz">
-                                    <option value="+" selected="true">-</option>
-                                    <option value="-">-</option>
-                                </select>
+                            <div class="tl">
+                                <label class="label-primary"> НС?</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.sub_data.full.a_r10naz">
+                                        <option value="+" selected="true">-</option>
+                                        <option value="-">-</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
-                   
+
                     <div>
                     </div>
                 </div>
             </div>
             <!--Конец Кол-во и вес-->
             <!--TRIRD block-->
-
-
             <div class="col-span-1 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
                     Ключевые слова
@@ -1336,14 +1280,12 @@
         </div>
     </div>
 </template>
-
 <script setup>
     import route_create from '../api/create'
     import create from '@api_base/create'
     import {
         ref
     } from 'vue'
-
     const full = ref(false)
     const dfull = ref(false)
     const tfull = ref(false)
@@ -1352,200 +1294,200 @@
     const efull = ref(false)
     const yfull = ref(false)
     const xfull = ref(false)
-     const bfull = ref(false)
-      const сfull = ref(false)
+    const bfull = ref(false)
+    const сfull = ref(false)
     const data = ref({
-            "general": {
-                "base": {
-                    "nazvantov": "Трійник EKATEC 130/108/130 90° зовн.",
-                    "artikul": " ",
-                    "info": true,
-                    "uslugnaz": "Товар",
-                    "razdel": "",
-                    "kateorynaz": "ПВХ покрытие для изоляции",
-                    "vklpricetov": "+",
-                    "bloked": 0
-                },
-                "full": {
-                    "shortnaz": "Трійник EKATEC 130/108/130 90° зовн.",
-                    "customnaz": "Трійник EKATEC 130/108/130 90° зовн.",
-                    "tnved": 3917400090,
-                    "barcode": null,
-                    "kassacode": null,
-                    "garmes": 0,
-                    "tovorder": 0,
-                    "priznaknaz": "Прочее",
-                    "treeidnaz": "Трійники EKAТЕС (зовн.)",
-                    "budgetpriznaknaz": "-",
-                    "abcnaz": "C",
-                    "xyznaz": "-",
-                    "qrsnaz": "-",
-                    "specstavkanaz": "-",
-                    "tovzakr": 0,
-                    "inbuffer": 0,
-                    "eshop": 0,
-                    "pokupnoy": 0,
-                    "akciz": "-",
-                    "akciznakl": "-",
-                    "email": null,
-                    "oprihas": "ТМЦ",
-                    "dohodacc": "-",
-                    "rashodacc": "реклама на ТВ",
-                    "defaultacc": "Накладная приходная",
-                    "brand": "Фиттинги из ПВХ покрития (скидка)",
-                    "strana": "Germany",
-                    "cvet": "-",
-                    "buchtov": "Трійник EKATEC 130/108/130 90° зовн."
-                }
+        "general": {
+            "base": {
+                "nazvantov": "Трійник EKATEC 130/108/130 90° зовн.",
+                "artikul": " ",
+                "info": true,
+                "uslugnaz": "Товар",
+                "razdel": "",
+                "kateorynaz": "ПВХ покрытие для изоляции",
+                "vklpricetov": "+",
+                "bloked": 0
             },
-            "manufacturers": {
-                "base": {
-                    "manufacter": "0-Сокращ",
-                    "provider": "21526-Сокращ",
-                    "a_f7": 0
-                },
-                "full": {
-                    "artmanuf": 0,
-                    "nazmanuf": "EKATEC T-piece 130 T 108 mm",
-                    "srokgodn": 0,
-                    "artpostav": 0,
-                    "nazpostav": "EKATEC T-piece 130 T 108 mm",
-                    "srokpostav": 0
-                }
-            },
-            "quantity": {
-                "base": {
-                    "ves": ".07",
-                    "minzapas": 0,
-                    "edizmernaz": "штуки "
-                },
-                "full": {
-                    "obiem": ".001",
-                    "floorspace": 0,
-                    "fasovka": true,
-                    "minfas": "0",
-                    "perezakaz": "1969-12-31T21:00:00.000000Z",
-                    "zakupkol": 0,
-                    "netto": "0",
-                    "normabrak": 0,
-                    "mincena1": 0,
-                    "mincena2": 0,
-                    "mincena3": 0,
-                    "mincena4": 0,
-                    "shirina": "0",
-                    "placetip": "-"
-                }
-            },
-            "assembly": {
-                "base": {
-                    "sborka": 0,
-                    "assemblmethod": 0
-                },
-                "full": {
-                    "assembltime": 0,
-                    "assembllead": "0",
-                    "autopereshet": 0,
-                    "autobuild": "-",
-                    "pereskompl": "-",
-                    "assemblmethod": 0,
-                    "materialcost": false,
-                    "labourcost": 0,
-                    "overhead": 0,
-                    "dificulty": "0",
-                    "proizvtip": "0"
-                }
-            },
-            "cost": {
-                "base": {
-                    "cenaoncall": "-",
-                    "indprice": 0,
-                    "tax1": 0,
-                    "tax2": 0,
-                    "tax3": 0,
-                    "tax4": 0
-                },
-                "full": {
-                    "tovkurs": 32,
-                    "tovsebestplan": 0,
-                    "tovcenaplan1": false,
-                    "tovcenaplan2": false,
-                    "tovcenaplan3": 0,
-                    "tovcenaplan4": 0,
-                    "tovsebestgrnplan": "0",
-                    "tovcenagrnplan1": "0",
-                    "tovcenagrnplan2": false,
-                    "tovcenagrnplan3": "0",
-                    "tovcenagrnplan4": "0",
-                    "priceunit": "1",
-                    "maxskidproc": "100",
-                    "tovsebest": "1969-12-31T21:00:00.000000Z",
-                    "tovcena1": "0",
-                    "tovcena2": 0,
-                    "tovcena3": 0,
-                    "tovcena4": 0,
-                    "tovsebestgrn": false,
-                    "tovcenagrn1": 0,
-                    "tovcenagrn2": 0,
-                    "tovcenagrn3": 0,
-                    "tovcenagrn4": 0,
-                    "zakupcena": "0",
-                    "averageseb": false
-                }
-            },
-            "stocks": {
-                "base": {
-                    "tovtotal": 0,
-                    "tovtotalfact": 0
-                },
-                "full": {
-                    "tovreserv": 0,
-                    "tovwip": 0,
-                    "tovkons": "0",
-                    "prognoz": "0",
-                    "box": 1,
-                    "stoyka": 1,
-                    "tovwipfact": 0,
-                    "tovkonsfact": 0,
-                    "stellav": 1,
-                    "yacheyka": 1,
-                    "kodyach": null
-                }
-            },
-            "props": [],
-            "descriptions": {
-                "opisan": 0
-            },
-            "sub_data": {
-                "base": {
-                    "tovprim": null
-                },
-                "full": {
-                    "a_s1": 0,
-                    "a_s2": null,
-                    "a_r1naz": "-",
-                    "a_f2": 0,
-                    "a_b2": 0,
-                    "a_r2naz": "-",
-                    "a_f3": 1,
-                    "a_r3naz": "-",
-                    "a_4naz": "-",
-                    "a_r5naz": "Накладная приходная",
-                    "a_r6naz": "-",
-                    "a_b7": 0,
-                    "a_r7naz": "-",
-                    "a_f8": 0,
-                    "a_r8naz": "Проче",
-                    "a_s9": null,
-                    "a_f9": 2,
-                    "a_b9": null,
-                    "a_r9naz": "ТИ ПВХ покрытие",
-                    "a_s10": 0,
-                    "a_f10": 0,
-                    "a_b10": 0,
-                    "a_r10naz": "ТИ ПВХ покрытие"
-                }
+            "full": {
+                "shortnaz": "Трійник EKATEC 130/108/130 90° зовн.",
+                "customnaz": "Трійник EKATEC 130/108/130 90° зовн.",
+                "tnved": 3917400090,
+                "barcode": null,
+                "kassacode": null,
+                "garmes": 0,
+                "tovorder": 0,
+                "priznaknaz": "Прочее",
+                "treeidnaz": "Трійники EKAТЕС (зовн.)",
+                "budgetpriznaknaz": "-",
+                "abcnaz": "C",
+                "xyznaz": "-",
+                "qrsnaz": "-",
+                "specstavkanaz": "-",
+                "tovzakr": 0,
+                "inbuffer": 0,
+                "eshop": 0,
+                "pokupnoy": 0,
+                "akciz": "-",
+                "akciznakl": "-",
+                "email": null,
+                "oprihas": "ТМЦ",
+                "dohodacc": "-",
+                "rashodacc": "реклама на ТВ",
+                "defaultacc": "Накладная приходная",
+                "brand": "Фиттинги из ПВХ покрития (скидка)",
+                "strana": "Germany",
+                "cvet": "-",
+                "buchtov": "Трійник EKATEC 130/108/130 90° зовн."
             }
-        } )
+        },
+        "manufacturers": {
+            "base": {
+                "manufacter": "0-Сокращ",
+                "provider": "21526-Сокращ",
+                "a_f7": 0
+            },
+            "full": {
+                "artmanuf": 0,
+                "nazmanuf": "EKATEC T-piece 130 T 108 mm",
+                "srokgodn": 0,
+                "artpostav": 0,
+                "nazpostav": "EKATEC T-piece 130 T 108 mm",
+                "srokpostav": 0
+            }
+        },
+        "quantity": {
+            "base": {
+                "ves": ".07",
+                "minzapas": 0,
+                "edizmernaz": "штуки "
+            },
+            "full": {
+                "obiem": ".001",
+                "floorspace": 0,
+                "fasovka": true,
+                "minfas": "0",
+                "perezakaz": "1969-12-31T21:00:00.000000Z",
+                "zakupkol": 0,
+                "netto": "0",
+                "normabrak": 0,
+                "mincena1": 0,
+                "mincena2": 0,
+                "mincena3": 0,
+                "mincena4": 0,
+                "shirina": "0",
+                "placetip": "-"
+            }
+        },
+        "assembly": {
+            "base": {
+                "sborka": 0,
+                "assemblmethod": 0
+            },
+            "full": {
+                "assembltime": 0,
+                "assembllead": "0",
+                "autopereshet": 0,
+                "autobuild": "-",
+                "pereskompl": "-",
+                "assemblmethod": 0,
+                "materialcost": false,
+                "labourcost": 0,
+                "overhead": 0,
+                "dificulty": "0",
+                "proizvtip": "0"
+            }
+        },
+        "cost": {
+            "base": {
+                "cenaoncall": "-",
+                "indprice": 0,
+                "tax1": 0,
+                "tax2": 0,
+                "tax3": 0,
+                "tax4": 0
+            },
+            "full": {
+                "tovkurs": 32,
+                "tovsebestplan": 0,
+                "tovcenaplan1": false,
+                "tovcenaplan2": false,
+                "tovcenaplan3": 0,
+                "tovcenaplan4": 0,
+                "tovsebestgrnplan": "0",
+                "tovcenagrnplan1": "0",
+                "tovcenagrnplan2": false,
+                "tovcenagrnplan3": "0",
+                "tovcenagrnplan4": "0",
+                "priceunit": "1",
+                "maxskidproc": "100",
+                "tovsebest": "1969-12-31T21:00:00.000000Z",
+                "tovcena1": "0",
+                "tovcena2": 0,
+                "tovcena3": 0,
+                "tovcena4": 0,
+                "tovsebestgrn": false,
+                "tovcenagrn1": 0,
+                "tovcenagrn2": 0,
+                "tovcenagrn3": 0,
+                "tovcenagrn4": 0,
+                "zakupcena": "0",
+                "averageseb": false
+            }
+        },
+        "stocks": {
+            "base": {
+                "tovtotal": 0,
+                "tovtotalfact": 0
+            },
+            "full": {
+                "tovreserv": 0,
+                "tovwip": 0,
+                "tovkons": "0",
+                "prognoz": "0",
+                "box": 1,
+                "stoyka": 1,
+                "tovwipfact": 0,
+                "tovkonsfact": 0,
+                "stellav": 1,
+                "yacheyka": 1,
+                "kodyach": null
+            }
+        },
+        "props": [],
+        "descriptions": {
+            "opisan": 0
+        },
+        "sub_data": {
+            "base": {
+                "tovprim": null
+            },
+            "full": {
+                "a_s1": 0,
+                "a_s2": null,
+                "a_r1naz": "-",
+                "a_f2": 0,
+                "a_b2": 0,
+                "a_r2naz": "-",
+                "a_f3": 1,
+                "a_r3naz": "-",
+                "a_4naz": "-",
+                "a_r5naz": "Накладная приходная",
+                "a_r6naz": "-",
+                "a_b7": 0,
+                "a_r7naz": "-",
+                "a_f8": 0,
+                "a_r8naz": "Проче",
+                "a_s9": null,
+                "a_f9": 2,
+                "a_b9": null,
+                "a_r9naz": "ТИ ПВХ покрытие",
+                "a_s10": 0,
+                "a_f10": 0,
+                "a_b10": 0,
+                "a_r10naz": "ТИ ПВХ покрытие"
+            }
+        }
+    })
 </script>
 
 <style lang="scss" scoped>
