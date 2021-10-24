@@ -9,6 +9,7 @@ import List from "./filters/List.vue"
 import SideTableLayout from "./table/SideTableLayout.vue"
 import SideBarLayout from "./table/SideBarLayout.vue"
 import DoubleTable from "./table/DoubleTable.vue"
+import RollUp from "./table/RollUp.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
 import Field from "./forms/Field.vue"
@@ -24,6 +25,7 @@ export default app => {
   app.component("double-table", DoubleTable)
   app.component("side-table", SideTableLayout)
   app.component("side-bar", SideBarLayout)
+  app.component("roll-up", RollUp)
   app.component("list", List)
   app.component("ModalSelect", ModalSelect)
   app.component("checkbox", Checkbox)

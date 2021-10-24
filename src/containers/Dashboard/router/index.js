@@ -11,9 +11,9 @@ export default [
         }
     },
     {
-        path: '/d',
+        path: '/d2',
         name: 'Home2',
-        component: () => import('@dashboard/views/List.vue'),
+        component: () => import('@dashboard/views/D2.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: true,

@@ -1,1 +1,1 @@
-export default id => `sales/order/links/${id}`
+export default id => `sales/orders/links/${id}`
