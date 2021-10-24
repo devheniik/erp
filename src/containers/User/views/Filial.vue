@@ -25,7 +25,7 @@ import { ref } from 'vue'
 import get from '@/hooks/get'
 import set from '@/api/index'
 
-import api from '../api/filial/filial/filial'
+import api from '../api/filial/list'
 
 const { data, isLoad } = get(api)
 

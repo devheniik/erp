@@ -13,11 +13,11 @@
         <div>
         <p class="text-sm text-gray-700">
             Показано с 
-            <span class="font-medium">{{ pagination  }}</span>
+            <span class="font-medium">{{ page * limit - limit + 1  }}</span>
             по
             <span class="font-medium">{{ pagination.to }}</span>
             из
-            <span class="font-medium">{{ pagination.total }}</span>
+            <span class="font-medium">{{ page * limit }}</span>
             всего
         </p>
         </div>
@@ -83,7 +83,8 @@
 
 const props = defineProps({
   pagination: Object,
-  page: Number
+  page: Number,
+  limit: Number
 })
 
 const handle = (isIncrement, value) => { 
