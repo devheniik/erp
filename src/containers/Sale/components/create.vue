@@ -211,7 +211,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Раскраска',
-                                        api: 'uniprops/color',
+                                        api: 'uniprops/props/color',
                                         meanKey: 'a_s1' }" v-model="data.general.full.cvet"></modal-select>
                                 </div>
                             </div>
@@ -235,7 +235,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Состояние',
-                                        api: 'uniprops/color',
+                                        api: 'uniprops/props/color',
                                         meanKey: 'a_s1'
                                             }" v-model="data.general.status.zakstatus"></modal-select>
                                 </div>
@@ -394,7 +394,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Валюта грн',
-                                        api: 'uniprops/color',
+                                        api: 'uniprops/props/color',
                                         meanKey: 'a_s1'
                                             }" v-model="data.general.status.zakstatus"></modal-select>
                                 </div>

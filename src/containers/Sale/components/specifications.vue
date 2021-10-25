@@ -28,11 +28,11 @@ const route = useRoute()
 
 
  
-const table_api = `sales/orders/${route.params.id}/specifications/data-table`
+const table_api = `sales/orders/get/${route.params.id}/specifications/data-table`
 
-const top_bar_api = `sales/orders/${route.params.id}/specifications/top-table`
+const top_bar_api = `sales/orders/get/${route.params.id}/specifications/top-table`
 
-const sub_bar_api = `sales/orders/${route.params.id}/specifications/sub-table`
+const sub_bar_api = `sales/orders/get/${route.params.id}/specifications/sub-table`
 
  
 

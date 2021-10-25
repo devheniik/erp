@@ -17,7 +17,7 @@
 import {  computed, ref, watchEffect  } from 'vue'
 const props = defineProps({
     api: String,
-    tree: Boolean, 
+    tree: Boolean
 }) 
 
 const emit = defineEmits(['select'])

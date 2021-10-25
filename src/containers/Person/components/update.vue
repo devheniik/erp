@@ -87,7 +87,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Инвалидность',
-                                        api: 'uniprops/disability',
+                                        api: 'uniprops/props/disability',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.disability"></modal-select>
                                 </div>
@@ -120,7 +120,7 @@
                             <div>
                                 <modal-select :data="{
                                     label:'Регион',
-                                    api: 'uniprops/regions',
+                                    api: 'uniprops/props/regions',
                                     meanKey: 'a_s1'
                                      }" v-model="data.general.base.region"></modal-select>
                             </div>
@@ -131,7 +131,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Образование',
-                                        api: 'uniprops/education',
+                                        api: 'uniprops/props/education',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.obraz"></modal-select>
                                 </div>
@@ -141,7 +141,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Категория',
-                                        api: 'uniprops/education_category',
+                                        api: 'uniprops/props/education_category',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.category"></modal-select>
                                 </div>
@@ -151,7 +151,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Профессия',
-                                        api: 'uniprops/profession',
+                                        api: 'uniprops/props/profession',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.special"></modal-select>
                                 </div>
@@ -161,7 +161,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Семейное положение',
-                                        api: 'uniprops/marital_status',
+                                        api: 'uniprops/props/marital_status',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.sempol"></modal-select>
                                 </div>
@@ -171,7 +171,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Национальность',
-                                        api: 'uniprops/nationality',
+                                        api: 'uniprops/props/nationality',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.nation"></modal-select>
                                 </div>
@@ -181,7 +181,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Ресурс',
-                                        api: 'uniprops/resource',
+                                        api: 'uniprops/props/resource',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.resurs"></modal-select>
                                 </div>
@@ -191,7 +191,7 @@
                                 <div>
                                     <modal-select :data="{
                                         label:'Раскраска',
-                                        api: 'uniprops/color',
+                                        api: 'uniprops/props/color',
                                         meanKey: 'a_s1'
                                              }" v-model="data.general.full.cvet"></modal-select>
                                 </div>
@@ -251,7 +251,7 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Секретность',
-                                    api: 'uniprops/secrecy',
+                                    api: 'uniprops/props/secrecy',
                                     meanKey: 'a_s1'
                                      }" v-model="data.profile.sekret"></modal-select>
                                 </div>
@@ -348,7 +348,7 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Отдел',
-                                    api: 'uniprops/department',
+                                    api: 'uniprops/props/department',
                                     meanKey: 'a_s1'
                                      }" v-model="data.job.otdel"></modal-select>
                                 </div>
@@ -358,7 +358,7 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Должность',
-                                    api: 'uniprops/post'     ,
+                                    api: 'uniprops/props/post'     ,
                                     meanKey: 'a_s1'
                                      }" v-model="data.job.dolvnost"></modal-select>
                                 </div>
@@ -378,7 +378,7 @@
                                 <div>
                                     <modal-select :data="{
                                     label:'Инспектор',
-                                    api: 'uniprops/manager',
+                                    api: 'uniprops/props/manager',
                                     meanKey: 'a_s1'
                                      }" v-model="data.job.manager"></modal-select>
                                 </div>
