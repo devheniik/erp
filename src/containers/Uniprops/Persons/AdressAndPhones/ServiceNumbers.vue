@@ -5,9 +5,9 @@
                 <button class="btn-circle-primary-md">Добавить</button>
             </div>
         </div>
-        <div class="label-big">
+        <div class="">
             <div>
-                <h1>Воинский учет</h1>
+                <h1>Служебные номера</h1>
 
             </div>
         </div>
@@ -23,86 +23,65 @@
         <div class="flex justify-center grid  grid-cols-1 w-auto mx-8">
 
             <div class="tl ">
-                <label class="label-primary">Состав:</label>
+                <label class="label-primary">Филиал для задолжености МОЛа:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Состав',
+                                    label:'Филиал для задолжености МОЛа',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
-            <div class="tl ">
-                <label class="label-primary">Воинское звание:</label>
+             <div class="tl ">
+                <label class="label-primary">Филиал для начисления затрат:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Воинское звание',
+                                    label:'Филиал для начисления затрат',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
-            <div class="tl ">
-                <label class="label-primary">Военкомат:</label>
+             <div class="tl ">
+                <label class="label-primary">Номера:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Военкомат',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }"></modal-select>
-                </div>
-            </div>
-            <div class="tl ">
-                <label class="label-primary">Пригодность к воинской службе:</label>
-                <div>
-                    <modal-select :data="{
-                                    label:'Пригодность к воинской службе',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }"></modal-select>
-                </div>
-            </div>
-            <div class="tl ">
-                <label class="label-primary"> Группа воинского учёта:</label>
-                <div>
-                    <modal-select :data="{
-                                    label:' Группа воинского учёта',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }"></modal-select>
-                </div>
-            </div>
-            <div class="tl ">
-                <label class="label-primary">Категории воинского учета:</label>
-                <div>
-                    <modal-select :data="{
-                                    label:'Категории воинского учета',
+                                    label:'Номера',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl">
-                <label class="label-primary">Дата постановки на учет:</label>
+                <label class="label-primary">Дата выдачи:</label>
                 <div class="flex  items-center">
-                    <flat-pickr :locale="'ru'" class="input-primary">
+                    <flat-pickr :locale="'ru'" class="input-primary" >
                     </flat-pickr>
                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                 </div>
             </div>
-            
-
-
             <div class="tl">
-                <label class="label-primary"> Военно-учетная специальность:</label>
-                <input type="text" class="input-primary" placeholder="" />
-            </div>
-              <div class="tl">
-                <label class="label-primary"> Находится на спец. учете:</label>
-                <input type="text" class="input-primary" placeholder="" />
+                <label class="label-primary">Дата возврата:</label>
+                <div class="flex  items-center">
+                    <flat-pickr :locale="'ru'" class="input-primary" >
+                    </flat-pickr>
+                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                </div>
             </div>
             <div class="tl">
-                <label class="label-primary">Призывник</label>
+                <label class="label-primary">Лимит:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary">Номер:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary">Примечание:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary">Для звонков</label>
                 <div>
                     <select class="dropdown-primary">
                         <option value="+" selected="true">Да</option>
@@ -111,7 +90,7 @@
                 </div>
             </div>
             <div class="tl">
-                <label class="label-primary">Военнообязанный</label>
+                <label class="label-primary">Дополнительный пакет</label>
                 <div>
                     <select class="dropdown-primary">
                         <option value="+" selected="true">Да</option>
@@ -119,13 +98,32 @@
                     </select>
                 </div>
             </div>
+            <div class="tl">
+                <label class="label-primary">Дополнительные услуги</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Статус: активен?</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+          
 
 
         </div>
         <div>
-            <div class="flex justify-center">
-                <button class="btn-circle-primary-md">Добавить</button>
-            </div>
+        <div class="flex justify-center">
+            <button class="btn-circle-primary-md">Добавить</button>
+        </div>
         </div>
     </div>
 </template>

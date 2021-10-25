@@ -7,7 +7,7 @@
         </div>
         <div class="label-big">
             <div>
-                <h1>Воинский учет</h1>
+                <h1>Срез</h1>
 
             </div>
         </div>
@@ -23,86 +23,80 @@
         <div class="flex justify-center grid  grid-cols-1 w-auto mx-8">
 
             <div class="tl ">
-                <label class="label-primary">Состав:</label>
+                <label class="label-primary">Кто проводил:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Состав',
+                                    label:'Кто проводил',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Воинское звание:</label>
+                <label class="label-primary">участвовал:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Воинское звание',
+                                    label:'участвовал',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Военкомат:</label>
+                <label class="label-primary">участвовал:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Военкомат',
+                                    label:'участвовал',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Пригодность к воинской службе:</label>
+                <label class="label-primary">участвовал:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'Пригодность к воинской службе',
+                                    label:'участвовал',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary"> Группа воинского учёта:</label>
+                <label class="label-primary"> Этапы адаптации:</label>
                 <div>
                     <modal-select :data="{
-                                    label:' Группа воинского учёта',
+                                    label:' Этапы адаптации',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
-            <div class="tl ">
-                <label class="label-primary">Категории воинского учета:</label>
-                <div>
-                    <modal-select :data="{
-                                    label:'Категории воинского учета',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }"></modal-select>
-                </div>
-            </div>
+            
             <div class="tl">
-                <label class="label-primary">Дата постановки на учет:</label>
+                <label class="label-primary"> Дата план.:</label>
                 <div class="flex  items-center">
                     <flat-pickr :locale="'ru'" class="input-primary">
                     </flat-pickr>
                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                 </div>
             </div>
-            
+            <div class="tl">
+                <label class="label-primary">Дата факт:</label>
+                <div class="flex  items-center">
+                    <flat-pickr :locale="'ru'" class="input-primary">
+                    </flat-pickr>
+                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                </div>
+            </div>
 
 
             <div class="tl">
-                <label class="label-primary"> Военно-учетная специальность:</label>
-                <input type="text" class="input-primary" placeholder="" />
-            </div>
-              <div class="tl">
-                <label class="label-primary"> Находится на спец. учете:</label>
+                <label class="label-primary"> Примечания:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
             <div class="tl">
-                <label class="label-primary">Призывник</label>
+                <label class="label-primary">Проведен</label>
                 <div>
                     <select class="dropdown-primary">
                         <option value="+" selected="true">Да</option>
@@ -111,7 +105,7 @@
                 </div>
             </div>
             <div class="tl">
-                <label class="label-primary">Военнообязанный</label>
+                <label class="label-primary">Прошел</label>
                 <div>
                     <select class="dropdown-primary">
                         <option value="+" selected="true">Да</option>
