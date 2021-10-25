@@ -134,7 +134,7 @@
 </template>
 
 <script setup>
-    import route_create from '../api/create'
+    
     import create from '@api_base/create'
     import {
         ref

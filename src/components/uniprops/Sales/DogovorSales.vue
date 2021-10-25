@@ -7,7 +7,7 @@
         </div>
         <div class="">
             <div>
-                <h1> Склады , Код формы : spravka </h1>
+                <h1>Договоры продаж</h1>
 
             </div>
         </div>
@@ -16,244 +16,258 @@
 
     <div class="mt-8">
         <h1 class="label-big">
-            Поля элемента справочника<span class="cursor-pointer"></span>
+            Общие данные<span class="cursor-pointer"></span>
         </h1>
     </div>
     <div class="section grid grid-cols-1 gap-4 mt-4">
         <div class="flex justify-center grid  grid-cols-1 w-auto mx-8">
 
-
-          
-           
-           
             <div class="tl ">
-                <label class="label-primary">Ответственный</label>
+                <label class="label-primary">Организация:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:'Организация',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary"> Типы складов:</label>
+                <label class="label-primary">Прайслист:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:'Прайслист',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Организации (для пров. комплектаций):</label>
+                <label class="label-primary">Филиал:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:'Филиал',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary"> Точка доставки:</label>
+                <label class="label-primary"> Менеджер договора:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:' Менеджер договора',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Основной филиал:</label>
+                <label class="label-primary"> Прайслист коррекции:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:'Прайслист коррекции',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Ресурс:</label>
+                <label class="label-primary">Товар-услуга:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }"></modal-select>
-                </div>
-            </div>
-              <div class="tl ">
-                <label class="label-primary"> Бухгалтер для документов:</label>
-                <div>
-                    <modal-select :data="{
-                                    label:'-',
+                                    label:'Товар-услуга',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Бухгалтерский склад:</label>
+                <label class="label-primary">Плательщик:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:'Плательщик',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary"> Складв1С:</label>
+                <label class="label-primary">Вид отсрочки по договору:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:'Вид отсрочки по договору',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
             <div class="tl ">
-                <label class="label-primary">Группа складов:</label>
+                <label class="label-primary"> Вид договора:</label>
                 <div>
                     <modal-select :data="{
-                                    label:'-',
+                                    label:' Вид договора',
                                     api: '/insp'     ,
                                     meanKey: 'name'
                                     }"></modal-select>
                 </div>
             </div>
-          
-              <div class="tl">
-                <label class="label-primary"> Порядок списания:</label>
-                <input type="text" class="input-primary" placeholder="" />
+            <div class="tl ">
+                <label class="label-primary">Проект:</label>
+                <div>
+                    <modal-select :data="{
+                                    label:'Проект',
+                                    api: '/insp'     ,
+                                    meanKey: 'name'
+                                    }"></modal-select>
+                </div>
             </div>
-             <div class="tl">
-                <label class="label-primary"> Логист в ф. структуре:</label>
-                <input type="text" class="input-primary" placeholder="" />
+            <div class="tl ">
+                <label class="label-primary">Родительский договор:</label>
+                <div>
+                    <modal-select :data="{
+                                    label:'Родительский договор',
+                                    api: '/insp'     ,
+                                    meanKey: 'name'
+                                    }"></modal-select>
+                </div>
             </div>
-             <div class="tl">
-                <label class="label-primary">Название:</label>
-                <input type="text" class="input-primary" placeholder="" />
-            </div>
-
             <div class="tl">
-                <label class="label-primary">Телефон:</label>
+                <label class="label-primary">Дата:</label>
+                <div class="flex  items-center">
+                    <flat-pickr :locale="'ru'" class="input-primary">
+                    </flat-pickr>
+                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Срок оплаты:</label>
+                <div class="flex  items-center">
+                    <flat-pickr :locale="'ru'" class="input-primary">
+                    </flat-pickr>
+                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Срок окончания:</label>
+                <div class="flex  items-center">
+                    <flat-pickr :locale="'ru'" class="input-primary">
+                    </flat-pickr>
+                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Сумма:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
-          <div class="tl">
+            <div class="tl">
+                <label class="label-primary">Скидка:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary"> Срок поставки:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary"> Процент комиссии банка:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary">Процент разницы, который оставляем себе:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary">Приоритет (сначала меньше):</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
+                <label class="label-primary">Номер:</label>
+                <input type="text" class="input-primary" placeholder="" />
+            </div>
+            <div class="tl">
                 <label class="label-primary">Примечание:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
             <div class="tl">
-                <label class="label-primary"> Название для клиента:</label>
-                <input type="text" class="input-primary" placeholder="" />
-            </div>
-             <div class="tl">
-                <label class="label-primary"> *Логист:</label>
-                <input type="text" class="input-primary" placeholder="" />
-            </div>
-             <div class="tl">
-                <label class="label-primary"> e-mail:</label>
+                <label class="label-primary">GLN Код:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
             <div class="tl">
-                <label class="label-primary">Адрес склада(сайт):</label>
+                <label class="label-primary"> Кто добавил:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
-             <div class="tl">
-                <label class="label-primary">Місце складання(Місто для відгрузок):</label>
+            <div class="tl">
+                <label class="label-primary">Когда добавил:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
-             <div class="tl">
-                <label class="label-primary"> e-shop</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary">Чужой</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary"> Склад клиента (для компл.)</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary"> Заказы из РЦ</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary"> Автоматически снимать резервы</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary">Архивный</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary"> Склад для сайта "Наша стройка"</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary"> НС остатки только в Больш.Валюте</label>
-                <div>
-                    <select class="dropdown-primary">
-                        <option value="+" selected="true">Да</option>
-                        <option value="-">Нет</option>
-                    </select>
-                </div>
-            </div>
-             <div class="tl">
-                <label class="label-primary">Код:</label>
+            <div class="tl">
+                <label class="label-primary">зеркальный договор:</label>
                 <input type="text" class="input-primary" placeholder="" />
             </div>
-             <div class="tl ">
-                <label class="label-primary"> Верхний уровень:</label>
+            <div class="tl">
+                <label class="label-primary">Закрыт</label>
                 <div>
-                    <modal-select :data="{
-                                    label:'-',
-                                    api: '/insp'     ,
-                                    meanKey: 'name'
-                                    }"></modal-select>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
                 </div>
             </div>
+            <div class="tl">
+                <label class="label-primary">Разрешать скидку</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Разрешать скидку</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Для док. валют (безнал.)</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Для недок. валют (нал.)</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Разрешить кредит без документов</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tl">
+                <label class="label-primary">Есть бумажн. оригинал</label>
+                <div>
+                    <select class="dropdown-primary">
+                        <option value="+" selected="true">Да</option>
+                        <option value="-">Нет</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
         <div>
             <div class="flex justify-center">
