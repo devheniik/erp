@@ -6,9 +6,9 @@
                     <Disclosure v-if="item.category.data" as="div" class="space-y-100" v-slot="{ open }"> 
                         <DisclosureButton  @click="disabled ? null : [ $log(item.uid), $emit('select', item.uid)]" :class="[open ? 'bg-secondary-300 text-gray-900' : 'bg-secondary-100 text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm font-medium focus:outline-none focus:ring-b focus:ring-primary-500']">
                              
-                                <span class=" pl-2 w-full text-center whitespace-nowrap truncate">
-                                    {{ item.name + ' ' + item.current  }} 
-                                </span>  
+                          <span class=" pl-2 w-full text-center whitespace-nowrap truncate">
+                            {{ item.name }} 
+                          </span>  
                         </DisclosureButton>
                         <transition
                           enter-active-class="transition duration-100 ease-out"
@@ -22,7 +22,7 @@
                           <DisclosurePanel>
                               <a v-for="subItem in item.category.data" :key="subItem.name" @click="$emit('select', subItem.uid)" :class="[open ? 'bg-secondary-300' : 'bg-secondary-100', 'group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600  hover:text-gray-900  hover:bg-primary-50']">                                 
                                       <span class=" pl-2 w-full text-center whitespace-nowrap truncate">
-                                          {{ subItem.name }} {{item.current }}
+                                          {{ subItem.name }}
                                       </span>  
                               </a>
                           </DisclosurePanel>
