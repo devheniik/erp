@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto w-full h-full">  
+    <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto  hide-scroll w-full h-full">  
         <div v-if="data && !isLoad" class="mt-1 flex-grow flex flex-col">
             <nav class="flex-1 px-2 bg-white"> 
                 <template v-for="item in data" :key="item.name"> 
@@ -11,11 +11,11 @@
                           </span>  
                         </DisclosureButton>
                         <transition
-                          enter-active-class="transition duration-300 ease-out"
-                          enter-from-class="transform -translate-y-full scale-y-95 opacity-0"
-                          enter-to-class="transform scale-y-100 opacity-100"
-                          leave-active-class="transition duration-1000 ease-out"
-                          leave-from-class="transform translate-y-full scale-100 opacity-100"
+                          enter-active-class="transition duration-100 ease-out"
+                          enter-from-class="transform -translate-x-full scale-x-95 opacity-0"
+                          enter-to-class="transform scale-x-100 opacity-100"
+                          leave-active-class="transition duration-100 ease-out"
+                          leave-from-class="transform translate-x-full scale-100 opacity-100"
                           leave-to-class="transform scale-95 opacity-0"
                         > 
                           <DisclosurePanel>
