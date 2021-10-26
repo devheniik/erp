@@ -1,0 +1,1 @@
+export default 'orders/operations/menu/get'

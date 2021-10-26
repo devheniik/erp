@@ -7,6 +7,7 @@
         }">
         <update v-show="comoponent == 'update'"></update> 
         <specifications v-show="comoponent == 'specifications'"></specifications> 
+        <operation v-show="comoponent == 'operation'"></operation> 
     </layout>
 </template>
 
@@ -20,6 +21,7 @@ import links from '../api/links'
 // * component import
 import update from '../components/update.vue'
 import specifications from '../components/specifications.vue'
+import operation from '../components/operation.vue'
 
 // * layout import
 import layout from '@/layouts/Card.vue'
@@ -30,7 +32,6 @@ import d_config from '../config/card'
 const config = ref(d_config)
 
 const comoponent = computed(() => config.value.find(e => e.active == true).component)
-
 
 
 </script>

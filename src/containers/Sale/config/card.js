@@ -7,13 +7,11 @@ export default [
     {
         label: 'Спецификации',
         active: false,
-        component: 'specifications',
-        link: '/link'
+        component: 'specifications'
     },
     {
         label: 'Операции',
         active: false,
-        component: 'operation',
-        link: '/link'
+        component: 'operation'
     },
 ]
