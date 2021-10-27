@@ -3,7 +3,7 @@
 <div v-if="!isLoad" class="bg-white shadow overflow-hidden sm:rounded-lg w-full">
     <div class="px-4 py-1.5 sm:px-6" @click="open = !open">
       <h3 class="text-lg leading-6 font-medium text-gray-900"> 
-        <span class="text-gray-500 mr-2">Итого:</span>{{ data.zakkode }} 
+        <span class="text-gray-500 mr-2">Итого:</span>{{ data.data.zakkode }} 
       </h3> 
     </div>
     <div class="border-t border-gray-200 px-4 py-1.5 sm:p-0 flex flex-col lg:flex-row justify-between" v-if="open">
@@ -13,7 +13,7 @@
             Всего 	
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ data.subsum }} 
+            {{ data.data.subsum }} 
           </dd>
         </div>
         <div class="py-1.5 sm:py-1.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -21,7 +21,7 @@
             НДС, 20 % 	
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ data.tax1sum }} 
+            {{ data.data.tax1sum }} 
           </dd>
         </div>  
         <div class="py-1.5 sm:py-1.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -29,7 +29,7 @@
             Итого
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ data.totalsum }} 
+            {{ data.data.totalsum }} 
           </dd>
         </div> 
         <div class="py-1.5 sm:py-1.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -37,7 +37,7 @@
             Итого, в вал. баланса
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            {{ data.totalsumbal }} 
+            {{ data.data.totalsumbal }} 
           </dd>
         </div>
       </dl> 

@@ -1,8 +1,8 @@
 <template>
-    <div> 
+    <div class="w-full"> 
         <div class="w-full flex items-center">
             <bar></bar>
-        </div>
+        </div> 
         <div class="flex justify-center w-full">
             <description :api="top_bar_api" />
         </div>
@@ -10,18 +10,18 @@
             <viewer :api="table_api">
 
             </viewer>
-        </div>
+        </div> 
         <div class="w-full mt-5">
-            <sub-table :api="sub_bar_api">
+            <SubTable_m :api="sub_bar_api">
 
-            </sub-table>
+            </SubTable_m>
         </div>
     </div>
 </template>
 
 <script setup>
 import description from './specifications/description.vue'
-import SubTable from './specifications/sub-table.vue'
+import SubTable_m from './specifications/sub-table.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()

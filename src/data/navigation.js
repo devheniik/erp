@@ -117,7 +117,7 @@ export default [
       {
         name: 'Карточки',
         icon: 'CollectionIcon',
-        href: { name: 'person-update', params: { id: '83'} },
+        href: { name: 'person-update', params: { id: '83'  } },
         current: false,
         uname: 'person-update',
         child: []

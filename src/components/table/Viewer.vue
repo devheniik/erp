@@ -19,9 +19,9 @@
                     </button>
                 </div>
                 <div class="my-5 mr-5">
-                    <utable @sort="sort($event)"
+                    <utable @sort="sort($event)" :modalSelect=modalSelect
                         @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)"
-                        :data="{ headers: data.headers, body: data.data}" :sort="data.sort"></utable>
+                        :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
                 </div>
             </div>
             <div class="w-full mb-1.5">

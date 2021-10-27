@@ -13,11 +13,15 @@ import RollUp from "./table/RollUp.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
 import Field from "./forms/Field.vue"
-import Bar from "./Bar.vue"
+import Bar from "./table/Bar.vue"
+import SubTable from "./table/SubTable.vue"
+import Alert from "./table/Alert.vue"
 
 
 
 export default app => {
+  app.component("alert", Alert)
+  app.component("sub-table", SubTable)
   app.component("bar", Bar)
   app.component("field", Field)
   app.component("loading", Loading)

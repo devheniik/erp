@@ -23,7 +23,7 @@ export default function (_route, start_data) {
         isReload.value = true
         if (data.value != null || data.value != undefined) {
             data.value.data = []
-            data.value.headers = [] 
+            // data.value.headers = [] 
         } 
         console.log(list)
         data.value = await list(_route, lodash.cloneDeep(data.value))
@@ -49,7 +49,7 @@ export default function (_route, start_data) {
     })
 
     return {
-        data,
+        data,//:  data.value != null ? data.value.map(e => e.data.body.selected = false) : [],
         load,
         isReload,
         isLoad

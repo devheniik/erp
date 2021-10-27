@@ -43,46 +43,75 @@
           api: "uniprops/post"
       }
   ],
-  bar: {
-    
-  }
-  data: {
-    headers: [
+  bar: [
+    {
+      name: 'Метки',
+      child: [
+        name: "Сохранить в документе",
+        disabled:  false,
+        route: false, 
+        func: "DeficitToExpr",
+        params: [ 0 ] 
+      ]
+    }
+  ],
+  headers: [
       {
         label: 'Номер',
-        value: 'number'
+        value: 'number',
+        show: true
       }
     ],
-    body: [
+  data: [
       [ // строка
-        { // ячейка
-          name: 'number',
-          label: 'Компания x',
-          params: {
-            id: 123
+        color: '#fff',
+        id: '67',
+        selected: false,
+        value: [
+          { // ячейка
+            name: 'number',
+            label: 'Компания x',
+            params: {
+              id: 123,
+              type: 'empty'
+            }, 
+            modal: false,
+            route: 'firm-view'
           },
-          clickable: true,
-          modal: false,
-          route: 'firm-view'
-        }
+          '123123',
+          '123',
+          '12332'
+        ]
       ]
-    ]
-  },
+    ],
   components: {
     start: [
       {
-        component: 'sub-table',
-        bind: { ... },
-        data: { ... },
-        api: 'string' 
+        component: 'sub-table', // суб таблица
+        config: { 
+          // 
+         },
+        data: [
+          [ // порная коллонка
+            { // Строка 
+                label: 'Всего, в вал. операций',
+                value: 0 
+            },
+            {
+                label: 'Всего, в вал. операций',
+                value: 0
+            }
+          ]
+        ]
       }
     ],
     end: [
       {
-        component: 'sub-table',
-        bind: { ... },
-        data: { ... },
-        api: 'string' 
+        component: 'alert', // сообщение 
+        config: { 
+          type: ['warning', 'danger'] // default - INFO
+         },
+        data: 'Текст сообщения' // String
       }
     ],
   },
@@ -106,24 +135,37 @@
   }
 }
 
-// [
-//       [ // этот массив это первая колонка в этом апи она одна, но в других может быть несколько
-//         {
-//             label: 'Всего, в вал. операций',
-//             value: 0 
-//         },
-//         {
-//             label: 'Всего, в вал. операций',
-//             value: 0
-//         },
-//         {
-//             label: 'Всего, в вал. операций',
-//             value: 0
-//         },
-//         {
-//             label: 'Всего, в вал. операций',
-//             value: 0
-//         }
-//       ]
-//   ]
+
 ```
+
+
+## alert 
+
+Пример - https://prnt.sc/1xhwgo8
+ 
+       
+```jsx
+      <div class="w-full flex items-center"> 
+          <alert v-bind="{
+                  type: 'danger'
+              }"></alert>
+      </div>
+      <div class="w-full flex items-center"> 
+          <alert v-bind="{
+                  type: 'warning'
+              }"></alert>
+      </div>
+      <div class="w-full flex items-center"> 
+          <alert  ></alert>
+      </div>
+```
+
+
+---
+
+
+
+## sub-table 
+
+Пример - https://prnt.sc/1xhzy90
+  

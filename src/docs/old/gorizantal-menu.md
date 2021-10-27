@@ -586,6 +586,16 @@
         "child" =>  [
         
         ]
+    ],
+    "name" =>  "Метки",
+    "child" =>  [
+        [  
+            "name" =>  "Переместить отложенные на склад", 
+            "disabled" => true,
+            "route" => [ "name" => "rezerv-view", "paramss" =>  [ "id" =>  2125780 ] ], 
+            "func"=> false,
+            "params" =>  [ 0 ] 
+        ],
     ]
 ]
 ```

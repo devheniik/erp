@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import data from '.././data/appdevtools-json'
+import data from '../../data/appdevtools-json'
 import {ref} from 'vue'
 
 const  tabs = ref(data)
