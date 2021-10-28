@@ -441,43 +441,63 @@ cc
         "general": {
             "base": {
                 "zakkode": "2125780",
+                firmanaz: "",
                 "firma": "Мізол",
+                contacternaz: "-",
                 "contacter": 0,
+                contractnaz: "",
                 "contract": 898502,
+                projectnaz: "",
                 "project": 0,
                 "ei_from_lk": true,
                 "manager": "Чернявська  Надія Іванівна",
+                zakaztipnaz: "",
                 "zakaztip": "Предоплата",
+                type_of_worknaz: "",
                 "type_of_work": 0,
+                manufacture_fornaz: "",
+                manufacture_for: "0",
+                frachttipnaz: "",
                 "frachttip": 0,
+                accountnaz: "",
                 "account": 0,
                 manufacture_for: 0,
+                a_r2naz: "",
                 "a_r2": "КМЧС",
                 "a_b1": true,
                 "a_b2": true
             },
             "full": {
                 "ordernum": null,
+                contacter2naz: "",
                 "contacter2": 0,
                 "creater": "Admin",
+                resursnaz: "",
                 "resurs": "ИТ-отдел",
+                peregovoridnaz: "",
                 "peregovorid": 0,
+                dostpointnaz: "",
                 "dostpoint": 0,
                 "tipexport": true,
                 "tomrp": true,
                 "filial": 20,
-                "colornaz": null,
-                "cvet": "-"
+                "cvetnaz": null,
+                "cvet": "-",
+              
+
             },
             "timing": {
                 "zakdate": "2021-10-01T00:00:00.000000Z",
                 "srokopl": "2021-10-01T00:00:00.000000Z",
                 "srokpostavz": 3,
                 "okonch": "2021-10-04T00:00:00.000000Z",
+                okonchhour: "",
+                okonchmin: "",
                 "closedate": "1900-01-01T00:00:00.000000Z",
                 "reservdo": "2021-10-06T00:00:00.000000Z"
             },
             "status": {
+                zakstatusnaz: "",
                 "zakstatus": "В работе",
                 "a_s1": null,
                 "a_d3": "2021-10-01T00:00:00.000000Z",
@@ -498,6 +518,7 @@ cc
             "taxes": {
                 "base": {
                     "totalsum": 6234.76,
+                    valutanaz: "",
                     "valuta": "Украинские гривни"
                 },
                 "full": {
@@ -509,10 +530,6 @@ cc
                     "doprash": 0,
                     "doprashue": 0,
                     "discsum": 0,
-                    "tax1sum": 1039.13,
-                    "tax2sum": 0,
-                    "tax3sum": 0,
-                    "tax4sum": 0,
                     "summanat": 6234.76,
                     "kurs": 1,
                     "tax1pr": 20,
@@ -533,11 +550,17 @@ cc
                     "zakprim": " Из заказа № 2125779"
                 },
                 "full": {
+                    a_r1naz: "",
                     "a_r1": 0,
+                    a_r3naz: "",
                     "a_r3": 0,
+                    a_r4naz: "",
                     "a_r4": 0,
+                    a_r5naz: "",
                     "a_r5": 0,
+                    a_r6naz: "",
                     "a_r6": 0,
+                    a_r10naz: "",
                     "a_r10": 0,
                     "a_d2": "2021-09-29T00:00:00.000000Z",
                     "a_f1": 0,
@@ -552,7 +575,16 @@ cc
                     "a_s9": null,
                     "a_s10": null,
                     "a_b6": true,
-                    "a_b10": true
+                    "a_b10": true,
+                    zakaz: "",
+                    poster: "",
+                    zaktip: "",
+                    returnto: "",
+                    dats: "",
+                    datpo: "",
+                    kvitanc: "",
+                    zaksrc: "",
+                    zakkeysrc: "",
                 }
             }
         }
