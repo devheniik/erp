@@ -51,7 +51,7 @@
           {
             name: "Сохранить в документе",
             disabled:  false,
-            type:'modal'/'promt'/'action'/'route'
+            type:'modal'/'promt'/'action'/'route',
             value: '',//Обязательный параметр, передавать его в поле из config.action_param_name
             url: 'url/function/..',
             params: {
@@ -62,8 +62,8 @@
       }
     ],
     config: {
-      promt_param_name: 'название переменной которую нужно модифицировать' // modal
-      action_param_name: 'название переменной которую нужно модифицировать' // action
+      promt_param_name: 'название переменной которую нужно модифицировать', // modal
+      action_param_name: 'название переменной которую нужно модифицировать', // action
       params:{
         //список hidden переменных их формы
       }
