@@ -7,7 +7,7 @@
                                 <thead class="bg-primary-50">
                                     <tr>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> 
-                                            <Switch :value="isAllSelect" @click="allSelect(!isAllSelect)" :class="[isAllSelect ? 'bg-indigo-600' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
+                                            <Switch :value="isAllSelect" @click="allSelect(!isAllSelect)" :class="[isAllSelect ? 'bg-indigo-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
                                                 <span aria-hidden="true" :class="[isAllSelect ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
                                             </Switch>                             
                                         </th>
@@ -19,8 +19,8 @@
                                                 <span> 
                                                     {{ header.label }}
                                                 </span>
-                                                <arrow-narrow-up-icon v-if="sort.field == header.value && sort.order == 'asc'" class="h-3 w-3"></arrow-narrow-up-icon>
-                                                <arrow-narrow-down-icon v-else-if="sort.field == header.value && sort.order == 'desc'" class="h-3 w-3"></arrow-narrow-down-icon>
+                                                <arrow-narrow-up-icon v-if="sort && sort.field == header.value && sort.order == 'asc' " class="h-3 w-3"></arrow-narrow-up-icon>
+                                                <arrow-narrow-down-icon v-else-if="sort && sort.field == header.value && sort.order == 'desc'" class="h-3 w-3"></arrow-narrow-down-icon>
                                             </div>
                                         </th> 
                                     </tr>

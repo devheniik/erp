@@ -1,25 +1,11 @@
 <template>
     <div class="w-full"> 
-        <div class="w-full flex items-center">
-            <bar></bar>
-        </div> 
-        <div class="flex justify-center w-full">
-            <description :api="top_bar_api" />
-        </div>
-        <div class="w-full mt-5 border-t-2 pt-5 border-b-2 pb-5  ">
-            <viewer :api="table_api">
-
-            </viewer>
-        </div> 
-        <div class="w-full mt-5">
-            <SubTable_m :api="sub_bar_api">
-
-            </SubTable_m>
-        </div>
+        <viewer :api="`sales/orders/get/${route.params.id}/specifications`">
+        </viewer>
     </div>
 </template>
 
-<script setup>
+<script setup> 
 import description from './specifications/description.vue'
 import SubTable_m from './specifications/sub-table.vue'
 import { computed } from 'vue'

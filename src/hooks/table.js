@@ -35,7 +35,7 @@ export default function (_route, start_data) {
         isReload.value = true
         if (data.value != null || data.value != undefined) {
             data.value.data = []
-            data.value.headers = [] 
+            // data.value.headers = [] 
         }  
         data.value = await list(_route, data.value)
         console.log('table load')

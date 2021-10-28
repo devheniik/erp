@@ -67,8 +67,8 @@
         color: '#fff',
         id: '67',
         selected: false,
-        value: [
-          { // ячейка
+        value: {
+          id: { // ячейка
             name: 'number',
             label: 'Компания x',
             params: {
@@ -78,10 +78,10 @@
             modal: false,
             route: 'firm-view'
           },
-          '123123',
-          '123',
-          '12332'
-        ]
+          fio: '123123',
+          zakaz: '123',
+          tr: '12332'
+        }
       ]
     ],
   components: {
@@ -133,6 +133,14 @@
       links: {}
     }
   }
+}
+
+const json = {
+  type: ['warning', 'danger'] // default - INFO,
+  data: {
+    message: 'Текст сообщения' // String
+  }
+  component: 'toast'
 }
 
 

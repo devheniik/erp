@@ -7,6 +7,11 @@
         </modal>
         <div v-if="!isLoad" class="w-full h-full mr-5 flex flex-col justify-between">
             <div>
+                <div class="mr-5" v-if=data.bar.data> 
+                    <bar v-bind=data.bar.config :data=data.bar.data>
+
+                    </bar>
+                </div>
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
                     <div v-for="(filter, i) in data.filters" :key="i">
                         <component @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.component">
@@ -18,6 +23,7 @@
                         <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
+                
                 <div class="my-5 mr-5">
                     <utable @sort="sort($event)" :modalSelect=modalSelect
                         @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)"
@@ -25,7 +31,7 @@
                 </div>
             </div>
             <div class="w-full mb-1.5">
-                <pagination @change="load" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
+                <pagination @change="load" v-model:headers="data.headers" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
             </div>
         </div>
         <loading v-if="isReload"></loading> 

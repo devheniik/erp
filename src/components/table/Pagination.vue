@@ -33,6 +33,21 @@
                         </button>
                     </div>
                 </li>
+                <li class="flex flex-col">
+                    <span class="w-full">
+                        Колонки
+                    </span>
+                    <div class="grid grid-cols-3 gap-4 w-full">
+                        <div class="py-2 flex flex-row justify-between pr-32" v-for="(h, i) in headers" :key="i">
+                            <p class="text-gray-800">
+                                {{ h.label }}  
+                            </p>
+                            <Switch   @click="h.show = !h.show; $emit('update:headers', p_headers)"  :class="[h.show ? 'bg-indigo-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
+                                <span aria-hidden="true" :class="[h.show ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
+                            </Switch>  
+                        </div>
+                    </div>
+                </li>
                 <li>
                     <span>
                         Не форматировать числа
@@ -157,18 +172,20 @@
 
 <script setup>
     import {
-        ref
+        ref, watchEffect 
     } from 'vue'
 
     const settings = ref(false)
 
-    const emit = defineEmit(['change', 'update:page', 'update:limit'])
+    const emit = defineEmit(['change', 'update:page', 'update:limit', 'update:headers'])
 
     const props = defineProps({
         pagination: Object,
+        headers: Array,
         page: Number,
         limit: [Number, String]
     })
+ 
 
     const handle = (isIncrement, value) => {
         if (!isIncrement) {
@@ -177,7 +194,7 @@
             emit('update:page', props.page + value)
         }
         emit('change')
-    }
+    } 
 </script>
 
 <style lang="scss" scoped>
