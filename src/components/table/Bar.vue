@@ -8,7 +8,7 @@
                     </a>
 
                     <div v-if="tab.child.length > 0 && tab.current" class="flex flex-col absolute bg-gray-700  rounded-lg border ">
-                        <div v-for="(subTab, subTabIdx) in [...tab.child, ...tab.child]" :key="subTabIdx" @click="handle(subTab)" class="text-gray-200 py-1 hover:text-gray-100 rounded-lg hover:bg-gray-800">
+                        <div v-for="(subTab, subTabIdx) in  tab.child" :key="subTabIdx" @click="handle(subTab)" class="text-gray-200 py-1 hover:text-gray-100 rounded-lg hover:bg-gray-800">
                             <a class="px-3 py-4 ">
                                 <span class="text-sm">{{ subTab.name }}</span> 
                             </a>
