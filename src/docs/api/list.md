@@ -43,18 +43,32 @@
           api: "uniprops/post"
       }
   ],
-  bar: [
-    {
-      name: 'Метки',
-      child: [
-        name: "Сохранить в документе",
-        disabled:  false,
-        route: false, 
-        func: "DeficitToExpr",
-        params: [ 0 ] 
-      ]
+  bar: {
+    data: [
+      {
+        name: 'Метки',
+        child: [
+          {
+            name: "Сохранить в документе",
+            disabled:  false,
+            type:'modal'/'promt'/'action'/'route',
+            value: '',//Обязательный параметр, передавать его в поле из config.action_param_name
+            url: 'url/function/..',
+            params: {
+              //параметры для фронта
+            }
+          }
+        ]
+      }
+    ],
+    config: {
+      promt_param_name: 'название переменной которую нужно модифицировать', // modal
+      action_param_name: 'название переменной которую нужно модифицировать', // action
+      params:{
+        //список hidden переменных их формы
+      }
     }
-  ],
+  },
   headers: [
       {
         label: 'Номер',
