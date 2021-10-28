@@ -1,18 +1,18 @@
 <template>
-    <div class="h-full">
+    <div class="h-full w-full">
         <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
             <slot name="create">
 
             </slot>
         </modal>
-        <div v-if="!isLoad" class="w-full h-full mr-5 flex flex-col justify-between">
-            <div>
-                <div class="mr-5" v-if=data.bar.data> 
+        <div v-if="!isLoad" class="w-full h-full  flex flex-col justify-between">
+            <div class="w-full">
+                <div class="w-full" v-if=data.bar> 
                     <bar v-bind=data.bar.config :data=data.bar.data>
 
                     </bar>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
+                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
                     <div v-for="(filter, i) in data.filters" :key="i">
                         <component @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.component">
                         </component>

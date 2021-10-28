@@ -18,7 +18,7 @@
         </div>
  
         <main class="my-5">
-            <div class="mr-5 mb-24">
+            <div class="mb-24">
                 <slot>
 
                 </slot>

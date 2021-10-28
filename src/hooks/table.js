@@ -17,6 +17,10 @@ export default function (_route, start_data) {
 
     const data = ref(start_data ? start_data : null) 
 
+    const rebuild_headers = () => {
+        
+    }
+
 
 
     const load = async () => {

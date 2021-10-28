@@ -1,10 +1,10 @@
 <template>
     <div class="flex flex-col">
-                <div class="-my-2 overflow-x-auto h-max bottom-scroll  sm:-mx-6 lg:-mx-8">
+                <div class="-my-2 overflow-x-auto h-max bottom-scroll  sm:-mx-6 lg:-mx-8 ">
                     <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                         <div class="border-b border-gray-200 sm:rounded-lg">
                             <table class="w-full divide-y divide-gray-200">
-                                <thead class="bg-primary-50">
+                                <thead class="bg-primary-50 rounded-xl">
                                     <tr>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> 
                                             <Switch :value="isAllSelect" @click="allSelect(!isAllSelect)" :class="[isAllSelect ? 'bg-indigo-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">

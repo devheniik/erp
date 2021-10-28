@@ -3,7 +3,7 @@
         <div class="hidden sm:block w-full">
             <nav class="relative z-50 rounded-lg shadow flex divide-x  divide-gray-200 w-full" aria-label="Tabs">
                 <div v-for="(tab, tabIdx) in tabs" :key="tab.name" class="w-full " @click="clear(tabIdx, !tab.current)">
-                    <a  :class="[tab.current ? 'text-gray-50 border-b-2 border-gray-800 bg-gray-800 ' : 'text-gray-100 hover:text-gray-50 bg-gray-700 ', tabIdx === 0 ? 'rounded-l-lg' : '', tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '', ' h-8 flex items-center text-sm font-medium justify-center hover:bg-gray-800 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
+                    <a  :class="[tab.current ? 'text-gray-50 border-b-2 border-gray-800 bg-gray-800 ' : 'text-gray-100 hover:text-gray-50 bg-gray-700 ', ' h-8 flex items-center text-sm font-medium justify-center hover:bg-gray-800 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
                         <span>{{ tab.name }}</span> 
                     </a>
 
