@@ -11,7 +11,7 @@
                         <!--Первый блок-->
                         <div class="tl">
                             <label class="label-primary">Код заказа:</label>
-                            <input type="text" class="input-primary" v-model="data.general.base.zakkode" />
+                            <input type="text" class="input-primary" v-model="data.ZAKKODE" />
                         </div>
                         <div class="tl">
                             <div>
@@ -19,7 +19,7 @@
                                     label:'Заказчик',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.firma">
+                                    }" v-model="data.FIRMANAZ">
                                 </modal-select>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                                     label:'Контактёр',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.contacter">
+                                    }" v-model="data.CONTACTERNAZ">
                                 </modal-select>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                                     label:'Договор',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.contract">
+                                    }" v-model="data.CONTRACTNAZ">
                             </modal-select>
                         </div>
                         <div class="tl">
@@ -46,14 +46,14 @@
                                     label:'Проект',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.project">
+                                    }" v-model="data.PROJECTNAZ">
                             </modal-select>
                         </div>
                         <div class="tl">
-                            <field label="Источник Заказ (9) ">123123</field>
+                            <field label="Источник Заказ (9) ">{{ data.ZAKAZTIP }}</field>
                         </div>
                         <div class="tl">
-                            <field label=" Через ЛК?">{{ data.general.base.project ? 'Да' : 'Нет' }}</field>
+                            <field label=" Через ЛК?">{{ data.EI_FROM_LK ? 'Да' : 'Нет' }}</field>
                         </div>
 
 
@@ -62,20 +62,20 @@
                             <div class="tl">
                                 <label class="label-primary">Заявка клиента:</label>
                                 <input type="text" class="input-primary" placeholder="Фамилия"
-                                    v-model="data.general.full.ordernum" />
+                                    v-model="data.ORDERNUM" />
                             </div>
                             <div class="tl">
                                 <modal-select :data="{
                                     label:'Контактёр 2',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.full.contacter2">
+                                    }" v-model="data.CONTACTER2">
                                 </modal-select>
                             </div>
                             <div class="tl">
-                                <label class="label-primary"> Через ЛК?</label>
+                                <label class="label-primary"> Добавил </label>
                                 <div class="field">
-                                    <h1 class="text-blue-400"> {{ data.general.full.creater }}</h1>
+                                    <h1 class="text-blue-400"> {{  }}</h1>
                                 </div>
                             </div>
                             <div class="tl">
@@ -83,7 +83,7 @@
                                     label:'Ресурс',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.full.resurs">
+                                    }" v-model="data.RESURSNAZ">
                                 </modal-select>
                             </div>
                             <div class="tl">
@@ -91,7 +91,7 @@
                                     label:'Переговоры',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.full.peregovorid">
+                                    }" v-model="data.PEREGOVORID">
                                 </modal-select>
                             </div>
                         </div>
@@ -101,14 +101,14 @@
                         <div class="tl">
                             <label class="label-primary">Менеджер</label>
                             <input type="text" disabled class="input-primary" placeholder="Менеджер"
-                                v-model="data.general.base.manager" />
+                                />
                         </div>
                         <div class="tl">
                             <modal-select :data="{
                                     label:'Тип заказа',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.zakaztip">
+                                    }" v-model="data.ZAKAZTIPNAZ">
                             </modal-select>
                         </div>
                         <div class="tl">
@@ -116,7 +116,7 @@
                                     label:'Вид работ',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.type_of_work">
+                                    }" v-model="data.TYPE_OF_WORKNAZ">
                             </modal-select>
                         </div>
                         <div class="tl">
@@ -124,31 +124,7 @@
                                     label:'Производство для',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.manufacture_for ">
-                            </modal-select>
-                        </div>
-                        <div class="tl">
-                            <modal-select :data="{
-                                    label:'Тип доставки',
-                                    api: '/reg',
-                                    meanKey: 'a_s1'
-                                    }" v-model="data.general.base.frachttip">
-                            </modal-select>
-                        </div>
-                        <div class="tl">
-                            <modal-select :data="{
-                                    label:'Расч. счёт',
-                                    api: '/reg',
-                                    meanKey: 'a_s1'
-                                    }" v-model="data.general.base.account">
-                            </modal-select>
-                        </div>
-                        <div class="tl">
-                            <modal-select :data="{
-                                    label:'Направление продажи',
-                                    api: '/reg',
-                                    meanKey: 'a_s1'
-                                    }" v-model="data.general.base.a_r2">
+                                    }" v-model="data.MANUFACTURE_FORNAZ ">
                             </modal-select>
                         </div>
                         <div class="tl">
@@ -156,13 +132,37 @@
                                     label:'Тип заказа',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.base.zakaztip">
+                                    }" v-model="data.ZAKAZTIPNAZ">
+                            </modal-select>
+                        </div>
+                        <div class="tl">
+                            <modal-select :data="{
+                                    label:'Расч. счёт',
+                                    api: '/reg',
+                                    meanKey: 'a_s1'
+                                    }" v-model="data.ACCOUNTNAZ">
+                            </modal-select>
+                        </div>
+                        <div class="tl">
+                            <modal-select :data="{
+                                    label:'Направление продажи',
+                                    api: '/reg',
+                                    meanKey: 'a_s1'
+                                    }" v-model="data.A_R2NAZ">
+                            </modal-select>
+                        </div>
+                        <div class="tl">
+                            <modal-select :data="{
+                                    label:'Тип доставки',
+                                    api: '/reg',
+                                    meanKey: 'a_s1'
+                                    }" v-model="data.FRACHTTIPNAZ">
                             </modal-select>
                         </div>
                         <div class="tl">
                             <label class="label-primary">Дропшиппинг:</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.general.base.a_b1">
+                                <select class="dropdown-primary" >
                                     <option :value="false">Нет</option>
                                     <option :value="true">Да</option>
                                 </select>
@@ -171,7 +171,7 @@
                         <div class="tl">
                             <label class="label-primary">Клиент клиента:</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.general.base.a_b2">
+                                <select class="dropdown-primary" v-model="data.a_b2">
                                     <option :value="false">Нет</option>
                                     <option :value="true">Да</option>
                                 </select>
@@ -186,13 +186,13 @@
                                     label:'Точка доставки',
                                     api: '/reg',
                                     meanKey: 'a_s1'
-                                    }" v-model="data.general.full.dostpoint">
+                                    }" v-model="data.DOSTPOINTNAZ">
                                 </modal-select>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Экспорт:</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.full.a_b1">
+                                    <select class="dropdown-primary" v-model="data.A_B1">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
@@ -201,7 +201,7 @@
                             <div class="tl">
                                 <label class="label-primary">В плане производства:</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.full.a_b2">
+                                    <select class="dropdown-primary">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
@@ -212,7 +212,7 @@
                                     <modal-select :data="{
                                         label:'Раскраска',
                                         api: 'uniprops/props/color',
-                                        meanKey: 'a_s1' }" v-model="data.general.full.cvet"></modal-select>
+                                        meanKey: 'a_s1' }" v-model="data.CVETNAZ"></modal-select>
                                 </div>
                             </div>
                         </div>
@@ -237,24 +237,24 @@
                                         label:'Состояние',
                                         api: 'uniprops/props/color',
                                         meanKey: 'a_s1'
-                                            }" v-model="data.general.status.zakstatus"></modal-select>
+                                            }" v-model="data.ZAKSTATUSNAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Поставщик:</label>
-                                <input type="text" class="input-primary" v-model="data.general.status.a_s1" />
+                                <input type="text" class="input-primary" v-model="data.A_S1" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Ориентировочная дата отгрузки:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.status.a_d3"></flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.A_D3"></flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Отгрузка со склада поставщика?</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.status.a_b4">
+                                    <select class="dropdown-primary" v-model="data.A_B4">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
@@ -263,7 +263,7 @@
                             <div class="tl">
                                 <label class="label-primary">Отгрузка с филиала:</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.status.a_b7">
+                                    <select class="dropdown-primary" v-model="data.A_B7">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
@@ -272,7 +272,7 @@
                             <div class="tl">
                                 <label class="label-primary">Ждем с РЦ</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.status.a_b8">
+                                    <select class="dropdown-primary" v-model="data.A_B8">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
@@ -290,7 +290,7 @@
                             <div class="tl">
                                 <label class="label-primary">Закрыт</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.status.a_b8">
+                                    <select class="dropdown-primary" v-model="data.CLOSED">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
@@ -299,13 +299,13 @@
                             <div class="tl">
                                 <label class="label-primary">Оформлен</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.general.status.a_b8">
+                                    <select class="dropdown-primary" v-model="data.OFORMLEN">
                                         <option :value="false">Нет</option>
                                         <option :value="true">Да</option>
                                     </select>
                                 </div>
                                 <div class="tl">
-                                    <field label="Разреш. отгрузка ">Да</field>
+                                    <field label="Разреш. отгрузка " >Да</field>
                                 </div>
                             </div>
                         </div>
@@ -327,7 +327,7 @@
                             <div class="tl">
                                 <label class="label-primary">Дата заказа:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.zakdate">
+                                    <flat-pickr class="input-primary" v-model="data.ZAKDATE">
                                     </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
@@ -335,14 +335,14 @@
                             <div class="tl">
                                 <label class="label-primary">Срок оплаты:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.srokopl">
+                                    <flat-pickr class="input-primary" v-model="data.SROKOPL">
                                     </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Срок поставки:</label>
-                                <input type="text" class="input-primary" v-model="data.general.timing.srokpostavz" />
+                                <input type="text" class="input-primary" v-model="data.SROKPOSTAVZ" />
                             </div>
                         </div>
                         <div>
@@ -350,7 +350,7 @@
                             <div class="tl">
                                 <label class="label-primary">Окончание:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.okonch"
+                                    <flat-pickr class="input-primary" v-model="data.OKONCH"
                                         :config="{enableTime: true}"></flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
@@ -358,7 +358,7 @@
                             <div class="tl">
                                 <label class="label-primary">Оконч. факт:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.closedate">
+                                    <flat-pickr class="input-primary" v-model="data.CLOSEDATE">
                                     </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
@@ -366,7 +366,7 @@
                             <div class="tl">
                                 <label class="label-primary">Резерв до:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.general.timing.reservdo">
+                                    <flat-pickr class="input-primary" v-model="data.RESERVDO">
                                     </flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
@@ -383,27 +383,27 @@
                 </h1>
                 <div class="grid-2-2-1 section ">
                     <!--Первый блок-->
-                    
-                        <div class="">
-                            <div class="tl">
-                                <field label="Итого">0</field>
-                            </div>
+
+                    <div class="">
+                        <div class="tl">
+                            <field label="Итого">0</field>
                         </div>
-                        <div>
-                           <div class="tl">
-                                <div>
-                                    <modal-select :data="{
+                    </div>
+                    <div>
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
                                         label:'Валюта грн',
                                         api: 'uniprops/props/color',
                                         meanKey: 'a_s1'
-                                            }" v-model="data.general.status.zakstatus"></modal-select>
-                                </div>
+                                            }" v-model="data.VALUTANAZ"></modal-select>
                             </div>
                         </div>
+                    </div>
 
-                        <div v-show="ffull">
-cc
-                        </div>
+                    <div v-show="ffull">
+                        cc
+                    </div>
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-2 md:col-span-2">
@@ -438,156 +438,111 @@ cc
     const data = ref({
         "object": "Orders",
         "id": null,
-        "general": {
-            "base": {
-                "zakkode": "2125780",
-                firmanaz: "",
-                "firma": "Мізол",
-                contacternaz: "-",
-                "contacter": 0,
-                contractnaz: "",
-                "contract": 898502,
-                projectnaz: "",
-                "project": 0,
-                "ei_from_lk": true,
-                "manager": "Чернявська  Надія Іванівна",
-                zakaztipnaz: "",
-                "zakaztip": "Предоплата",
-                type_of_worknaz: "",
-                "type_of_work": 0,
-                manufacture_fornaz: "",
-                manufacture_for: "0",
-                frachttipnaz: "",
-                "frachttip": 0,
-                accountnaz: "",
-                "account": 0,
-                manufacture_for: 0,
-                a_r2naz: "",
-                "a_r2": "КМЧС",
-                "a_b1": true,
-                "a_b2": true
-            },
-            "full": {
-                "ordernum": null,
-                contacter2naz: "",
-                "contacter2": 0,
-                "creater": "Admin",
-                resursnaz: "",
-                "resurs": "ИТ-отдел",
-                peregovoridnaz: "",
-                "peregovorid": 0,
-                dostpointnaz: "",
-                "dostpoint": 0,
-                "tipexport": true,
-                "tomrp": true,
-                "filial": 20,
-                "cvetnaz": null,
-                "cvet": "-",
-              
-
-            },
-            "timing": {
-                "zakdate": "2021-10-01T00:00:00.000000Z",
-                "srokopl": "2021-10-01T00:00:00.000000Z",
-                "srokpostavz": 3,
-                "okonch": "2021-10-04T00:00:00.000000Z",
-                okonchhour: "",
-                okonchmin: "",
-                "closedate": "1900-01-01T00:00:00.000000Z",
-                "reservdo": "2021-10-06T00:00:00.000000Z"
-            },
-            "status": {
-                zakstatusnaz: "",
-                "zakstatus": "В работе",
-                "a_s1": null,
-                "a_d3": "2021-10-01T00:00:00.000000Z",
-                "a_b4": true,
-                "a_b7": true,
-                "a_b8": true,
-                "oplachen": true,
-                "otgruven": true,
-                "closed": true,
-                "oformlen": true,
-                "enotgr": true
-            },
-            "deliveryMethod": {
-                "a_b3": true,
-                "a_b5": true,
-                "a_d1": "2021-10-01T00:00:00.000000Z"
-            },
-            "taxes": {
-                "base": {
-                    "totalsum": 6234.76,
-                    valutanaz: "",
-                    "valuta": "Украинские гривни"
-                },
-                "full": {
-                    "totalsumbal": 191.26,
-                    "kursbal": 31.3438,
-                    "discountp": 0,
-                    "discountfor": null,
-                    "frachtsum": 0,
-                    "doprash": 0,
-                    "doprashue": 0,
-                    "discsum": 0,
-                    "summanat": 6234.76,
-                    "kurs": 1,
-                    "tax1pr": 20,
-                    "tax2pr": 0,
-                    "tax3pr": 0,
-                    "tax4pr": 0,
-                    "tax1base": 5195.63,
-                    "tax2base": 0,
-                    "tax3base": 0,
-                    "tax4base": 0,
-                    "taxzakazdohod": 6234.76,
-                    "kurssklad": 31.3438
-                }
-            },
-            "description": " ",
-            "subData": {
-                "base": {
-                    "zakprim": " Из заказа № 2125779"
-                },
-                "full": {
-                    a_r1naz: "",
-                    "a_r1": 0,
-                    a_r3naz: "",
-                    "a_r3": 0,
-                    a_r4naz: "",
-                    "a_r4": 0,
-                    a_r5naz: "",
-                    "a_r5": 0,
-                    a_r6naz: "",
-                    "a_r6": 0,
-                    a_r10naz: "",
-                    "a_r10": 0,
-                    "a_d2": "2021-09-29T00:00:00.000000Z",
-                    "a_f1": 0,
-                    "a_f3": 0,
-                    "a_f10": 0,
-                    "a_s3": "-",
-                    "a_s4": "0",
-                    "a_s5": "-",
-                    "a_s6": null,
-                    "a_s7": null,
-                    "a_s8": null,
-                    "a_s9": null,
-                    "a_s10": null,
-                    "a_b6": true,
-                    "a_b10": true,
-                    zakaz: "",
-                    poster: "",
-                    zaktip: "",
-                    returnto: "",
-                    dats: "",
-                    datpo: "",
-                    kvitanc: "",
-                    zaksrc: "",
-                    zakkeysrc: "",
-                }
-            }
-        }
+        ZAKKODE: "2125848",
+        FIRMANAZ: "26971-%D1%EE%EA%F0%E0%F9",
+        FIRMA: "26971",
+        CONTACTERNAZ: "-",
+        CONTACTER: "0",
+        CONTRACTNAZ: "",
+        CONTRACT: "0",
+        PROJECTNAZ: "",
+        PROJECT: "0",
+        EI_FROM_LK: "%CD%E5%F2",
+        ZAKAZTIPNAZ: "%D2%E5%F5%ED%E8%F7%E5%F1%EA%E8%E9+%EA%F0%E5%E4%E8%F2",
+        ZAKAZTIP: "128356",
+        TYPE_OF_WORKNAZ: "",
+        TYPE_OF_WORK: "0",
+        MANUFACTURE_FORNAZ: "",
+        MANUFACTURE_FOR: "0",
+        FRACHTTIPNAZ: "-",
+        FRACHTTIP: "0",
+        ACCOUNTNAZ: "",
+        ACCOUNT: "0",
+        A_R2NAZ: "%CB%EE%E3%E8%F1%F2%E8%EA%E0",
+        A_R2: "394160",
+        A_B1: "-",
+        ORDERNUM: "",
+        CONTACTER2NAZ: "-",
+        CONTACTER2: "0",
+        RESURSNAZ: "%CA%E8%E5%E2",
+        RESURS: "145164",
+        PEREGOVORIDNAZ: "-",
+        PEREGOVORID: "0",
+        DOSTPOINTNAZ: "-",
+        DOSTPOINT: "0",
+        TIPEXPORT: "-",
+        TOMRP: "-",
+        CVETNAZ: "%D1%E8%ED%E8%E9",
+        CVET: "1807",
+        ZAKDATE: "25.10.2021",
+        SROKOPL: "27.10.2021",
+        SROKPOSTAVZ: "3",
+        OKONCH: "28.10.2021",
+        OKONCHHOUR: "00",
+        OKONCHMIN: "00",
+        CLOSEDATE: "",
+        RESERVDO: "28.10.2021",
+        ZAKSTATUSNAZ: "%D7%E0%F1%F2%E8%F7%ED%EE+%EE%F2%E3%F0%F3%E6%E5%ED",
+        ZAKSTATUS: "1139185",
+        A_S1: "",
+        A_D3: "25.10.2021",
+        A_B4: "-",
+        A_B7: "-",
+        A_B8: "-",
+        CLOSED: "-",
+        OFORMLEN: "-",
+        A_B3: "-",
+        A_B5: "-",
+        A_D1: "25.10.2021",
+        VALUTANAZ: "%E3%F0%ED.",
+        VALUTA: "11",
+        KURSBAL: "31.3438",
+        DISCOUNTP: "0",
+        DISCOUNTFOR: "",
+        FRACHTSUM: "0",
+        KURS: "1",
+        TAX1PR: "20",
+        TAX2PR: "0",
+        TAX3PR: "0",
+        TAX4PR: "0",
+        KURSSKLAD: "31.3438",
+        SODERV: "+",
+        ZAKPRIM: "+%B9++21258451",
+        A_R1NAZ: "-",
+        A_R1: "0",
+        A_R3NAZ: "0-%D1%EE%EA%F0%E0%F9",
+        A_R3: "0",
+        A_R4NAZ: "-",
+        A_R4: "0",
+        A_R5NAZ: "-",
+        A_R5: "0",
+        A_R6NAZ: "-",
+        A_R6: "0",
+        A_R10NAZ: "0-%D1%EE%EA%F0%E0%F9",
+        A_R10: "0",
+        A_D2: "25.10.2021",
+        A_F1: "0",
+        A_F3: "0",
+        A_F10: "0",
+        A_S3: "-",
+        A_S4: "%B2%ED%F2%E5%F0%ED%E5%F2+%CA%E8%BF%E2+%C4%E0%F0%ED%E8%F6%FF+%2F%CC%B3%E7%EE%EB",
+        A_S5: "+",
+        A_S6: "",
+        A_S7: "",
+        A_S8: "",
+        A_S9: "",
+        A_S10: "",
+        A_B6: "-",
+        A_B10: "-",
+        ZAKAZ: "2125848",
+        POSTER: "Edit",
+        ZAKTIP: "1",
+        RETURNTO: "",
+        DATS: "01.10.2021",
+        DATPO: "31.10.2021",
+        KVITANC: "",
+        ZAKSRC: "0",
+        ZAKKEYSRC: "0",
     })
 </script>
 
