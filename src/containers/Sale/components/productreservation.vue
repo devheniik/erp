@@ -1,10 +1,10 @@
 <template>
     <div>
-  <div class=" rounded-lg col-span-1 lg:col-span-1 md:col-span-1">
-                <h1 class="label-big">
+  <div class=" rounded-lg col-span-1 lg:col-span-1 md:col-span-1 ">
+                <h1 class="label-big mx-5">
                     Дополнительные данные 
                 </h1>
-                <div class="">
+                <div class="space-y-4 mx-5">
                      <div class="tl">
                             <label class="label-primary"> Дата:</label>
                             <div class="flex justify-between items-center">
@@ -84,14 +84,15 @@
                    
 
                 </div>
-                <div>
-                    <div class="btn-hover-primary">Резервировать</div>
+                <div class="mt-4 flex justify-center">
+                    <div class="button-hover-primary">Резервировать</div>
                 </div>
             </div>
     </div>
 </template>
 
 <script setup>
+import {ref} from 'vue'
 const data = ref({
     
 	"CURDATE": "29.10.2021",

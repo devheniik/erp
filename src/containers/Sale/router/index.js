@@ -43,4 +43,15 @@ export default [
             uname: 'sale-update'
         }
     },
+    {
+        path: '/sales/zakaz/reserv',
+        name: 'product-reserv',
+        component: () => import('@sale/components/productreservation.vue'),
+        meta: {
+            layout: 'Empty',
+            requreAuth: false,
+            permition: null,
+            uname: 'product-reserv'
+        }
+    },
 ]

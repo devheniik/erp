@@ -1,3 +1,5 @@
 <template>
-    <slot></slot>
+    <div class="w-full h-full ">
+        <slot></slot>
+    </div>
 </template>
