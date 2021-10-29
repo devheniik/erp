@@ -1,1 +1,1 @@
-export default  'sale/create'
+export default (obj) => `sale/create?ZAKAZ=${obj.ZAKAZ}&ZAKAZ=${obj.ZAKAZ}&ZAKAZ=${obj.ZAKAZ}&ZAKAZ=${obj.ZAKAZ}&ZAKAZ=${obj.ZAKAZ}&ZAKAZ=${obj.ZAKAZ}&ZAKAZ=${obj.ZAKAZ}&`

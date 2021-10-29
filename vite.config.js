@@ -7,13 +7,18 @@ const options = { pretty: true } // FIXME: pug pretty is deprecated!
 const locals = { name: "My Pug" }
  
 
-export default ({ mode }) => {
+export default ({ mode }) => { 
   process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
   // import.meta.env.VITE_NAME available here with: process.env.VITE_NAME
   // import.meta.env.VITE_PORT available here with: process.env.VITE_PORT
 
   return defineConfig({
+    // server: {
+    //   host: "megatree.biz",
+    //   port: 3000,
+    //   https: true,
+    // },
     plugins: [vue(), pugPlugin(options, locals)],
     resolve: {
       alias: {

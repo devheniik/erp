@@ -702,17 +702,23 @@
             <button type="button" class="button-hover-primary-active ">Добавить ТТН</button>
         </div>
         <div class="w-full flex justify-center mt-6">
-            <button @click="create(route_create, data)" type="button" class="button-hover-primary">Добавить</button>
+            <button @click="create(post_str(obj))" type="button" class="button-hover-primary">Добавить</button>
         </div>
     </div>
 </template>
 
 <script setup>
-    import route_create from '../api/create'
-    import create from '@api_base/create'
+    import post_str from '../api/create'
+    import create from '@api'
     import {
         ref
     } from 'vue'
+
+    const obj = ref({
+        ZAKAZ: 123123,
+        FIRMANAZ: 'mizol'
+    })
+ 
 
     const full = ref(false)
     const ffull = ref(false)
