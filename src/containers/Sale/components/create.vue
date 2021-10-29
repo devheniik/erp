@@ -100,8 +100,7 @@
                         <!--Второй блок-->
                         <div class="tl">
                             <label class="label-primary">Менеджер</label>
-                            <input type="text" disabled class="input-primary" placeholder="Менеджер"
-                                />
+                            <input type="text" disabled class="input-primary" placeholder="Менеджер" />
                         </div>
                         <div class="tl">
                             <modal-select :data="{
@@ -162,7 +161,7 @@
                         <div class="tl">
                             <label class="label-primary">Дропшиппинг:</label>
                             <div>
-                                <select class="dropdown-primary" >
+                                <select class="dropdown-primary">
                                     <option :value="false">Нет</option>
                                     <option :value="true">Да</option>
                                 </select>
@@ -219,6 +218,67 @@
                     </div>
                     <!--Конец второго блока-->
                     <div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="label-big ">
+                    Сроки
+                </h1>
+
+                <div>
+                    <div class="grid-2-2-1 section">
+                        <div>
+                            <!--Первый блок-->
+                            <div class="tl">
+                                <label class="label-primary">Дата заказа:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.ZAKDATE">
+                                    </flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Срок оплаты:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.SROKOPL">
+                                    </flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Срок поставки:</label>
+                                <input type="text" class="input-primary" v-model="data.SROKPOSTAVZ" />
+                            </div>
+                        </div>
+                        <div>
+                            <!--Второй блок-->
+                            <div class="tl">
+                                <label class="label-primary">Окончание:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.OKONCH"
+                                        :config="{enableTime: true}"></flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Оконч. факт:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.CLOSEDATE">
+                                    </flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                            <div class="tl">
+                                <label class="label-primary">Резерв до:</label>
+                                <div class="flex justify-between items-center">
+                                    <flat-pickr class="input-primary" v-model="data.RESERVDO">
+                                    </flat-pickr>
+                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--Конец второго блока-->
                     </div>
                 </div>
             </div>
@@ -305,7 +365,7 @@
                                     </select>
                                 </div>
                                 <div class="tl">
-                                    <field label="Разреш. отгрузка " >Да</field>
+                                    <field label="Разреш. отгрузка ">Да</field>
                                 </div>
                             </div>
                         </div>
@@ -314,68 +374,45 @@
                 </div>
             </div>
             <!--TRIRD block-->
-
             <div>
                 <h1 class="label-big ">
-                    Сроки
+                    Способ доставки для "Мiзол"
                 </h1>
 
                 <div>
                     <div class="grid-2-2-1 section">
                         <div>
-                            <!--Первый блок-->
+
                             <div class="tl">
-                                <label class="label-primary">Дата заказа:</label>
-                                <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.ZAKDATE">
-                                    </flat-pickr>
-                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                <label class="label-primary"> есть предоплата</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.A_B4">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">Срок оплаты:</label>
-                                <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.SROKOPL">
-                                    </flat-pickr>
-                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                                <label class="label-primary"> Ожидается предоплата:</label>
+                                <div>
+                                    <select class="dropdown-primary" v-model="data.A_B7">
+                                        <option :value="false">Нет</option>
+                                        <option :value="true">Да</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="tl">
-                                <label class="label-primary">Срок поставки:</label>
-                                <input type="text" class="input-primary" v-model="data.SROKPOSTAVZ" />
-                            </div>
-                        </div>
-                        <div>
-                            <!--Второй блок-->
-                            <div class="tl">
-                                <label class="label-primary">Окончание:</label>
+                                <label class="label-primary"> Дата получения клиентом:</label>
                                 <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.OKONCH"
-                                        :config="{enableTime: true}"></flat-pickr>
-                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Оконч. факт:</label>
-                                <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.CLOSEDATE">
-                                    </flat-pickr>
-                                    <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
-                                </div>
-                            </div>
-                            <div class="tl">
-                                <label class="label-primary">Резерв до:</label>
-                                <div class="flex justify-between items-center">
-                                    <flat-pickr class="input-primary" v-model="data.RESERVDO">
-                                    </flat-pickr>
+                                    <flat-pickr class="input-primary" v-model="data.A_D3"></flat-pickr>
                                     <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                                 </div>
                             </div>
                         </div>
-                        <!--Конец второго блока-->
                     </div>
                 </div>
             </div>
+
             <div class=" rounded-lg col-span-2 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
                     Налоги и суммы <span class="cursor-pointer"
@@ -402,23 +439,267 @@
                     </div>
 
                     <div v-show="ffull">
-                        cc
+                        <div class="tl">
+                            <field label="Итого бал., EURO">0</field>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курс бал. EURO:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Надбавка/Скидка, %:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Скидка за:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> За доставку:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <field label=" Доп. расходы">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label=" Доп. расх. у.е.">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label=" Сумма специф.">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label=" Сумма скидки">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label="НДС">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label=" Налог 2">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label="ПФ">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label=" Налог 4">0</field>
+                        </div>
+                    </div>
+                    <div v-show="ffull">
+                        <div class="tl">
+                            <field label=" Итого, нац.">0</field>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Курс нац.:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> НДС, %:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Налог 2, %:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> ПФ, %:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Налог 4, %:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <field label=" База НДС">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label=" База Налог 2">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label="База ПФ">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label="База Налог 4">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label="Доход с налог">0</field>
+                        </div>
+                        <div class="tl">
+                            <field label="Курс склад">0</field>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-2 md:col-span-2">
                 <h1 class="label-big">
-                    Дополнительная информация
+                    Описание <span class="cursor-pointer"
+                        @click="afull = !afull">{{ afull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
-                <div>
+                <div v-show="afull">
                     <div class="mx-4 mt-4">
-                        <label class="block text-sm font-medium text-gray-400">Примечания</label>
+                        <label class="block text-sm font-medium text-gray-400"></label>
                         <div class="mt-1">
                             <textarea rows="3" class="textarea-primary"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class=" rounded-lg col-span-1 lg:col-span-1 md:col-span-1">
+                <h1 class="label-big">
+                    Дополнительные данные <span class="cursor-pointer"
+                        @click="bfull = !bfull">{{ bfull ? '(скрыть)' : '(подробнее)' }}</span>
+                </h1>
+                <div class="">
+                    <!--Первый блок-->
+
+                    <div class="">
+                        <div class="tl">
+                            <label class="label-primary"> Примечание:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+
+                    <div v-show="bfull">
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
+                                        label:' Участник RotoProfiLiga2014 ',
+                                        api: 'uniprops/props/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.VALUTANAZ"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
+                                        label:'СПД',
+                                        api: 'uniprops/props/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.VALUTANAZ"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
+                                        label:' Склад прогноза',
+                                        api: 'uniprops/props/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.VALUTANAZ"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
+                                        label:'Тип просрочки',
+                                        api: 'uniprops/props/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.VALUTANAZ"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
+                                        label:'Гр.Склад. Cabinet2',
+                                        api: 'uniprops/props/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.VALUTANAZ"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <div>
+                                <modal-select :data="{
+                                        label:'Перевозчик',
+                                        api: 'uniprops/props/color',
+                                        meanKey: 'a_s1'
+                                            }" v-model="data.VALUTANAZ"></modal-select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Дата пересчета:</label>
+                            <div class="flex justify-between items-center">
+                                <flat-pickr class="input-primary" v-model="data.A_D3"></flat-pickr>
+                                <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
+                            </div>
+                        </div>
+
+                        <div class="tl">
+                            <label class="label-primary"> Списать бонусов:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Кво.строкВКабинете:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Отложено склад (прогноз):</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Склады отлож. и спис:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Выдано:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Проблемный заказ:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">Примечание НС:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">сумма из ТТН:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">ТТН:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">код документа Заказау:</label>
+                            <input type="text" class="input-primary" v-model="data.A_S1" />
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary">  Отправлено смс?:</label>
+                            <div>
+                                <select class="dropdown-primary" v-model="data.A_B7">
+                                    <option :value="false">Нет</option>
+                                    <option :value="true">Да</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tl">
+                            <field label=" Игнорировать просрочку">Нет</field>
+                        </div>
+                        <div class="tl">
+                            <label class="label-primary"> Подкрасить?:</label>
+                            <div>
+                                <select class="dropdown-primary" v-model="data.A_B7">
+                                    <option :value="false">Нет</option>
+                                    <option :value="true">Да</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <h1 class="label-big mt-4">
+                    Способы доставки <span class="cursor-pointer"
+                        @click="cfull = !cfull">{{ cfull ? '(скрыть)' : '(подробнее)' }}</span>
+                </h1>
+           <div class="w-full flex justify-center mt-6 space-x-2" v-show="cfull">
+
+            <button type="button" class="button-hover-primary-color">Адрес - Адрес </button>
+            <button type="button" class="button-hover-primary-color">Адрес -  Отделение </button>
+            <button type="button" class="button-hover-primary-color">Отделение - Адрес </button>
+            <button type="button" class="button-hover-primary-color">Отделение - Отделение</button>
+            <button type="button" class="button-hover-primary-active ">Добавить ТТН</button>
         </div>
         <div class="w-full flex justify-center mt-6">
             <button @click="create(route_create, data)" type="button" class="button-hover-primary">Добавить</button>
@@ -435,6 +716,9 @@
 
     const full = ref(false)
     const ffull = ref(false)
+    const afull = ref(false)
+    const bfull = ref(false)
+    const cfull = ref(false)
     const data = ref({
         "object": "Orders",
         "id": null,
