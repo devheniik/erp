@@ -13,19 +13,16 @@
                             <div class="tl">
                                 <label class="label-primary"> Сокр. название</label>
                                 <input type="text" class="input-primary"
-                                    placeholder="Название контрагента, удобное в поиске"
-                                    v-model="data.general.base.sokrash" />
+                                    placeholder="Название контрагента, удобное в поиске" v-model="data.SOKRASH" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary"> Полное название</label>
                                 <input type="text" class="input-primary"
-                                    placeholder="Название согласно св-ва(выятга) гос. реестр"
-                                    v-model="data.general.base.polnoe" />
+                                    placeholder="Название согласно св-ва(выятга) гос. реестр" v-model="data.POLNOE" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Телефон</label>
-                                <input type="text" class="input-primary" placeholder="Телефон"
-                                    v-model="data.general.base.tel" />
+                                <input type="text" class="input-primary" placeholder="Телефон" v-model="data.TEL" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary"> Тип организ.:</label>
@@ -34,26 +31,19 @@
                                         label:' Тип организ.',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.general.base.tipnaz"></modal-select>
+                                            }" v-model="data.TIPNAZ"></modal-select>
                                 </div>
                             </div>
                         </div>
                         <!--Основное конец-->
                         <div v-show="full">
                             <div class="tl">
-                                <label class="label-primary"> Факс</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.general.full.nazeng" />
-                            </div>
-                            <div class="tl">
                                 <label class="label-primary">Name</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.general.full.nazeng" />
+                                <input type="text" class="input-primary" placeholder="" v-model="data.NAZENG" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Назва</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.general.full.nazukr" />
+                                <input type="text" class="input-primary" placeholder="" v-model="data.NAZUKR" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Вышестоящая организация:</label>
@@ -62,7 +52,7 @@
                                         label:'Вышестоящая организация',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.general.full.fathernaz"></modal-select>
+                                            }" v-model="data.FATHERNAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -72,7 +62,7 @@
                                         label:'Собственник',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.general.full.ownernaz"></modal-select>
+                                            }" v-model="data.OWNERNAZ"></modal-select>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +84,7 @@
                                         label:' Наш менеджер',
                                         api: '/manager',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.manager"></modal-select>
+                                            }" v-model="data.MANAGERNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -104,7 +94,7 @@
                                         label:'Регион',
                                         api: '/gorod',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.gorod"></modal-select>
+                                            }" v-model="data.GORODNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -114,7 +104,7 @@
                                         label:'Район',
                                         api: '/district',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.district"></modal-select>
+                                            }" v-model="data.DISTRICTNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -124,7 +114,7 @@
                                         label:'Сфера деят.',
                                         api: '/sferad',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.sferad"></modal-select>
+                                            }" v-model="data.SFERADNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -134,7 +124,7 @@
                                         label:' Источник клиента',
                                         api: '/clientsrc',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.clientsrc"></modal-select>
+                                            }" v-model="data.CLIENTSRCNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -144,18 +134,10 @@
                                         label:' Секретность',
                                         api: '/sekret',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.sekret"></modal-select>
+                                            }" v-model="data.SEKRETNAZ"></modal-select>
                             </div>
                         </div>
-                        <div class="tl">
-                            <label class="label-primary">Направление продажи</label>
-                            <div>
-                                <select class="dropdown-primary" v-model="data.profile.base.tipnaz">
-                                    <option value="+">-</option>
-                                    <option value="-">-</option>
-                                </select>
-                            </div>
-                        </div>
+
                     </div>
                     <!--Основное1 конец-->
                     <!--Основное2 начало-->
@@ -163,7 +145,7 @@
                         <div class="tl">
                             <label class="label-primary"> Член корп.</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.profile.base.nasha">
+                                <select class="dropdown-primary" v-model="data.NASHA">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -172,7 +154,7 @@
                         <div class="tl">
                             <label class="label-primary">Заказчик</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.profile.base.zakazch">
+                                <select class="dropdown-primary" v-model="data.ZAKAZCH">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -181,7 +163,7 @@
                         <div class="tl">
                             <label class="label-primary">Поставщик</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.profile.base.postavsh">
+                                <select class="dropdown-primary" v-model="data.POSTAVSH">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -190,7 +172,7 @@
                         <div class="tl">
                             <label class="label-primary">Производитель</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.profile.base.proizvod">
+                                <select class="dropdown-primary" v-model="data.PROIZVOD">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -203,7 +185,7 @@
                                         label:' Валюта закупок',
                                         api: '/a_r1naz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.a_r1naz"></modal-select>
+                                            }" v-model="data.A_R10NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -213,7 +195,7 @@
                                         label:'  Значимость клиента',
                                         api: '/a_r5naz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.base.a_r5naz"></modal-select>
+                                            }" v-model="data.A_R5NAZ"></modal-select>
                             </div>
                         </div>
                     </div>
@@ -222,13 +204,12 @@
                         <div>
                             <div class="tl">
                                 <label class="label-primary">Артикул</label>
-                                <input type="text" class="input-primary" placeholder=""
-                                    v-model="data.profile.full.artikul" />
+                                <input type="text" class="input-primary" placeholder="" v-model="data.ARTIKUL" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Архивный</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.profile.full.zakrit">
+                                    <select class="dropdown-primary" v-model="data.ZAKRIT">
                                         <option value="+">Да</option>
                                         <option value="-">Нет</option>
                                     </select>
@@ -241,7 +222,7 @@
                                         label:' Налог на приб.',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.taxprofitnaz"></modal-select>
+                                            }" v-model="data.TAXPROFITNAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -251,7 +232,7 @@
                                         label:' Налоговая зона',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.taxzonenaz"></modal-select>
+                                            }" v-model="data.TAXZONENAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -261,7 +242,7 @@
                                         label:' Категория (ABC)',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.abcnaz"></modal-select>
+                                            }" v-model="data.ABCNAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -271,7 +252,7 @@
                                         label:' Статус Клиента (XYZ)',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.xyznaz"></modal-select>
+                                            }" v-model="data.XYZNAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -281,7 +262,7 @@
                                         label:'Раскраска',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.cvetnaz"></modal-select>
+                                            }" v-model="data.CVETNAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
@@ -291,7 +272,7 @@
                                         label:'Ресурс',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.resursnaz"></modal-select>
+                                            }" v-model="data.RESURSNAZ"></modal-select>
                                 </div>
                             </div>
                         </div>
@@ -299,13 +280,11 @@
                     <div v-show="ifull" class="mt-8">
                         <div class="tl">
                             <label class="label-primary">Макс. кред. нам</label>
-                            <input type="text" class="input-primary" placeholder=""
-                                v-model="data.profile.full.maxcreditour" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.MAXCREDITOUR" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Срок кред. нам</label>
-                            <input type="text" class="input-primary" placeholder=""
-                                v-model="data.profile.full.srokcreditour" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.SROKCREDITOUR" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Страна:</label>
@@ -314,7 +293,7 @@
                                         label:'Страна',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.strana"></modal-select>
+                                            }" v-model="data.STRANANAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -324,7 +303,7 @@
                                         label:' Счёт поставщика',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.postavshacc"></modal-select>
+                                            }" v-model="data.POSTAVSHACCNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -334,13 +313,13 @@
                                         label:' Счёт заказчика',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.profile.full.zakazchacc"></modal-select>
+                                            }" v-model="data.ZAKAZCHACCNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
                             <label class="label-primary">Дата рег.:</label>
                             <div class="flex  items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.profile.full.datareg">
+                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.DATAREG">
                                 </flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
@@ -348,8 +327,7 @@
                         <div class="tl">
                             <label class="label-primary"> Добавил
                                 Изменил</label>
-                            <input type="text" class="input-primary" placeholder=""
-                                v-model="data.profile.full.zakrit" />
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                     </div>
                 </div>
@@ -374,21 +352,21 @@
                                         label:'  Вал. баланса',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.pricingProfile.full.valutanaz"></modal-select>
+                                            }" v-model="data.VALUTANAZ"></modal-select>
                                 </div>
                             </div>
                             <div class="tl">
                                 <label class="label-primary"> Макс. кредит</label>
-                                <input type="text" class="input-primary" placeholder="" v-model="data.pricingProfile.full.maxcredit"/>
+                                <input type="text" class="input-primary" placeholder="" v-model="data.MAXCREDIT" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary"> Срок кредита</label>
-                                <input type="text" class="input-primary" placeholder="" v-model="data.pricingProfile.full.srokcredit"/>
+                                <input type="text" class="input-primary" placeholder="" v-model="data.SROKCREDIT" />
                             </div>
                             <div class="tl">
                                 <label class="label-primary">Запрет отгр.</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.pricingProfile.full.zapretotgr">
+                                    <select class="dropdown-primary" v-model="data.ZAPRETOTGR">
                                         <option value="+">Да</option>
                                         <option value="-">Нет</option>
                                     </select>
@@ -397,7 +375,7 @@
                             <div class="tl">
                                 <label class="label-primary">Оплаты от собств.</label>
                                 <div>
-                                    <select class="dropdown-primary" v-model="data.pricingProfile.full.ownerpay">
+                                    <select class="dropdown-primary" v-model="data.OWNERPAY">
                                         <option value="+">Да</option>
                                         <option value="-">Нет</option>
                                     </select>
@@ -409,7 +387,7 @@
                         <div class="tl">
                             <label class="label-primary">Плат. НДС</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.pricingProfile.full.tax1">
+                                <select class="dropdown-primary" v-model="data.TAX1">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -418,7 +396,7 @@
                         <div class="tl">
                             <label class="label-primary">НДС для физ. лиц</label>
                             <div>
-                                <select class="dropdown-primary " v-model="data.pricingProfile.full.ndsfizlic">
+                                <select class="dropdown-primary " v-model="data.TAX2">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -429,7 +407,7 @@
             </div>
             <div>
                 <h1 class="label-big">
-                    Общие данные <span class="cursor-pointer"
+                    Реквизиты <span class="cursor-pointer"
                         @click="ffull = !ffull">{{ ffull ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section mb-4">
@@ -439,16 +417,17 @@
                         <div class="tl">
                             <label class="label-primary"> ЄДРПОУ</label>
                             <input type="text" class="input-primary"
-                                placeholder="ЕДРПОУ согласно св-ва(вытяга) гос реестр" v-model="data.requisite.base.okpo"/>
+                                placeholder="ЕДРПОУ согласно св-ва(вытяга) гос реестр" v-model="data.OKPO" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Юр. адрес</label>
                             <input type="text" class="input-primary"
-                                placeholder="Адрес согласно св-ва(вытяга) гос реестр" v-model="data.requisite.base.adrur"/>
+                                placeholder="Адрес согласно св-ва(вытяга) гос реестр" v-model="data.ADRUR" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Физ. адрес</label>
-                            <input type="text" class="input-primary" placeholder="Физ. адрес (для клиентов)" v-model="data.requisite.base.adrfiz"/>
+                            <input type="text" class="input-primary" placeholder="Физ. адрес (для клиентов)"
+                                v-model="data.ADRFIZ" />
                         </div>
 
                     </div>
@@ -459,7 +438,7 @@
                         <div class="tl">
                             <label class="label-primary">Плательщик</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.requisite.full.is_payer">
+                                <select class="dropdown-primary" v-model="data.IS_PAYER">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -467,27 +446,27 @@
                         </div>
                         <div class="tl">
                             <label class="label-primary"> www</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.www"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.WWW" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> Почтовый адрес</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.adrcorr"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.ADRCORR" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> e-mail</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.email" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.EMAIL" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> ФИО рук</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.rukfio"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.RUKFIO" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> ФИО бухг.</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.buhfio"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.BUHFIO" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Сан рук.</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.rukdolvnnaz"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.RUKSAN" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> Должность рук:</label>
@@ -496,54 +475,54 @@
                                         label:' Должность рук',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.requisite.full.rukdolvnnaz"></modal-select>
+                                            }" v-model="data.RUKDOLVNNAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
                             <label class="label-primary">В лице</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.a_s10"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.VLICE" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">В лице ФИО</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.a_s9"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.A_S10" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">В лице должность</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.www"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.A_S9" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">На основании</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.naosnov"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.NAOSNOV" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Email для получения счетов</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.fiskcode"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.FISKCODE" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> GLN код</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.glncode" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.GLNCODE" />
                         </div>
                     </div>
                     <div v-show="ffull">
                         <div class="tl">
                             <label class="label-primary"> ІПН платника ПДВ</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.nalnomer"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.NALNOMER" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Налог. свид</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.nalsvid"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.NALSVID" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Р/счёт</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.schet"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.SCHET" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">В банке*</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.vbanke"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.VBANKE" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">МФО*</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.requisite.full.mfo"/>
+                            <input type="text" class="input-primary" placeholder="" v-model="data.MFO" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Банк:</label>
@@ -552,7 +531,7 @@
                                         label:'Банк',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.requisite.full.banknaz"></modal-select>
+                                            }" v-model="data.BANKNAZ"></modal-select>
                             </div>
                         </div>
 
@@ -571,7 +550,7 @@
                         <!--Основное начало-->
                         <div class="tl">
                             <label class="label-primary"> Примечание</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.base.a_s1" />
+                            <input type="text" class="input-primary" placeholder="" v-model="data.PRIM" />
                         </div>
                     </div>
 
@@ -585,7 +564,7 @@
                                         label:' Область',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_s2"></modal-select>
+                                            }" v-model="data.A_R1NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -595,7 +574,7 @@
                                         label:'Ссылка на группу комп ВЭД',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_s3"></modal-select>
+                                            }" v-model="data.A_R2NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -605,7 +584,7 @@
                                         label:' Кладовщик по умолчанию (для наших орг.)',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_s4"></modal-select>
+                                            }" v-model="data.A_R3NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -615,7 +594,7 @@
                                         label:'статус ВЭД',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_s6"></modal-select>
+                                            }" v-model="data.A_R4NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -625,7 +604,7 @@
                                         label:'Модерация',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_f10"></modal-select>
+                                            }" v-model="data.A_R6NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -635,7 +614,7 @@
                                         label:'Статус проверки контактов',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_s1"></modal-select>
+                                            }" v-model="data.A_R8NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
@@ -645,13 +624,13 @@
                                         label:'Маршрут поставки',
                                         api: '/specstavkanaz',
                                         meanKey: 'name'
-                                            }" v-model="data.additional.full.a_s1"></modal-select>
+                                            }" v-model="data.A_R9NAZ"></modal-select>
                             </div>
                         </div>
                         <div class="tl">
                             <label class="label-primary">Контракт до:</label>
                             <div class="flex  items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.additional.full.a_d1">
+                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.A_D1">
                                 </flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
@@ -659,7 +638,7 @@
                         <div class="tl">
                             <label class="label-primary">Дата доступа в ЛК:</label>
                             <div class="flex  items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.additional.full.a_d2">
+                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.A_D2">
                                 </flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
@@ -667,7 +646,7 @@
                         <div class="tl">
                             <label class="label-primary">Отсрочка дебиторки до:</label>
                             <div class="flex  items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.additional.full.a_d4">
+                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.A_D4">
                                 </flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
@@ -675,55 +654,55 @@
                         <div class="tl">
                             <label class="label-primary">Дата создания компании:</label>
                             <div class="flex  items-center">
-                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.additional.full.a_d5">
+                                <flat-pickr :locale="'ru'" class="input-primary" v-model="data.A_D5">
                                 </flat-pickr>
                                 <CalendarIcon class="h-6 w-6 text-primary-400 ml-2" />
                             </div>
                         </div>
                         <div class="tl">
                             <label class="label-primary"> Номер_Постачальника</label>
-                            <input type="text" class="input-primary" placeholder=""  v-model="data.additional.full.a_r1naz"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Счетчик дней запр.прайсов</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_r2naz"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Лимит для комплектаций, ЕВРО</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_r3naz"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Доб.Номер для сайта</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_r4naz" />
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> нн (ОГРН для РФ).</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_r6naz" />
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary"> E-mail для напоминаний дебиторской задолжености</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_r8naz"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Координата</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_r9naz"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Автоопределенный адрес</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_b5" />
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Тел. для смс</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_b6"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Код Філії</label>
-                            <input type="text" class="input-primary" placeholder="" v-model="data.additional.full.a_b7"/>
+                            <input type="text" class="input-primary" placeholder="" />
                         </div>
                         <div class="tl">
                             <label class="label-primary">Наш конкурент ?</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b1">
+                                <select class="dropdown-primary" v-model="data.A_B1">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -732,7 +711,7 @@
                         <div class="tl">
                             <label class="label-primary">Отпралять на E-mail курсы?</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b2">
+                                <select class="dropdown-primary" v-model="data.A_B2">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -741,7 +720,7 @@
                         <div class="tl">
                             <label class="label-primary">Отправлять только при изменении</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b3">
+                                <select class="dropdown-primary" v-model="data.A_B3">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -750,7 +729,7 @@
                         <div class="tl">
                             <label class="label-primary">Участвует в КК</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b4">
+                                <select class="dropdown-primary" v-model="data.A_B4">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -759,7 +738,7 @@
                         <div class="tl">
                             <label class="label-primary">Статус клиента</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b5">
+                                <select class="dropdown-primary" v-model="data.A_B5">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -768,7 +747,7 @@
                         <div class="tl">
                             <label class="label-primary">Лимит СПД</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b6">
+                                <select class="dropdown-primary" v-model="data.A_B6">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -777,7 +756,7 @@
                         <div class="tl">
                             <label class="label-primary">Просроченная дебиторка</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b7">
+                                <select class="dropdown-primary" v-model="data.A_B7">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -786,7 +765,7 @@
                         <div class="tl">
                             <label class="label-primary">Эксклюзив для ВЭД</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b8">
+                                <select class="dropdown-primary" v-model="data.A_B8">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -795,7 +774,7 @@
                         <div class="tl">
                             <label class="label-primary">Наявність скан документів</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b9">
+                                <select class="dropdown-primary" v-model="data.A_B9">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -804,7 +783,7 @@
                         <div class="tl">
                             <label class="label-primary">Доступен в ЛК</label>
                             <div>
-                                <select class="dropdown-primary" v-model="data.additional.full.a_b10">
+                                <select class="dropdown-primary" v-model="data.A_B10">
                                     <option value="+">Да</option>
                                     <option value="-">Нет</option>
                                 </select>
@@ -813,14 +792,20 @@
                         <div class="mx-4 mt-4">
                             <label class="block text-sm font-medium text-gray-400">Примечания</label>
                             <div class="mt-1">
-                                <textarea rows="3" class="textarea-primary" v-model="data.additional.full.prim2"></textarea>
+                                <textarea rows="3" class="textarea-primary" v-model="data.PRIM2"></textarea>
                             </div>
                         </div>
                     </div>
-
-
+                </div>
+                <div class="flex justify-center space-x-2">
+                    <button class="button-hover-primary-color">Отправить на модерацию</button>
+                    <button class="button-hover-primary-color">Отправить на доработку</button>
                 </div>
             </div>
+            <div class="flex justify-center">
+                    <button class="button-hover-primary">Добавить</button>
+                    
+                </div>
         </div>
     </div>
 </template>
@@ -832,248 +817,172 @@
         ref
     } from 'vue'
     const data = ref({
-        "general": {
+        "SOKRASH": "133921-%D1%EE%EA%F0%E0%F9",
+        "POLNOE": "133921-%CF%EE%EB%ED%EE%E5+%ED%E0%E7%E2%E0%ED%E8%E5",
+        "TEL": "380900133921",
+        "TIPNAZ": "%D2%EE%E2%E0%F0%E8%F1%F2%E2%EE+%E7+%EE%E1%EC%E5%E6%E5%ED%EE%FE+%E2%B3%E4%EF%EE%E2%B3%E4%E0%EB%FC%ED%B3%F1%F2%FE",
+        "TIP": "40",
+        "ORGFAX": "",
+        "NAZENG": "133921-nazeng",
+        "NAZUKR": "133921-%D3%EA%F0.+%CD%E0%E7%E2%E0",
+        "FATHERNAZ": "0-%D1%EE%EA%F0%E0%F9",
+        "FATHER": "0",
+        "OWNERNAZ": "133921-%D1%EE%EA%F0%E0%F9",
+        "OWNER": "133921",
+        "ORGMETKA": "-",
+        "FINDERCOOSERNAZ": "",
+        "FINDERCOOSER": "",
+        "DESIGNSPECIALIZATIONNAZ": "",
+        "DESIGNSPECIALIZATION": "0",
+        "DESIGNCHARACTERISTICSNAZ": "",
+        "DESIGNCHARACTERISTICS": "0",
+        "SYSTEMSPECIALIZATIONNAZ": "",
+        "SYSTEMSPECIALIZATION": "0",
+        "SYSTEMCHARACTERISTICSNAZ": "",
+        "SYSTEMCHARACTERISTICS": "0",
+        "MANAGERNAZ": "user_538463",
+        "MANAGER": "538463",
+        "GORODNAZ": "Dnepr",
+        "GOROD": "971850",
+        "DISTRICTNAZ": "%D8%E5%E2%F7%E5%ED%EA%EE%E2%F1%EA%E8%E9+%F0%E0%E9%EE%ED",
+        "DISTRICT": "941986",
+        "SFERADNAZ": "%D2%EE%F0%E3%EE%E2%E0%FF+%EE%F0%E3%E0%ED%E8%E7%E0%F6%E8%FF",
+        "SFERAD": "1142538",
+        "CLIENTSRCNAZ": "-",
+        "CLIENTSRC": "0",
+        "SEKRETNAZ": "Euroizol",
+        "SEKRET": "102014",
+        "NASHA": "-",
+        "ZAKAZCH": "+",
+        "POSTAVSH": "-",
+        "PROIZVOD": "-",
+        "A_R10NAZ": "",
+        "A_R10": "0",
+        "A_R5NAZ": "%D2%E5%EA%F3%F9%E8%E9",
+        "A_R5": "743230",
+        "ARTIKUL": "133921",
+        "ZAKRIT": "-",
+        "SKLADNAZ": "",
+        "SKLAD": "0",
+        "TAXPROFITNAZ": "-",
+        "TAXPROFIT": "0",
+        "TAXZONENAZ": "-",
+        "TAXZONE": "0",
+        "ABCNAZ": "-",
+        "ABC": "0",
+        "XYZNAZ": "-",
+        "XYZ": "0",
+        "CVETNAZ": "-",
+        "CVET": "0",
+        "RESURSNAZ": "-",
+        "RESURS": "0",
+        "MAXCREDITOUR": "0",
+        "SROKCREDITOUR": "30",
+        "STRANANAZ": "-",
+        "STRANA": "0",
+        "POSTAVSHACCNAZ": "",
+        "POSTAVSHACC": "0",
+        "ZAKAZCHACCNAZ": "",
+        "ZAKAZCHACC": "0",
+        "DATAREG": "26.08.2021",
+        "DILERNAZ": "",
+        "DILER": "0",
+        "VALUTANAZ": "EURO",
+        "VALUTA": "100382",
+        "MAXCREDIT": "5",
+        "SROKCREDIT": "0",
+        "ZAPRETOTGR": "-",
+        "OWNERPAY": "+",
+        "TAX1": "+",
+        "TAX2": "+",
+        "TAX3": "+",
+        "TAX4": "+",
+        "NDSFIZLIC": "+",
+        "OKPO": "000133921",
+        "ADRUR": "%C0%E4%F0%E5%F1%F1+%D0%F3%F1.+-+133921",
+        "ADRFIZ": "%C0%E4%F0%E5%F1%F1+%F4%E8%E7+-+133921",
+        "IS_PAYER": "-",
+        "WWW": "",
+        "ADRCORR": "%C0%E4%F0%E5%F1%F1+%EA%EE%F0%E5%F1%EF%EE%ED%E4%E5%ED%F6%E8%E8-+133921",
+        "EMAIL": "133921@mail.com",
+        "RUKFIO": "",
+        "BUHFIO": "",
+        "RUKSAN": "",
+        "RUKDOLVNNAZ": "-",
+        "RUKDOLVN": "0",
+        "VLICE": "",
+        "A_S10": "",
+        "A_S9": "",
+        "NAOSNOV": "",
+        "FISKCODE": "133921-fiskcode@mail.com",
+        "GLNCODE": "",
+        "NALNOMER": "0000000133921",
+        "NALSVID": "",
+        "SCHET": "",
+        "VBANKE": "",
+        "MFO": "",
+        "BANKNAZ": "-",
+        "BANK": "0",
+        "SCHETNDS": "",
+        "VBANKENDS": "",
+        "MFONDS": "",
+        "BANKNDSNAZ": "",
+        "BANKNDS": "0",
+        "send_message": "-",
+        "send_message_to_client": "-",
+        "send_message_to_manager": "-",
+        "send_auto_company_blocking": "-",
+        "PRIM": "",
+        "A_S1": "",
+        "A_S2": "",
+        "A_S3": "",
+        "A_S4": "",
+        "A_S5": "",
+        "A_S6": "",
+        "A_S7": "",
+        "A_F1": "0",
+        "A_F7": "0",
+        "A_F8": "0",
+        "A_F9": "0",
+        "A_F10": "0",
+        "A_D1": "",
+        "A_D2": "",
+        "A_D4": "",
+        "A_D5": "",
+        "A_B1": "-",
+        "A_B2": "-",
+        "A_B3": "-",
+        "A_B4": "+",
+        "A_B5": "+",
+        "A_B6": "-",
+        "A_B7": "-",
+        "A_B8": "-",
+        "A_B9": "-",
+        "A_B10": "-",
+        "A_R1NAZ": "-",
+        "A_R1": "0",
+        "A_R2NAZ": "0-%D1%EE%EA%F0%E0%F9",
+        "A_R2": "0",
+        "A_R3NAZ": "%D4%C8%CE+0",
+        "A_R3": "0",
+        "A_R4NAZ": "-",
+        "A_R4": "0",
+        "A_R6NAZ": "%CF%F0%EE%E2%E5%F0%E5%ED%EE",
+        "A_R6": "815007",
+        "A_R8NAZ": "-",
+        "A_R8": "0",
+        "A_R9NAZ": "-",
+        "A_R9": "0",
+        "PRIM2": "+",
+        "show_on_map": "+",
+        "EDITID": "133921",
+        "POSTER": "Edit",
+        "RETURNTO": "",
+        "opername": "%C8%E7%EC%E5%ED%E8%F2%FC",
+        "TTIP": "",
+        "EL": "",
+        "TFUNCTION": ""
 
-            "base": {
-
-                "sokrash": "133920-Сокращ",
-
-                "polnoe": "133920-Полное название",
-
-                "tel": "+38(067)470-03-61",
-
-                "tipnaz": "Физ. лицо"
-
-            },
-
-            "full": {
-
-                "nazeng": "133920-nazeng",
-
-                "nazukr": "133920-Укр. Назва",
-
-                "fathernaz": "0-Сокращ",
-
-                "ownernaz": "133920-Сокращ"
-
-            }
-
-        },
-
-        "profile": {
-
-            "base": {
-
-                "manager": "Кобзаренко Лілія Геннадіївна",
-
-                "gorod": "Киев",
-
-                "district": "-",
-
-                "sferad": "Конечный потребитель ",
-
-                "clientsrc": "1_НС_сайт_КОРЗИНА",
-
-                "sekret": "Euroizol",
-
-                "nasha": true,
-
-                "zakazch": true,
-
-                "postavsh": true,
-
-                "proizvod": true,
-
-                "a_r1naz": "-",
-
-                "a_r5naz": "Текущий"
-
-            },
-
-            "full": {
-
-                "artikul": "133920",
-
-                "zakrit": true,
-
-                "taxprofitnaz": "-",
-
-                "taxzonenaz": "-",
-
-                "abcnaz": "-",
-
-                "xyznaz": "-",
-
-                "cvetnaz": "-",
-
-                "resursnaz": "-",
-
-                "maxcreditour": 0,
-
-                "srokcreditour": 30,
-
-                "strana": "-",
-
-                "postavshacc": "-",
-
-                "zakazchacc": "-",
-
-                "datareg": "2021-08-25T21:00:00.000000Z"
-
-            }
-
-        },
-
-        "pricingProfile": {
-
-            "full": {
-
-                "valutanaz": "EURO",
-
-                "maxcredit": 0,
-
-                "srokcredit": 30,
-
-                "zapretotgr": true,
-
-                "ownerpay": true,
-
-                "tax1": true,
-
-                "ndsfizlic": true
-
-            }
-
-        },
-
-        "requisite": {
-
-            "base": {
-
-                "okpo": null,
-
-                "adrur": "  ",
-
-                "adrfiz": "Киев"
-
-            },
-
-            "full": {
-
-                "is_payer": true,
-
-                "www": "http://nasha-stroyka.com.ua/",
-
-                "adrcorr": "Киев",
-
-                "email": "133920@mail.com",
-
-                "rukfio": null,
-
-                "buhfio": null,
-
-                "rukdolvnnaz": "-",
-
-                "a_s10": null,
-
-                "a_s9": null,
-
-                "naosnov": null,
-
-                "fiskcode": "133920-fiskcode@mail.com",
-
-                "glncode": null,
-
-                "nalnomer": null,
-
-                "nalsvid": null,
-
-                "schet": null,
-
-                "vbanke": null,
-
-                "mfo": null,
-
-                "banknaz": "-"
-
-            }
-
-        },
-
-        "zprice": {
-
-            "full": []
-
-        },
-
-        "additional": {
-
-            "base": {
-
-                "prim": null
-
-            },
-
-            "full": {
-
-                "a_s1": null,
-
-                "a_s2": null,
-
-                "a_s3": null,
-
-                "a_s4": null,
-
-                "a_s6": null,
-
-                "a_f10": 0,
-
-                "a_d1": "2021-08-25T21:00:00.000000Z",
-
-                "a_d2": "1899-12-31T21:57:56.000000Z",
-
-                "a_d4": "2021-08-25T21:00:00.000000Z",
-
-                "a_d5": "2021-08-25T21:00:00.000000Z",
-
-                "a_b1": true,
-
-                "a_b2": true,
-
-                "a_b3": true,
-
-                "a_b4": true,
-
-                "a_b5": true,
-
-                "a_b6": true,
-
-                "a_b7": true,
-
-                "a_b8": true,
-
-                "a_b9": true,
-
-                "a_b10": true,
-
-                "a_r1naz": "-",
-
-                "a_r2naz": "-",
-
-                "a_r3naz": "-",
-
-                "a_r4naz": "-",
-
-                "a_r6naz": "Не проверено",
-
-                "a_r8naz": "-",
-
-                "a_r9naz": "-",
-
-                "prim2": " "
-
-            }
-        }
     })
     const full = ref(false)
     const dfull = ref(false)
