@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!isLoad" > 
         <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div class=" rounded-lg">
                 <h1 class="label-big">
@@ -9,10 +9,10 @@
                 <div class="grid-2-2-1 section">
                     <div>
                         <!--Первый блок-->
-                        <div class="tl">
+                        <!-- <div class="tl">
                             <label class="label-primary">Код заказа:</label>
                             <input type="text" class="input-primary" v-model="data.ZAKKODE" />
-                        </div>
+                        </div> -->
                         <div class="tl">
                             <div>
                                 <modal-select :data="{
@@ -707,243 +707,34 @@
             <button type="button" class="button-hover-primary-active ">Добавить ТТН</button>
         </div>
         <div class="w-full flex justify-center mt-6">
-            <button @click="update(post_str(obj))" type="button" class="button-hover-primary">Изменить</button>
+            <button @click="update(update_route(data))" type="button" class="button-hover-primary">Изменить</button>
         </div>
     </div>
 </template>
 
 <script setup>
-    import post_str from '../api/update'
-    import update from '@api'
-    import {
-        ref
+   import {
+        ref,
+        onMounted
     } from 'vue'
+    import {
 
-    const obj = ref({
-         ZAKKODE: "2125848",
-        FIRMANAZ: "26971-%D1%EE%EA%F0%E0%F9",
-        FIRMA: "26971",
-        CONTACTERNAZ: "-",
-        CONTACTER: "0",
-        CONTRACTNAZ: "",
-        CONTRACT: "0",
-        PROJECTNAZ: "",
-        PROJECT: "0",
-        EI_FROM_LK: "%CD%E5%F2",
-        ZAKAZTIPNAZ: "%D2%E5%F5%ED%E8%F7%E5%F1%EA%E8%E9+%EA%F0%E5%E4%E8%F2",
-        ZAKAZTIP: "128356",
-        TYPE_OF_WORKNAZ: "",
-        TYPE_OF_WORK: "0",
-        MANUFACTURE_FORNAZ: "",
-        MANUFACTURE_FOR: "0",
-        FRACHTTIPNAZ: "-",
-        FRACHTTIP: "0",
-        ACCOUNTNAZ: "",
-        ACCOUNT: "0",
-        A_R2NAZ: "%CB%EE%E3%E8%F1%F2%E8%EA%E0",
-        A_R2: "394160",
-        A_B1: "-",
-        A_B2: "",
-        ORDERNUM: "",
-        CONTACTER2NAZ: "-",
-        CONTACTER2: "0",
-        RESURSNAZ: "%CA%E8%E5%E2",
-        RESURS: "145164",
-        PEREGOVORIDNAZ: "-",
-        PEREGOVORID: "0",
-        DOSTPOINTNAZ: "-",
-        DOSTPOINT: "0",
-        TIPEXPORT: "-",
-        TOMRP: "-",
-        CVETNAZ: "%D1%E8%ED%E8%E9",
-        CVET: "1807",
-        ZAKDATE: "25.10.2021",
-        SROKOPL: "27.10.2021",
-        SROKPOSTAVZ: "3",
-        OKONCH: "28.10.2021",
-        OKONCHHOUR: "00",
-        OKONCHMIN: "00",
-        CLOSEDATE: "",
-        RESERVDO: "28.10.2021",
-        ZAKSTATUSNAZ: "%D7%E0%F1%F2%E8%F7%ED%EE+%EE%F2%E3%F0%F3%E6%E5%ED",
-        ZAKSTATUS: "1139185",
-        A_S1: "",
-        A_D3: "25.10.2021",
-        A_B4: "-",
-        A_B7: "-",
-        A_B8: "-",
-        CLOSED: "-",
-        OFORMLEN: "-",
-        A_B3: "-",
-        A_B5: "-",
-        A_D1: "25.10.2021",
-        VALUTANAZ: "%E3%F0%ED.",
-        VALUTA: "11",
-        KURSBAL: "31.3438",
-        DISCOUNTP: "0",
-        DISCOUNTFOR: "",
-        FRACHTSUM: "0",
-        KURS: "1",
-        TAX1PR: "20",
-        TAX2PR: "0",
-        TAX3PR: "0",
-        TAX4PR: "0",
-        KURSSKLAD: "31.3438",
-        SODERV: "+",
-        ZAKPRIM: "+%B9++21258451",
-        A_R1NAZ: "-",
-        A_R1: "0",
-        A_R3NAZ: "0-%D1%EE%EA%F0%E0%F9",
-        A_R3: "0",
-        A_R4NAZ: "-",
-        A_R4: "0",
-        A_R5NAZ: "-",
-        A_R5: "0",
-        A_R6NAZ: "-",
-        A_R6: "0",
-        A_R10NAZ: "0-%D1%EE%EA%F0%E0%F9",
-        A_R10: "0",
-        A_D2: "25.10.2021",
-        A_F1: "0",
-        A_F3: "0",
-        A_F10: "0",
-        A_S3: "-",
-        A_S4: "%B2%ED%F2%E5%F0%ED%E5%F2+%CA%E8%BF%E2+%C4%E0%F0%ED%E8%F6%FF+%2F%CC%B3%E7%EE%EB",
-        A_S5: "+",
-        A_S6: "",
-        A_S7: "",
-        A_S8: "",
-        A_S9: "",
-        A_S10: "",
-        A_B6: "-",
-        A_B10: "-",
-        ZAKAZ: "2125848",
-        POSTER: "Edit",
-        ZAKTIP: "1",
-        RETURNTO: "",
-        DATS: "01.10.2021",
-        DATPO: "31.10.2021",
-        KVITANC: "",
-        ZAKSRC: "0",
-        ZAKKEYSRC: "0",
-    })
- 
-
+        useRoute
+    } from 'vue-router'
+    import update_route from '../api/update'
+    import update from '@api'
+    import get from '../api/get'
+    import load from '@/hooks/load'
     const full = ref(false)
     const ffull = ref(false)
     const afull = ref(false)
     const bfull = ref(false)
     const cfull = ref(false)
-    const data = ref({
-        "object": "Orders",
-        "id": null,
-        ZAKKODE: "2125848",
-        FIRMANAZ: "26971-%D1%EE%EA%F0%E0%F9",
-        FIRMA: "26971",
-        CONTACTERNAZ: "-",
-        CONTACTER: "0",
-        CONTRACTNAZ: "",
-        CONTRACT: "0",
-        PROJECTNAZ: "",
-        PROJECT: "0",
-        EI_FROM_LK: "%CD%E5%F2",
-        ZAKAZTIPNAZ: "%D2%E5%F5%ED%E8%F7%E5%F1%EA%E8%E9+%EA%F0%E5%E4%E8%F2",
-        ZAKAZTIP: "128356",
-        TYPE_OF_WORKNAZ: "",
-        TYPE_OF_WORK: "0",
-        MANUFACTURE_FORNAZ: "",
-        MANUFACTURE_FOR: "0",
-        FRACHTTIPNAZ: "-",
-        FRACHTTIP: "0",
-        ACCOUNTNAZ: "",
-        ACCOUNT: "0",
-        A_R2NAZ: "%CB%EE%E3%E8%F1%F2%E8%EA%E0",
-        A_R2: "394160",
-        A_B1: "-",
-        A_B2: "",
-        ORDERNUM: "",
-        CONTACTER2NAZ: "-",
-        CONTACTER2: "0",
-        RESURSNAZ: "%CA%E8%E5%E2",
-        RESURS: "145164",
-        PEREGOVORIDNAZ: "-",
-        PEREGOVORID: "0",
-        DOSTPOINTNAZ: "-",
-        DOSTPOINT: "0",
-        TIPEXPORT: "-",
-        TOMRP: "-",
-        CVETNAZ: "%D1%E8%ED%E8%E9",
-        CVET: "1807",
-        ZAKDATE: "25.10.2021",
-        SROKOPL: "27.10.2021",
-        SROKPOSTAVZ: "3",
-        OKONCH: "28.10.2021",
-        OKONCHHOUR: "00",
-        OKONCHMIN: "00",
-        CLOSEDATE: "",
-        RESERVDO: "28.10.2021",
-        ZAKSTATUSNAZ: "%D7%E0%F1%F2%E8%F7%ED%EE+%EE%F2%E3%F0%F3%E6%E5%ED",
-        ZAKSTATUS: "1139185",
-        A_S1: "",
-        A_D3: "25.10.2021",
-        A_B4: "-",
-        A_B7: "-",
-        A_B8: "-",
-        CLOSED: "-",
-        OFORMLEN: "-",
-        A_B3: "-",
-        A_B5: "-",
-        A_D1: "25.10.2021",
-        VALUTANAZ: "%E3%F0%ED.",
-        VALUTA: "11",
-        KURSBAL: "31.3438",
-        DISCOUNTP: "0",
-        DISCOUNTFOR: "",
-        FRACHTSUM: "0",
-        KURS: "1",
-        TAX1PR: "20",
-        TAX2PR: "0",
-        TAX3PR: "0",
-        TAX4PR: "0",
-        KURSSKLAD: "31.3438",
-        SODERV: "+",
-        ZAKPRIM: "+%B9++21258451",
-        A_R1NAZ: "-",
-        A_R1: "0",
-        A_R3NAZ: "0-%D1%EE%EA%F0%E0%F9",
-        A_R3: "0",
-        A_R4NAZ: "-",
-        A_R4: "0",
-        A_R5NAZ: "-",
-        A_R5: "0",
-        A_R6NAZ: "-",
-        A_R6: "0",
-        A_R10NAZ: "0-%D1%EE%EA%F0%E0%F9",
-        A_R10: "0",
-        A_D2: "25.10.2021",
-        A_F1: "0",
-        A_F3: "0",
-        A_F10: "0",
-        A_S3: "-",
-        A_S4: "%B2%ED%F2%E5%F0%ED%E5%F2+%CA%E8%BF%E2+%C4%E0%F0%ED%E8%F6%FF+%2F%CC%B3%E7%EE%EB",
-        A_S5: "+",
-        A_S6: "",
-        A_S7: "",
-        A_S8: "",
-        A_S9: "",
-        A_S10: "",
-        A_B6: "-",
-        A_B10: "-",
-        ZAKAZ: "2125848",
-        POSTER: "Edit",
-        ZAKTIP: "1",
-        RETURNTO: "",
-        DATS: "01.10.2021",
-        DATPO: "31.10.2021",
-        KVITANC: "",
-        ZAKSRC: "0",
-        ZAKKEYSRC: "0",
-    })
+     const {
+        data,
+        isLoad,
+        id
+    } = load(get)
 </script>
 
 <style lang="scss" scoped>
