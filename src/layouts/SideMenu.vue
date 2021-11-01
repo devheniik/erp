@@ -167,7 +167,7 @@
             </nav>
           </div>
           <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-            <a href="#" class="flex-shrink-0 w-full group block">
+            <a  class="flex-shrink-0 w-full group block">
               <div class="flex items-center">
                 <div>
                   <img class="inline-block h-9 w-9 rounded-full"
@@ -175,7 +175,7 @@
                     alt="" />
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm font-medium text-gray-200 group-hover:text-gray-100">
+                  <p class="text-sm font-medium text-gray-200 group-hover:text-gray-100" @click="$toast({component: 'toast', data: {type: 'warning', message: `text`}})">
                     Whitney Francis
                   </p>
                   <!-- <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
@@ -233,8 +233,7 @@
   import useNavigation from '../hooks/navigation'
 
   import logo from '../assets/images/logo.png'
-
-
+ 
   const {
     navigation,
     findActive,

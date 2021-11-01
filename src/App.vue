@@ -1,32 +1,18 @@
 <template lang="pug">
 #app(@dragover.prevent @drop.prevent)
+  toast-layer
   component(:is="layout")
     router-view
-</template> 
-<!--<script setup>
-    import { computed, getCurrentInstance } from 'vue'
-    import { useRoute } from 'vue-router'
-
-    import router from '@/router'
-
-    import  SideMenu  from '@/layouts/SideMenu.vue'
- 
-    const route = useRoute()
-    const app = getCurrentInstance()
-
-    console.log(app);
- 
-
-    const layout = computed(() => `${route.meta.layout}Menu`)  
- 
-</script>-->
+</template>  
 <script> 
 import store from '@/store'
 import SideMenu from '@/layouts/SideMenu.vue'
+import ToastLayer from '@/layouts/Toast.vue'
 import Empty from '@/layouts/Empty.vue'
 export default {
   components: {
-    SideMenu
+    SideMenu,
+    ToastLayer
   },
   computed: {
     layout() {

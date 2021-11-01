@@ -16,10 +16,12 @@ import Field from "./forms/Field.vue"
 import Bar from "./table/Bar.vue"
 import SubTable from "./table/SubTable.vue"
 import Alert from "./table/Alert.vue"
+import Toast from "./notifications/Toast.vue"
 
 
 
 export default app => {
+  app.component("toast", Toast)
   app.component("alert", Alert)
   app.component("sub-table", SubTable)
   app.component("bar", Bar)

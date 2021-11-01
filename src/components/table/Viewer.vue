@@ -18,7 +18,7 @@
                         </component>
                     </div>
                 </div>
-                <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-50">
+                <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-40">
                     <button @click="createOpen = true" class="btn-circle-primary">
                         <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
                     </button>

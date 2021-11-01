@@ -8,6 +8,7 @@ module.exports = {
         colors: {
             primary: colors.blue,
             secondary: colors.coolGray,
+            success: colors.green,
             warning: colors.orange,
             danger: colors.red,
             gray: colors.gray,

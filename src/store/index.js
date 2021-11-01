@@ -1,8 +1,10 @@
 import { createStore } from 'vuex'
-import user from '@user/store'
+import user from './modules/user'
+import toast from './modules/toast'
 
 const store = createStore({
     modules: {
+        toast,
         user,
     },
 })
