@@ -22,6 +22,17 @@ export default [
         }
     },
     {
+        path: '/sales/products/list',
+        name: 'sales-product-update',
+        component: () => import('@sale/views/Products/List.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sales-product-update'
+        }
+    },
+    {
         path: '/sales/shipments',
         name: 'sales-shipment-view',
         component: () => import('@sale/views/Shipment/List.vue'),
