@@ -15,7 +15,7 @@ export default function (_route) {
         isLoad.value = true  
         console.log('----------', _route(entityId));
         data.value = await get(_route(entityId))  
-        data.value = data.value.data  
+        data.value = data.value 
         console.log('load by id');
         isLoad.value = false
     }
