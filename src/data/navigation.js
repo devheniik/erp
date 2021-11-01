@@ -443,8 +443,17 @@ export default [
             uname: 'sales-product-view',
             child: []
           },
+          {
+            name: 'Список',
+            href: { name: 'sales-product-update' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sales-product-update',
+            child: []
+          },
         ]
       },
+      
       {
         name: 'Отгрузки',
         href: { name: 'sales-shipment-view' },
