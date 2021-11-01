@@ -7,12 +7,12 @@
         <div class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden z-50">
           <div class="p-4">
             <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <component :is="data.type == 'warning' ? 'ExclamationIcon' : type == 'danger' ? 'ShieldExclamationIcon' : 'CheckCircleIcon '" :class="['h-6 w-6', data.type == 'warning' ? 'text-warning-400' : type == 'danger' ? 'text-danger-400' : 'text-success-400']" aria-hidden="true" />
+              <div class="flex-shrink-0"> 
+                <component :is="type == 'warning' ? 'ExclamationIcon' : type == 'danger' ? 'ShieldExclamationIcon' : 'CheckCircleIcon'" :class="['h-6 w-6', type == 'warning' ? 'text-warning-400' : type == 'danger' ? 'text-danger-400' : 'text-success-400']" aria-hidden="true" />
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <p class="text-sm font-medium text-gray-900">
-                  {{ data.message }} 
+                  {{ message }} 
                 </p>
                 <!-- <p class="mt-1 text-sm text-gray-500">
                   Anyone with a link can now view this file.
@@ -34,6 +34,10 @@
 
 <script setup>
     const props = defineProps({
-        data: Object
+        message: String,
+        type: {
+          type: String,
+          default: 'info'
+        }
     })
 </script>
