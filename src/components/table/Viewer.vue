@@ -5,11 +5,10 @@
 
             </slot>
         </modal>
-        <div v-if="!isLoad" class="w-full h-full  flex flex-col justify-between">
+        <div v-if="!isLoad && data" class="w-full h-full  flex flex-col justify-between">
             <div class="w-full">
                 <div class="w-full" v-if=data.bar> 
-                    <bar v-bind=data.bar.config :data=data.bar.data>
-
+                    <bar v-bind=data.bar.config :data=data.bar.data> 
                     </bar>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">

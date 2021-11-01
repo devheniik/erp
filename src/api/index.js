@@ -10,7 +10,7 @@ export default async function (route, req) {
         // } else {
         //     response = await axios.post(route) 
         // }  
-        return response.data 
+        return JSON.parse(JSON.stringify(response.data))
     } catch (error) {
         console.log(error)
     } finally { 

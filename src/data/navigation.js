@@ -430,25 +430,25 @@ export default [
       },
       {
         name: 'Товары',
-        href: { name: 'sales-product-view' },
+        href: { name: 'sale-product-view' },
         icon: 'ArchiveIcon',
         current: false,
-        uname: 'sales-product-view',
+        uname: 'sale-product-view',
         child: [
           {
             name: 'Каталог',
-            href: { name: 'sales-product-view' },
+            href: { name: 'sale-product-view' },
             icon: 'ViewListIcon',
             current: false,
-            uname: 'sales-product-view',
+            uname: 'sale-product-view',
             child: []
           },
           {
             name: 'Список',
-            href: { name: 'sales-product-update' },
+            href: { name: 'sale-product-update' },
             icon: 'ViewListIcon',
             current: false,
-            uname: 'sales-product-update',
+            uname: 'sale-product-update',
             child: []
           },
         ]
@@ -456,17 +456,43 @@ export default [
       
       {
         name: 'Отгрузки',
-        href: { name: 'sales-shipment-view' },
+        href: { name: 'sale-shipment-view' },
         icon: 'ArchiveIcon',
         current: false,
-        uname: 'sales-shipment-view',
+        uname: 'sale-shipment-view',
         child: [
           {
             name: 'Список',
-            href: { name: 'sales-shipment-view' },
+            href: { name: 'sale-shipment-view' },
             icon: 'ViewListIcon',
             current: false,
-            uname: 'sales-shipment-view',
+            uname: 'sale-shipment-view',
+            child: []
+          },
+        ]
+      },
+
+      {
+        name: 'Заказчики',
+        href: { name: 'sale-firm-view' },
+        icon: 'ArchiveIcon',
+        current: false,
+        uname: 'sale-firm-view',
+        child: [
+          {
+            name: 'Список',
+            href: { name: 'sale-firm-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-firm-view',
+            child: []
+          },
+          {
+            name: 'Карточки',
+            icon: 'CollectionIcon',
+            href: { name: 'sale-firm-update', params: { id: '133921' } },
+            current: false,
+            uname: 'sale-firm-update',
             child: []
           },
         ]
