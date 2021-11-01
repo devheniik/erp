@@ -1,11 +1,10 @@
 <template>
-    <div class="z-30">
+    <div class="z-30"> 
         <div aria-live="assertive" class="absolute inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
             <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
-                <component v-for="(t, i) in toasts" :key="i" :data="t.data" :is="t.component" @close="del(i)"></component>  
+                <component v-for="(t, i) in toasts" :key="i" v-bind="t.data" :is="t.component" @close="del(i)"></component>  
             </div>
         </div>
-
     </div>
 </template>
 

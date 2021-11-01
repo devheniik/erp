@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex items-center mb-5">
         <div class="hidden sm:block w-full">
-            <nav class="relative z-40 rounded-lg shadow flex divide-x  divide-gray-200 w-full" aria-label="Tabs">
+            <nav class="relative z-50 rounded-lg shadow flex divide-x  divide-gray-200 w-full" aria-label="Tabs">
                 <div v-for="(tab, tabIdx) in tabs" :key="tab.name" class="w-full " @click="clear(tabIdx, !tab.current)">
                     <a  :class="[tab.current ? 'text-gray-50 border-b-2 border-gray-800 bg-gray-800 ' : 'text-gray-100 hover:text-gray-50 bg-gray-700 ', ' h-8 flex items-center text-sm font-medium justify-center hover:bg-gray-800 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
                         <span>{{ tab.name }}</span> 
@@ -47,7 +47,7 @@ const  handle = async (obj) => {
         let response = {}
         switch (obj.type){
             case 'promt':
-                const value = prompt("Введите штрих-код", "")
+                const value = prompt(obj.promt_message ?? '')
                 params.value[props.promt_param_name] = value
                 params.value[props.action_param_name] = obj.value
                 response = await send(obj.url, params.value)
@@ -62,8 +62,8 @@ const  handle = async (obj) => {
             //     send(obj.value, config.params)
             //     break;
 
-        } 
-        app.config.globalProperties.$toast(response)
+        }    
+        app.appContext.config.globalProperties.$toast(JSON.parse(JSON.stringify(response)))
     }
 
 </script>
