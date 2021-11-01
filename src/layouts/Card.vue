@@ -31,7 +31,7 @@
 
         <!-- NAVIGATION -->
         <div class="bg-gray-100  w-full">
-            <div class="fixed bottom-0 overflow-y-auto border-t border-gray-300 hide-scroll z-0 inline-flex items-center   space-x-2 justify-center w-full lg:w-fixed bg-white py-3">
+            <div class="fixed bottom-0 overflow-y-auto border-t border-gray-300 hide-scroll z-50 inline-flex items-center   space-x-2 justify-center w-full lg:w-fixed bg-white py-3">
                 <!-- <button class="inline-flex items-center px-1 text-xs font-medium">
                     Сущьность
                     <span class="text-secondary-600 ml-2">№</span>
