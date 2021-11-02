@@ -57,6 +57,13 @@
             params: {
               //параметры для фронта
             }
+          },
+          {
+            name: "Округление цен",
+            disabled:  false,
+            type: 'modal',
+            value: '',//Обязательный параметр, передавать его в поле из config.action_param_name
+            url: 'sales/zakokrugdo'
           }
         ]
       }
