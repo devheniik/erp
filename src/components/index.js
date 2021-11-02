@@ -17,10 +17,12 @@ import Bar from "./table/Bar.vue"
 import SubTable from "./table/SubTable.vue"
 import Alert from "./table/Alert.vue"
 import Toast from "./notifications/Toast.vue"
+import Zakokrugdo from "./modals/zakokrugdo.vue"
 
 
 
 export default app => {
+  app.component("zakokrugdo", Zakokrugdo)
   app.component("toast", Toast)
   app.component("alert", Alert)
   app.component("sub-table", SubTable)
