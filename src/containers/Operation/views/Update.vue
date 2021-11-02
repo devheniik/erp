@@ -8,6 +8,7 @@
         }">
         <update v-show="component == 'update'"></update> 
         <eventlist v-show="component == 'eventlist'"></eventlist> 
+        <management v-show="component == 'management'"></management> 
     </layout>
 </template>
 
@@ -22,6 +23,7 @@ import links from '../api/operation/links'
 import update from '../components/update.vue'
 //import properties from '../components/properties.vue'
 import eventlist from '../components/eventlist.vue'
+import management from '../components/management.vue'
 
 // * layout import
 import layout from '@/layouts/Card.vue'

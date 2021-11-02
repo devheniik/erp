@@ -11,6 +11,11 @@ export default [
         component: 'update',
         link: '/link'
     },
+    {
+        label: 'Разноски',
+        active: false,
+        component: 'management'
+    },
     // {
     //     label: 'Свойства',
     //     active: false,

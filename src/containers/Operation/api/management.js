@@ -1,0 +1,1 @@
+export default 'business_transactions/transaction_management/menu/get'
