@@ -1,4 +1,5 @@
-export default [
+
+export default (config) => [
   {
     name: 'Филиал',
     href: { name: 'filial' },
@@ -84,7 +85,7 @@ export default [
       },
       {
         name: 'Карточки',
-        href: { name: 'firm-update', params: { id: 133920 } },
+        href: { name: 'firm-update', params: { id: config.firm ?? 0 } },
         icon: 'CollectionIcon',
         current: false,
         uname: 'firm-update',
@@ -490,7 +491,7 @@ export default [
           {
             name: 'Карточки',
             icon: 'CollectionIcon',
-            href: { name: 'sale-firm-update', params: { id: '133921' } },
+            href: { name: 'sale-firm-update', params: { id: config.firm ?? 0 } },
             current: false,
             uname: 'sale-firm-update',
             child: []
@@ -683,4 +684,4 @@ export default [
     uname: 'text',
     child: []
   }
-]
+] 

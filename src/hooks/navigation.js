@@ -1,11 +1,25 @@
 import navigation_data from '../data/navigation'
 import router from '@/router'
 import {useRoute} from 'vue-router'
-import { ref, watch } from 'vue'
+import { ref, watch,onMounted, computed } from 'vue'
+import store from "@/store"
 export default function() {
-    const navigation = ref(navigation_data)
-
     const route = useRoute()
+    const isLoad = ref(true)
+    
+    const navigation = ref([]) 
+    watch(() => route.fullPath, () => {   
+        navigation.value = navigation_data(store.state.config.config)
+    })
+ 
+
+    onMounted(async () => {
+        isLoad.value = true   
+        navigation.value = navigation_data(store.state.config.config)
+        findActive(route.meta.uname)
+        isLoad.value = false
+    })
+
 
     const findActive = name => {  
         navigation.value.forEach(first => { 

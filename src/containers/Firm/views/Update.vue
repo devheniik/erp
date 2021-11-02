@@ -4,7 +4,8 @@
             links: links,
             route_name: 'firm-update',
             api: list,
-            current: comoponent
+            current: comoponent,
+            ls_name: 'firm'
         }">
         <update v-show="comoponent == 'update'"></update> 
         <properties v-show="comoponent == 'properties'"></properties> 
@@ -12,7 +13,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed } from 'vue' 
 
 // * api import 
 import list from '../api/list'

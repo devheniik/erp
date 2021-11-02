@@ -153,12 +153,22 @@
     </div>
 </template>
 
-<script setup>
-    import route_create from '../api/create'
-    import create from '@api_base/create'
+<script setup> 
     import {
         ref
     } from 'vue'
+    import send from "@api"
+
+    const props = defineProps({
+        params: Object
+    })
+
+    import get from '@/hooks/get'
+
+    const {
+    data, isLoad
+    } = get('orders/corrections/eizakazcopy/show', { ZAKAZ: props.params.ZAKAZ, ZAKTIP: props.params.ZAKTIP }) 
+
 </script>
 
 <style lang="scss" scoped>

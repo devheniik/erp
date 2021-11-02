@@ -7,7 +7,7 @@ import {
     onUpdated
 } from 'vue'
 import get from '@/api/index'
-export default function (_route) {
+export default function (_route, body) {
     const isLoad = ref(true)
 
     const data = ref()
@@ -15,7 +15,7 @@ export default function (_route) {
 
     const load = async () => {
         isLoad.value = true
-        data.value =  await get(_route)
+        data.value =  await get(_route, body ? body : null)
         console.log(data.value);
         console.log('get')
         isLoad.value = false

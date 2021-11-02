@@ -20,6 +20,10 @@ export default {
     }
   },
   setup(props) {
+    store.commit('setup_config')
+
+    
+
     return {
       store
     }

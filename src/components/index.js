@@ -18,12 +18,10 @@ import SubTable from "./table/SubTable.vue"
 import Alert from "./table/Alert.vue"
 import Toast from "./notifications/Toast.vue"
 import Zakokrugdo from "./modals/zakokrugdo.vue"
-import Zaktipceny from "./modals/zaktipceny"
-import CopyOrder from "./uniprops/Sales/CopyOrder.vue"
+import Zaktipceny from "./modals/zaktipceny.vue"
 
 
 export default app => {
-  app.component("copy-order", CopyOrder)
   app.component("zaktipceny", Zaktipceny)
   app.component("zakokrugdo", Zakokrugdo)
   app.component("toast", Toast)

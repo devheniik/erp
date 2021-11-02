@@ -6,7 +6,7 @@
             api: list,
             current: component 
         }">
-        <update v-show="component == 'update'"></update> 
+        <!--<update v-show="component == 'update'"></update> -->
         <eventlist v-show="component == 'eventlist'"></eventlist> 
         <management v-show="component == 'management'"></management> 
     </layout>

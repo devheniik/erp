@@ -81,7 +81,7 @@
 
 <script setup> 
     import {  ref, watch, computed } from 'vue'
-
+    import store from "@/store"
     // * router init 
     import {  useRoute  } from 'vue-router'
     const route = useRoute()
@@ -97,7 +97,8 @@
         route_name: String,
         links: Function,
         api: String,
-        current: String
+        current: String,
+        ls_name: String
     })
 
     const emit = defineEmits(['update:config'])
@@ -135,6 +136,8 @@
     watch(computed(() => route.params.id), async () => {
         await load(route.params.id)
         entityId.value = route.params.id 
+        console.log(route.params.id)
+        route.params.id  ? store.commit('update_card', { name: props.ls_name, id: route.params.id }) : ''
     })
 </script>
 

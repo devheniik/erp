@@ -26,7 +26,9 @@ export default function (_route, start_data) {
     const load = async () => {
         isReload.value = true
         if (data.value != null || data.value != undefined) {
-            data.value.data = []
+            delete data.value['data']
+            delete data.value['meta']
+            delete data.value['bar']
             // data.value.headers = [] 
         } 
         console.log(list)
@@ -37,8 +39,10 @@ export default function (_route, start_data) {
     const start = async () => {
         isLoad.value = true
         isReload.value = true
-        if (data.value != null || data.value != undefined) {
-            data.value.data = []
+        if (data.value != null || data.value != undefined) { 
+            delete data.value['data']
+            delete data.value['meta']
+            delete data.value['bar']
             // data.value.headers = [] 
         }  
         data.value = await list(_route, data.value)

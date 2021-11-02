@@ -41,6 +41,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
 </template>
 
@@ -54,6 +55,8 @@ const props = defineProps({
     modalSelect: Boolean,
     sort: Object
 })
+
+    
 
     const emit = defineEmits(['select', 'sort', 'update:body'])
 

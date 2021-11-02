@@ -224,8 +224,9 @@
 
 <script setup>
   import {
-    ref
+    ref, watch, computed
   } from 'vue'
+  import store from '@/store'
   import {
     useRoute,
     useRouter
@@ -253,6 +254,10 @@
     linkTo(item, router)
     findActive(item.uname)
   }
+
+  // console.log('---', store.getters['config']);
+
+  
 
 
 

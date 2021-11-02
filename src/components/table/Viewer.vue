@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-full">
+    <div class="h-full w-full"> 
         <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
             <slot name="create">
 
@@ -8,7 +8,7 @@
         <div v-if="!isLoad && data" class="w-full h-full  flex flex-col justify-between">
             <div class="w-full">
                 <div class="w-full" v-if=data.bar> 
-                    <bar v-bind=data.bar.config :data=data.bar.data> 
+                    <bar v-bind=data.bar.config :data=data.bar.data @reload=load()> 
                     </bar>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
