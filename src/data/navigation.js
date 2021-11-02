@@ -70,7 +70,7 @@ export default [
   {
     name: 'Организации',
     href: { name: 'firm-view' },
-    icon: 'AdjustmentsIcon',
+    icon: 'OfficeBuildingIcon',
     current: false,
     uname: 'firm-view',
     child: [
@@ -454,28 +454,28 @@ export default [
         ]
       },
       
-      {
-        name: 'Отгрузки',
-        href: { name: 'sale-shipment-view' },
-        icon: 'ArchiveIcon',
-        current: false,
-        uname: 'sale-shipment-view',
-        child: [
-          {
-            name: 'Список',
-            href: { name: 'sale-shipment-view' },
-            icon: 'ViewListIcon',
-            current: false,
-            uname: 'sale-shipment-view',
-            child: []
-          },
-        ]
-      },
+      // {
+      //   name: 'Отгрузки',
+      //   href: { name: 'sale-shipment-view' },
+      //   icon: 'UploadIcon',
+      //   current: false,
+      //   uname: 'sale-shipment-view',
+      //   child: [
+      //     {
+      //       name: 'Список',
+      //       href: { name: 'sale-shipment-view' },
+      //       icon: 'ViewListIcon',
+      //       current: false,
+      //       uname: 'sale-shipment-view',
+      //       child: []
+      //     },
+      //   ]
+      // },
 
       {
         name: 'Заказчики',
         href: { name: 'sale-firm-view' },
-        icon: 'ArchiveIcon',
+        icon: 'OfficeBuildingIcon',
         current: false,
         uname: 'sale-firm-view',
         child: [
@@ -493,6 +493,108 @@ export default [
             href: { name: 'sale-firm-update', params: { id: '133921' } },
             current: false,
             uname: 'sale-firm-update',
+            child: []
+          },
+        ]
+      },
+      {
+        name: 'Отгрузка',
+        href: { name: 'sale-operation-658-view' },
+        icon: 'UploadIcon',
+        current: false,
+        uname: 'sale-operation-658-view',
+        child: [
+          {  
+            name: 'Список',
+            href: { name: 'sale-operation-658-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-operation-658-view',
+            child: []
+          },
+        ]
+      },
+      {
+        name: 'Возврат товаров',
+        href: { name: 'sale-operation-660-view' },
+        icon: 'RewindIcon',
+        current: false,
+        uname: 'sale-operation-660-view',
+        child: [
+          {  
+            name: 'Список',
+            href: { name: 'sale-operation-660-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-operation-660-view',
+            child: []
+          },
+        ]
+      },
+      {
+        name: 'Оплаты',
+        href: { name: 'sale-operation-657-view' },
+        icon: 'CashIcon',
+        current: false,
+        uname: 'sale-operation-657-view',
+        child: [
+          {  
+            name: 'Список',
+            href: { name: 'sale-operation-657-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-operation-657-view',
+            child: []
+          },
+        ]
+      },
+      {
+        name: 'Возврат денег',
+        href: { name: 'sale-operation-659-view' },
+        icon: 'RewindIcon',
+        current: false,
+        uname: 'sale-operation-659-view',
+        child: [
+          {  
+            name: 'Список',
+            href: { name: 'sale-operation-659-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-operation-659-view',
+            child: []
+          },
+        ]
+      },
+      {
+        name: 'Доп оплаты',
+        href: { name: 'sale-operation-754-view' },
+        icon: 'CashIcon',
+        current: false,
+        uname: 'sale-operation-754-view',
+        child: [
+          {  
+            name: 'Список',
+            href: { name: 'sale-operation-754-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-operation-754-view',
+            child: []
+          },
+        ]
+      },
+      {
+        name: 'Компенсация',
+        href: { name: 'sale-operation-686-view' },
+        icon: 'CurrencyDollarIcon',
+        current: false,
+        uname: 'sale-operation-686-view',
+        child: [
+          {  
+            name: 'Список',
+            href: { name: 'sale-operation-686-view' },
+            icon: 'ViewListIcon',
+            current: false,
+            uname: 'sale-operation-686-view',
             child: []
           },
         ]
