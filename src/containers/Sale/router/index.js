@@ -27,7 +27,7 @@ export default [
     {
         path: '/sales/products',
         name: 'sale-product-view',
-        component: () => import('@sale/views/Products/List.vue'),
+        component: () => import('@sale/views/Product/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
@@ -38,7 +38,7 @@ export default [
     {
         path: '/sales/products/list',
         name: 'sale-product-update',
-        component: () => import('@sale/views/Products/List.vue'),
+        component: () => import('@sale/views/Product/List.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
