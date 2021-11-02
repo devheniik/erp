@@ -86,6 +86,97 @@ export default [
         }
     },
 
+    // * operations
+    {
+        path: '/sales/operations/658',
+        name: 'sale-operation-658-view',
+        component: () => import('../../../components/table/Viewer.vue'),
+        props: {
+            api: 'transactions/operation-types/get?operationTypes=658'
+        },
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sale-operation-658-view'
+        }
+    },
+
+    {
+        path: '/sales/operations/660',
+        name: 'sale-operation-660-view',
+        component: () => import('../../../components/table/Viewer.vue'),
+        props: {
+            api: 'transactions/operation-types/get?operationTypes=660'
+        },
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sale-operation-660-view'
+        }
+    },
+
+    {
+        path: '/sales/operations/657',
+        name: 'sale-operation-657-view',
+        component: () => import('../../../components/table/Viewer.vue'),
+        props: {
+            api: 'transactions/operation-types/get?operationTypes=657'
+        },
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sale-operation-657-view'
+        }
+    },
+
+    {
+        path: '/sales/operations/659',
+        name: 'sale-operation-659-view',
+        component: () => import('../../../components/table/Viewer.vue'),
+        props: {
+            api: 'transactions/operation-types/get?operationTypes=659'
+        },
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sale-operation-659-view'
+        }
+    },
+
+    {
+        path: '/sales/operations/754',
+        name: 'sale-operation-754-view',
+        component: () => import('../../../components/table/Viewer.vue'),
+        props: {
+            api: 'transactions/operation-types/get?operationTypes=754'
+        },
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sale-operation-754-view'
+        }
+    },
+
+    {
+        path: '/sales/operations/686',
+        name: 'sale-operation-686-view',
+        component: () => import('../../../components/table/Viewer.vue'),
+        props: {
+            api: 'transactions/operation-types/get?operationTypes=686'
+        },
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'sale-operation-686-view'
+        }
+    },
+
     
 
     // * utils
