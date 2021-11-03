@@ -90,14 +90,12 @@
         selected: false,
         value: {
           id: { // ячейка
-            name: 'number',
             label: 'Компания x',
             params: {
-              id: 123,
-              type: 'empty'
+              id: 123
             }, 
-            modal: false,
-            route: 'firm-view'
+            type: 'route',
+            value: 'firm-view'
           },
           fio: '123123',
           zakaz: '123',
