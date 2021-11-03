@@ -4,7 +4,8 @@
             links: links,
             route_name: 'firm-update',
             api: get,
-            current: comoponent
+            current: comoponent,
+            ls_name: 'finance'
         }">
         <update v-show="comoponent == 'update'"></update> 
         <properties v-show="comoponent == 'properties'"></properties> 

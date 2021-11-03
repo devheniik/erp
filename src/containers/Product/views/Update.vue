@@ -4,7 +4,8 @@
             links: links,
             route_name: 'product-update',
             api: list,
-            current: component 
+            current: component,
+            ls_name: 'product'
         }">
         <update v-show="component == 'update'"></update>  
     </layout>

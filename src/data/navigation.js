@@ -40,7 +40,7 @@ export default (config) => [
           },
           {
             name: 'Карточки',
-            href: { name: 'finance-advance-reports-update', params: { id: 4577952  } },
+            href: { name: 'finance-advance-reports-update', params: { id: config.firm_advance ?? 0  } },
             icon: 'CollectionIcon',
             current: false,
             uname: 'finance-advance-reports-update',
@@ -118,7 +118,7 @@ export default (config) => [
       {
         name: 'Карточки',
         icon: 'CollectionIcon',
-        href: { name: 'person-update', params: { id: '83'  } },
+        href: { name: 'person-update', params: { id:  config.person ?? 0    } },
         current: false,
         uname: 'person-update',
         child: []
@@ -365,7 +365,7 @@ export default (config) => [
       },
       {
         name: 'Карточки',
-        href: { name: 'product-update', params: { id: 125135 } },
+        href: { name: 'product-update', params: { id: config.product ?? 0   } },
         icon: 'CollectionIcon',
         current: false,
         uname: 'product-update',
@@ -398,7 +398,7 @@ export default (config) => [
       },
       {
         name: 'Карточки',
-        href: { name: 'operation-update', params: { id: 0 } },
+        href: { name: 'operation-update', params: { id:  config.operation ?? 0   } },
         icon: 'CollectionIcon',
         current: false,
         uname: 'operation-update',
@@ -424,7 +424,7 @@ export default (config) => [
       {
         name: 'Карточки',
         icon: 'CollectionIcon',
-        href: { name: 'sale-update', params: { id: '2125780'} },
+        href: { name: 'sale-update', params: { id:  config.order ?? 0  } },
         current: false,
         uname: 'sale-update',
         child: []

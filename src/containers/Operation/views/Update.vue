@@ -4,7 +4,8 @@
             links: links,
             route_name: 'operation-update',
             api: list,
-            current: component 
+            current: component,
+            ls_name: 'operation'
         }">
         <!--<update v-show="component == 'update'"></update> -->
         <eventlist v-show="component == 'eventlist'"></eventlist> 

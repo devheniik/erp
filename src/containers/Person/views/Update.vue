@@ -4,7 +4,8 @@
             links: links,
             route_name: 'person-update',
             api: list,
-            current: comoponent
+            current: comoponent,
+            ls_name: 'person'
         }">
         <update v-show="comoponent == 'update'"></update> 
         <properties v-show="comoponent == 'properties'"></properties> 

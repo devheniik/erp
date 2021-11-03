@@ -11,14 +11,12 @@ export default {
         }
     },
     mutations: { 
-        update_card (state, payload) {  
-            console.log(payload);
+        update_card (state, payload) {   
             state.config[payload.name] = payload.id
             localStorage[payload.name] = payload.id
         },
         setup_config (state) {   
-            const config = JSON.stringify(localStorage)
-            console.log(config);
+            const config = JSON.stringify(localStorage) 
             state.config =  JSON.parse(config)
         }   
      },

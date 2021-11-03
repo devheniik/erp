@@ -3,7 +3,8 @@
             name: 'заказ',
             links: links,
             route_name: 'sale-update',
-            api: list
+            api: list,
+            ls_name: 'order'
         }">
         <update v-show="comoponent == 'update'"></update> 
         <specifications v-show="comoponent == 'specifications'"></specifications> 

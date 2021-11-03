@@ -4,7 +4,8 @@
             links: links,
             route_name: 'finance-advance-reports-update',
             api: list,
-            current: comoponent
+            current: comoponent,
+            ls_name: 'firm_advance'
         }">
         <update v-show="comoponent == 'update'"></update> 
         <!-- <properties v-show="comoponent == 'properties'"></properties>  -->
