@@ -12,10 +12,10 @@
             </slot>
         </div>
         <modal v-model="isOpen" width="w-10/12"> 
-            <viewer modalSelect :start_data="start_data" @select="select($event)" :api="data.api"></viewer>
+            <viewer modalSelect  @select="select($event)" :api="data.api"></viewer>
         </modal>
     </div>
-    <!--[$emit('update:modelvalue', $event.uid), label = $event.values[data.meanKey]]--> 
+    <!--[$emit('update:modelvalue', $event.uid), label = $event.values[data.label_key]]--> 
 </template>
 
 <script setup>
@@ -34,9 +34,10 @@ const emit = defineEmits(['update:modelValue', 'change'])
 const label = ref(props.data.label)
 
 const select = e => { 
-    emit('update:modelValue', e.uid)
-    emit('change', e.uid) 
-    label.value = e.value[props.data.meanKey]
+    console.log(e.value[props.data.value_name]);
+    emit('update:modelValue', e.value[props.data.value_name].value)
+    emit('change', e.value[props.data.value_name].value) 
+    label.value = e.value[props.data.label_key] ?? e.value[props.data.label_key].label
     isOpen.value = false
 }
 

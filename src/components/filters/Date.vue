@@ -1,9 +1,9 @@
 <template>
     <div> 
-        <div class="flex flex-row items-center justify-between bg-primary-500 rounded-md px-3 text-gray-100">
-            <label>{{data.label}}</label>
-            <flat-pickr  class="block sm:text-sm w-full rounded-none focus:outline-none border-1 border-primary-500" v-model="date" @change.stop="change()" ></flat-pickr>
-             <CalendarIcon class="h-6 w-6" />
+        <div class="flex flex-row items-center justify-between bg-primary-500 rounded-md px-3 ">
+            <label class="whitespace-nowrap pr-3 text-gray-100">{{data.label}}</label>
+            <flat-pickr  class="block sm:text-sm w-full rounded-none focus:outline-none border border-primary-500" v-model="date" @change.stop="change()" ></flat-pickr>
+             <CalendarIcon class="h-6 w-6 ml-3 text-gray-100" />
         </div>
          <!-- @change=" $emit('change')" -->
     </div>

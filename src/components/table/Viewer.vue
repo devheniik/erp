@@ -11,12 +11,14 @@
                     <bar v-bind=data.bar.config :data=data.bar.data @reload=load()> 
                     </bar>
                 </div>
+                
                 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
-                    <div v-for="(filter, i) in data.filters" :key="i">
-                        <component @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.component">
+                    <div v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
+                        <component @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.filter_type">
                         </component>
                     </div>
                 </div>
+
                 <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-40">
                     <button @click="createOpen = true" class="btn-circle-primary">
                         <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
@@ -24,9 +26,7 @@
                 </div>
                 
                 <div class="my-5 mr-5">
-                    <utable @sort="sort($event)" :modalSelect=modalSelect
-                        @select="!modalSelect ? $router.push({ name: route_card, params: { id: $event.uid }}) : $emit('select', $event)"
-                        :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
+                    <utable @sort="sort($event)" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
                 </div>
             </div>
             <div class="w-full mb-1.5">
@@ -34,6 +34,7 @@
             </div>
         </div>
         <loading v-if="isReload"></loading> 
+        <!-- modalSelect ? $emit('select', $event) : -->
     </div>
 </template>
 
@@ -44,8 +45,11 @@
         inject,
         watchEffect,
         watch,
-        onUpdated
+        onUpdated,
+        getCurrentInstance
     } from 'vue'
+
+    const app = getCurrentInstance()
 
     // * hooks
     import table from '@/hooks/table'
@@ -57,6 +61,8 @@
         route_card: String,
         start_data: Object
     })
+
+    const emit = defineEmits(['select'])
 
     console.log('viewer', props.start_data);
 
@@ -71,11 +77,14 @@
     // * props & emits init
 
     
-
+    const select = (data) => {  
+        if(props.modalSelect){
+            emit('select', data)
+        } 
+    }
 
     
-
-    const emits = defineEmits(['select'])
+ 
 
     // * create ref
     const createOpen = ref(false)

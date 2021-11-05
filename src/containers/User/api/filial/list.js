@@ -1,1 +1,1 @@
-export default 'system/filials'
+export default 'system/filials/list'

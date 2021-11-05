@@ -13,8 +13,8 @@
             </div>
         </div>
         <ul role="list" class=" grid grid-cols-4 divide-y divide-y-reverse divide-gray-200 mt-4">
-            <li v-for="filial in data" :key="filial.uid" class="py-1.5 flex">
-                <p class="text-sm text-primary-500 w-full text-center" @click="set(`system/filial/${filial.uid}`)" >{{ filial.sokrash }}</p>
+            <li v-for="filial in data.data" :key="filial.uid" class="py-1.5 flex">
+                <p class="text-sm text-primary-500 w-full text-center" @click="set(`system/filial/select/${filial.uid}`)" >{{ filial.sokrash }}</p>
             </li>
         </ul>
     </div>

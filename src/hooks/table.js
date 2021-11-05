@@ -17,19 +17,10 @@ export default function (_route, start_data) {
 
     const data = ref(start_data ? start_data : null) 
 
-    const rebuild_headers = () => {
-        
-    }
-
-
-
     const load = async () => {
         isReload.value = true
         if (data.value != null || data.value != undefined) {
-            delete data.value['data']
-            delete data.value['meta']
-            delete data.value['bar']
-            // data.value.headers = [] 
+
         } 
         console.log(list)
         data.value = await list(_route, lodash.cloneDeep(data.value))
@@ -40,10 +31,6 @@ export default function (_route, start_data) {
         isLoad.value = true
         isReload.value = true
         if (data.value != null || data.value != undefined) { 
-            delete data.value['data']
-            delete data.value['meta']
-            delete data.value['bar']
-            // data.value.headers = [] 
         }  
         data.value = await list(_route, data.value)
         console.log('table load')

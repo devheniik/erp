@@ -29,11 +29,13 @@
                                                 <span aria-hidden="true" :class="[col.selected ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
                                             </Switch>  
                                         </td>   
-                                        <td @click="modalSelect ? $emit('select', col) : $open($router.resolve({name: 'person-update', params: { id: col.uid }}))" class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer"> 
-                                            {{ col.uid }}
-                                        </td> 
-                                        <td  v-for="(field, i) in col.value" :key="i" class="px-6 py-4 whitespace-nowrap text-sm text-left">
-                                             {{ field }}
+                                        <td  v-for="(field, i) in col.value" :key="i" class="px-6 py-4 whitespace-nowrap text-sm text-left">  
+                                            <div v-if="typeof(field) === 'object' " class="text-primary-500 hover:underline" @click="!modalSelect && field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : $emit('select',col) ">
+                                                {{field?.label}}
+                                            </div>
+                                            <div v-else>
+                                                {{ field }} 
+                                            </div>
                                         </td> 
                                     </tr>
                                 </tbody>
@@ -47,14 +49,16 @@
 
 
 <script setup>
+import router from "@/router"
 import t_color from '@/functions/t_color'
-import {ref, computed} from 'vue'
+import {ref, computed, getCurrentInstance} from 'vue'
 const props = defineProps({
     headers: Array,
-    body: Array, 
+    body: Array,  
     modalSelect: Boolean,
     sort: Object
 })
+
 
     
 
@@ -82,6 +86,8 @@ const props = defineProps({
         })  
         emit('update:body', data)
     }
+
+    
 
 
 
