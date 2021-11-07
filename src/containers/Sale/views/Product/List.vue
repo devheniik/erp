@@ -6,12 +6,11 @@
 </template>
 
 <script setup>
+import {ref} from 'vue'
 import categories from '../../api/products/category'
 import list from '../../api/products/list'
 
-const link = (...params) => {
-    //return `product`
-}
+const link = ref(null)
 
 </script>
 
