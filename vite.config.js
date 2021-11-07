@@ -14,11 +14,11 @@ export default ({ mode }) => {
   // import.meta.env.VITE_PORT available here with: process.env.VITE_PORT
 
   return defineConfig({
-    // server: {
-    //   host: "erpstorm.de",
-    //   port: 3000,
-    //   https: true,
-    // },
+    server: {
+      host: "erpstorm.de",
+      port: 3000,
+      https: true,
+    },
     plugins: [vue(), pugPlugin(options, locals)],
     resolve: {
       alias: {

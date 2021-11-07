@@ -88,6 +88,10 @@ import router from "@/router"
                 show_modal.value = true 
                 break;
 
+            case 'window':
+                app.appContext.config.globalProperties.$open(obj.value) 
+                break;
+
         }
 
 

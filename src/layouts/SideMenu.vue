@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex overflow-hidden bg-white ">
+  <div class="h-screen flex overflow-hidden bg-white">
     <TransitionRoot as="template" :show="sidebarOpen">
       <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0"
