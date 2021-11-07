@@ -1,10 +1,10 @@
 <template>
     <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto w-full h-full">  
-        <div v-if="data" class="mt-1 flex-grow flex flex-col">
-            <nav class="flex-1 px-2 bg-white"> 
+        <div v-if="!isLoad" class="mt-1 flex-grow flex flex-col">
+            <nav class="flex-1 px-2 bg-white">   
                 <template v-for="item in data.data" :key="item.name"> 
                     <Disclosure v-if="item.category.data" as="div" class="space-y-1" v-slot="{ open }"> 
-                        <DisclosureButton  @click="disabled ? null : [ $log(item.uid), $emit('select', item.uid)]" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-b focus:ring-primary-500']">
+                        <DisclosureButton  @click="disabled ? null : item.uid ? [ $log(item.uid), $emit('select', item.uid) ] : nul" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-b focus:ring-primary-500']">
                             <div class="flex flex-row items-center">
                                 <StopIcon class="h-3 w-3 text-primary-400 mx-3" />
                                 <span class="  whitespace-nowrap truncate">
@@ -15,7 +15,7 @@
                         </DisclosureButton>
 
                         <DisclosurePanel>
-                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="$emit('select', subItem.uid)" class="group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">
+                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class="group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">
                                 <div class="flex flex-wrap items-center whitespace-nowrap truncate">
                                     <StopIcon class="h-3 w-3 ml-8 mr-3 text-primary-600" />
                                     <span class=" whitespace-nowrap truncate">
@@ -47,15 +47,7 @@ const props = defineProps({
         load,
         isLoad
     } = get(props.api)
- 
-    
-
-
-// ui 
-// const handle = item => {
-//     items.for
-// }
- 
+  
 </script>
 
 <style lang="scss" scoped>

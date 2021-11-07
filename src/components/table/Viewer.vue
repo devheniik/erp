@@ -62,9 +62,7 @@
         start_data: Object
     })
 
-    const emit = defineEmits(['select'])
-
-    console.log('viewer', props.start_data);
+    const emit = defineEmits(['select']) 
 
     const {
         data,
