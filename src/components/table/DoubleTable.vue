@@ -33,8 +33,7 @@ const sideRef = ref(true)
 
 
 watchEffect(() => {
-  emit('select', selected.value)
-  console.log(selected.value);
+  emit('select', selected.value) 
   updateRender()
 })
   
