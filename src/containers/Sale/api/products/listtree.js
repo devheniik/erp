@@ -1,0 +1,1 @@
+export default id => `products/catalog/category/${id}/modal/group`

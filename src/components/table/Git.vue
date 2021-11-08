@@ -13,7 +13,7 @@
                 <ChevronDownIcon v-if="item.childs > 0" :class="[current ? 'text-gray-400 rotate-90' : 'text-gray-300', 'mr-2 flex-shrink-0 h-3 w-3 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150']" />
             </div>
             <div v-if="current && child.length" class="mt-1">
-                <git v-for="item in child" :api="api" :item="item" :key="item.name" class="p-1"></git>
+                <git @select="$emit('select', $event)" v-for="item in child" :api="api" :item="item" :key="item.name" class="p-1"></git>
             </div>
         </div>
 
@@ -46,16 +46,23 @@ import get from '@api'
         api: String
     })
 
+    const emit = defineEmits(['select'])
+
     
     
     const child = ref([])
     const current = ref(false)
 
     const load = async () => {
+        if (props.item.childs == 0) { 
+            emit('select', props.item.uid)
+        } 
         if (child.value.length > 0) {
             return
-        }
-        child.value = (await get(props.api, { father: props.item.uid})).data
+        }  
+        if (props.item.childs > 0) {
+            child.value = (await get(props.api, { father: props.item.uid})).data
+        } 
     } 
 
 </script>

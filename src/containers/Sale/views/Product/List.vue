@@ -3,7 +3,7 @@
         <div class="flex w-full justify-start mx-5 my-1"> 
             <component :is="'list'"  v-model="c_compoennt" :data="{ list: options}"></component>
         </div>
-        <double-table :component="c_compoennt" @select="link = list($event)" :api="api" :link="link">
+        <double-table :component="c_compoennt" @select="link = call($event)" :api="api" :link="link">
             <viewer :api="link">
             </viewer>
         </double-table>
@@ -15,8 +15,10 @@
     import categories from '../../api/products/category'
     import tree from '../../api/products/tree'
     import list from '../../api/products/list'
+    import listtree from '../../api/products/listtree'
 
     const api = computed(() => c_compoennt.value == 'side-bar' ? categories : tree); 
+    const call = computed(() => c_compoennt.value == 'side-bar' ? list : listtree); 
 
     const c_compoennt = ref('side-bar')
 

@@ -9,7 +9,7 @@
             </component>
         </div>
         <div
-            :class="[sideRef && !component == 'tree' && !component == 'rollup' ? 'w-6/12' : sideRef && component == 'tree' ? 'w-8/12' : sideRef && component == 'rollup' ? 'w-8/12' : 'w-full', 'pl-4']">
+            :class="['w-9/12', 'pl-4']">
             <slot :key="render" v-if="selected">
 
             </slot>

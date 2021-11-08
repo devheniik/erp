@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto w-full h-full">  
         <div v-if="!isLoad" class="flex-grow flex flex-col">  
-                <git v-for="item in data.data" :api="api" :item="item" :key="item.name" class="p-1"></git>
+                <git v-for="item in data.data" @select="$emit('select', $event)" :api="api" :item="item" :key="item.name" class="p-1"></git>
                 <!-- <template > 
                     <Disclosure v-if="item.category.data" as="div" class="space-y-1" v-slot="{ open }"> 
                         <DisclosureButton  @click="disabled ? null : item.uid ? [ $log(item.uid), $emit('select', item.uid) ] : nul" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-b focus:ring-primary-500']">
