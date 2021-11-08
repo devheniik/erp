@@ -19,10 +19,12 @@ import Alert from "./table/Alert.vue"
 import Toast from "./notifications/Toast.vue"
 import Zakokrugdo from "./modals/zakokrugdo.vue"
 import Zaktipceny from "./modals/zaktipceny.vue"
+import TreeLevel from "./table/TreeLevel.vue"
 
 
 export default app => {
   app.component("zaktipceny", Zaktipceny)
+  app.component("tree-level", TreeLevel)
   app.component("zakokrugdo", Zakokrugdo)
   app.component("toast", Toast)
   app.component("alert", Alert)

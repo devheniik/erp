@@ -1,10 +1,9 @@
 <template>
-    <div class="h-full"> 
-        123
+    <div class="h-full">  
         <div class="flex w-full justify-end mr-5">
             <list v-model="entity" :data="{ list: options}"></list> 
         </div>
-        <double-table :api="roles" @select="id = $event; link = info($event, entity)"> 
+        <double-table :component="'side-table'" :api="roles" @select="id = $event; link = info($event, entity)"> 
             <viewer :key="render"  :api="link">  
             </viewer>  
         </double-table>

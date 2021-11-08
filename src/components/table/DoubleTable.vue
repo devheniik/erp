@@ -1,14 +1,15 @@
 <template>
     <div class="w-full h-full flex flex-wrap">
+    <!-- sideRef && !component == 'tree' && !component == 'rollup' ? 'w-6/12' : sideRef && (component == 'tree' || component == 'tree-level') ? 'w-4/12' : sideRef && component == 'rollup' ? 'w-4/12' :  -->
         <div
-            :class="[sideRef && !tree && !rollup ? 'w-6/12' : sideRef && tree ? 'w-4/12' : sideRef && rollup ? 'w-4/12' : 'w-1/12', 'h-full overflow-y-auto hide-scroll']">
-            <component :is="rollup ? 'roll-up' : !tree ? 'side-table' : 'side-bar'" class="relative" :api="api"
+            :class="['w-3/12', 'h-full overflow-y-auto hide-scroll']">
+            <component :is="component" class="relative" :api="api"
                 @select="selected = $event">
 
             </component>
         </div>
         <div
-            :class="[sideRef && !tree && !rollup ? 'w-6/12' : sideRef && tree ? 'w-8/12' : sideRef && rollup ? 'w-8/12' : 'w-full', 'pl-4']">
+            :class="[sideRef && !component == 'tree' && !component == 'rollup' ? 'w-6/12' : sideRef && component == 'tree' ? 'w-8/12' : sideRef && component == 'rollup' ? 'w-8/12' : 'w-full', 'pl-4']">
             <slot :key="render" v-if="selected">
 
             </slot>
@@ -24,8 +25,9 @@
     } from 'vue'
     const props = defineProps({
         api: String,
-        tree: Boolean,
-        rollup: Boolean
+        component: String,
+        // tree: Boolean,
+        // rollup: Boolean
     })
 
     const emit = defineEmits(['select'])

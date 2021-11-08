@@ -3,7 +3,7 @@
         <!-- <div class="flex w-full justify-end mr-5">
             <list v-model="entity" :data="{ list: options}"></list> 
         </div> -->
-        <double-table :api="list" tree :options="[]" @select="link = table($event)"> 
+        <double-table :api="list" :component="'side-bar'" :options="[]" @select="link = table($event)"> 
             <viewer  :api="link" route_card="operation-update"> 
                 <template v-slot:create>
                     <create></create>
