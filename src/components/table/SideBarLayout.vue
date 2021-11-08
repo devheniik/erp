@@ -15,14 +15,13 @@
                         </DisclosureButton>
 
                         <DisclosurePanel>
-                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class="group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">
-                                <div class="flex flex-wrap items-center whitespace-nowrap truncate">
-                                    <StopIcon class="h-3 w-3 ml-8 mr-3 text-primary-600" />
-                                    <span class=" whitespace-nowrap truncate">
-                                        {{ subItem.name }}
-                                    </span>
-                                    
-                                </div> 
+                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class="group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">                              
+                                <div class="flex flex-row items-center overflow-x-hidden">
+                                <StopIcon class="h-3 w-3 text-primary-400 mx-3" />
+                                <span class="whitespace-nowrap truncate">
+                                    {{ subItem.name }} 
+                                </span> 
+                            </div> 
                                 <span v-if="subItem.count && subItem.count > 0" :class="[subItem.current ? ' bg-gray-800' : 'text-gray-100 bg-ptimary-400 group-hover:bg-primary-300', 'ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full']">
                                     {{ subItem.count }}
                                 </span>

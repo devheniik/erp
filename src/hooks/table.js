@@ -18,22 +18,32 @@ export default function (_route, start_data) {
     const data = ref(start_data ? start_data : null) 
 
     const load = async () => {
-        isReload.value = true
-        if (data.value != null || data.value != undefined) {
-
+        isReload.value = true 
+        if (!data?.value?.headers) {
+            data.value.headers = []
         } 
-        console.log(list)
         data.value = await list(_route, lodash.cloneDeep(data.value))
+        if (!data?.value?.page) {
+            data.value.page = data.value.meta.pagination.current_page
+        }
+        if (!data?.value?.limit) {
+            data.value.limit = data.value.meta.pagination.per_page
+        }
         isReload.value = false
     }
 
     const start = async () => {
         isLoad.value = true
         isReload.value = true
-        if (data.value != null || data.value != undefined) { 
-        }  
-        data.value = await list(_route, data.value)
-        console.log('table load')
+        data.value = await list(_route, data.value) 
+        // !data.value?.headers ?  data.value.headers : null  
+        if (!data.value.page) { 
+            data.value.page = data.value.meta.pagination.current_page 
+    }
+        if (!data.value.limit) {
+            data.value.limit = data.value.meta.pagination.per_page
+        }
+
         isReload.value = false,
         isLoad.value = false
     }

@@ -185,7 +185,22 @@
     const emit = defineEmit(['change', 'update:page', 'update:limit', 'update:headers'])
 
     const props = defineProps({
-        pagination: Object,
+        pagination: {
+            type: Object,
+            default: function () {
+                return {
+                    include: [],
+                    custom: [],
+                    pagination: {
+                        total: 10,
+                        count: 10,
+                        per_page: 10,
+                        current_page: 1,
+                        total_pages: 1
+                    }
+                }
+            }
+        },
         headers: Array,
         page: Number,
         limit: [Number, String]
