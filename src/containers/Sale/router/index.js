@@ -14,7 +14,10 @@ export default [
     {
         path: '/sales/:id',
         name: 'sale-update',
-        component: () => import('@sale/views/Update.vue'),
+        props: {
+            api: 'orders/show'
+        },
+        component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,

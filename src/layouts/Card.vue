@@ -95,7 +95,7 @@
         config: Array,
         name: String,
         route_name: String,
-        links: Function,
+        links: String,
         api: String,
         current: String,
         ls_name: String

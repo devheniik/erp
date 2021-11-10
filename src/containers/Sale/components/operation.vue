@@ -1,5 +1,5 @@
 <template>
-    <double-table rollup  :api="api" @select="link = $event">
+    <double-table component="roll-up"  :api="api" @select="link = $event">
         <viewer :api="`${link}?id=${$route.params.id}`">  
         </viewer>  
     </double-table> 

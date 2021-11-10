@@ -1,3 +1,4 @@
+import create_get_card from '../api/create_card'
 export default [
     {
         path: '/products',
@@ -9,18 +10,22 @@ export default [
             permition: null,
             uname: 'product-view'
         }
+    }, 
+    {
+        path: '/products/new',
+        name: 'product-create',
+        component: () => import('../../../components/UModal.vue'),
+        props: {
+            api: create_get_card,
+            poster: 'Adding'
+        },
+        meta: {
+            layout: 'Empty',
+            requreAuth: false,
+            permition: null,
+            uname: 'product-create'
+        }
     },
-    // {
-    //     path: '/sales/products',
-    //     name: 'sales-product-view',
-    //     component: () => import('@sale/views/Product/List.vue'),
-    //     meta: {
-    //         layout: 'SideMenu',
-    //         requreAuth: false,
-    //         permition: null,
-    //         uname: 'sales-product-view'
-    //     }
-    // },
     {
         path: '/product/:id',
         name: 'product-update',

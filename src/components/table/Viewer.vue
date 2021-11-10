@@ -57,9 +57,9 @@
 
     const props = defineProps({
         api: String,
+        params: Object,
         modalSelect: Boolean,
-        route_card: String,
-        start_data: Object
+        route_card: String
     })
 
     const emit = defineEmits(['select']) 
@@ -69,7 +69,7 @@
         load,
         isLoad,
         isReload
-    } = table(props.api, props.start_data)
+    } = table(props.api, props.params)
 
 
     // * props & emits init

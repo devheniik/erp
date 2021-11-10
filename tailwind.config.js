@@ -22,10 +22,13 @@ module.exports = {
             white: colors.white,
             indigo: colors.indigo,
             red: colors.red,
-            yellow: colors.yellow,
+            yellow: colors.yellow, 
 
         },
         extend: {
+            colors:{
+                'litepie-primary': colors.blue, // color system for light mode
+            },
             fontFamily: {
                 body: ['Montserrat']
             },

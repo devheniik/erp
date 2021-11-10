@@ -16,7 +16,7 @@ export default function (_route) {
     const load = async (id) => {
         isLoad.value = true  
         isReload.value = true 
-        data.value = await get(_route(id))  
+        data.value = await get(_route)  
         isLoad.value = false
         isReload.value = false
     }

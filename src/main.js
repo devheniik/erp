@@ -15,6 +15,11 @@ import uniprops from './components/uniprops/index'
 
 const app = createApp(App).use(router).use(store)  
 
+
+// import 'primevue/resources/themes/tailwind-light/theme.css';
+// import 'primevue/resources/primevue.min.css';
+
+
 global(app)
 uniprops(app)
 plugins(app)

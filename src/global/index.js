@@ -6,6 +6,8 @@ import VueFlatPickr from 'vue-flatpickr-component'
 import flatpickr from "flatpickr"
 import { Russian } from "flatpickr/dist/l10n/ru.js"
 
+import LitepieDatepicker from 'litepie-datepicker'
+ 
 
 flatpickr.setDefaults(
   {
@@ -15,8 +17,19 @@ flatpickr.setDefaults(
     static : true
   }
 )
+ 
+
+import PrimeVue from 'primevue/config'
+// import InputSwitch from 'primevue/InputSwitch'
 
 export default app => {
+  app.use(LitepieDatepicker)
+  app.use(PrimeVue) 
+
+  // app.component('InputSwitch', InputSwitch)
+
+ 
+
 
   Object.entries(heroicons).forEach(([componentName, component]) => {
     if (componentName !== 'default') {

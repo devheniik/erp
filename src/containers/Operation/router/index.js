@@ -24,7 +24,10 @@ export default [
     {
         path: '/operation/:id',
         name: 'operation-update',
-        component: () => import('@operation/views/Update.vue'),
+        props: {
+            api: 'business_transactions/show'
+        },
+        component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,

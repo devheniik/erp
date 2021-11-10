@@ -398,7 +398,7 @@ export default (config) => [
       },
       {
         name: 'Карточки',
-        href: { name: 'operation-update', params: { id:  config.operation ?? 0   } },
+        href: { name: 'operation-update', params: { id:  config.business_transaction ?? 0   } },
         icon: 'CollectionIcon',
         current: false,
         uname: 'operation-update',

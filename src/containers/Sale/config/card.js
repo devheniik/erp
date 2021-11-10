@@ -14,5 +14,4 @@ export default [
         active: false,
         component: 'operation'
     },
-  
 ]

@@ -10,6 +10,16 @@ export default [
         }
     },
     {
+        path: '/card/:api',
+        name: 'ucard',
+        component: () => import('../../../components/UModal.vue'),
+        meta: {
+            layout: 'Empty',
+            requreAuth: false,
+            permition: null
+        }
+    },
+    {
         path: '/filial',
         name: 'filial',
         component: () => import('@user/views/Filial.vue'),

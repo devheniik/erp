@@ -9,10 +9,14 @@ import List from "./filters/List.vue"
 import SideTableLayout from "./table/SideTableLayout.vue"
 import SideBarLayout from "./table/SideBarLayout.vue"
 import DoubleTable from "./table/DoubleTable.vue"
+import DoubleViewer from "./table/DoubleViewer.vue"
 import RollUp from "./table/RollUp.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
 import Field from "./forms/Field.vue"
+import InputText from "./forms/InputText.vue"
+import InputSelect from "./forms/InputSelect.vue"
+import InputSwitch from "./forms/InputSwitch.vue"
 import Bar from "./table/Bar.vue"
 import SubTable from "./table/SubTable.vue"
 import Alert from "./table/Alert.vue"
@@ -20,9 +24,16 @@ import Toast from "./notifications/Toast.vue"
 import Zakokrugdo from "./modals/zakokrugdo.vue"
 import Zaktipceny from "./modals/zaktipceny.vue"
 import TreeLevel from "./table/TreeLevel.vue"
+import UCard from './UCard.vue'
+import UModal from './UModal.vue'
 
 
 export default app => {
+  app.component('input-select', InputSelect)
+  app.component('input-text', InputText)
+  app.component('input-switch', InputSwitch)
+  app.component("umodal", UModal)
+  app.component("ucard", UCard)
   app.component("zaktipceny", Zaktipceny)
   app.component("tree-level", TreeLevel)
   app.component("zakokrugdo", Zakokrugdo)
@@ -34,6 +45,7 @@ export default app => {
   app.component("loading", Loading)
   app.component("date", Date)
   app.component("double-table", DoubleTable)
+  app.component("double-viewer", DoubleViewer)
   app.component("side-table", SideTableLayout)
   app.component("side-bar", SideBarLayout)
   app.component("roll-up", RollUp)
