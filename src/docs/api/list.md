@@ -135,16 +135,16 @@
       {
         component: 'button', // сообщение 
         config: { 
-          type: ['warning', 'danger', 'success'], // default - INFO
-          action: 'window',
-          label: 'Экспорт'
-          data: {
-            api: '',
-            params: {
-            //...
+            type: ['warning', 'danger', 'success'], // default - INFO
+            action: 'window',
+            label: 'Экспорт',
+            data: {
+              api: '',
+              params: {
+              //...
             }
           }, 
-         }
+        }
       }
     ],
   },
