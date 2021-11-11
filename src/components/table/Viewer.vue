@@ -19,10 +19,8 @@
                     </div>
                 </div>
 
-                <div v-if="data.buttons" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
-                    <div v-for="(button, i) in data.buttons" :key="i">
-                        <ubutton v-bind="button"> </ubutton>
-                    </div>
+                <div v-if="data.buttons" class="grid grid-cols-4 lg:grid-cols-12 md:grid-cols-2 gap-4 mx-2.5 mt-5"> 
+                        <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton> 
                 </div>
 
                 <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-40">

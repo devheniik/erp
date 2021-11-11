@@ -37,7 +37,7 @@ export default app => {
   app.component('input-select', InputSelect)
   app.component('input-text', InputText)
   app.component('input-switch', InputSwitch)
-  app.component("uButton", UButton)
+  app.component("ubutton", UButton)
   app.component("umodal", UModal)
   app.component("ucard", UCard)
   app.component("zaktipceny", Zaktipceny)
