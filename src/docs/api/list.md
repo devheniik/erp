@@ -131,6 +131,20 @@
           type: ['warning', 'danger'] // default - INFO
          },
         data: 'Текст сообщения' // String
+      },
+      {
+        component: 'button', // сообщение 
+        config: { 
+          type: ['warning', 'danger', 'success'], // default - INFO
+          action: 'window',
+          label: 'Экспорт'
+          data: {
+            api: '',
+            params: {
+            //...
+            }
+          }, 
+         }
       }
     ],
   },
