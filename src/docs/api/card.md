@@ -3,6 +3,108 @@
 
 ```javascript
 [{
+
+    const ct = (c /* field*/) => {
+        if (c.type == 'input') {
+            return {
+                component: 'input-text',
+                value: c.value,  
+                bind: {
+                    id: c.id,
+                    name: c.name,
+                    label: c.label,
+                    placeholder: c.placeholder,
+                    type: 'text',
+                },
+            }
+        }
+
+        if (c.type == 'textarea') {
+            return {
+                component: 'input-area',
+                value: c.value,  
+                bind: {
+                    id: c.id,
+                    name: c.name,
+                    label: c.label,
+                    placeholder: c.placeholder,
+                    type: 'text',
+                },
+            }
+        }
+
+        if (c.type == 'label') { 
+            return {
+                component: 'input-text',
+                value: c.value,  
+                bind: {
+                    id: c.name,
+                    name: c.name,
+                    disabled: true,
+                    label: c.label,
+                    placeholder: null,
+                    type: 'text',
+                },
+            }
+        }
+
+        if (c.type == 'boolean') {
+            return {
+                component: 'input-select',
+                value: c.value,
+                bind: {
+                    id: c.label,
+                    name: c.label,
+                    label: c.label, 
+                    options: c.content,
+                }
+            }
+        }
+
+        if (c.type == 'select') {
+            return {
+                component: 'input-select',
+                value: c.value,
+                bind: {
+                    id: c.name,
+                    name: c.name,
+                    label: c.label, 
+                    options: c.content.options,
+                }
+            }
+        }
+
+        if (c.type == 'group') { 
+            return {
+                component: 'group',
+                value: c.content.hidden.value,
+                bind: {
+                    id: c.id,  
+                    value_name: c.content.value,
+                    label: c.label,
+                    name: c.label,
+                    params: c.content.action, 
+                    type: 'text', 
+                    placeholder: c.label,
+                },
+            }
+        }
+
+        return {
+                component: false,
+                type: c.type,
+                value: c.value,
+                label: c.label,
+                // bind: {
+                //     id: c.label,
+                //     name: c.label,
+                //     label: c.label, 
+                //     options: c.content,
+                // }
+            }
+    }
+
+    
     "config": {
         "id": 0,
         "title": "Общие данные",

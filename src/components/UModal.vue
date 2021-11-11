@@ -1,7 +1,7 @@
 <template>
     <div v-if="!isLoad" class="p-5">
         <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
-            <div v-for="section in sections" :key="section.id" class="rounded-lg">
+            <div v-for="section in data" :key="section.id" class="rounded-lg">
                 <h1 class="label-big">{{section.config.title}}<span class="cursor-pointer"
                         @click="section.dop_open = !section.dop_open">{{ section.dop_open ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
@@ -9,15 +9,14 @@
                     <div v-for="(col, col_id) in section.childs" :key="col_id">
                         <!--Первый блок-->
                         <div class="my-4" v-for="(component, i) in col.base" :key="i">
-
-                            <span v-if="!component.component">{{ component.type +  ' '  + component.label}} </span>
-                            <component v-if="component.component" v-model="component.value" v-bind="component.bind" :is="component.component">  </component> 
+                            <span v-if="!ct(component.field).component">{{ ct(component.field).type + ' ' + ct(component.field).label}} </span> 
+                            <component v-if="ct(component.field).component" v-model="ct(component.field).value" v-bind="ct(component.field).bind" :is="ct(component.field).component">  </component>  
                         </div>
                         <!-- FULL -->
                         <div v-show="section.dop_open">
                             <div class="my-5" v-for="(component, i) in col.full" :key="i">
-                            <span v-if="!component.component">{{ component.type + ' ' + component.label}} </span> 
-                                <component v-if="component.component" v-model="component.value" v-bind="component.bind" :is="component.component">  </component> 
+                            <span v-if="!ct(component.field).component">{{ ct(component.field).type + ' ' + ct(component.field).label}} </span> 
+                                <component v-if="ct(component.field).component" v-model="ct(component.field).value" v-bind="ct(component.field).bind" :is="ct(component.field).component">  </component> 
                             </div>                        
                         </div>
 
@@ -49,45 +48,26 @@
         isLoad
     } = get(props.api, {
         POSTER: props.poster
-    })
+    }) 
 
-    const sections = ref([])
-
-    watchEffect(() => {
-        if (data.value) {
-            let resp = []
-            data.value.sections.forEach((element, index) => {
-                resp.push({
-                    config: element,
-                    childs: []
-                })
-                for (let i = 0; i < element.cols; i++) {
-                    resp[index].childs.push({
-                        base: [],
-                        full: []
-                    })
-                }
-            })
-
-            data.value.base_fields.forEach((element, index) => {
-                resp.find(e => e.config.id == element.section).childs[element.col - 1].base.push(
-                    ct(element.field))
-            })
-
-            data.value.full_fields.forEach((element, index) => {
-                resp.find(e => e.config.id == element.section).childs[element.col - 1].full.push(
-                    ct(element.field))
-            }) 
-
-            console.log(resp)
-            sections.value = resp
-        }
-    })
-
-    const ct = (c) => {
+    const ct = (c /* field*/) => {
         if (c.type == 'input') {
             return {
                 component: 'input-text',
+                value: c.value,  
+                bind: {
+                    id: c.id,
+                    name: c.name,
+                    label: c.label,
+                    placeholder: c.placeholder,
+                    type: 'text',
+                },
+            }
+        }
+
+        if (c.type == 'textarea') {
+            return {
+                component: 'input-area',
                 value: c.value,  
                 bind: {
                     id: c.id,
@@ -140,15 +120,21 @@
             }
         }
 
-        // if (c.type == 'boolean') {
-        //     return {
-        //         component: 'input-switch',
-        //         value: c.value,
-        //         bind: {
-        //             label: c.label
-        //         },
-        //     }
-        // }
+        if (c.type == 'group') { 
+            return {
+                component: 'group',
+                value: c.content.hidden.value,
+                bind: {
+                    id: c.id,  
+                    value_name: c.content.value,
+                    label: c.label,
+                    name: c.label,
+                    params: c.content.action, 
+                    type: 'text', 
+                    placeholder: c.label,
+                },
+            }
+        }
 
         return {
                 component: false,
