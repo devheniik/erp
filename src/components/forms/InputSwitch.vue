@@ -12,8 +12,7 @@
         </SwitchGroup> 
 </template>
 
-<script setup>
-import InputSwitch from 'primevue/InputSwitch'
+<script setup> 
 
 const props = defineProps({ 
     label: String, 
