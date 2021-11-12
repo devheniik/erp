@@ -8,15 +8,15 @@
                 <div class="grid-2-2-1 section">
                     <div v-for="(col, col_id) in section.childs" :key="col_id">
                         <!--Первый блок-->
-                        <div class="my-4" v-for="(component, i) in col.base" :key="i">
-                            <span v-if="!ct(component.field).component">{{ ct(component.field).type + ' ' + ct(component.field).label}} </span> 
-                            <component v-if="ct(component.field).component" v-model="ct(component.field).value" v-bind="ct(component.field).bind" :is="ct(component.field).component">  </component>  
+                        <div class="my-2" v-for="(component, i) in col.base" :key="i">
+                            <span v-if="!component.field.component">{{ component.field.type + ' ' + component.field.label}} </span> 
+                            <component v-if="component.field.component" v-model="component.field.value" v-bind="component.field.bind" :is="component.field.component">  </component>  
                         </div>
                         <!-- FULL -->
                         <div v-show="section.dop_open">
-                            <div class="my-5" v-for="(component, i) in col.full" :key="i">
-                            <span v-if="!ct(component.field).component">{{ ct(component.field).type + ' ' + ct(component.field).label}} </span> 
-                                <component v-if="ct(component.field).component" v-model="ct(component.field).value" v-bind="ct(component.field).bind" :is="ct(component.field).component">  </component> 
+                            <div class="my-2" v-for="(component, i) in col.full" :key="i">
+                            <span v-if="!component.field.component">{{ component.field.type + ' ' + component.field.label}} </span> 
+                                <component v-if="component.field.component" v-model="component.field.value" v-bind="component.field.bind" :is="component.field.component">  </component> 
                             </div>                        
                         </div>
 

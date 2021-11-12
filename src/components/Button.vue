@@ -20,9 +20,8 @@ import {getCurrentInstance} from 'vue'
         if (props.action == 'window') {
             app.appContext.config.globalProperties.$open(router.resolve({ name: props.data.route, params: props.data.params ?? {} })) 
         }
-        if (props.action == 'window-backend') {
-            console.log((new URLSearchParams(props.data.params)).toString())
-            window.open(`${import.meta.env.VITE_PORT}${props.data.api}?${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
+        if (props.action == 'window-backend') { 
+            window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
         }
     }
 

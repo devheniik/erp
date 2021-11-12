@@ -3,11 +3,11 @@
         <div @click="isOpen = true">
               <div>
                 <label :for="name" class="block text-sm font-medium text-gray-700">{{label}}</label>
-                <div class="mt-1 flex rounded-md shadow-sm">
+                <div class="mt-0.5 flex rounded-md shadow-sm">
                 <div class="relative flex items-stretch flex-grow focus-within:z-10"> 
                     <input :value="local_label" :disabled="true" :type="type" :name="name" :id="id" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm border-gray-300" :placeholder="placeholder" />
-                </div>
-                <button @click="load()" type="button" class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                </div> 
+                <button v-for="(btn, i) in buttons" :key="i" @click="load(btn)" type="button" :class="[i + 1 == buttons.length ? 'rounded-r-md' : '', '-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium  text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500']">
                     <SearchIcon class="h-5 w-5 text-gray-400" aria-hidden="true" /> 
                 </button>
                 </div>
@@ -29,7 +29,7 @@ const props = defineProps({
     value_name: String,
     label: String,
     name: String,
-    params: Object, 
+    buttons: Object, 
     type: String, 
     placeholder: String, 
     type: String, 
@@ -41,8 +41,8 @@ const local_label = ref(props.value_name)
 
 const data = ref(null)
 
-const load = async () => {
-    data.value = await get('finder', props.params) 
+const load = async (e) => {
+    data.value = await get('finder', e.params) 
 }
 
 

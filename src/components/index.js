@@ -17,6 +17,7 @@ import Field from "./forms/Field.vue"
 import InputText from "./forms/InputText.vue"
 import InputSelect from "./forms/InputSelect.vue"
 import InputSwitch from "./forms/InputSwitch.vue"
+import InputTextarea from "./forms/InputTextarea.vue"
 import Group from "./forms/Group.vue"
 import Finder from "./forms/Finder.vue"
 import Bar from "./table/Bar.vue"
@@ -37,6 +38,7 @@ export default app => {
   app.component('input-select', InputSelect)
   app.component('input-text', InputText)
   app.component('input-switch', InputSwitch)
+  app.component('input-area', InputTextarea)
   app.component("ubutton", UButton)
   app.component("umodal", UModal)
   app.component("ucard", UCard)
