@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import store from "@/store"
-
 // * modules
 import dashboard from '@dashboard/router'
 import user from '@user/router'
@@ -12,7 +11,9 @@ import operation from '@operation/router'
 import firm from '@firm/router'
 import finance from '@finance/router'
 
+
 const routes = [ ...dashboard, ...user, ...person, ...permitions, ...sale, ...product, ...operation, ...firm, ...finance ]
+ 
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

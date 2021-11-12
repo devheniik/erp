@@ -19,6 +19,7 @@
     "postcss-import": "^14.0.2",
     "primevue": "^3.8.2",
     "sass": "^1.42.1",
+    "splitpanes": "^3.0.6",
     "vue": "^3.1.5",
     "vue-flatpickr-component": "^9.0.5",
     "vue-router": "^4.0.10",

@@ -105,8 +105,10 @@
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden lg:flex lg:flex-shrink-0">
-      <div class="flex flex-col" style="min-width: 240px;">
+  <splitpanes class="default-theme">
+  <pane size="18" class=" hide-scroll overflow-y-auto">
+    <div class="hidden lg:flex lg:flex-shrink-0 resize-x" style="min-width: 240px;">
+      <div class="flex flex-col w-full" >
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-800  ">
           <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -190,8 +192,10 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
+    </pane>
+    <pane class="hide-scroll overflow-y-auto ">
     <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
       <div class="lg:hidden">
         <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
@@ -218,6 +222,8 @@
         </main>
       </div>
     </div>
+    </pane>
+  </splitpanes>
   </div>
 </template>
 
@@ -226,6 +232,8 @@
   import {
     ref, watch, computed
   } from 'vue'
+  import { Splitpanes, Pane } from 'splitpanes'
+  import 'splitpanes/dist/splitpanes.css'
   import store from '@/store'
   import {
     useRoute,
@@ -234,7 +242,7 @@
   import useNavigation from '../hooks/navigation'
 
   import logo from '../assets/images/logo.png'
- 
+  
   const {
     navigation,
     findActive,
@@ -278,4 +286,11 @@
   #scroll {
     scrollbar-width: none;
   }
+
+  .splitpanes {
+  background: #fff;
+}
+ 
+   
+
 </style>
