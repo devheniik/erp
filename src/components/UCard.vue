@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoad">
+    <div v-if="!isLoad" class="h-card">
         <layout v-model:config="data.tabs" v-bind="data.global">     
                 <component :is="data.tabs.find(e => e.active).component" v-bind="data.tabs.find(e => e.active).config"> 
                 </component> 
@@ -43,5 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.h-card{
+    height: calc(100% - 110px);
+}
 </style>

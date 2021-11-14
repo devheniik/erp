@@ -1,15 +1,15 @@
 <template>
-<div  class="w-full"> 
-    <div v-if="!isLoad" class="w-full">
+<div  class="w-full h-full"> 
+    <div v-if="!isLoad" class="w-full h-full">
         <!-- TABS -->
         <div class="sm:hidden">
-            <select class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-md">
+            <select class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300">
                 <option v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" :value="b.active" :selected="current == b.component" >{{ b.label }}  </option>
             </select>
         </div>
 
         <div class="hidden sm:block">
-            <div class="border-b border-gray-200">
+            <div class="border-b border-gray-200 bg-white">
                 <nav class="-mb-px flex" aria-label="Tabs">
                     <a v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" type="button"
                         :class="[b.active ? 'border-primary-500 text-primary-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300', 'w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm']">{{ b.label }}</a>
@@ -17,8 +17,8 @@
             </div>
         </div>
  
-        <main class="my-5">
-            <div class="mb-24">
+        <main class="h-full">
+            <div class="h-full">
                 <slot>
 
                 </slot>
@@ -31,7 +31,7 @@
 
         <!-- NAVIGATION -->
         <div class="bg-gray-100  w-full">
-            <div class="fixed bottom-0 overflow-y-auto border-t border-gray-300 hide-scroll z-40 inline-flex items-center   space-x-2 justify-center w-full lg:w-fixed bg-white py-3">
+            <div class="fixed bottom-0 overflow-y-auto border-t border-gray-300 hide-scroll z-40 inline-flex items-center space-x-2 justify-center w-full lg:w-fixed bg-white py-3">
                 <!-- <button class="inline-flex items-center px-1 text-xs font-medium">
                     Сущьность
                     <span class="text-secondary-600 ml-2">№</span>

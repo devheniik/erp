@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto w-full h-full">  
-        <div v-if="!isLoad" class="mt-1 flex-grow flex flex-col">
-            <nav class="flex-1 px-2 bg-white">   
+    <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto w-full h-full hide-scroll">  
+        <div v-if="!isLoad" class="mt-1 flex-grow flex flex-col ">
+            <nav class="flex-1 px-2 bg-white ">   
                 <template v-for="item in data.data" :key="item.name"> 
                     <Disclosure v-if="item.category.data" as="div" class="space-y-1" v-slot="{ open }"> 
                         <DisclosureButton  @click="disabled ? null : item.uid ? [ $log(item.uid), $emit('select', item.uid) ] : nul" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-b focus:ring-primary-500']">

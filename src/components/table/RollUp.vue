@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4 bg-white overflow-y-auto  hide-scroll w-full h-full z-20">  
-        <div v-if="!isLoad" class="mt-1 flex-grow flex flex-col">
-            <nav class="flex-1 bg-white border"> 
+    <div class="flex flex-col flex-grow  border-r border-gray-200 pb-4   overflow-y-auto  hide-scroll w-full h-full z-20">  
+        <div v-if="!isLoad" class="flex-grow flex flex-col">
+            <nav class="flex-1 border"> 
                 <template v-for="item in data" :key="item.name"> 
                     <Disclosure v-if="item.child" as="div" class="space-y-100" v-slot="{ open }"> 
                         <DisclosureButton   :class="[open ? ' text-gray-900' : ' text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group bg-secondary-100 border-y border w-full flex items-center justify-between pr-2 py-4 text-left text-sm font-medium focus:outline-none focus:ring-b focus:ring-primary-500']">

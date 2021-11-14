@@ -1,7 +1,7 @@
 <template>
     <div v-if="!isLoad" class="p-5">
         <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
-            <div v-for="section in data" :key="section.id" class="rounded-lg">
+            <div v-for="section in data.sections" :key="section.id" class="rounded-lg">
                 <h1 class="label-big">{{section.config.title}}<span class="cursor-pointer"
                         @click="section.dop_open = !section.dop_open">{{ section.dop_open ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
@@ -22,11 +22,11 @@
 
                     </div>
                 </div>
-            </div>
-            <!--<div class="w-full flex justify-center mt-6">
-                <button @click="create(post_str(obj))" type="button" class="button-hover-primary">Добавить</button>
-            </div>-->
+            </div> 
         </div>
+        <div v-if="data.buttons" class="flex items-center justify-center"> 
+                <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button" :post_data="data.sections" class="px-4"> </ubutton> 
+            </div>
     </div>
 </template>
 
@@ -39,16 +39,14 @@
     import get from '@/hooks/get'
     const props = defineProps({
         api: String,
-        poster: String
+        params: Object
     })
 
     const {
         data,
         load,
         isLoad
-    } = get(props.api, {
-        POSTER: props.poster
-    }) 
+    } = get(props.api, props.params) 
 
     const ct = (c /* field*/) => {
         if (c.type == 'input') {

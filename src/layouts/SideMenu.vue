@@ -106,8 +106,7 @@
 
     <!-- Static sidebar for desktop -->
   <splitpanes class="default-theme">
-  <pane size="18" class=" hide-scroll overflow-y-auto">
-    <div class="hidden lg:flex lg:flex-shrink-0 resize-x" style="min-width: 240px;">
+  <pane size="18" class="hidden lg:flex lg:flex-shrink-0 hide-scroll overflow-y-auto w-full"> 
       <div class="flex flex-col w-full" >
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-800  ">
@@ -192,17 +191,19 @@
             </a>
           </div>
         </div>
-      </div> 
-    </div>
+      </div>  
     </pane>
-    <pane class="hide-scroll overflow-y-auto ">
-    <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
+    <pane size="100" class="hide-scroll overflow-y-auto">
+    <div class="flex flex-col min-w-0 flex-1 overflow-hidden h-full">
       <div class="lg:hidden">
-        <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
-          <div>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-              alt="Workflow" />
-          </div>
+        <div class="flex items-center justify-between  border-b   px-4 py-1.5 ">
+          <div class="flex items-center justify-start ml-2 flex-shrink-0 text-gray-800"> 
+              <CogIcon class="h-12 w-12 mr-3" />
+              <div class="flex flex-col">
+                <span class="font-extrabold text-2xl">EUROZOL</span>
+                <span class="font-medium text-sm -mt-2">BUILD IT</span>
+              </div>
+            </div>
           <div>
             <button type="button"
               class="-mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900"
@@ -213,8 +214,8 @@
           </div>
         </div>
       </div>
-      <div class="flex-1 relative z-0 flex overflow-hidden">
-        <main class="flex-1 hide-scroll relative z-0 overflow-y-auto focus:outline-none xl:order-last mt-2 h-full"
+      <div class="flex-1 relative z-0 flex overflow-hidden h-full">
+        <main class="flex-1 hide-scroll relative z-0 overflow-y-auto focus:outline-none xl:order-last h-full"
           style="margin-left: -1px;">
           <!-- Start main area-->
           <slot></slot>
@@ -263,7 +264,6 @@
     findActive(item.uname)
   }
 
-  // console.log('---', store.getters['config']);
 
   
 

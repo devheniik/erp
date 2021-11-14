@@ -17,7 +17,9 @@ export default [
         component: () => import('../../../components/UModal.vue'),
         props: {
             api: create_get_card,
-            poster: 'Adding'
+            params: {
+                POSTER: 'Adding'
+            }
         },
         meta: {
             layout: 'Empty',

@@ -7,18 +7,24 @@
 
 <script setup>
 import router from '@/router'
+import post from '@api'
 import {getCurrentInstance} from 'vue'
     const props = defineProps({
         type: String,  
         action: String,
         label: String,
-        data: Object
+        data: Object,
+        params: Object,
+        post_data: Object,
     })
     const app = getCurrentInstance();
 
-    const handle = () => {
+    const handle = async () => {
         if (props.action == 'window') {
             app.appContext.config.globalProperties.$open(router.resolve({ name: props.data.route, params: props.data.params ?? {} })) 
+        }
+        if (props.action == 'save') {
+            await post(props.data.api, Object.assign(props.data.params, props.post_data))
         }
         if (props.action == 'window-backend') { 
             window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')

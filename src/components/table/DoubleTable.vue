@@ -1,8 +1,8 @@
 <template>
     <div class="w-full h-full flex flex-wrap">
-        <splitpanes class="default-theme"> 
+        <splitpanes class="default-theme h-full"> 
             <!-- sideRef && !component == 'tree' && !component == 'rollup' ? 'w-6/12' : sideRef && (component == 'tree' || component == 'tree-level') ? 'w-4/12' : sideRef && component == 'rollup' ? 'w-4/12' :  -->
-            <pane class="hide-scroll overflow-y-auto">
+            <pane class="hide-scroll overflow-y-auto" size="30">
 
                 <div :class="['w-full h-full overflow-y-auto hide-scroll']">
                     <component :is="component" class="relative" :api="api" @select="selected = $event">
@@ -10,9 +10,9 @@
                     </component>
                 </div>
             </pane>
-            <pane class="hide-scroll overflow-y-auto">
+            <pane class="hide-scroll overflow-y-auto ">
 
-                <div :class="['w-full', 'pl-4']">
+                <div :class="['w-full h-full']">
                     <slot :key="render" v-if="selected">
 
                     </slot>
