@@ -1,6 +1,6 @@
 <template>
     <div v-if="!isLoad" class="p-5">
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
+        <form id="form" name="form" ref="form" class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div v-for="section in data.sections" :key="section.id" class="rounded-lg">
                 <h1 class="label-big">{{section.config.title}}<span class="cursor-pointer"
                         @click="section.dop_open = !section.dop_open">{{ section.dop_open ? '(скрыть)' : '(подробнее)' }}</span>
@@ -23,9 +23,10 @@
                     </div>
                 </div>
             </div> 
-        </div>
+        </form>
         <div v-if="data.buttons" class="flex items-center justify-center"> 
-                <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button" :post_data="data.sections" class="px-4"> </ubutton> 
+                <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button" :post_data="form" class="px-4"> </ubutton> 
+                {{form}}
             </div>
     </div>
 </template>
@@ -46,7 +47,12 @@
         data,
         load,
         isLoad
-    } = get(props.api, props.params) 
+    } = get(props.api, props.params)
+    
+    const form = ref(null)
+    // (new FormData(document.getElementById('formumodal'))) )
+
+    // const formData = computed(() => !isLoad.value ? (new FormData(form.value)) : {})
 
     const ct = (c /* field*/) => {
         if (c.type == 'input') {

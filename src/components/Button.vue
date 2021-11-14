@@ -24,7 +24,10 @@ import {getCurrentInstance} from 'vue'
             app.appContext.config.globalProperties.$open(router.resolve({ name: props.data.route, params: props.data.params ?? {} })) 
         }
         if (props.action == 'save') {
-            await post(props.data.api, Object.assign(props.data.params, props.post_data))
+            console.log(props.post_data)
+            const formData = new FormData(props.post_data)  
+            formData.append('POSTER', props.data.params.POSTER)
+            await post(props.data.api, formData)
         }
         if (props.action == 'window-backend') { 
             window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
