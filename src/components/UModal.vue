@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!true" class="p-5">
+    <div v-if="!isLoad" class="p-5">
         <form ref="form">
             <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div v-for="section in data.sections" :key="section.id" class="rounded-lg">
