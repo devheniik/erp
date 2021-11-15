@@ -1,8 +1,8 @@
 <template> 
     <div>
-        <label :for="name" class="block text-sm font-medium text-gray-700">{{label}}</label>
+        <label :for="name" class="block text-sm font-medium text-gray-700">{{label ?? name}}</label>
         <div class="mt-0.5">
-            <input @input="$emit('update:modelValue',$event.target.value)" :value="modelValue" :disabled="disabled" :type="type" :name="name" :id="id" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" :placeholder="placeholder"/>
+            <input :required="required"  @input="$emit('update:modelValue',$event.target.value)" :value="modelValue" :disabled="disabled" :type="type" :name="name" :id="id" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" :placeholder="placeholder"/>
         </div>
     </div> 
 </template>
@@ -14,6 +14,7 @@ const props = defineProps({
     name: String,
     label: String,
     type: String,
+    required: Boolean,
     disabled: {
         type: Boolean,
         default: false

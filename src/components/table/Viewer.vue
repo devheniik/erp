@@ -12,14 +12,14 @@
                     </bar>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
+                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
                     <div v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
                         <component @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.filter_type">
                         </component>
                     </div>
                 </div>
 
-                <div v-if="data.buttons" class="grid grid-cols-4 lg:grid-cols-12 md:grid-cols-2 gap-4 mx-2.5 mt-5"> 
+                <div v-if="data.buttons" class="flex justify-end mx-2.5 mt-5"> 
                         <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton> 
                 </div>
 

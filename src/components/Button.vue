@@ -1,21 +1,22 @@
 <template>
-    <button type="button" @click="handle()"
-        :class="`inline-flex items-center justify-center py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-${type}-600 hover:bg-${type}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${type}-500`">
+    <button @click="handle()"
+        :class="[ `bg-${type}-600 hover:bg-${type}-700`, 'inline-flex whitespace-nowrap px-2 items-center justify-center py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white  focus:outline-none focus:ring-0']">
         {{label}}
     </button>
 </template>
 
 <script setup>
-import router from '@/router'
-import post from '@api'
-import {getCurrentInstance} from 'vue'
+    import router from '@/router'
+    import post from '@api'
+    import {getCurrentInstance} from 'vue'
+
+    const emit = defineEmits(['save'])
     const props = defineProps({
         type: String,  
         action: String,
         label: String,
         data: Object,
-        params: Object,
-        post_data: Object,
+        params: Object
     })
     const app = getCurrentInstance();
 
@@ -23,11 +24,8 @@ import {getCurrentInstance} from 'vue'
         if (props.action == 'window') {
             app.appContext.config.globalProperties.$open(router.resolve({ name: props.data.route, params: props.data.params ?? {} })) 
         }
-        if (props.action == 'save') {
-            console.log(props.post_data)
-            const formData = new FormData(props.post_data)  
-            formData.append('POSTER', props.data.params.POSTER)
-            await post(props.data.api, formData)
+        if (props.action == 'save') {  
+            emit('save', props.data)
         }
         if (props.action == 'window-backend') { 
             window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
