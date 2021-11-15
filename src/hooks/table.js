@@ -15,7 +15,7 @@ export default function (_route, start_data) {
     const isReload = ref(true)
  
 
-    const data = ref(start_data ? start_data : null) 
+    const data = ref(start_data ? start_data : undefined) 
 
     const load = async () => {
         isReload.value = true 

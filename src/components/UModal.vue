@@ -29,10 +29,8 @@
             
         </form>
         <div v-if="data.buttons" class="flex items-center justify-center w-full"> 
-                <ubutton @save="save($event)" v-for="(button, i) in data.buttons" :key="i" v-bind="button" class="px-4"> </ubutton>  
-            </div> 
-        
-        
+            <ubutton @save="save($event)" v-for="(button, i) in data.buttons" :key="i" v-bind="button" class="px-4"> </ubutton>  
+        </div>  
     </div>
 </template>
 
@@ -64,16 +62,19 @@ import post from '@api'
     const save = async (e) => {  
         const formData = new FormData(form.value)  
         formData.append('POSTER', e.params.POSTER)
+        let valid = true
         form.value.forEach(e => {   
             if (e['required']) { 
-                console.log(e['value'])
+                console.log(typeof(e['value']))
                 if (!e['value']) { 
                     app.appContext.config.globalProperties.$toast({component: 'toast', data: {type: 'warning', message: e['labels'][0].textContent ?? e['name']}}) 
-                    return 
+                    valid = false 
                 } 
             }
         })
-        await post(e.api, formData) 
+        if (valid) {
+            await post(e.api, formData)  
+        }
     } 
 </script>
 
