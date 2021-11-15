@@ -33,7 +33,7 @@
                         </button>
                     </div>
                 </li>
-                <li class="flex flex-col">
+                <li class="flex flex-col" v-if="headers.length">
                     <span class="w-full">
                         Колонки
                     </span>
@@ -201,7 +201,10 @@
                 }
             }
         },
-        headers: Array,
+        headers: {
+          type: Array,
+          default: () => []
+        },
         page: Number,
         limit: [Number, String]
     })
