@@ -10,8 +10,12 @@ export default [
         }
     },
     {
-        path: '/card/:api',
-        name: 'ucard',
+        path: '/umodal/:api',
+        name: 'umodal',
+        props: (route) => ({
+            api: route.params.api,
+            params: route.query
+         }), 
         component: () => import('../../../components/UModal.vue'),
         meta: {
             layout: 'Empty',

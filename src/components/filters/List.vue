@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <select @change="$emit('update:modelValue', $event.target.value); $emit('change')" class="dropdown-primary"> 
+            <select :disabled="data.readonly" @change="$emit('update:modelValue', $event.target.value); $emit('change')" class="dropdown-primary"> 
                 <option  v-for="option in data.list" :key="option.value" :value="option.value" :selected="modelValue == option.value">
                     {{option.label}}
                 </option>

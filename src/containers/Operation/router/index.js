@@ -22,6 +22,20 @@ export default [
     //     }
     // },
     {
+        path: '/operations/new/:params',
+        name: 'operation-create',
+        props: {
+            api: 'business_transactions/adding'
+        },
+        component: () => import('../../../components/UCard.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: false,
+            permition: null,
+            uname: 'operation-update'
+        }
+    },
+    {
         path: '/operation/:id',
         name: 'operation-update',
         props: {
