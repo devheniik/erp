@@ -356,7 +356,7 @@ export default (config) => [
     uname: 'text',
     child: [
       {
-        name: 'Каталог товаров',
+        name: 'Список',
         href: { name: 'product-view' },
         icon: 'ViewListIcon',
         current: false,

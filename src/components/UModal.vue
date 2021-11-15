@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoad" class="p-5">
+    <div v-if="!isLoad" class="p-5"> 
         <form ref="form">
             <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div v-for="section in data.sections" :key="section.id" class="rounded-lg">
@@ -64,10 +64,9 @@ import post from '@api'
         formData.append('POSTER', e.params.POSTER)
         let valid = true
         form.value.forEach(e => {   
-            if (e['required']) { 
-                console.log(typeof(e['value']))
-                if (!e['value']) { 
-                    app.appContext.config.globalProperties.$toast({component: 'toast', data: {type: 'warning', message: e['labels'][0].textContent ?? e['name']}}) 
+            if (e['required']) {    
+                if (!(e['hidden'] ? Number(e['value']) : e['value'])) { 
+                    app.appContext.config.globalProperties.$toast({component: 'toast', data: {type: 'warning', message: e['labels'] ? e['labels'][0]?.textContent : e['name']}}) 
                     valid = false 
                 } 
             }
