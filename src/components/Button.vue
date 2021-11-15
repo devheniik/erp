@@ -22,7 +22,8 @@
 
     const handle = async () => {
         if (props.action == 'window') {
-            app.appContext.config.globalProperties.$open(router.resolve({ name: props.data.route, params: props.data.params ?? {} })) 
+            console.log(props.data)
+            app.appContext.config.globalProperties.$open(router.resolve(props.data) )
         }
         if (props.action == 'save') {  
             emit('save', props.data)
