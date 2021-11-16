@@ -6,8 +6,7 @@
              <CalendarIcon class="h-6 w-6 ml-3 text-gray-100" />
         </div> -->
          <!-- @change=" $emit('change')" -->
-         <litepie-datepicker
-            ref="myRef"
+         <litepie-datepicker 
             as-single
             i18n="ru"
             :options="options"
