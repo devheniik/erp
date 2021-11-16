@@ -17,6 +17,7 @@
     "litepie-datepicker": "^1.0.14",
     "lodash": "^4.17.21",
     "postcss-import": "^14.0.2",
+    "primeicons": "^5.0.0",
     "primevue": "^3.8.2",
     "sass": "^1.42.1",
     "splitpanes": "^3.0.6",

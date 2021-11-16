@@ -1,6 +1,6 @@
 <template>
     <div v-if="!isLoad">
-        <div class="flex flex-col">
+        <div class="flex flex-col" v-if="data.type === 'table'" >
           <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
             <div v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
               <component @change="load"
@@ -43,11 +43,13 @@
                       @update:page="request.TPAGE=($event)"
                       v-model:limit="data.pagination.total_pages"></pagination>
         </div>
+      <Tree v-else-if="data.type === 'tree'" :value="data.data" selectionMode="single" @node-select="onNodeSelect" v-model:selectionKeys="selectedKey" />
     </div>
   <loading v-if="isLoad"/>
 </template>
 
 <script setup>
+import Tree from 'primevue/tree';
     import finder from '@/hooks/finder'
     import {ref} from 'vue'
 
@@ -63,6 +65,10 @@
       isLoad
     } = finder('finder', request.value)
 
+    const selectedKey = ref(null)
+
+    const emit = defineEmits(['select'])
+
     const paginationTransformer = (pagination) => {
       return {
         total: +pagination.total,
@@ -72,6 +78,13 @@
         total_pages: pagination.total_pages
       }
     }
+
+    const onNodeSelect = (e) => {
+      if (!e.children) {
+        emit('select', e)
+      }
+    }
+
 
 </script>
 

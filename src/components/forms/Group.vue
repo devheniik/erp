@@ -63,8 +63,8 @@ const load = async (e, key) => {
 
 const select = (e,key) => {
     console.log(e)
-    local_label.value = e[1]
-    emit('update:modelValue', Number(e[0]))
+    local_label.value = e[1] || e.label
+    emit('update:modelValue', Number(e[0] || e.id))
     console.log(e[0])
     // label.value = e
     isOpen.value[key] = false
