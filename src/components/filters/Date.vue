@@ -14,7 +14,7 @@
             :placeholder="data.label"
             :formatter="formatter"
             :auto-apply="false"
-            :modelValue="modelValue ?? data.value_default"
+            :modelValue="String(modelValue) ?? String(data.value_default)"
             @update:modelValue="$emit('update:modelValue', $event); $emit('change')"
         />
     </div>

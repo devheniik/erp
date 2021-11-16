@@ -23,11 +23,11 @@
                         <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton> 
                 </div>
 
-                <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-40">
+                <!-- <div v-if="!modalSelect" class="fixed flex items-center mr-5 right-3 bottom-16 z-40">
                     <button @click="createOpen = true" class="btn-circle-primary">
                         <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
                     </button>
-                </div>
+                </div> -->
                 
                 <div class="my-5 mr-5">
                     <utable @sort="sort($event)" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
