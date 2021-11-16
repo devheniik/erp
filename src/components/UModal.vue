@@ -61,7 +61,9 @@ import post from '@api'
 
     const save = async (e) => {  
         const formData = new FormData(form.value)  
-        formData.append('POSTER', e.params.POSTER)
+        data.value.hidden.forEach(e => {
+            formData.append(e.name, e.value) 
+        })
         let valid = true
         form.value.forEach(e => {   
             if (e['required']) {    
