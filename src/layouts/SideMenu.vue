@@ -121,7 +121,7 @@
             </div>
             <nav class="mt-1 flex-1" aria-label="Sidebar">
               <div class="px-2 space-y-1">
-                <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="">
+                <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="cursor-pointer">
                   <div @click="!item.current ? handleClick(item) : item.current = false"
                     :class="[item.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 hover:bg-secondary-700 hover:text-white', 'group flex items-center justify-between px-2 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                     <div class="flex flex-wrap items-center">
@@ -135,8 +135,8 @@
                   </div>
                   <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                     <div v-show="item.current && item.child.length"
-                      class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
-                      <div v-for="(subItem, j) in item.child" :key="j">
+                      class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden ">
+                      <div v-for="(subItem, j) in item.child" :key="j" class="cursor-pointer">
                         <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false"
                           :class="[subItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 bg-gradient-to-r from-secondary-700 to-secondary-800 hover:bg-secondary-800 hover:text-white', 'group flex items-center justify-between ml-2.5 pl-2 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                           <div class="flex flex-wrap items-center">
@@ -152,7 +152,7 @@
                           <div v-if="subItem.current && subItem.child.length"
                             class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
                             <div @click="handleClick(thItem)" v-for="(thItem, k) in subItem.child" :key="k"
-                              :class="[thItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 bg-gradient-to-r from-secondary-600 to-secondary-800 hover:bg-secondary-800 hover:text-white', 'group flex items-center justify-start ml-5 pl-2 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
+                              :class="[thItem.current ? 'bg-secondary-900 text-white' : 'text-secondary-300 bg-gradient-to-r  from-secondary-600 to-secondary-800 hover:bg-secondary-800 hover:text-white', 'group cursor-pointer flex items-center justify-start ml-5 pl-2 px-1.5 py-1.5 text-base font-medium rounded-md truncate whitespace-nowrap']">
                               <component :is="thItem.icon"
                                 :class="[thItem.current ? 'text-secondary-300' : 'text-secondary-400 group-hover:text-secondary-300', 'mr-4 flex-shrink-0 h-5 w-5']"
                                 aria-hidden="true" />

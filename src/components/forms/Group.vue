@@ -2,12 +2,12 @@
     <div>
         <div>
               <div>
-                <label :for="name" class="block text-sm font-medium text-gray-700">{{label}}</label>
+                <label v-if="!noLabel" :for="name" class="block text-sm font-medium text-gray-700">{{label}}</label>
                 <div class="mt-0.5 flex rounded-md shadow-sm">
                 <div class="relative flex items-stretch flex-grow focus-within:z-10">
                     <input :value="local_label" :disabled="true" :type="type" :name="name" :id="id" :class="[`focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm`, required && (modelValue == 0 || !modelValue) ? 'border-danger-300' : 'border-gray-300']" :placeholder="placeholder" />
                 </div> 
-                <button v-for="(btn, i) in buttons" :key="i" @click="!readonly ? load(btn,i) : null" type="button" :title="btn.help" :class="[i + 1 == buttons.length ? 'rounded-r-md' : '', '-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium  text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500']">
+                <button :disabled="readonly" v-for="(btn, i) in buttons" :key="i" @click="!readonly ? load(btn,i) : null" type="button" :title="btn.help" :class="[i + 1 == buttons.length ? 'rounded-r-md' : '', '-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium  text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500']">
                     <SearchIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
                     <modal v-model="isOpen[i]" width="w-10/12">
                       <component @filter="filter($event)" @select="select($event, i)" :params="btn.params" :is="'finder'"></component>
@@ -34,6 +34,10 @@ const props = defineProps({
     name: String,
     required: Boolean,
     readonly: {
+        type: Boolean,
+        default: false
+    },
+    noLabel: {
         type: Boolean,
         default: false
     },
