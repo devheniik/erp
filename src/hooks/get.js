@@ -13,9 +13,10 @@ export default function (_route, body) {
     const data = ref()
 
 
-    const load = async () => {
+    const load = async (new_data) => {
         isLoad.value = true
-        data.value =  await get(_route, body)  
+        console.log(new_data, body, new_data ?? body)
+        data.value =  await get(_route, new_data ?? body)  
         isLoad.value = false
     }
 

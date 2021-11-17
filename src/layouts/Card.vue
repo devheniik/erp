@@ -36,17 +36,17 @@
                     Сущьность
                     <span class="text-secondary-600 ml-2">№</span>
                 </button> -->
-                <modal-select @change="$router.push({ name: route_name, params: { id: $event }})" :data="{ api: api }" custom>
+                <modal-select @change="handle_link({ name: route_name, params: { id: $event }})" :data="{ api: api }" custom>
                     <button class="button-hover-box-primary">
                         <SearchIcon class="h-4 w-4" />
                     </button>
                 </modal-select>
                 <button v-show="data.first != null" class="button-hover-box-primary"
-                    @click="$router.push({ name: route_name, params: { id: data.first } })">
+                    @click="handle_link({ name: route_name, params: { id: data.first } })">
                     <ChevronDoubleLeftIcon class="h-4 w-4" />
                 </button>
                 <button v-show="data.prev != null" class="button-hover-box-primary"
-                    @click="$router.push({ name: route_name, params: { id: data.prev } })">
+                    @click="handle_link({ name: route_name, params: { id: data.prev } })">
                     <ChevronLeftIcon class="h-4 w-4" />
                 </button>
                 <div class="relative border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-primary-600 focus-within:border-primary-600">
@@ -55,14 +55,14 @@
                     <input type="text"
                         class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                         placeholder="№" v-model="entityId"
-                        @keyup.enter="$router.push({ name: route_name, params: { id: entityId } })" />
+                        @keyup.enter="handle_link({ name: route_name, params: { id: entityId } })" />
                 </div>
                 <button v-show="data.next != null" class="button-hover-box-primary"
-                    @click="$router.push({ name: route_name, params: { id: data.next } })">
+                    @click="handle_link({ name: route_name, params: { id: data.next } })">
                     <ChevronRightIcon class="h-4 w-4" />
                 </button>
                 <button v-show="data.last != null" class="button-hover-box-primary"
-                    @click="$router.push({ name: route_name, params: { id: data.last } })">
+                    @click="handle_link({ name: route_name, params: { id: data.last } })">
                     <ChevronDoubleRightIcon class="h-4 w-4" />
                 </button>
                 <button class="button-hover-box-primary">
@@ -83,8 +83,9 @@
     import {  ref, watch, computed } from 'vue'
     import store from "@/store"
     // * router init 
-    import {  useRoute  } from 'vue-router'
+    import {  useRoute, useRouter  } from 'vue-router'
     const route = useRoute()
+    const router = useRouter()
 
     // * hooks
     import dataLoad from '.././hooks/reload'
@@ -101,7 +102,7 @@
         ls_name: String
     })
 
-    const emit = defineEmits(['update:config'])
+    const emit = defineEmits(['update:config', 'reload'])
 
     // * tabs ux
 
@@ -129,15 +130,18 @@
         load
     } = dataLoad(props.links)
 
+    const handle_link = (data) => { 
+        route.params.id  ? store.commit('update_card', { name: props.ls_name, id: data.params.id }) : ''  
+        router.push(data)
+        emit('reload', data.params.id)  
+    }
+
 
 
 
     // * runtime logic
     watch(computed(() => route.params.id), async () => {
-        await load(route.params.id)
-        entityId.value = route.params.id 
-        console.log(route.params.id)
-        route.params.id  ? store.commit('update_card', { name: props.ls_name, id: route.params.id }) : ''
+        
     })
 </script>
 

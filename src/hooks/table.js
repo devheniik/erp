@@ -32,6 +32,21 @@ export default function (_route, start_data) {
         isReload.value = false
     }
 
+    const reLoad = async () => {
+        isReload.value = true 
+        if (!data?.value?.headers) {
+            data.value.headers = []
+        } 
+        data.value = await list(_route)
+        if (!data?.value?.page) {
+            data.value.page = data.value.meta.pagination.current_page
+        }
+        if (!data?.value?.limit) {
+            data.value.limit = data.value.meta.pagination.per_page
+        }
+        isReload.value = false
+    }
+
     const start = async () => {
         isLoad.value = true
         isReload.value = true
@@ -57,7 +72,8 @@ export default function (_route, start_data) {
         data,//:  data.value != null ? data.value.map(e => e.data.body.selected = false) : [],
         load,
         isReload,
-        isLoad
+        isLoad,
+        reLoad
     }
 
 

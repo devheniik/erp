@@ -5,8 +5,8 @@
 
             </slot>
         </modal>
-        <div v-if="!isLoad && data" class="w-full h-full flex flex-col justify-between"> 
-            <div class="w-full h-full  flex flex-col justify-start">
+        <div v-if="!isLoad && data" class="w-full min-h-full flex flex-col justify-between"> 
+            <div class="w-full h-full">
                 
                 <div class="w-full" v-if=data.bar> 
                     <bar v-bind=data.bar.config :data=data.bar.data @reload=load()> 
@@ -15,9 +15,16 @@
                 
                 <div class="w-full flex flex-row items-center  ml-2.5 mt-3 justify-between">
                     <p class="text-3xl text-gray-700 whitespace-nowrap">{{ data.title ?? 'Таблица' }}</p>
-                    <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-8 border border-transparent rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700">
-                        <FilterIcon class="h-5 w-5" aria-hidden="true" />
-                    </button>
+                    <div>
+                        <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-2 border border-transparent rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700">
+                            <FilterIcon class="h-5 w-5" aria-hidden="true" />
+                        </button>
+                        <button @click="reLoad()" type="button" class="inline-flex items-center  p-2 mr-8 border border-transparent rounded-full shadow-sm text-white bg-danger-600 hover:bg-danger-700">
+                            <XIcon class="h-5 w-5" aria-hidden="true" />
+                        </button>
+                    </div>
+                    
+                    
                 </div>
 
                 <div v-if="filter_show" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
@@ -90,7 +97,8 @@
         data,
         load,
         isLoad,
-        isReload
+        isReload,
+        reLoad
     } = table(props.api, props.params)
 
 

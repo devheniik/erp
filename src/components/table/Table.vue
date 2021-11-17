@@ -69,8 +69,7 @@ const props = defineProps({
     const isAllSelect = computed(() => { 
         let res = true
         props.body.forEach(e => { 
-            if (e.selected == undefined) {
-                console.log(1);
+            if (e.selected == undefined) { 
                 res = false
             }
 

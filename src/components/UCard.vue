@@ -1,6 +1,7 @@
 <template>
     <div v-if="!isLoad" class="h-card">
-        <layout v-model:config="data.tabs" v-bind="data.global">     
+        <layout v-model:config="data.tabs" @reload="load({ id: $event })" v-bind="data.global">   
+        <!-- rid = $event; load()   -->
                 <component :is="data.tabs.find(e => e.active).component" v-bind="data.tabs.find(e => e.active).config"> 
                 </component> 
         </layout>
@@ -23,18 +24,20 @@ export default {
         api: String
     },
     setup(props) {
-        const route = useRoute()  
+        const route = useRoute() 
+        
+        const rid = ref(route.params.id)
 
         const {
             data,
             load,
             isLoad
-        } = get(props.api, { id: route.params.id }) 
+        } = get(props.api, { id: rid.value }) 
  
         
 
         return {
-             data,
+            data,
             load,
             isLoad
         }
