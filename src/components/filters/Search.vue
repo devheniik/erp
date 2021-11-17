@@ -1,7 +1,7 @@
 <template>
     <div>
         <div> 
-            <input :disabled="data.readonly" type="text" @input="$emit('update:modelValue', $event.target.value)" @keyup.enter="$emit('change')"  class="input-primary" :placeholder="data.label" :value="modelValue  ?? data.value.default" />
+            <input :disabled="data.readonly" type="text" @input="$emit('update:modelValue', $event.target.value)" @keyup.enter="$emit('change')"  class="input-primary" :placeholder="data.label" :value="modelValue" />
         </div>
     </div>
 </template>
