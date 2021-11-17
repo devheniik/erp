@@ -382,7 +382,7 @@ export default (config) => [
     child: []
   },
   {
-    name: 'Операции',
+    name: 'Хоз операции',
     href: { name: 'operation-view' },
     icon: 'AdjustmentsIcon',
     current: false,

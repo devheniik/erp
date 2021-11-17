@@ -30,7 +30,7 @@
                             <tbody>
                                 <tr v-for="(tr_d, Idx) in data.data" :key="Idx" :class="Idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'">
                                     <td v-for="(td_d, i) in tr_d" :key="i" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                      <div v-if="typeof(td_d) == 'object'" @click="[ i == 1 ? $emit('select', tr_d) : null, habdle(td_d)]" class="underline text-primary-500 cursor-pointer">
+                                      <div v-if="typeof(td_d) == 'object'" @click="i == 1 ? $emit('select', tr_d) : null; habdle(td_d)" class="underline text-primary-500 cursor-pointer">
                                         {{ td_d?.label }}
                                       </div>
                                         <span v-else @click="i == 1 ? $emit('select', tr_d) : null">
