@@ -30,10 +30,12 @@ import TreeLevel from "./table/TreeLevel.vue"
 import UCard from './UCard.vue'
 import UModal from './UModal.vue'
 import UButton from './Button.vue'
+import Empty from './table/Empty.vue'
 
 
 export default app => {
   app.component('finder', Finder)
+  app.component('empty', Empty)
   app.component('group', Group)
   app.component('input-select', InputSelect)
   app.component('input-text', InputText)

@@ -33,6 +33,7 @@ const date = ref(props.modelValue)
 
 const formatter = ref({
       date: 'DD.MM.YYYY', 
+      month: 'MMM'
     })
 
 const options = ref({

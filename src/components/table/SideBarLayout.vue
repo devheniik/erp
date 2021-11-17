@@ -15,7 +15,7 @@
                         </DisclosureButton>
 
                         <DisclosurePanel class="cursor-pointer">
-                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class=" group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">                              
+                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class="mx-3 group w-auto flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">                              
                                 <div class="flex flex-row items-center overflow-x-hidden">
                                 <StopIcon class="h-3 w-3 text-primary-400 mx-3" />
                                 <span class="whitespace-nowrap truncate">

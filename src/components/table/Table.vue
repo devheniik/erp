@@ -22,7 +22,7 @@
                                         </th> 
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
+                                <tbody  class="bg-white divide-y divide-gray-200">
                                     <tr v-for="col in body" :key="col.uid" :class="t_color(col.color)"> 
                                         <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer"> 
                                             <Switch v-model="col.selected" :class="[col.selected ? 'bg-indigo-600' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
@@ -40,6 +40,8 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <empty v-if="body.length == 0" v-bind="{ title: 'Создайте заказ' }"></empty> 
+
                         </div>
                     </div>
                 </div>

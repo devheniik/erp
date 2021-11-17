@@ -8,6 +8,8 @@ import { Russian } from "flatpickr/dist/l10n/ru.js"
  
 
 import LitepieDatepicker from 'litepie-datepicker'
+
+
  
 
 flatpickr.setDefaults(
@@ -23,7 +25,8 @@ flatpickr.setDefaults(
 import PrimeVue from 'primevue/config'
 // import InputSwitch from 'primevue/InputSwitch'
 
-export default app => {
+export default app => { 
+
   app.use(LitepieDatepicker)
   app.use(PrimeVue) 
  

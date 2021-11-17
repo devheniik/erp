@@ -5,8 +5,8 @@
 
             </slot>
         </modal>
-        <div v-if="!isLoad && data" class="w-full h-full  flex flex-col justify-between"> 
-            <div class="w-full">
+        <div v-if="!isLoad && data" class="w-full h-full flex flex-col justify-between"> 
+            <div class="w-full h-full  flex flex-col justify-start">
                 
                 <div class="w-full" v-if=data.bar> 
                     <bar v-bind=data.bar.config :data=data.bar.data @reload=load()> 
@@ -27,23 +27,26 @@
                     </div>
                 </div>
 
-                <div v-if="data.buttons" class="flex justify-end mx-2.5 mt-5"> 
+                <div v-if="data.buttons" class="flex justify-end ml-2.5 mr-5 mt-5"> 
                         <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton> 
                 </div> 
 
+
+
                 <div class="w-full my-5 mx-2" v-if="data?.components?.start?.length">
                     <component v-for="(component, i) in data.components.start" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
-                </div>
-                
+                </div> 
+
+
                 <div class="my-5 mr-5">
                     <utable @sort="sort($event)" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
                 </div>
+ 
+
 
                 <div class="w-full my-5 mx-2" v-if="data?.components?.end?.length">
                     <component v-for="(component, i) in data.components.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
-                </div>
-
-
+                </div> 
             </div> 
 
             <div class="w-full mb-1.5">
