@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Listbox as="div" :modelValue="modelValue" @update:modelValue="$emit('update:modelValue', $event)"> 
+        <Listbox as="div" :modelValue="modelValue" @update:modelValue="$emit('update:modelValue', $event); $emit('change')"> 
             <div class="relative">
             <ListboxButton class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <span class="block truncate">{{ data.label && modelValue == null ?  data.label : data?.list?.find(e => e.value == modelValue).label ?? data.label ?? data.list[0].label }}</span>

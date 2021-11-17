@@ -10,7 +10,7 @@
                 <button :disabled="readonly" v-for="(btn, i) in buttons" :key="i" @click="!readonly ? load(btn,i) : null" type="button" :title="btn.help" :class="[i + 1 == buttons.length ? 'rounded-r-md' : '', '-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium  text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500']">
                     <SearchIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
                     <modal v-model="isOpen[i]" width="w-10/12">
-                      <component @filter="filter($event)" @select="select($event, i)" :params="btn.params" :is="'finder'"></component>
+                      <component  @select="select($event, i)" :params="btn.params" :is="'finder'"></component>
                     </modal>
                 </button>
                 </div>

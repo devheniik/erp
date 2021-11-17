@@ -13,18 +13,7 @@ export default function (_route, body) {
     const data = ref()
     const load = async () => {
         isLoad.value = true
-        data.value =  await get(_route, body)
-        data.value.filters = [
-            {
-                filter_name: 'Search',
-                filter_type: 'search',
-                filter_show: true,
-                label: 'Поиск',
-                label_key: 'search',
-                value: null,
-                value_default: null
-            }
-        ]
+        data.value =  await get(_route, body) 
         isLoad.value = false
     }
 

@@ -1,16 +1,20 @@
 <template>
     <div v-if="!isLoad">
+      <div class="flex justify-between items-center mb-2">
+        <div class="flex flex-row">
+          <p v-for="l in letters_en" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-500 hover:underline cursor-pointer">
+            {{l}}
+          </p>
+        </div>
+        <div class="flex flex-row">
+          <p v-for="l in letters_ru" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-500 hover:underline cursor-pointer">
+            {{l}}
+          </p>
+        </div>
+      </div>
         <div class="flex flex-col" v-if="data.type === 'table'" >
-          <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5">
-            <div v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
-              <component @change="load"
-                         v-model="filter.value"
-                         @update:modelValue="request.TFILTR=$event"
-                         :data="filter"
-                         :start_data="data.filters"
-                         :is="filter.filter_type">
-              </component>
-            </div>
+          <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
+            <search v-model="request.TFILTR" :data="{ label: 'Поиск' }" @keyup.enter="load()" @update:modelValue="request.TFILTR=$event"></search>
           </div>
             <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -85,9 +89,8 @@ import Tree from 'primevue/tree';
       }
     }
 
+    const letters_en = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    const letters_ru = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ъ", "Ы", "Ь", "Э", "Ю", "Я", "І", "Ї", "Є" ]
 
-</script>
 
-<style lang="scss" scoped>
-
-</style>
+</script> 
