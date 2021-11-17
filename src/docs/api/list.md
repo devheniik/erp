@@ -51,7 +51,7 @@
           {
             name: "Сохранить в документе",
             disabled:  false,
-            type:'modal'/'promt'/'action'/'route',
+            type:'modal',
             value: '',//Обязательный параметр, передавать его в поле из config.action_param_name
             url: 'url/function/..',
             params: {

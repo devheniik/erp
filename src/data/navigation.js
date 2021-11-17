@@ -341,7 +341,7 @@ export default (config) => [
     child: []
   },
   {
-    name: 'Пироекты',
+    name: 'Проекты',
     href: '#',
     icon: 'TableIcon',
     current: false,

@@ -60,7 +60,7 @@ const props = defineProps({
 })
 
 
-    
+    const app = getCurrentInstance()
 
     const emit = defineEmits(['select', 'sort', 'update:body'])
 

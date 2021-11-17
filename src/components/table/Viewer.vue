@@ -5,14 +5,20 @@
 
             </slot>
         </modal>
-        <div v-if="!isLoad && data" class="w-full h-full  flex flex-col justify-between">
+        <div v-if="!isLoad && data" class="w-full h-full  flex flex-col justify-between"> 
             <div class="w-full">
+                <div class="w-full flex flex-row items-center  ml-2.5 mt-3 justify-between">
+                    <p class="text-3xl text-gray-700 whitespace-nowrap">{{ data.title ?? 'Таблица' }}</p>
+                    <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-8 border border-transparent rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700">
+                        <FilterIcon class="h-5 w-5" aria-hidden="true" />
+                    </button>
+                </div>
                 <div class="w-full" v-if=data.bar> 
                     <bar v-bind=data.bar.config :data=data.bar.data @reload=load()> 
                     </bar>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
+                <div v-if="filter_show" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
                     <div v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
                         <group noLabel v-if="filter.filter_type == 'group'" :readonly="filter.readonly" v-bind="filter.bind" v-model="filter.value" @update:modelValue="load"></group>
                         <component v-else @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.filter_type"></component>
@@ -55,6 +61,8 @@
     } from 'vue'
 
     const app = getCurrentInstance()
+
+    const filter_show = ref(true)
 
     // * hooks
     import table from '@/hooks/table'

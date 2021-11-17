@@ -20,8 +20,8 @@
                         > 
                           <DisclosurePanel>
                           <!-- ; subItem.active = true -->
-                              <a v-for="subItem in item.child" :key="subItem.name" @click="$emit('select', subItem.link)" :class="[open ? '' : '', 'bg-white group w-full flex items-center justify-between py-3 text-sm font-medium text-gray-600  hover:text-gray-900  hover:bg-primary-50']">                                 
-                                  <span class=" pl-2 w-full text-center whitespace-nowrap truncate">
+                              <a v-for="subItem in item.child" :key="subItem.name" @click="$emit('select', subItem.link); selected = subItem" :class="[open ? '' : '', 'bg-white group w-full flex items-center justify-between  text-sm font-medium text-gray-600  hover:text-gray-900  hover:bg-primary-50']">                                 
+                                  <span  :class="[selected == subItem ? 'bg-primary-200' : '',  'pl-2 w-full text-center whitespace-nowrap truncate py-3']">
                                     {{ subItem.name }}
                                   </span>  
                               </a>
@@ -47,6 +47,8 @@ const props = defineProps({
         load,
         isLoad
     } = get(props.api)
+
+    const selected = ref(null)
 
      
 

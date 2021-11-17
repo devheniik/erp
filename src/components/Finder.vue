@@ -30,7 +30,10 @@
                             <tbody>
                                 <tr v-for="(tr_d, Idx) in data.data" :key="Idx" :class="Idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'">
                                     <td v-for="(td_d, i) in tr_d" :key="i" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        <span @click="i == 1 ? $emit('select', tr_d) : null" :class="i == 1 ? 'underline text-primary-500 cursor-pointer' : null">
+                                      <div v-if="typeof(td_d) == 'object'" @click="[ i == 1 ? $emit('select', tr_d) : null, habdle(td_d)]" class="underline text-primary-500 cursor-pointer">
+                                        {{ td_d?.label }}
+                                      </div>
+                                        <span v-else @click="i == 1 ? $emit('select', tr_d) : null">
                                             {{ td_d }} 
                                         </span>
                                     </td>
@@ -53,9 +56,10 @@
 </template>
 
 <script setup>
-import Tree from 'primevue/tree';
+  import Tree from 'primevue/tree'
+  import router from '@/router'
     import finder from '@/hooks/finder'
-    import {ref} from 'vue'
+    import {ref, getCurrentInstance} from 'vue'
 
     const props = defineProps({
       params: Object
@@ -69,6 +73,14 @@ import Tree from 'primevue/tree';
       isLoad
       
     } = finder('finder', request.value)
+
+    const app = getCurrentInstance()
+
+    const habdle = (e) => {
+      if (e.type == 'window'){
+        app.appContext.config.globalProperties.$open(router.resolve(e.data))
+      }
+    }
 
     const selectedKey = ref(null)
 
