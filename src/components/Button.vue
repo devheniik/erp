@@ -23,7 +23,8 @@
     const handle = async () => {
         if (props.action == 'window') {
             console.log(props.data)
-            app.appContext.config.globalProperties.$open(router.resolve(props.data) )
+            app.appContext.config.globalProperties.$open(router.resolve(props.data))
+            // router.push({ name: 'finder', params: {}, query: {} })
         }
         if (props.action == 'save') {  
             emit('save', props.data)

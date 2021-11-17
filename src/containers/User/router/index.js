@@ -24,6 +24,19 @@ export default [
         }
     },
     {
+        path: '/finder',
+        name: 'finder',
+        props: (route) => ({ 
+            params: route.query
+         }), 
+        component: () => import('../../../components/Finder.vue'),
+        meta: {
+            layout: 'Empty',
+            requreAuth: false,
+            permition: null
+        }
+    },
+    {
         path: '/filial',
         name: 'filial',
         component: () => import('@user/views/Filial.vue'),

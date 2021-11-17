@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isLoad">
+    <div v-if="!isLoad" class="p-2"> 
       <div class="flex justify-between items-center mb-2">
         <div class="flex flex-row">
           <p v-for="l in letters_en" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-500 hover:underline cursor-pointer">
@@ -67,6 +67,7 @@ import Tree from 'primevue/tree';
       data,
       load,
       isLoad
+      
     } = finder('finder', request.value)
 
     const selectedKey = ref(null)

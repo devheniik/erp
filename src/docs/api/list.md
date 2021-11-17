@@ -91,11 +91,17 @@
         value: {
           id: { // ячейка
             label: 'Компания x',
-            params: {
-              id: 123
-            }, 
-            type: 'route',
-            value: 'firm-view'
+            type: 'window',
+            data: {
+              params: {
+                api: 'buisness_transactions/adding
+              },
+              query: {
+                POSTER: 'Adding',
+                ZAKAZ: '123'
+              },
+              name: 'umodal' 
+            }
           },
           fio: '123123',
           zakaz: '123',

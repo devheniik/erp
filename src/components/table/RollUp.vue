@@ -19,6 +19,7 @@
                           leave-to-class="transform scale-95 opacity-0"
                         > 
                           <DisclosurePanel>
+                          <!-- ; subItem.active = true -->
                               <a v-for="subItem in item.child" :key="subItem.name" @click="$emit('select', subItem.link)" :class="[open ? '' : '', 'bg-white group w-full flex items-center justify-between py-3 text-sm font-medium text-gray-600  hover:text-gray-900  hover:bg-primary-50']">                                 
                                   <span class=" pl-2 w-full text-center whitespace-nowrap truncate">
                                     {{ subItem.name }}
