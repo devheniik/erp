@@ -33,7 +33,7 @@
                                       <div v-if="typeof(td_d) == 'object'" @click="i == 1 ? $emit('select', tr_d) : null; habdle(td_d)" class="underline text-primary-500 cursor-pointer">
                                         {{ td_d?.label }}
                                       </div>
-                                        <span v-else @click="i == 1 ? $emit('select', tr_d) : null">
+                                        <span v-else @click="i == 1 ? $emit('select', tr_d) : null" :class="i == 1 ? 'underline text-primary-500 cursor-pointer' : ''">
                                             {{ td_d }} 
                                         </span>
                                     </td>
@@ -62,7 +62,11 @@
     import {ref, getCurrentInstance} from 'vue'
 
     const props = defineProps({
-      params: Object
+      params: Object,
+      arr_select: {
+        type: Boolean,
+        default: false
+      }
     })
 
     const request = ref(props.params)

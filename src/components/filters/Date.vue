@@ -13,7 +13,7 @@
             :disableDate="true"
             :placeholder="data.label"
             :formatter="formatter"
-            :auto-apply="false"
+            :auto-apply="true"
             :modelValue="String(modelValue) ?? String(data.value_default)"
             @update:modelValue="$emit('update:modelValue', $event); $emit('change')"
         />
@@ -32,7 +32,7 @@ const emit = defineEmits(['update:modelValue', 'change'])
 const date = ref(props.modelValue)
 
 const formatter = ref({
-      date: 'DD-MM-YYYY', 
+      date: 'DD.MM.YYYY', 
     })
 
 const options = ref({

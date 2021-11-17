@@ -10,7 +10,7 @@ export default function (color) {
         return 'bg-red-100'
 
         case 'Коричневый':
-        return 'bg-warmGray-100'
+        return 'bg-warmGray-300'
 
         case 'Фиолетовый':
         return 'bg-purple-100'
@@ -25,7 +25,7 @@ export default function (color) {
         return 'bg-blue-100'
 
         case 'Чёрный':
-        return 'bg-gray-200'
+        return 'bg-gray-600'
 
 
         default: 

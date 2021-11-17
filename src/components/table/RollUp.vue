@@ -18,7 +18,7 @@
                           leave-from-class="transform translate-x-full scale-100 opacity-100"
                           leave-to-class="transform scale-95 opacity-0"
                         > 
-                          <DisclosurePanel>
+                          <DisclosurePanel class="cursor-pointer">
                           <!-- ; subItem.active = true -->
                               <a v-for="subItem in item.child" :key="subItem.name" @click="$emit('select', subItem.link); selected = subItem" :class="[open ? '' : '', 'bg-white group w-full flex items-center justify-between  text-sm font-medium text-gray-600  hover:text-gray-900  hover:bg-primary-50']">                                 
                                   <span  :class="[selected == subItem ? 'bg-primary-200' : '',  'pl-2 w-full text-center whitespace-nowrap truncate py-3']">

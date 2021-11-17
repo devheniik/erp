@@ -14,8 +14,8 @@
                             <ChevronDownIcon :class="[open ? 'text-gray-400 rotate-90' : 'text-gray-300', 'mr-2 flex-shrink-0 h-3 w-3 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150']" />
                         </DisclosureButton>
 
-                        <DisclosurePanel>
-                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class="group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">                              
+                        <DisclosurePanel class="cursor-pointer">
+                            <a v-for="subItem in item.category.data" :key="subItem.name" @click="subItem.uid ? $emit('select', subItem.uid) : null" class=" group w-full flex items-center justify-between py-1 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 bg-white hover:bg-primary-50">                              
                                 <div class="flex flex-row items-center overflow-x-hidden">
                                 <StopIcon class="h-3 w-3 text-primary-400 mx-3" />
                                 <span class="whitespace-nowrap truncate">
