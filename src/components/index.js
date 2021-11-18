@@ -31,10 +31,12 @@ import UCard from './UCard.vue'
 import UModal from './UModal.vue'
 import UButton from './Button.vue'
 import Empty from './table/Empty.vue'
+import Row from './table/Row.vue'
 
 
 export default app => {
   app.component('finder', Finder)
+  app.component('row', Row)
   app.component('empty', Empty)
   app.component('group', Group)
   app.component('input-select', InputSelect)

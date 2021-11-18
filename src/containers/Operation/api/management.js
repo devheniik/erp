@@ -1,1 +1,1 @@
-export default 'business_transactions/transaction_management/menu/get'
+export default 'business-transactions/transaction_management/menu/get'

@@ -37,6 +37,8 @@ import router from "@/router"
     } from 'vue'
     import send from '@api'
     const app = getCurrentInstance()
+
+    
     const props = defineProps({
         params: Object,
         action_param_name: String,

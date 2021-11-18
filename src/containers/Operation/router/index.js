@@ -25,7 +25,7 @@ export default [
         path: '/operations/new/:params',
         name: 'operation-create',
         props: {
-            api: 'business_transactions/adding'
+            api: 'business-transactions/adding'
         },
         component: () => import('../../../components/UCard.vue'),
         meta: {
@@ -39,7 +39,7 @@ export default [
         path: '/operation/:id',
         name: 'operation-update',
         props: {
-            api: 'business_transactions/show'
+            api: 'business-transactions/show'
         },
         component: () => import('../../../components/UCard.vue'),
         meta: {
