@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-full"> 
+    <div :key="render_key" class="h-full w-full"> 
         <modal v-model="createOpen" width="w-11/12 lg:w-9/12 md:w-8/12">
             <slot name="create">
 
@@ -19,7 +19,7 @@
                         <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-2 border border-transparent rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700">
                             <FilterIcon class="h-5 w-5" aria-hidden="true" />
                         </button>
-                        <button @click="reLoad()" type="button" class="inline-flex items-center  p-2 mr-8 border border-transparent rounded-full shadow-sm text-white bg-danger-600 hover:bg-danger-700">
+                        <button @click="reLoad(); render_key++" type="button" class="inline-flex items-center  p-2 mr-8 border border-transparent rounded-full shadow-sm text-white bg-danger-600 hover:bg-danger-700">
                             <XIcon class="h-5 w-5" aria-hidden="true" />
                         </button>
                     </div>
@@ -77,6 +77,8 @@
     } from 'vue'
 
     const app = getCurrentInstance()
+
+    const render_key = ref(1)
 
     const filter_show = ref(true)
 

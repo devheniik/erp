@@ -1,6 +1,6 @@
 <template>
     <button @click="handle()"
-        :class="[ `bg-${type}-600 hover:bg-${type}-700`, 'inline-flex whitespace-nowrap px-2 items-center justify-center py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white  focus:outline-none focus:ring-0']">
+        :class="[  type == 'warning' ? 'bg-warning-600 hover:bg-warning-700' : type == 'danger' ? 'bg-danger-600 hover:bg-danger-700' : type == 'success' ? 'bg-success-600 hover:bg-success-700' : 'bg-primary-600 hover:bg-primary-700' ,`bg-${type}-600 hover:bg-${type}-700`, 'inline-flex whitespace-nowrap px-2 items-center justify-center py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white  focus:outline-none focus:ring-0']">
         {{label}}
     </button>
 </template>
