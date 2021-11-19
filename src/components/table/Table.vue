@@ -96,15 +96,18 @@
 
     const isAllSelect = computed(() => {
         let res = true
-        props.body.forEach(e => {
-            if (e.selected == undefined) {
-                res = false
-            }
+        if (props.body.length > 0) {
+            props.body.forEach(e => {
+                if (e.selected == undefined) {
+                    res = false
+                }
 
-            if (e.selected == false) {
-                res = false
-            }
-        })
+                if (e.selected == false) {
+                    res = false
+                }
+            })
+        }
+        
         return res
     })
 
