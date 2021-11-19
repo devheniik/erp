@@ -1,4 +1,4 @@
-export default function (color) {
+export default function (color) { 
     switch (color) {
         case 'Зелёный':
         return 'bg-green-100'

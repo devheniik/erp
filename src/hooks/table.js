@@ -23,11 +23,11 @@ export default function (_route, start_data) {
             data.value.headers = []
         } 
         data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data })
-        if (!data?.value?.page) {
-            data.value.page = data.value.meta.pagination.current_page
+        if (!data.value.page) { 
+            data.value.page = data.value?.meta?.pagination?.current_page 
         }
-        if (!data?.value?.limit) {
-            data.value.limit = data.value.meta.pagination.per_page
+        if (!data.value.limit) {
+            data.value.limit = data.value?.meta?.pagination?.per_page
         }
         isReload.value = false
     }
@@ -38,11 +38,11 @@ export default function (_route, start_data) {
             data.value.headers = []
         } 
         data.value = await list(_route, { ...start_data })
-        if (!data?.value?.page) {
-            data.value.page = data.value.meta.pagination.current_page
+        if (!data.value.page) { 
+            data.value.page = data.value?.meta?.pagination?.current_page 
         }
-        if (!data?.value?.limit) {
-            data.value.limit = data.value.meta.pagination.per_page
+        if (!data.value.limit) {
+            data.value.limit = data.value?.meta?.pagination?.per_page
         }
         isReload.value = false
     }
@@ -53,10 +53,10 @@ export default function (_route, start_data) {
         data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data }) 
         // !data.value?.headers ?  data.value.headers : null  
         if (!data.value.page) { 
-            data.value.page = data.value.meta.pagination.current_page 
-    }
+            data.value.page = data.value?.meta?.pagination?.current_page 
+        }
         if (!data.value.limit) {
-            data.value.limit = data.value.meta.pagination.per_page
+            data.value.limit = data.value?.meta?.pagination?.per_page
         }
 
         isReload.value = false,

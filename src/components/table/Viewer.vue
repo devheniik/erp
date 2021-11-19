@@ -45,7 +45,7 @@
                 </div> 
 
 
-                <div class="my-5 mr-5">
+                <div class="my-5 mr-5" v-if="data.data.length">
                     <utable @sort="sort($event)" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
                 </div>
  
@@ -57,7 +57,7 @@
             </div> 
 
             <div class="w-full mb-1.5">
-                <pagination @change="load" v-model:headers="data.headers" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
+                <pagination v-if="data.meta?.pagination" @change="load" v-model:headers="data.headers" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
             </div>
         </div>
         <loading v-if="isReload"></loading> 

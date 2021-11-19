@@ -4,5 +4,11 @@ const install = app => {
         store.commit('toast_create', data)//(data)
     }
 }
+
+const toast = (data) => {  
+    store.commit('toast_create', data)//(data)
+}
   
-  export { install as default }
+  export { install as default, toast }
+
+  

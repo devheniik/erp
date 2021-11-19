@@ -14,8 +14,7 @@ export default function (_route, body) {
 
 
     const load = async (new_data) => {
-        isLoad.value = true
-        console.log(new_data, body, new_data ?? body)
+        isLoad.value = true 
         data.value =  await get(_route, new_data ?? body)  
         isLoad.value = false
     }

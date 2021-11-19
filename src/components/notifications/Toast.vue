@@ -8,7 +8,7 @@
           <div class="p-4">
             <div class="flex items-start">
               <div class="flex-shrink-0"> 
-                <component :is="type == 'warning' ? 'ExclamationIcon' : type == 'danger' ? 'ShieldExclamationIcon' : 'CheckCircleIcon'" :class="['h-6 w-6', type == 'warning' ? 'text-warning-400' : type == 'danger' ? 'text-danger-400' : 'text-success-400']" aria-hidden="true" />
+                <component :is="type == 'warning' ? 'ExclamationIcon' : type == 'danger' ? 'ShieldExclamationIcon' : type == 'success' ? 'CheckCircleIcon' : 'InformationCircleIcon'" :class="['h-6 w-6', type == 'warning' ? 'text-warning-400' : type == 'danger' ? 'text-danger-400' : type == 'success' ? 'text-success-400' : 'text-primary-400']" aria-hidden="true" />
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <p class="text-sm font-medium text-gray-900">
