@@ -15,14 +15,14 @@ export default function (_route, start_data) {
     const isReload = ref(true)
  
 
-    const data = ref(start_data ? start_data : undefined) 
+    const data = ref(undefined) 
 
     const load = async () => {
         isReload.value = true 
         if (!data?.value?.headers) {
             data.value.headers = []
         } 
-        data.value = await list(_route, lodash.cloneDeep(data.value))
+        data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data })
         if (!data?.value?.page) {
             data.value.page = data.value.meta.pagination.current_page
         }
@@ -37,7 +37,7 @@ export default function (_route, start_data) {
         if (!data?.value?.headers) {
             data.value.headers = []
         } 
-        data.value = await list(_route)
+        data.value = await list(_route, { ...start_data })
         if (!data?.value?.page) {
             data.value.page = data.value.meta.pagination.current_page
         }
@@ -50,7 +50,7 @@ export default function (_route, start_data) {
     const start = async () => {
         isLoad.value = true
         isReload.value = true
-        data.value = await list(_route, data.value) 
+        data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data }) 
         // !data.value?.headers ?  data.value.headers : null  
         if (!data.value.page) { 
             data.value.page = data.value.meta.pagination.current_page 

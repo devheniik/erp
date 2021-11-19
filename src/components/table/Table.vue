@@ -7,8 +7,7 @@
                         <thead class="bg-primary-50 rounded-xl">
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    <div
-                                        class="rounded-full flex items-center text-gray-400 hover:text-gray-600">
+                                    <div class="rounded-full flex items-center text-gray-400 hover:text-gray-600">
                                         <span class="sr-only">Open options</span>
                                         <MenuIcon class="h-5 w-5" aria-hidden="true" />
                                     </div>
