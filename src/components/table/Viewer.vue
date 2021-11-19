@@ -12,6 +12,10 @@
                     <bar v-bind=data.bar.config :data=data.bar.data @reload=load()> 
                     </bar>
                 </div>
+
+                <div class="w-full my-5 mx-2">
+                    <component v-for="(component, i) in data.components.start" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
+                </div> 
                 
                 <div class="w-full flex flex-row items-center  ml-2.5 mt-3 justify-between">
                     <p class="text-3xl text-gray-700 whitespace-nowrap">{{ data.title ?? 'Таблица' }}</p>
@@ -37,13 +41,7 @@
                 <div v-if="data.buttons" class="flex justify-end ml-2.5 mr-5 mt-5"> 
                         <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton> 
                 </div> 
-
-
-
-                <div class="w-full my-5 mx-2">
-                    <component v-for="(component, i) in data.components.start" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
-                </div> 
-
+ 
 
                 <div class="my-5 mr-5" v-if="data.data.length">
                     <utable @sort="sort($event)" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
