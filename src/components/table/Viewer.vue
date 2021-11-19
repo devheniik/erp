@@ -87,8 +87,7 @@
     const props = defineProps({
         api: String,
         params: Object,
-        modalSelect: Boolean,
-        route_card: String
+        modalSelect: Boolean
     })
 
     const emit = defineEmits(['select']) 

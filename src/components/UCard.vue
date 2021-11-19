@@ -3,7 +3,7 @@
         <layout v-model:config="data.tabs" @reload="load({ id: $event })" v-bind="data.global">
             <!-- rid = $event; load()   -->
             <div class="h-full">
-                <component :is="data.tabs.find(e => e.active).component" v-bind="data.tabs.find(e => e.active).config">
+                <component v-for="(component, i) in data.tabs" :key="i" v-show="component.active" :is="component.component" v-bind="component.config">
                 </component>
             </div>
 
