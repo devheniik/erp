@@ -7,10 +7,10 @@
       </div>-->
       <div class=" border-gray-200 px-4 py-1.5 sm:p-0 flex flex-col lg:flex-row justify-between">
         <dl v-for="(dl, i) in data" :key="i" class="sm:divide-y sm:divide-gray-200 w-full">
-          <div v-for="(d, i) in dl" :key="i"  class="py-3 sm:py-1.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"> 
-            <dd class="mt-1 text-sm text-gray-800 sm:mt-0 sm:col-span-2 text-right"> 
-              {{ d }} 
-            </dd>
+          <div v-for="(d, i) in dl" :key="i"  class="py-3 sm:py-1.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500 whitespace-nowrap truncate">
+              {{ d ?? " " }}
+            </dt> 
           </div> 
         </dl>   
       </div>
