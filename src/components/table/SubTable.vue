@@ -1,10 +1,5 @@
 <template> 
-    <div v-if="true" class="bg-white shadow overflow-hidden sm:rounded-lg w-[98%] my-5 px-5"> 
-      <!--<div class="px-4 py-1.5 sm:px-6" @click="open = !open">
-        <h3 class="text-lg leading-6 font-medium text-gray-900"> 
-          <span class="text-gray-500 mr-2">Заказ:</span>{{ data.data.zakkode }} 
-        </h3> 
-      </div>-->
+    <div v-if="true" class="bg-white shadow overflow-hidden sm:rounded-lg w-[98%] my-5 px-5">  
       <div class=" border-gray-200 px-4 py-1.5 sm:p-0 flex flex-col lg:flex-row justify-between w-full">
         <div class="flex flex-col w-full">
           <div v-for="(dl, i) in data" :key="i" class="flex flex-col divide-y-2 py-1">
