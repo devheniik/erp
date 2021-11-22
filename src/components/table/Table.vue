@@ -54,7 +54,7 @@
                                     class="px-6 py-4 whitespace-nowrap text-sm text-left">
                                     <div v-if="typeof(field) === 'object' "
                                         class="text-primary-500 hover:underline cursor-pointer"
-                                        @click="!modalSelect && field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : $emit('select',col) ">
+                                        @click="field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',col.data) : null">
                                         {{field?.label}}
                                     </div>
                                     <div v-else>

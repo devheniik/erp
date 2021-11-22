@@ -52,8 +52,13 @@
     const sideRef = ref(true)
 
 
-    watchEffect(() => {
+    watchEffect(() => { 
         if (selected.value) {
+            if (typeof(selected.value) == 'object') {
+                emit('select_params', selected.value.params)
+                emit('select', selected.value.api) 
+                return
+            }
             emit('select', selected.value)
             updateRender()
         }
