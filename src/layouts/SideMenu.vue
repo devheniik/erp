@@ -177,14 +177,14 @@
                 </div>
                 <div class="ml-3">
                   <p class="text-sm font-medium text-gray-200 group-hover:text-gray-100" @click="$toast({component: 'toast', data: {type: 'warning', message: `text`}})">
-                    Whitney Francis
+                    Пользователь
                   </p>
                   <!-- <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
                     View profile 
                   </p>  -->
                   <router-link as="p" :to="'/login'"
                     class="text-xs font-medium text-gray-300 group-hover:text-gray-200">
-                    Logout
+                    Выйти
                   </router-link>
                 </div>
               </div>

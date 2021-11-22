@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="w-full my-5 mx-2">
-                    <component v-for="(component, i) in data.components.start" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
+                    <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
                 </div> 
                 
                 <div class="w-full flex flex-row items-center  ml-2.5 mt-3 justify-between">
