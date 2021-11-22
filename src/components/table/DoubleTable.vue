@@ -53,6 +53,7 @@
 
 
     watchEffect(() => { 
+        console.log(selected.value)
         if (selected.value) {
             if (typeof(selected.value) == 'object') {
                 emit('select_params', selected.value.params)
