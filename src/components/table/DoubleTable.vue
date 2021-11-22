@@ -5,7 +5,7 @@
             <pane class="hide-scroll overflow-y-auto" size="30">
 
                 <div :class="['w-full h-full overflow-y-auto hide-scroll']">
-                    <component :is="component" class="relative" :api="api" @select="selected = $event">
+                    <component :is="component" class="relative" :api="api" :params="params" :modelSelect="true" @select="selected = $event">
 
                     </component>
                 </div>
@@ -36,6 +36,7 @@
     const props = defineProps({
         api: String,
         component: String,
+        params: Object,
         // tree: Boolean,
         // rollup: Boolean
     })

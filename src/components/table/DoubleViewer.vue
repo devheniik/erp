@@ -1,5 +1,5 @@
 <template>
-    <double-table :component="component"  :api="menu" @select="link = $event">
+    <double-table :component="component" :params="root_params" :api="menu" @select="link = $event">
         <viewer :api="link" :params="params">  
         </viewer>  
     </double-table> 
@@ -11,6 +11,7 @@ import {ref} from 'vue'
 const props = defineProps({
     menu: String,
     params: Object,
+    root_params: Object,
     component: String
 })
  

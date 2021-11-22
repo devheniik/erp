@@ -32,9 +32,11 @@ import UModal from './UModal.vue'
 import UButton from './Button.vue'
 import Empty from './table/Empty.vue'
 import Row from './table/Row.vue'
+import ListInput from './filters/InputSearch.vue'
 
 
 export default app => {
+  // app.component('list-input', ListInput)
   app.component('finder', Finder)
   app.component('row', Row)
   app.component('empty', Empty)
