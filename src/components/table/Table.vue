@@ -6,13 +6,13 @@
                     <table class="w-full divide-y divide-gray-200">
                         <thead class="bg-primary-50 rounded-xl">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th v-show="row" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     <div class="rounded-full flex items-center text-gray-400 hover:text-gray-600">
                                         <span class="sr-only">Open options</span>
                                         <MenuIcon class="h-5 w-5" aria-hidden="true" />
                                     </div>
                                 </th>
-                                <th
+                                <th v-show="select"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     <Switch :value="isAllSelect" @click="allSelect(!isAllSelect)"
                                         :class="[isAllSelect ? 'bg-indigo-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
@@ -39,10 +39,10 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             <tr v-for="col in body" :key="col.uid" :class="t_color(col.color)">
-                                <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer">
+                                <td v-show="row" class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer">
                                     <row></row> 
                                 </td>
-                                <td
+                                <td v-show="select"
                                     class="px-6 py-4 whitespace-nowrap text-left text-sm text-primary-600 hover:underline cursor-pointer">
                                     <Switch v-model="col.selected"
                                         :class="[col.selected ? 'bg-indigo-600' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
@@ -84,6 +84,8 @@
     } from 'vue'
     const props = defineProps({
         headers: Array,
+        row: Boolean,
+        select: Boolean,
         body: Array,
         modalSelect: Boolean,
         sort: Object

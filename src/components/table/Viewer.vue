@@ -39,7 +39,7 @@
  
 
                 <div class="my-5 mr-5">
-                    <utable @sort="sort($event)" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
+                    <utable @sort="sort($event)" :v-bind="{ row: data.show_row_select ?? false, select: data.show_row_burgers ?? false }" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
                 </div>
  
 
