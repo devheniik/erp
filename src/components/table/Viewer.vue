@@ -37,13 +37,10 @@
                         <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton> 
                 </div> 
  
-
                 <div class="my-5 mr-5">
                     <utable @sort="sort($event)" :v-bind="{ row: data.show_row_select ?? false, select: data.show_row_burgers ?? false }" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
                 </div>
  
-
-
                 <div class="w-full my-5 mx-2" v-if="data?.components?.end?.length">
                     <component v-for="(component, i) in data.components.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
                 </div> 
