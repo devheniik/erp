@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex items-center justify-center w-full top-0 left-0 z-40">
+  <div class="h-full flex items-center justify-center w-full top-0 left-0 z-40 relative">
     <div class="mt-4 z-40">
       <div class="flex items-center justify-center flex-shrink-0 text-gray-800"> 
         <CogIcon class="h-16 w-16 animate-spin" />

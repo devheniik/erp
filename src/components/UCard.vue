@@ -1,8 +1,8 @@
 <template>
-    <div v-if="!isLoad" class="h-card">
+    <div v-if="!isLoad" class="h-full" >
         <layout v-model:config="data.tabs" @reload="load({ id: $event })" v-bind="data.global">
             <!-- rid = $event; load()   -->
-            <div class="h-full">
+            <div class="h-card" id="card123321">
                 <component v-for="(component, i) in data.tabs" :key="i" v-show="component.active" :is="component.component" v-bind="component.config">
                 </component>
             </div>
