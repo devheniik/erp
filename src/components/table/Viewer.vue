@@ -101,6 +101,7 @@
     
     const select = (data) => {  
         if(props.modalSelect){
+            console.log(data, 'viewer');
             emit('select', data)
         } 
     }
