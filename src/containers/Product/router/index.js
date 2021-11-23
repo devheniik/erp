@@ -31,7 +31,7 @@ export default [
     {
         path: '/product/:id',
         name: 'product-update',
-        params: {
+        props: {
             api: 'products/show'
         },
         component: () => import('../../../components/UCard.vue'),
