@@ -36,7 +36,7 @@ import ListInput from './filters/InputSearch.vue'
 
 
 export default app => {
-  // app.component('list-input', ListInput)
+  app.component('list-input', ListInput)
   app.component('finder', Finder)
   app.component('row', Row)
   app.component('empty', Empty)
