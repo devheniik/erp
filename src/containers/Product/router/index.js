@@ -31,7 +31,10 @@ export default [
     {
         path: '/product/:id',
         name: 'product-update',
-        component: () => import('@product/views/Update.vue'),
+        params: {
+            api: 'orders/show'
+        },
+        component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
