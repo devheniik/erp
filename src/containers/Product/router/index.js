@@ -32,7 +32,7 @@ export default [
         path: '/product/:id',
         name: 'product-update',
         params: {
-            api: 'orders/show'
+            api: 'products/show'
         },
         component: () => import('../../../components/UCard.vue'),
         meta: {
