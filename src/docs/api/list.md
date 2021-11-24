@@ -103,6 +103,16 @@
               name: 'umodal' 
             }
           },
+          eidtablecol: { // ячейка
+            value: '1312313',
+            type: 'input',
+            data: {
+                name: '',
+                type: '',
+                placeholder: ''
+              },  
+            }
+          },
           fio: '123123',
           zakaz: '123',
           tr: '12332'
@@ -112,22 +122,28 @@
   components: {
     start: [
       {
-        component: 'sub-table', // суб таблица
-        config: { 
-          // 
-         },
-        data: [
-          [ // порная коллонка
-            { // Строка 
-                label: 'Всего, в вал. операций',
-                value: 0 
-            },
-            {
-                label: 'Всего, в вал. операций',
-                value: 0
-            }
-          ]
-        ]
+        component: 'correction', // суб таблица
+        config: {},
+        data: {
+          first: {
+            type: '',
+            name: '',
+            label: '',
+            id: ''
+          },
+          second: {
+            type: '',
+            name: '',
+            label: '',
+            id: ''
+          },
+          button: {
+            label: '',
+            data: {
+              query: { /* ... */ }
+            } 
+          }
+        }
       }
     ],
     end: [
