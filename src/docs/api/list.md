@@ -124,8 +124,6 @@
       {
         component: 'correction', // суб таблица
         config: {},
-        
-        ],
         data: {
           first: {
             type: '',
@@ -142,7 +140,7 @@
           button: {
             label: '',
             data: {
-              query: { /* ... */}
+              query: { /* ... */ }
             } 
           }
         }
