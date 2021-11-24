@@ -28,7 +28,7 @@
             
             
         </form>
-        <div v-if="data.buttons" class="flex items-center justify-center w-full"> 
+        <div v-if="data.buttons" class="flex items-center justify-center w-full mt-2"> 
             <ubutton @save="save($event)" v-for="(button, i) in data.buttons" :key="i" v-bind="button" class="px-4"> </ubutton>  
         </div>  
     </div>
