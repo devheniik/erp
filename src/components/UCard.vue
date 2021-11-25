@@ -2,9 +2,11 @@
     <div v-if="!isLoad" class="h-full" >
         <layout v-model:config="data.tabs" @reload="load({ id: $event })" v-bind="data.global">
             <!-- rid = $event; load()   -->
-            <div class="card " id="card123321">
-                <component v-for="(component, i) in data.tabs" :key="i" v-show="component.active" :is="component.component" v-bind="component.config">
-                </component>
+            <div class="card">
+                <div class="h-[100%]" id="card123321">
+                    <component v-for="(component, i) in data.tabs" :key="i" v-show="component.active" :is="component.component" v-bind="component.config">
+                    </component>
+                </div>             
             </div> 
         </layout>
     </div>
