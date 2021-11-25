@@ -4,10 +4,7 @@
             <list v-model="entity" :data="{ list: options}"></list> 
         </div> -->
         <double-table :api="list" :component="'side-bar'" :options="[]" @select="link = table($event)"> 
-            <viewer  :api="link" route_card="operation-update"> 
-                <template v-slot:create>
-                    <create></create>
-                </template>
+            <viewer  :api="link">  
             </viewer>  
         </double-table>
     </div>

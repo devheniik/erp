@@ -142,10 +142,10 @@
                                     <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" />
                                 </div>
                                 <div class="ml-3">
-                                    <p class="text-base font-medium text-gray-200 group-hover:text-gray-100" @click="$toast({component: 'toast', data: {type: 'warning', message: `text`}})">
+                                    <p class="text-base font-medium text-gray-900 group-hover:text-gray-100" @click="$toast({component: 'toast', data: {type: 'warning', message: `text`}})">
                                         Пользователь
                                     </p> 
-                                    <router-link as="p" :to="'/login'" class="text-xs font-medium text-gray-300 group-hover:text-gray-200">
+                                    <router-link as="p" :to="'/login'" class="text-xs font-medium text-gray-900 group-hover:text-gray-200">
                                         Выйти
                                     </router-link>
                                 </div>

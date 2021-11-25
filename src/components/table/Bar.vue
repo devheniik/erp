@@ -91,7 +91,7 @@ import router from "@/router"
                 break;
 
             case 'window':
-                app.appContext.config.globalProperties.$open(router.resolve({ name: obj.value, params: obj?.params ?? {} })) 
+                app.appContext.config.globalProperties.$open(router.resolve({ name: obj.value, query: obj?.query ?? {}, params: obj?.params ?? {} })) 
                 break;
 
         }

@@ -10,6 +10,7 @@ import SideTableLayout from "./table/SideTableLayout.vue"
 import SideBarLayout from "./table/SideBarLayout.vue"
 import DoubleTable from "./table/DoubleTable.vue"
 import DoubleViewer from "./table/DoubleViewer.vue"
+import DoubleViewerApi from "./table/DoubleViewerApi.vue"
 import RollUp from "./table/RollUp.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
@@ -66,6 +67,7 @@ export default app => {
   app.component("date", Date)
   app.component("double-table", DoubleTable)
   app.component("double-viewer", DoubleViewer)
+  app.component("double-viewer-api", DoubleViewerApi)
   app.component("side-table", SideTableLayout)
   app.component("side-bar", SideBarLayout)
   app.component("roll-up", RollUp)

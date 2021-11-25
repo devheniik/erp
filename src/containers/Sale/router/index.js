@@ -30,14 +30,18 @@ export default [
     {
         path: '/sales/products',
         name: 'sale-product-view',
-        component: () => import('@sale/views/Product/List.vue'),
+        props: (route) => ({
+            api: 'products/catalog/show',
+            params: route.query
+         }), 
+        component: () => import('../../../components/table/DoubleViewerApi.vue'), 
         meta: {
             layout: 'SideMenu',
             requreAuth: false,
             permition: null,
             uname: 'sale-product-view'
         }
-    },
+    }, 
     {
         path: '/sales/products/list',
         name: 'sale-product-update',

@@ -30,8 +30,7 @@
             data.label && modelValue.list == null && !data.value_default
               ? data.label
               : modelValue.list == null && data.value_default
-              ? data?.list?.find((e) => e.value == data.value_default.list)
-                  .label
+              ? data?.list?.find((e) => e.value == data.value_default.list).label
               : data?.list?.find((e) => e.value == modelValue.list).label ??
                 data.label ??
                 data.list[0].label
