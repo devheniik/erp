@@ -29,7 +29,7 @@
     }
 
     .button-hover-box-primary{
-        @apply inline-flex whitespace-nowrap items-center justify-center h-9  w-9 border  text-xs font-medium rounded-md text-gray-500 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
+        @apply inline-flex whitespace-nowrap items-center justify-center w-[32px] h-[32px] border  text-xs font-medium rounded-md text-gray-500 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
     }
 
     .button-hover-primary-active{
