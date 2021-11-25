@@ -1063,7 +1063,7 @@
   .p-inputtext.p-invalid.p-component {
     border-color: #f0a9a7;
   }
-  .p-inputtext.p-inputtext-sm {
+  .p-inputtext.p-inputtext-base {
     font-size: 0.875rem;
     padding: 0.65625rem 0.65625rem;
   }
@@ -1126,7 +1126,7 @@
     background-color: #ffffff;
   }
   
-  .p-inputtext-sm .p-inputtext {
+  .p-inputtext-base .p-inputtext {
     font-size: 0.875rem;
     padding: 0.65625rem 0.65625rem;
   }

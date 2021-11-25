@@ -10,7 +10,7 @@
 @import './components/label.css';
 @import './components/dropdown.css';
 @import './components/textarea.css';
-@import './components/button.css';
+@import './components/button.scss';
 
 @import './base/grid.css';
 

@@ -4,7 +4,7 @@
             <div v-if="!custom"
                 class="flex items-center justify-between bg-primary-300 text-gray-700 rounded-lg border-2 border-primary-300 w-auto px-3"
                 style="height:  37.6px;">
-                <label class="block text-sm font-medium mx-2">{{ label }}</label>
+                <label class="block text-base font-medium mx-2">{{ label }}</label>
                 <SearchIcon class="h-5 w-5" />
             </div>
             <slot v-else>

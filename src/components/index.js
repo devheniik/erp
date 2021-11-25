@@ -23,6 +23,7 @@ import Finder from "./Finder.vue"
 import Bar from "./table/Bar.vue"
 import SubTable from "./table/SubTable.vue"
 import Alert from "./table/Alert.vue"
+import Correction from "./table/Correction.vue"
 import Toast from "./notifications/Toast.vue"
 import Zakokrugdo from "./modals/zakokrugdo.vue"
 import Zaktipceny from "./modals/zaktipceny.vue"
@@ -34,8 +35,12 @@ import Empty from './table/Empty.vue'
 import Row from './table/Row.vue'
 import ListInput from './filters/InputSearch.vue'
 
+// cells
+import InputCell from './table/Cells/InputCell.vue'
+
 
 export default app => {
+  app.component('input-cell', InputCell)
   app.component('list-input', ListInput)
   app.component('finder', Finder)
   app.component('row', Row)
@@ -52,6 +57,7 @@ export default app => {
   app.component("tree-level", TreeLevel)
   app.component("zakokrugdo", Zakokrugdo)
   app.component("toast", Toast)
+  app.component("correction", Correction)
   app.component("alert", Alert)
   app.component("sub-table", SubTable)
   app.component("bar", Bar)

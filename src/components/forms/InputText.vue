@@ -1,28 +1,76 @@
-<template> 
-    <div>
-        <label :for="name" class="block text-sm font-medium text-gray-700">{{label ?? name}}</label>
-        <div class="mt-0.5">
-            <input :required="required"  @input="$emit('update:modelValue',$event.target.value)" :value="modelValue" :disabled="disabled" :type="type" :name="name" :id="id" :class="['shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm rounded-md', required && (modelValue == 0 || !modelValue) ? 'border-danger-300' : 'border-gray-300']" :placeholder="placeholder"/>
-        </div>
-    </div> 
+<template>
+  <div>
+    <label
+      v-if="!hideLabel"
+      :for="name"
+      class="block text-base font-medium text-gray-700"
+      >{{ label ?? name }}</label
+    >
+    <div class="mt-0.5">
+      <input
+        ref="input"
+        :required="required"
+        @input="handler($event.target.value)"
+        :value="modelValue"
+        :disabled="disabled"
+        type="text"
+        :name="name"
+        :id="id"
+        :class="[
+          'shadow-sm block w-full sm:text-base rounded-md',
+          required && (modelValue == 0 || !modelValue)
+            ? 'border-danger-300'
+            : 'border-gray-300',
+          valid
+            ? 'focus:ring-primary-500 focus:border-primary-500'
+            : 'focus:ring-danger-500 focus:border-danger-500'
+        ]"
+        :placeholder="placeholder"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
-import InputText  from 'primevue/inputtext' 
+import { ref } from 'vue'
 const props = defineProps({
-    id: String,
-    name: String,
-    label: String,
-    type: String,
-    required: Boolean,
-    disabled: {
-        type: Boolean,
-        default: false
-    },
-    placeholder: String,
-    modelValue: String,
+  id: String,
+  name: String,
+  hideLabel: {
+    type: Boolean,
+    default: false
+  },
+  label: String,
+  type: String,
+  pattern: [String, JSON],
+  required: Boolean,
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  placeholder: String,
+  modelValue: [String, Number]
 })
 const emit = defineEmits(['update:modelValue'])
+
+const input = ref('input')
+const valid = ref(true)
+
+const handler = (event) => {
+  if (props.type == 'number') {
+    console.log(JSON.stringify(event))
+    if (/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/.exec(event)) {
+      emit('update:modelValue', event)
+      valid.value = true
+      return
+    }
+    input.value = props.modelValue
+    valid.value = false
+    return
+  }
+
+  emit('update:modelValue', event)
+}
 </script>
 
 <style lang="scss" scoped>

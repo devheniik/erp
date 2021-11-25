@@ -6,11 +6,25 @@ module.exports = {
     mode: 'jit',
     purge: [
         './index.html',
-         './src/**/*.{vue,js,ts,jsx,tsx}',
-         path.resolve(__dirname, './node_modules/litepie-datepicker/**/*.js')
-        ],
+        './src/**/*.{vue,js,ts,jsx,tsx}',
+        path.resolve(__dirname, './node_modules/litepie-datepicker/**/*.js')
+    ],
     darkMode: false, // or 'media' or 'class'
-    theme: { 
+    theme: {
+        fontSize: { 
+            'xs': '.65rem', 
+            'sm': '.75rem', 
+            'tiny': '.75rem',
+            'base': '.875rem',
+            'lg': '1.125rem',
+            'xl': '1.25rem',
+            '2xl': '1.5rem', 
+            '3xl': '1.875rem', 
+            '4xl': '2.25rem',
+            '5xl': '3rem',
+            '6xl': '4rem', 
+            '7xl': '5rem',
+        },
         colors: {
             primary: colors.blue,
             secondary: colors.coolGray,
@@ -28,11 +42,11 @@ module.exports = {
             white: colors.white,
             indigo: colors.indigo,
             red: colors.red,
-            yellow: colors.yellow, 
+            yellow: colors.yellow,
 
         },
         extend: {
-            colors:{
+            colors: {
                 'litepie-primary': colors.blue, // color system for light mode
             },
             fontFamily: {
@@ -44,7 +58,7 @@ module.exports = {
         },
     },
     variants: {
-        extend: { 
+        extend: {
             zIndex: ["responsive", "hover"],
             position: ["responsive", "hover"],
             padding: ["responsive", "last"],

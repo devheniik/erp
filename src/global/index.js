@@ -9,7 +9,7 @@ import { Russian } from "flatpickr/dist/l10n/ru.js"
 
 import LitepieDatepicker from 'litepie-datepicker'
 
-
+import Maska from 'maska'
  
 
 flatpickr.setDefaults(
@@ -20,6 +20,8 @@ flatpickr.setDefaults(
     static : true
   }
 )
+
+console.log(Maska)
  
 
 import PrimeVue from 'primevue/config'
@@ -29,6 +31,8 @@ export default app => {
 
   app.use(LitepieDatepicker)
   app.use(PrimeVue) 
+
+  app.use(Maska)
  
 
  
