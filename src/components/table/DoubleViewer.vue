@@ -9,7 +9,7 @@
     </div>
     <div class="w-full h-2 bg-white"></div>
     <double-table :component="component" :params="root_params" :api="menu" @select="link = $event" @select-params="right_params = $event">
-        <viewer :api="link" :params="right_params">
+        <viewer :api="link" :params="{ ...right_params, ...params}">
         </viewer>
     </double-table>
 </div>

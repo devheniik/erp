@@ -83,7 +83,7 @@
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <splitpanes class="default-theme">
+    <splitpanes class="">
         <pane size="18" class="hidden lg:flex lg:flex-shrink-0 hide-scroll overflow-y-auto w-full">
             <div class="flex flex-col w-full">
                 <!-- Sidebar component, swap this element with another sidebar if you like -->

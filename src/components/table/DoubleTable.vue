@@ -1,6 +1,6 @@
 <template>
     <div class="w-full h-full flex flex-wrap">
-        <splitpanes class="default-theme h-full"> 
+        <splitpanes class=" h-full"> 
             <!-- sideRef && !component == 'tree' && !component == 'rollup' ? 'w-6/12' : sideRef && (component == 'tree' || component == 'tree-level') ? 'w-4/12' : sideRef && component == 'rollup' ? 'w-4/12' :  -->
             <pane class="hide-scroll overflow-y-auto" size="30">
                 <div :class="['w-full h-full overflow-y-auto hide-scroll']">

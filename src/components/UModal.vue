@@ -3,8 +3,7 @@
         <form ref="form">
             <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
             <div v-for="section in data.sections" :key="section.id" class="rounded-lg">
-                <h1 class="label-big">{{section.config.title}}<span class="cursor-pointer"
-                        @click="section.dop_open = !section.dop_open">{{ section.dop_open ? '(скрыть)' : '(подробнее)' }}</span>
+                <h1 class="">{{section.config.title}}<span class="cursor-pointer" @click="section.dop_open = !section.dop_open">{{ section.dop_open ? '(скрыть)' : '(подробнее)' }}</span>
                 </h1>
                 <div class="grid-2-2-1 section">
                     <div v-for="(col, col_id) in section.childs" :key="col_id">

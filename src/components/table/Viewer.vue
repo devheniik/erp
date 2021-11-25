@@ -1,6 +1,6 @@
 <template>
 <div :key="render_key" class="h-full w-full">
-    <div v-if="!isLoad && !isReload && data" class="w-full min-h-full flex flex-col justify-between">
+    <div v-if="!isLoad && data" class="w-full min-h-full flex flex-col justify-between">
         <form @submit.prevent ref="form" class="w-full h-full">
 
             <!-- BAR -->
