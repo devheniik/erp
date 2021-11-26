@@ -1,35 +1,35 @@
 export default function (color) { 
     switch (color) {
         case 'Зелёный':
-        return 'bg-green-100'
+        return 'bg-green'
 
         case 'Жёлтый':
-        return 'bg-yellow-100'
+        return 'bg-yellow'
 
         case 'Красный':
-        return 'bg-red-100'
+        return 'bg-red'
 
         case 'Коричневый':
         return 'bg-warmGray-300'
 
         case 'Фиолетовый':
-        return 'bg-purple-100'
+        return 'bg-purple'
 
         case 'Оранжевый':
-        return 'bg-orange-100'
+        return 'bg-orange'
 
         case 'Розовый':
-        return 'bg-pink-100'
+        return 'bg-pink'
 
         case 'Синий':
-        return 'bg-blue-100'
+        return 'bg-blue'
 
         case 'Чёрный':
         return 'bg-gray-600'
 
 
         default: 
-        return 'bg-white-100'
+        return 'bg-white'
              
     }
 }

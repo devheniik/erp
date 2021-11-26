@@ -13,7 +13,7 @@
                                 </div>
                             </th>
                             <th v-show="select" class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                <Switch :value="isAllSelect" @click="allSelect(!isAllSelect)" :class="[isAllSelect ? 'bg-indigo-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
+                                <Switch :value="isAllSelect" @click="allSelect(!isAllSelect)" :class="[isAllSelect ? 'bg-primary-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500']">
                                     <span aria-hidden="true" :class="[isAllSelect ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
                                 </Switch>
                             </th>
@@ -38,7 +38,7 @@
                                 <row></row>
                             </td>
                             <td v-show="select" class="px-4 py-2 whitespace-nowrap text-left text-base text-primary-600 hover:underline cursor-pointer">
-                                <Switch v-model="col.selected" :class="[col.selected ? 'bg-indigo-600' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
+                                <Switch v-model="col.selected" :class="[col.selected ? 'bg-primary-600' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500']">
                                     <span aria-hidden="true" :class="[col.selected ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
                                 </Switch>
                             </td>

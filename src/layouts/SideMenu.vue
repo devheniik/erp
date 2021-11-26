@@ -84,7 +84,7 @@
 
     <!-- Static sidebar for desktop -->
     <splitpanes class="">
-        <pane size="18" class="hidden lg:flex lg:flex-shrink-0 hide-scroll overflow-y-auto w-full">
+        <pane size="13" class="hidden lg:flex lg:flex-shrink-0 hide-scroll overflow-y-auto w-full">
             <div class="flex flex-col w-full">
                 <!-- Sidebar component, swap this element with another sidebar if you like -->
                 <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100  ">
@@ -155,7 +155,7 @@
                 </div>
             </div>
         </pane>
-        <pane size="100" class="hide-scroll overflow-y-auto">
+        <pane class="hide-scroll overflow-y-auto">
             <div class="flex flex-col min-w-0 flex-1 overflow-hidden h-full">
                 <div class="lg:hidden">
                     <div class="flex items-center justify-between  border-b   px-4 py-1.5 ">

@@ -11,24 +11,24 @@
 
             <!-- Titles and clear button -->
             <div class="w-full flex flex-row items-center  ml-2.5 mt-3 justify-between">
-                <p class="text-3xl text-gray-700 whitespace-nowrap">{{ data.title ?? 'Таблица' }}</p>
+                <p class="text-2xl text-gray-700 whitespace-nowrap">{{ data.title ?? 'Таблица' }}</p>
                 <div>
-                    <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-2 border border-transparent rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700">
-                                        <FilterIcon class="h-5 w-5" aria-hidden="true" />
-                                    </button>
-                    <button @click="reLoad(); render_key++" type="button" class="inline-flex items-center  p-2 mr-8 border border-transparent rounded-full shadow-sm text-white bg-danger-600 hover:bg-danger-700">
-                                        <XIcon class="h-5 w-5" aria-hidden="true" />
-                                    </button>
+                    <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-2 rounded-full shadow-sm text-primary-500 hover:bg-gray-100 hover:shadow-md">
+                        <FilterIcon class="h-5 w-5" aria-hidden="true" />
+                    </button>
+                    <button @click="reLoad(); render_key++" type="button" class="inline-flex items-center  p-2 mr-5 rounded-full shadow-sm text-danger-500 hover:bg-gray-100 hover:shadow-md">
+                        <XIcon class="h-5 w-5" aria-hidden="true" />
+                    </button>
                 </div>
             </div>
 
             <!-- Components Start -->
-            <div class="my-5 mx-2 w-[98%]">
+            <div v-if="data.components?.start.length" class="my-5 mx-2 w-[98%]">
                 <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" @edit="edit($event)" :is="component.component"></component>
             </div>
             
             <!-- Filters -->
-            <div v-if="filter_show" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
+            <div v-if="filter_show && data.filters?.length" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
                 <!-- :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" -->
                 <div :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
                     <group noLabel v-if="filter.filter_type == 'group'" :readonly="filter.readonly" v-bind="filter.bind" v-model="filter.value" @update:modelValue="load"></group>
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Buttons -->
-            <div v-if="data.buttons" class="flex justify-end ml-2.5 mr-5 mt-5">
+            <div v-if="data.buttons?.length" class="flex justify-end ml-2.5 mr-5 mt-5">
                 <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton>
             </div>
 
