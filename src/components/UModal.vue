@@ -2,15 +2,15 @@
 <div v-if="!isLoad" class="p-5">
     <div v-if="data?.tabs?.length">
         <div class="w-full">
-            <div class="sm:hidden">
+            <!-- <div class="sm:hidden">
                 <select class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300">
                         <option v-for="(b, i) in data.tabs"  :key="i" :value="b.active" :selected="active == b.component" >{{ b.label }}  </option>
                     </select>
-            </div>
+            </div> -->
             <div class="hidden sm:block w-full">
                 <div class=" bg-white w-full flex items-center justify-center">
                     <nav class="flex" aria-label="Tabs">
-                        <a v-for="(b, i) in data.tabs" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-secondary-100' : 'text-secondary-50 hover:bg-primary-600 bg-primary-500 hover:text-secondary-50', (i == (data.tabs.length - 1) ?? i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (data.tabs.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
+                        <a @click="handle_tab(i)" v-for="(b, i) in data.tabs" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-secondary-100' : 'text-secondary-50 hover:bg-primary-600 bg-primary-500 hover:text-secondary-50', (i == (data.tabs.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (data.tabs.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
                     </nav>
                 </div>
             </div>
@@ -62,7 +62,6 @@
                                 <component v-if="component.field.component" v-model="component.field.value" :required="component.field.required" v-bind="component.field.bind" :is="component.field.component"> </component>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -98,6 +97,13 @@ const {
     isLoad
 } = get(props.api, props.params)
 
+const handle_tab = (i) => {
+    data.value.tabs.forEach(e => {
+        e.active = false
+    })
+    data.value.tabs[i].active = true
+}
+
 // const render_data = ref(data.tabs ? data.tabs.find(active))
 
 const form = ref(null)
@@ -108,6 +114,11 @@ const save = async (e) => {
         data.value.hidden.forEach(e => {
             formData.append(e.name, e.value)
         })
+    }
+    if (e.params) {
+        for (const [key, value] of Object.entries(e.params)) {
+            formData.append(key, value)
+        }
     }
     let valid = true
     form.value.forEach(e => {
