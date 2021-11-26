@@ -1,5 +1,7 @@
-const colors = require('tailwindcss/colors')
-const path = require('path');
+const colors = require('./colors/index');
+const path = require('path'); 
+
+const color_theme = colors['macos'];
 
 
 module.exports = {
@@ -25,29 +27,10 @@ module.exports = {
             '6xl': '4rem', 
             '7xl': '5rem',
         },
-        colors: {
-            primary: colors.blue,
-            secondary: colors.coolGray,
-            success: colors.green,
-            warning: colors.orange,
-            danger: colors.red,
-            gray: colors.gray,
-            blue: colors.blue,
-            orange: colors.orange,
-            warmGray: colors.warmGray,
-            pink: colors.pink,
-            purple: colors.purple,
-            green: colors.emerald,
-            black: colors.black,
-            white: colors.white,
-            indigo: colors.indigo,
-            red: colors.red,
-            yellow: colors.yellow,
-
-        },
+        colors: color_theme,
         extend: {
             colors: {
-                'litepie-primary': colors.blue, // color system for light mode
+                'litepie-primary': color_theme.primary, // color system for light mode
             },
             fontFamily: {
                 body: ['Montserrat']

@@ -5,7 +5,7 @@
             <div class="overflow-y-auto border-t border-gray-300 hide-scroll z-40 inline-flex items-center space-x-1 justify-center w-full bg-white py-3">
                 <!-- <button class="inline-flex items-center px-1 text-xs font-medium">
                     Сущьность
-                    <span class="text-secondary-600 ml-2">№</span>
+                    <span class="text-gray-600 ml-2">№</span>
                 </button> -->
                 <modal-select @change="handle_link({ name: route_name, params: { id: $event }})" :data="{ api: api }" custom>
                     <button class="button-hover-box-primary">
@@ -45,7 +45,7 @@
         <div class="hidden sm:block">
             <div class="border-b border-gray-200 bg-white">
                 <nav class="flex" aria-label="Tabs">
-                    <a v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-secondary-100' : 'text-secondary-50 hover:bg-primary-600 bg-primary-500 hover:text-secondary-50', i == 0 ? 'rounded-l-md' : i == (buttons.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
+                    <a v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-gray-100' : 'text-gray-50 hover:bg-primary-600 bg-primary-500 hover:text-gray-50', i == 0 ? 'rounded-l-md' : i == (buttons.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
                 </nav>
             </div>
         </div>

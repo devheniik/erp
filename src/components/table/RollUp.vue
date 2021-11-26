@@ -4,7 +4,7 @@
             <nav class="flex-1 border"> 
                 <template v-for="item in data" :key="item.name"> 
                     <Disclosure v-if="item.child" as="div" class="space-y-100" v-slot="{ open }"> 
-                        <DisclosureButton   :class="[open ? ' text-gray-900' : ' text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group bg-secondary-100 border-y border w-full flex items-center justify-between pr-2 py-4 text-left text-sm font-medium focus:outline-none focus:ring-b focus:ring-primary-500']">
+                        <DisclosureButton   :class="[open ? ' text-gray-900' : ' text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group bg-gray-100 border-y border w-full flex items-center justify-between pr-2 py-4 text-left text-sm font-medium focus:outline-none focus:ring-b focus:ring-primary-500']">
                              
                           <span class=" pl-2 w-full text-center whitespace-nowrap truncate">
                             {{ item.name }} 

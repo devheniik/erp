@@ -2,12 +2,12 @@
     <div v-if="!isLoad" class="p-2"> 
       <div class="flex justify-between items-center mb-2">
         <div class="flex flex-row">
-          <p v-for="l in letters_en" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-500 hover:underline cursor-pointer">
+          <p v-for="l in letters_en" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-400 hover:underline cursor-pointer">
             {{l}}
           </p>
         </div>
         <div class="flex flex-row">
-          <p v-for="l in letters_ru" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-500 hover:underline cursor-pointer">
+          <p v-for="l in letters_ru" @click="request.TFILTR=l; load()" :key="l" class="text-xs mx-0.5 text-primary-400 hover:underline cursor-pointer">
             {{l}}
           </p>
         </div>
@@ -30,10 +30,10 @@
                             <tbody>
                                 <tr v-for="(tr_d, Idx) in data.data" :key="Idx" :class="Idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'">
                                     <td v-for="(td_d, i) in tr_d" :key="i" class="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900">
-                                      <div v-if="typeof(td_d) == 'object'" @click="i == 1 ? $emit('select', tr_d) : null; habdle(td_d)" class="underline text-primary-500 cursor-pointer">
+                                      <div v-if="typeof(td_d) == 'object'" @click="i == 1 ? $emit('select', tr_d) : null; habdle(td_d)" class="underline text-primary-400 cursor-pointer">
                                         {{ td_d?.label }}
                                       </div>
-                                        <span v-else @click="i == 1 ? $emit('select', tr_d) : null" :class="i == 1 ? 'underline text-primary-500 cursor-pointer' : ''">
+                                        <span v-else @click="i == 1 ? $emit('select', tr_d) : null" :class="i == 1 ? 'underline text-primary-400 cursor-pointer' : ''">
                                             {{ td_d }} 
                                         </span>
                                     </td>

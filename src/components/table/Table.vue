@@ -4,7 +4,7 @@
         <div class="py-1 align-middle inline-block w-full sm:px-6 lg:px-8">
             <div :class="[body.length ? 'border-b border-gray-200' : '',  'sm:rounded-lg']">
                 <table class="w-full divide-y divide-gray-200">
-                    <thead class="bg-secondary-50 rounded-xl">
+                    <thead class="bg-gray-50 rounded-xl">
                         <tr>
                             <th v-show="row" class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 <div class="rounded-full flex items-center text-gray-400 hover:text-gray-600">
@@ -42,8 +42,8 @@
                                     <span aria-hidden="true" :class="[col.selected ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
                                 </Switch>
                             </td>
-                            <td v-for="(field, i) in col.value" :key="i" class="px-4 py-2 whitespace-nowrap text-base font-light text-left text-secondary-900">
-                                <div v-if="typeof(field) === 'object'" class="text-primary-500 hover:underline cursor-pointer" @click="field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
+                            <td v-for="(field, i) in col.value" :key="i" class="px-4 py-2 whitespace-nowrap text-base font-light text-left text-gray-900">
+                                <div v-if="typeof(field) === 'object'" class="text-primary-400 hover:underline cursor-pointer" @click="field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
                                     {{field?.label}}
                                 </div>
                                 <div v-else>

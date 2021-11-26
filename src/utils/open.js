@@ -1,6 +1,6 @@
 const install = app => {
     app.config.globalProperties.$open = (route) => { 
-        window.open(route.href, route.href, 'width=900,height=750')
+        window.open(route.href, route.href, 'width=750,height=750')
     }
   }
   

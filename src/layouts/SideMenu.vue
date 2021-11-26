@@ -22,9 +22,9 @@
                         <nav class="mt-5 flex-1" aria-label="Sidebar">
                             <div class="px-2 space-y-1 ">
                                 <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="cursor-pointer">
-                                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-secondary-200 text-gray-900' : 'text-secondary-800 hover:bg-secondary-200 hover:text-secondary-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
+                                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
                                         <div class="flex flex-wrap items-center">
-                                            <component :is="item.icon" :class="[item.current ? 'text-primary-600' : 'text-primary-500 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" /> {{ item.name }}
+                                            <component :is="item.icon" :class="[item.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" /> {{ item.name }}
                                         </div>
                                         <ChevronDownIcon class="h-3 w-3 scale-90" v-if="item.current && item.child.length > 0" />
                                         <ChevronLeftIcon class="h-3 w-3 scale-90" v-else-if="item.child.length > 0" />
@@ -32,9 +32,9 @@
                                     <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                                         <div v-show="item.current && item.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden ">
                                             <div v-for="(subItem, j) in item.child" :key="j" class="cursor-pointer">
-                                                <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-secondary-200 text-gray-900' : 'text-secondary-800 hover:bg-secondary-200 hover:text-secondary-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
+                                                <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
                                                     <div class="flex flex-wrap items-center pl-8">
-                                                        <!-- <component :is="subItem.icon" :class="[subItem.current ? 'text-primary-600' : 'text-primary-500 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
+                                                        <!-- <component :is="subItem.icon" :class="[subItem.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
                                                         {{ subItem.name }}
                                                     </div>
                                                     <ChevronDownIcon class="h-3 w-3 scale-90" v-if="subItem.current && subItem.child.length > 0" />
@@ -42,8 +42,8 @@
                                                 </div>
                                                 <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                                                     <div v-if="subItem.current && subItem.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
-                                                        <div @click="handleClick(thItem)" v-for="(thItem, k) in subItem.child" :key="k" :class="[thItem.current ? 'bg-secondary-200 text-gray-900' : 'text-secondary-800 hover:bg-secondary-200 hover:text-secondary-900', 'group flex items-center  px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
-                                                            <!-- <component :is="thItem.icon" :class="[thItem.current ? 'text-primary-600' : 'text-primary-500 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
+                                                        <div @click="handleClick(thItem)" v-for="(thItem, k) in subItem.child" :key="k" :class="[thItem.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center  px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
+                                                            <!-- <component :is="thItem.icon" :class="[thItem.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
                                                             <span class="pl-14">
                                                               {{ thItem.name }} 
                                                             </span>
@@ -87,7 +87,7 @@
         <pane size="18" class="hidden lg:flex lg:flex-shrink-0 hide-scroll overflow-y-auto w-full">
             <div class="flex flex-col w-full">
                 <!-- Sidebar component, swap this element with another sidebar if you like -->
-                <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-secondary-100  ">
+                <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100  ">
                     <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
                         <div class="flex items-center justify-start ml-2 flex-shrink-0 text-gray-800">
                             <!-- https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg -->
@@ -100,9 +100,9 @@
                         <nav class="mt-1 flex-1" aria-label="Sidebar">
                             <div class="px-2 space-y-1 ">
                                 <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="cursor-pointer">
-                                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-secondary-200 text-gray-900' : 'text-secondary-800 hover:bg-secondary-200 hover:text-secondary-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
+                                    <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
                                         <div class="flex flex-wrap items-center">
-                                            <component :is="item.icon" :class="[item.current ? 'text-primary-600' : 'text-primary-500 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" /> {{ item.name }}
+                                            <component :is="item.icon" :class="[item.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" /> {{ item.name }}
                                         </div>
                                         <ChevronDownIcon class="h-3 w-3 scale-90" v-if="item.current && item.child.length > 0" />
                                         <ChevronLeftIcon class="h-3 w-3 scale-90" v-else-if="item.child.length > 0" />
@@ -110,9 +110,9 @@
                                     <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                                         <div v-show="item.current && item.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden ">
                                             <div v-for="(subItem, j) in item.child" :key="j" class="cursor-pointer">
-                                                <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-secondary-200 text-gray-900' : 'text-secondary-800 hover:bg-secondary-200 hover:text-secondary-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
+                                                <div @click="!subItem.current ? handleClick(subItem) : subItem.current = false" :class="[subItem.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
                                                     <div class="flex flex-wrap items-center pl-8">
-                                                        <!-- <component :is="subItem.icon" :class="[subItem.current ? 'text-primary-600' : 'text-primary-500 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
+                                                        <!-- <component :is="subItem.icon" :class="[subItem.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
                                                         {{ subItem.name }}
                                                     </div>
                                                     <ChevronDownIcon class="h-3 w-3 scale-90" v-if="subItem.current && subItem.child.length > 0" />
@@ -120,8 +120,8 @@
                                                 </div>
                                                 <transition enter-active-class="translate-x-full" leave-active-class="translate-x-full">
                                                     <div v-if="subItem.current && subItem.child.length" class="transition-transform	easy-in duration-300 space-y-1 mt-1 overflow-hidden">
-                                                        <div @click="handleClick(thItem)" v-for="(thItem, k) in subItem.child" :key="k" :class="[thItem.current ? 'bg-secondary-200 text-gray-900' : 'text-secondary-800 hover:bg-secondary-200 hover:text-secondary-900', 'group flex items-center  px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
-                                                            <!-- <component :is="thItem.icon" :class="[thItem.current ? 'text-primary-600' : 'text-primary-500 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
+                                                        <div @click="handleClick(thItem)" v-for="(thItem, k) in subItem.child" :key="k" :class="[thItem.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center  px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
+                                                            <!-- <component :is="thItem.icon" :class="[thItem.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" />  -->
                                                             <span class="pl-14">
                                                               {{ thItem.name }} 
                                                             </span>

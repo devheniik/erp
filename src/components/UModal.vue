@@ -10,7 +10,7 @@
             <div class="hidden sm:block w-full">
                 <div class=" bg-white w-full flex items-center justify-center">
                     <nav class="flex" aria-label="Tabs">
-                        <a @click="handle_tab(i)" v-for="(b, i) in data.tabs" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-secondary-100' : 'text-secondary-50 hover:bg-primary-600 bg-primary-500 hover:text-secondary-50', (i == (data.tabs.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (data.tabs.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
+                        <a @click="handle_tab(i)" v-for="(b, i) in data.tabs" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-gray-100' : 'text-gray-50 hover:bg-primary-600 bg-primary-500 hover:text-gray-50', (i == (data.tabs.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (data.tabs.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
                     </nav>
                 </div>
             </div>
