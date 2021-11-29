@@ -2,10 +2,10 @@
     <div>
         <div>
               <div>
-                <label v-if="!noLabel" :for="name" class="block text-sm font-medium text-gray-700">{{label}}</label>
+                <label v-if="!noLabel" class="block text-sm font-medium text-gray-700">{{label}}</label>
                 <div class=" flex rounded-md shadow-sm">
                 <div class="relative flex items-stretch flex-grow focus-within:z-10">
-                    <input :value="local_label" :disabled="true" :type="type" :name="name" :id="id" :class="[`focus:ring-primary-500 h-[36px] focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm`, required && (modelValue == 0 || !modelValue) ? 'border-danger-300' : 'border-gray-300']" :placeholder="placeholder" />
+                    <input :value="local_label" :disabled="true" :type="type"  :class="[`focus:ring-primary-500 h-[36px] focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm`, required && (modelValue == 0 || !modelValue) ? 'border-danger-300' : 'border-gray-300']" :placeholder="placeholder" />
                 </div> 
                 <button v-if="modelValue != null" @click="clear()" title="Очистить" :class="['-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium  text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500']">
                     <XIcon  class="h-4 w-4 text-gray-400" aria-hidden="true"/> 
@@ -18,8 +18,8 @@
                 </button>
                 </div>
             </div>
-            <label :for="id" class="block text-sm font-medium text-gray-700 sr-only">{{label}}</label>
-            <input :value="Number(modelValue)" hidden="true" :required="required" type="hidden" :name="id"  class="focus:ring-primary-500 focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm border-gray-300"  />
+            <label :for="name" class="block text-sm font-medium text-gray-700 sr-only">{{label}}</label>
+            <input :value="Number(modelValue)" hidden="true" type="text" :required="required" :name="name" :id="name"  class="focus:ring-primary-500 sr-only focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm border-gray-300"  />
         </div>
 
     </div>

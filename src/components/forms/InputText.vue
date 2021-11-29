@@ -3,10 +3,10 @@
     <label
       v-if="!hideLabel"
       :for="name"
-      class="block text-base font-medium text-gray-700"
-      >{{ label ?? name }}</label
+      class="block text-sm font-medium text-gray-700"
+      >{{ label ? label : name }}</label
     >
-    <div class="mt-0.5">
+    <div>
       <input
         ref="input"
         :required="required"
@@ -17,7 +17,7 @@
         :name="name"
         :id="id"
         :class="[
-          'shadow-sm block w-full sm:text-base rounded-md',
+          'shadow-sm block w-full sm:text-base rounded-md h-[36px]',
           required && (modelValue == 0 || !modelValue)
             ? 'border-danger-300'
             : 'border-gray-300',
