@@ -12,8 +12,7 @@ export default async function (route, req) {
         response = await axios.post(route, req)
         // } else {
         //     response = await axios.post(route) 
-        // }  
-        console.log(response.data)
+        // }   
         if (response.data?.component == 'toast' && typeof(response.data?.data?.message) == 'string') {
             toast(JSON.parse(JSON.stringify(response.data)))
         }

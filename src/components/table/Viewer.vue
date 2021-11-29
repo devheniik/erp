@@ -32,7 +32,7 @@
                 <!-- :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" -->
                 <div :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
                     <group noLabel v-if="filter.filter_type == 'group'" :readonly="filter.readonly" v-bind="filter.bind" v-model="filter.value" @update:modelValue="load"></group>
-                    <component v-else @change="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.filter_type"></component>
+                    <component v-else @change="load" @touch="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.filter_type"></component>
                 </div>
             </div>
 

@@ -9,8 +9,8 @@
             </div> -->
             <div class="hidden sm:block w-full">
                 <div class=" bg-white w-full flex items-center justify-center">
-                    <nav class="flex" aria-label="Tabs">
-                        <a @click="handle_tab(i)" v-for="(b, i) in data.tabs" :key="i" type="button" :class="[b.active ? 'bg-primary-600 text-gray-100' : 'text-gray-50 hover:bg-primary-600 bg-primary-500 hover:text-gray-50', (i == (data.tabs.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (data.tabs.length - 1) ? 'rounded-r-md' : '', 'px-3 py-2 h-[32px] font-medium text-sm']">{{ b.label }}</a>
+                    <nav class="flex rounded-md bg-gray-200 p-0.5" aria-label="Tabs">
+                        <a @click="handle_tab(i)" v-for="(b, i) in data.tabs" :key="i" type="button" :class="[b.active ? 'bg-gradient-to-t from-primary-100 via-primary-400 to-primary-100 shadow-md text-gray-50' : 'text-gray-800', (i == (data.tabs.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (data.tabs.length - 1) ? 'rounded-r-md' : '', 'px-3 rounded-md  flex  items-center py-2 h-[28px] font-medium text-sm']">{{ b.label }}</a>
                     </nav>
                 </div>
             </div>
