@@ -6,7 +6,7 @@
             @change="$emit('update:modelValue', $event.target.value); $emit('change')"
             :id="id"
             :name="name"
-            :class="['h-[34px] block w-full pl-3 pr-10 pt-[5px] text-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-base rounded-md', required && (modelValue == 0 || !modelValue) ? 'border-danger-300' : 'border-gray-300']"
+            :class="['h-[36px] block w-full pl-3 pr-10 pt-[5px] text-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-base rounded-md', required && (modelValue == 0 || !modelValue) ? 'border-danger-300' : 'border-gray-300']"
         >
             <option
                 v-for="option in options"

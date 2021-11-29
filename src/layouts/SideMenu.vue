@@ -155,7 +155,7 @@
                 </div>
             </div>
         </pane>
-        <pane class="hide-scroll overflow-y-auto">
+        <pane class="hide-scroll overflow-y-auto" size="100%">
             <div class="flex flex-col min-w-0 flex-1 overflow-hidden h-full">
                 <div class="lg:hidden">
                     <div class="flex items-center justify-between  border-b   px-4 py-1.5 ">
@@ -168,9 +168,9 @@
                         </div>
                         <div>
                             <button type="button" class="-mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900" @click="sidebarOpen = true">
-              <span class="sr-only">Open sidebar</span>
-              <MenuIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
+                                <span class="sr-only">Open sidebar</span>
+                                <MenuIcon class="h-6 w-6" aria-hidden="true" />
+                            </button>
                         </div>
                     </div>
                 </div>

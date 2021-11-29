@@ -3,14 +3,14 @@
         <!-- @click="disabled ? null : item.uid ? [ $log(item.uid), $emit('select', item.uid) ] : nul" -->
         <div>
             <div @click="load(); current = !current"
-                :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-primary-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-b focus:ring-primary-500']">
-                <div class="flex flex-row items-center overflow-x-hidden">
-                    <StopIcon class="h-3 w-3 text-primary-400 mx-3" />
-                    <span class="whitespace-nowrap truncate">
+                :class="[item.current ? 'bg-gray-100 text-gray-900' : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900', 'group w-full flex items-center justify-between pr-2 py-1 text-left text-sm  rounded-md focus:outline-none focus:ring-b focus:ring-primary-500']">
+                <div class="flex flex-row items-center overflow-x-hidden"> 
+                    <ChevronDownIcon v-if="item.childs > 0" :class="[current ? 'text-gray-800' : 'text-gray-300 -rotate-90', 'mx-2  flex-shrink-0 h-3 w-3 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150']" />
+                    <div v-else class="opacity-0 mx-2 w-3"></div>
+                    <span :class="[current ? ' text-gray-800 font-medium' : '', 'whitespace-nowrap truncate']">
                         {{ item.a_s1 }}
                     </span>
                 </div>
-                <ChevronDownIcon v-if="item.childs > 0" :class="[current ? 'text-gray-400 rotate-90' : 'text-gray-300', 'mr-2 flex-shrink-0 h-3 w-3 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150']" />
             </div>
             <div v-if="current && child.length" class="mt-1">
                 <git @select="$emit('select', $event)" v-for="item in child" :api="api" :item="item" :key="item.name" class="p-1"></git>
