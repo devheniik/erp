@@ -23,7 +23,10 @@
             : 'border-gray-300',
           valid
             ? 'focus:ring-primary-500 focus:border-primary-500'
-            : 'focus:ring-danger-500 focus:border-danger-500'
+            : 'focus:ring-danger-500 focus:border-danger-500',
+          disabled
+            ? 'bg-gray-100 text-gray-400'
+            : ''  
         ]"
         :placeholder="placeholder"
       />
