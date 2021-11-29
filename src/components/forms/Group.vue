@@ -19,7 +19,7 @@
                 </div>
             </div>
             <label :for="id" class="block text-sm font-medium text-gray-700 sr-only">{{label}}</label>
-            <input :value="Number(modelValue)" hidden="true" type="text" :required="required" :name="id" :id="id"  class="focus:ring-primary-500 sr-only focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm border-gray-300"  />
+            <input :value="Number(modelValue)"  type="text" :required="required" :name="id" :id="id"  class="focus:ring-primary-500 sr-only focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm border-gray-300"  />
         </div>
 
     </div>

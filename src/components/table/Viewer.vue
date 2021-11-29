@@ -1,7 +1,7 @@
 <template>
 <div :key="render_key" class="h-full w-full">
     <div v-if="!isLoad && data" class="w-full min-h-full flex flex-col justify-between">
-        <form @submit.prevent ref="form" class="w-full h-full">
+        <div ref="form" class="w-full h-full">
 
             <!-- BAR -->
             <div class="w-full" v-if=data.bar>
@@ -50,7 +50,7 @@
             <div class="w-full my-5 mx-2" v-if="data?.components?.end?.length">
                 <component v-for="(component, i) in data.components.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
             </div>
-        </form>
+        </div>
 
         <!-- Pagination -->
         <div class="w-full mb-1.5">
