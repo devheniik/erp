@@ -1,5 +1,5 @@
 <template>
-    <button @click="handler"
+    <button @click="handle"
         :class="[`bg-gradient-to-t from-${type}-100 via-${type}-400 to-${type}-100`, 'inline-flex whitespace-nowrap px-2 items-center justify-center py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white  focus:outline-none focus:ring-0']">
         {{label}}
           <!-- type == 'warning' ? 'bg-warning-600 hover:bg-warning-700' : type == 'danger' ? 'bg-danger-600 hover:bg-danger-700' : type == 'success' ? 'bg-success-600 hover:bg-success-700' : 'bg-primary-600 hover:bg-primary-700' , -->
