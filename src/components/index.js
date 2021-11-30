@@ -35,6 +35,7 @@ import UButton from './Button.vue'
 import Empty from './table/Empty.vue'
 import Row from './table/Row.vue'
 import ListInput from './filters/InputSearch.vue'
+import InputDate from './forms/InputDate.vue'
 
 // cells
 import InputCell from './table/Cells/InputCell.vue'
@@ -42,6 +43,7 @@ import InputCell from './table/Cells/InputCell.vue'
 
 export default app => {
   app.component('input-cell', InputCell)
+  app.component('input-date', InputDate)
   app.component('list-input', ListInput)
   app.component('finder', Finder)
   app.component('row', Row)
