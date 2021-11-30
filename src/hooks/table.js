@@ -19,7 +19,7 @@ export default function (_route, start_data) {
 
     const load = async () => {
         isReload.value = true 
-        if (start_data.parent_filters?.length > 0) {
+        if (start_data?.parent_filters?.length > 0) {
             if (data.value.filters?.length > 0) {
                 data.value.filters = [ ...data.value.filters, ...start_data.parent_filters ]
                 delete start_data.parent_filters
