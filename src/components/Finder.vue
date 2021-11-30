@@ -78,7 +78,7 @@
       load,
       isLoad
       
-    } = finder('finder', request.value)
+    } = finder(props.custom ? props.api : 'finder', request.value)
 
     const app = getCurrentInstance()
 

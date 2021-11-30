@@ -7,7 +7,7 @@ import flatpickr from "flatpickr"
 import { Russian } from "flatpickr/dist/l10n/ru.js"
  
 
-import LitepieDatepicker from 'litepie-datepicker'
+import LitepieDatepicker from 'jonya-datepicker'
 
 import Maska from 'maska'
  

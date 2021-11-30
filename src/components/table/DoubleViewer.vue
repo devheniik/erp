@@ -8,7 +8,7 @@
         </div>
     </div> 
     <double-table :component="component" :params="root_params" :api="menu" @select="link = $event" @select-params="right_params = $event">
-        <viewer :api="link" :params="{ ...right_params, ...params}">
+        <viewer :api="link" :params="{ ...right_params, ...params, parent_filters: filters }">
         </viewer>
     </double-table>
 </div>
