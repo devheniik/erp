@@ -68,7 +68,12 @@
       arr_select: {
         type: Boolean,
         default: false
-      }
+      },
+      custom: {
+        type: Boolean,
+        default: false
+      },
+      api: String
     })
 
     const request = ref(props.params)
@@ -79,6 +84,8 @@
       isLoad
       
     } = finder(props.custom ? props.api : 'finder', request.value)
+
+    console.log(props);
 
     const app = getCurrentInstance()
 
