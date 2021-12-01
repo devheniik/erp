@@ -7,7 +7,7 @@
             <component v-else @change="$emit('touch', props)" v-model="filter.value" :data="filter" :start_data="filters" :is="filter.filter_type"></component>
         </div>
     </div> 
-    <double-table :component="component" :params="root_params" :api="menu" @select="link = $event" @select-params="right_params = $event">
+    <double-table :component="component" :filters="filters" :params="root_params" :api="menu" @select="link = $event" @select-params="right_params = $event">
         <viewer :api="link" :params="{ ...right_params, ...params, parent_filters: filters }">
         </viewer>
     </double-table>

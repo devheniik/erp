@@ -36,14 +36,15 @@
 <script setup> 
 import get from '@/hooks/get'
 const props = defineProps({
-    api: String
+    api: String,
+    filters: Object
 })
 
     const {
         data,
         load,
         isLoad
-    } = get(props.api)
+    } = get(props.api, { filters: props.filters })
   
 </script>
 

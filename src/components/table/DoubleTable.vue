@@ -4,7 +4,7 @@
             <!-- sideRef && !component == 'tree' && !component == 'rollup' ? 'w-6/12' : sideRef && (component == 'tree' || component == 'tree-level') ? 'w-4/12' : sideRef && component == 'rollup' ? 'w-4/12' :  -->
             <pane class="hide-scroll overflow-y-auto" size="20">
                 <div :class="['w-full h-full overflow-y-auto hide-scroll']">
-                    <component :is="component" class="relative" :api="api" :params="params" :modalSelect="true" @select="selected = $event">
+                    <component :is="component" class="relative" :filters="filters" :api="api" :params="params" :modalSelect="true" @select="selected = $event">
                     </component>
                 </div>
             </pane>
@@ -35,6 +35,7 @@
         api: String,
         component: String,
         params: Object,
+        filters: Object,
         // tree: Boolean,
         // rollup: Boolean
     })

@@ -86,6 +86,7 @@ import table from '@/hooks/table'
 const props = defineProps({
     api: String,
     params: Object,
+    root_filters: Array,
     modalSelect: Boolean
 })
 

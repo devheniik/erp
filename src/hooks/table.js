@@ -18,17 +18,18 @@ export default function (_route, start_data) {
     const data = ref(undefined) 
 
     const load = async () => {
+        let r_data = lodash.cloneDeep(data.value ?? {})
         isReload.value = true 
         if (start_data?.parent_filters?.length > 0) {
-            if (data.value.filters?.length > 0) {
-                data.value.filters = [ ...data.value.filters, ...start_data.parent_filters ]
+            if (r_data.filters?.length > 0) {
+                r_data.filters = [ ...r_data.filters, ...start_data.parent_filters ]
                 delete start_data.parent_filters
-            } else if (!data.value.filters) {
-                data.value.filters = start_data.parent_filters
+            } else if (!r_data.filters) {
+                r_data.filters = start_data.parent_filters
                 delete start_data.parent_filters
             }
         }
-        data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data })
+        data.value = await list(_route, { ...r_data, ...start_data })
         // if (!data.value?.page) { 
         //     data.value.page = data.value?.meta?.pagination?.current_page 
         // }
@@ -39,28 +40,29 @@ export default function (_route, start_data) {
     }
 
     const reLoad = async () => {
+        let r_data = lodash.cloneDeep(data.value)
         isReload.value = true 
         if (start_data?.parent_filters?.length > 0) {
-            if (data.value.filters?.length > 0) {
-                data.value.filters = [ ...data.value.filters, ...start_data.parent_filters ]
+            if (r_data.filters?.length > 0) {
+                r_data.filters = [ ...r_data.filters, ...start_data.parent_filters ]
                 delete start_data.parent_filters
-            } else if (!data.value.filters) {
-                data.value.filters = start_data.parent_filters
+            } else if (!r_data.filters) {
+                r_data.filters = start_data.parent_filters
                 delete start_data.parent_filters
             }
             
         }
 
-        if (!data.value.filters) { 
-            delete data.value.filters
+        if (r_data.filters) {  
+            delete r_data.filters
         } 
-        if (data.value?.page) {
-            delete data.value.page 
+        if (r_data?.page) {
+            delete r_data.page 
         }
-        if (data.value?.limit) { 
-            delete data.value.limit 
+        if (r_data?.limit) { 
+            delete r_data.limit 
         }
-        data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data })
+        data.value = await list(_route, { ...r_data, ...start_data })
         // if (!data.value?.page) { 
         //     data.value.page = data.value?.meta?.pagination?.current_page 
         // }
@@ -73,17 +75,7 @@ export default function (_route, start_data) {
 
     const start = async () => {
         isLoad.value = true
-        isReload.value = true
-        data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data }) 
-        // !data.value?.headers ?  data.value.headers : null  
-        // if (!data.value?.page) { 
-        //     data.value.page = data.value?.meta?.pagination?.current_page 
-        // }
-        // if (!data.value?.limit) {
-        //     data.value.limit = data.value?.meta?.pagination?.per_page
-        // }
-
-        isReload.value = false,
+        await load()
         isLoad.value = false
     }
  
