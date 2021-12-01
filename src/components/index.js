@@ -26,6 +26,7 @@ import SubTable from "./table/SubTable.vue"
 import Alert from "./table/Alert.vue"
 import Correction from "./table/Correction.vue"
 import Toast from "./notifications/Toast.vue"
+import ToastClose from "./notifications/ToastClose.vue"
 import Zakokrugdo from "./modals/zakokrugdo.vue"
 import Zaktipceny from "./modals/zaktipceny.vue"
 import TreeLevel from "./table/TreeLevel.vue"
@@ -59,6 +60,7 @@ export default app => {
   app.component("zaktipceny", Zaktipceny)
   app.component("tree-level", TreeLevel)
   app.component("zakokrugdo", Zakokrugdo)
+  app.component("toast-close", ToastClose)
   app.component("toast", Toast)
   app.component("correction", Correction)
   app.component("alert", Alert)

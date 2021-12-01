@@ -72,6 +72,7 @@
         <ubutton @save="save($event)" v-for="(button, i) in data.buttons" :key="i" v-bind="button" class="px-4"> </ubutton>
     </div>
 </div>
+<loading v-else></loading>
 </template>
 
 <script setup>

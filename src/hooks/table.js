@@ -38,7 +38,38 @@ export default function (_route, start_data) {
         isReload.value = false
     }
 
-    const reLoad = async () => await load()
+    const reLoad = async () => {
+        isReload.value = true 
+        if (start_data?.parent_filters?.length > 0) {
+            if (data.value.filters?.length > 0) {
+                data.value.filters = [ ...data.value.filters, ...start_data.parent_filters ]
+                delete start_data.parent_filters
+            } else if (!data.value.filters) {
+                data.value.filters = start_data.parent_filters
+                delete start_data.parent_filters
+            }
+            
+        }
+
+        if (!data.value.filters) { 
+            delete data.value.filters
+        } 
+        if (data.value?.page) {
+            delete data.value.page 
+        }
+        if (data.value?.limit) { 
+            delete data.value.limit 
+        }
+        data.value = await list(_route, { ...lodash.cloneDeep(data.value), ...start_data })
+        // if (!data.value?.page) { 
+        //     data.value.page = data.value?.meta?.pagination?.current_page 
+        // }
+        // if (!data.value?.limit) {
+        //     data.value.limit = data.value?.meta?.pagination?.per_page
+        // }
+        isReload.value = false
+    }
+ 
 
     const start = async () => {
         isLoad.value = true

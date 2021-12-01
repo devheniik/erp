@@ -13,7 +13,7 @@ export default async function (route, req) {
         // } else {
         //     response = await axios.post(route) 
         // }   
-        if (response.data?.component == 'toast' && typeof(response.data?.data?.message) == 'string') {
+        if (response?.data?.component?.includes('toast') && typeof(response.data?.data?.message) == 'string') { 
             toast(JSON.parse(JSON.stringify(response.data)))
         }
 

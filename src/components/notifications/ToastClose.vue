@@ -11,9 +11,9 @@
         leave-from="opacity-100 translate-x-0 scale-100"
         leave-to="opacity-0 translate-x-96 scale-95"
         >
-        <div class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden z-50">
-          <div class="p-4">
-            <div class="flex items-start">
+        <div class="max-w-xs w-full bg-opacity-90 bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden z-50">
+          <div class="p-3">
+            <div class="flex items-center">
               <div class="flex-shrink-0"> 
                 <component :is="type == 'warning' ? 'ExclamationIcon' : type == 'danger' ? 'ShieldExclamationIcon' : type == 'success' ? 'CheckCircleIcon' : 'InformationCircleIcon'" :class="['h-6 w-6', type == 'warning' ? 'text-warning-400' : type == 'danger' ? 'text-danger-400' : type == 'success' ? 'text-success-400' : 'text-primary-400']" aria-hidden="true" />
               </div>
@@ -28,7 +28,7 @@
               <div class="ml-4 flex-shrink-0 flex">
                 <button @click="close()" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500">
                   <span class="sr-only">Close</span>
-                  <XIcon class="h-5 w-5" aria-hidden="true" />
+                  <XIcon class="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -58,6 +58,8 @@ import {ref} from 'vue'
 
     const close = () => {
       show.value = false
+      window.open('','_self').close()
+
       setTimeout(() => {
         emit('close')
         show.value = false
@@ -65,6 +67,6 @@ import {ref} from 'vue'
     }
 
     setTimeout(() => {
-      close()
+       close()
     }, props.delay)
 </script>

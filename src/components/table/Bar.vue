@@ -5,13 +5,13 @@
     </modal>
     <div class="w-full flex items-center mb-5">
         <!-- <div class="hidden sm:block w-full"> -->
-            <nav class="relative z-50 shadow bg-gray-100  flex justify-start divide-gray-200 w-full" aria-label="Tabs">
+            <nav class="relative z-50 shadow bg-gray-100 flex justify-start divide-gray-200 w-full" aria-label="Tabs">
                 <div v-for="(tab, tabIdx) in tabs" :key="tab.name" @click="clear(tabIdx, !tab.current)">
-                    <a :class="[tab.current ? 'text-gray-900 bg-gray-200' : 'text-gray-800 hover:text-gray-900', 'mx-0.5 px-2 rounded-md h-6 flex items-center text-sm font-medium justify-center hover:bg-gray-200 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
+                    <a :class="[tab.current ? 'text-gray-900 bg-gray-200' : 'text-gray-800 hover:text-gray-900', 'mx-0.5 px-2 h-6 flex items-center text-sm font-medium justify-center hover:bg-gray-200 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
                             <span>{{ tab.name }}</span>
                         </a>
 
-                    <div v-if="tab.child.length > 0 && tab.current" class="flex flex-col absolute rounded-lg bg-gray-100 bg-opacity-90 p-2 m-1 border">
+                    <div v-if="tab.child.length > 0 && tab.current" class="flex flex-col absolute rounded-lg bg-gray-100 bg-opacity-90 p-1 m-1 border">
                         <div v-for="(subTab, subTabIdx) in  tab.child" :key="subTabIdx" @click="handle(subTab)" class="text-gray-800 font-medium hover:text-gray-100 rounded-lg hover:bg-primary-500 ">
                             <a class="px-3">
                                     <span class="text-sm whitespace-nowrap truncate">{{ subTab.name }}</span>

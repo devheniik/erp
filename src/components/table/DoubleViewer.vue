@@ -3,7 +3,7 @@
     <div v-if="filters?.length" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 py-3 border-b">
         <!-- :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" -->
         <div :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" v-for="(filter, i) in filters" :key="i" v-show="filter.filter_show">
-            <group noLabel v-if="filter.filter_type == 'group'" :readonly="filter.readonly" v-bind="filter.bind" v-model="filter.value" @update:modelValue="$emit('touch', props)"></group>
+            <group noLabel v-if="filter.filter_type == 'group'" :readonly="filter.readonly" v-bind="filter.bind" @change_value_name="filter.bind.value_name = $event" v-model="filter.value" @update:modelValue="$emit('touch', props)"></group>
             <component v-else @change="$emit('touch', props)" v-model="filter.value" :data="filter" :start_data="filters" :is="filter.filter_type"></component>
         </div>
     </div> 
