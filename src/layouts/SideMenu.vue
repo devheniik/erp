@@ -160,7 +160,7 @@
                 <div class="lg:hidden">
                     <div class="flex items-center justify-between  border-b   px-4 py-1.5 ">
                         <div class="flex items-center justify-start ml-2 flex-shrink-0 text-gray-800">
-                            <CogIcon class="h-12 w-12 mr-3" />
+                            <!-- <CogIcon class="h-12 w-12 mr-3" /> -->
                             <div class="flex flex-col">
                                 <span class="font-extrabold text-2xl">EUROZOL</span>
                                 <span class="font-medium text-base -mt-2">BUILD IT</span>

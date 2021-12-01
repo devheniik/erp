@@ -1,15 +1,15 @@
 <template>
     <div>
-        <!--<label
+        <label
             :for="name"
-            class="block text-sm font-medium text-gray-700"
-        >{{ label ? label : name }}</label>-->
+            class="block text-sm font-medium text-gray-700 pl-1"
+        >{{ label ? label : name }}</label> 
         <litepie-datepicker
             as-single
             i18n="ru"
             :options="options"
             :disableDate="true"
-            :placeholder="placeholder"
+            :placeholder="'01.01.2022'"
             :formatter="formatter"
             :auto-apply="true"
             :modelValue="String(modelValue)"
@@ -23,7 +23,7 @@
             :name="id"
             :id="id"
             class="focus:ring-primary-500 sr-only focus:border-primary-500 block w-full rounded-none rounded-l-md pl-4 sm:text-sm border-gray-300"
-        />
+        />  
     </div>
 </template>
 

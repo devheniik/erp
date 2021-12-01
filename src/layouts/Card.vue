@@ -2,7 +2,7 @@
 <div class="w-full h-full">
     <div class="flex flex-col lg:flex-row w-full items-center justify-between px-2 border-b">
         <div class="bg-gray-100">
-            <div class="overflow-y-auto border-t border-gray-300 hide-scroll z-40 inline-flex items-center space-x-1 justify-center w-full bg-white py-3">
+            <div class="overflow-y-auto  hide-scroll z-40 inline-flex items-center space-x-1 justify-center w-full bg-white py-3">
                 <!-- <button class="inline-flex items-center px-1 text-xs font-medium">
                     Сущьность
                     <span class="text-gray-600 ml-2">№</span>
@@ -36,14 +36,14 @@
                 </button> -->
             </div>
         </div>
-        <div class="sm:hidden">
-            <select class="block w-full focus:ring-primary-500 focus:border-primary-500 border-gray-300">
+        <div class="sm:hidden mb-3  w-full">
+            <select class="block  w-full focus:ring-primary-500 focus:border-primary-500 rounded-md border-gray-300">
                 <option v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" :value="b.active" :selected="current == b.component" >{{ b.label }}  </option>
             </select>
         </div>
 
         <div class="hidden sm:block">
-            <div class="border-gray-200 bg-white">
+            <div class="border-gray-200 sm:mb-4 lg:mb-0 bg-white">
                 <nav class="flex rounded-md bg-gray-200 p-0.5" aria-label="Tabs">
                     <a v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" type="button" :class="[b.active ? 'bg-gradient-to-t from-primary-100 via-primary-400 to-primary-100 shadow-md text-gray-50' : 'text-gray-800 ', 'px-3 rounded-md  flex  items-center py-2 h-[28px] font-medium text-sm']">{{ b.label }}</a>
                      <!-- (i == (buttons.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (buttons.length - 1) ? 'rounded-r-md' : '' -->

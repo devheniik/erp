@@ -1,6 +1,6 @@
 <template>
     <div>
-        <label :for="name" class="block text-sm font-medium text-gray-700">{{ label ? label : name }}</label>
+        <label :for="name" class="block text-sm font-medium text-gray-700 pl-1">{{ label ? label : name }}</label>
         <select
             :required="required"
             @change="$emit('update:modelValue', $event.target.value); $emit('change')"

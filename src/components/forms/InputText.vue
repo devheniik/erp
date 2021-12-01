@@ -3,7 +3,7 @@
     <label
       v-if="!hideLabel"
       :for="name"
-      class="block text-sm font-medium text-gray-700"
+      class="block text-sm font-medium text-gray-700 pl-1"
       >{{ label ? label : name }}</label
     >
     <div>

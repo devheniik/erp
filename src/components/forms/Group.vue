@@ -2,7 +2,7 @@
     <div>
         <div>
             <div>
-                <label v-if="!noLabel" class="block text-sm font-medium text-gray-700">{{ label }}</label>
+                <label v-if="!noLabel" class="block text-sm font-medium text-gray-700 pl-1">{{ label }}</label>
                 <div class="flex rounded-md shadow-sm">
                     <div class="relative flex items-stretch flex-grow focus-within:z-10">
                         <input
