@@ -11,6 +11,8 @@ import {
 import * as  lodash from 'lodash'
 import list from '@api'
 export default function (_route, start_data) {
+
+    let aaa_ = start_data
     const isLoad = ref(true)
     const isReload = ref(true)
  
@@ -21,9 +23,10 @@ export default function (_route, start_data) {
         let r_data = lodash.cloneDeep(data.value ?? {})
         isReload.value = true 
         if (start_data?.parent_filters?.length > 0) {
+            console.log(start_data);
             if (r_data.filters?.length > 0) {
                 r_data.filters = [ ...r_data.filters, ...start_data.parent_filters ]
-                delete start_data.parent_filters
+                //delete start_data.parent_filters
             } else if (!r_data.filters) {
                 r_data.filters = start_data.parent_filters
                 delete start_data.parent_filters
