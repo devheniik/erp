@@ -12,7 +12,7 @@
                 </button>
                 <button :disabled="readonly" v-for="(btn, i) in buttons" :key="i" @click="load(btn,i)" type="button" :title="btn.help" :class="[i + 1 == buttons.length ? 'rounded-r-md' : '', '-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium  text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500']">
                     <SearchIcon class="h-4 w-4 text-gray-400" aria-hidden="true"/> 
-                    <modal v-model="isOpen[i]" width="w-10/12">
+                    <modal v-model="isOpen[i]" width="w-10/12"> 
                       <component  @select="select($event, i)" v-bind="btn.bind" :params="btn.params" :is="'finder'"></component>
                     </modal>
                 </button>
@@ -49,7 +49,9 @@ const props = defineProps({
     placeholder: String,
     modelValue: [String, Number, Array]
 }) 
-const isOpen = ref([])
+    const isOpen = ref(props.buttons.map((e) => {
+        return false
+    })) 
 
 props.buttons.forEach((btn,i) => {
   isOpen.value[i] = false
@@ -74,12 +76,9 @@ const clear = async () => {
 }
 
 
-const select = (e,key) => {
-    console.log(e)
-    local_label.value = e[1] || e.label
-    emit('update:modelValue', Number(e[0] || e.id))
-    console.log(e[0])
-    // label.value = e
+const select = (e, key) => {  
+    local_label.value = e[1] ?? e.label
+    emit('update:modelValue', Number(e[0] ?? e.id))
     isOpen.value[key] = false
 }
 
