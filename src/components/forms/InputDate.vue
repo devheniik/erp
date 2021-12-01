@@ -1,15 +1,15 @@
 <template>
-    <div class="flex" id="litepie-datepicker">
-        <label
+    <div>
+        <!--<label
             :for="name"
             class="block text-sm font-medium text-gray-700"
-        >{{ label ? label : name }}</label>
+        >{{ label ? label : name }}</label>-->
         <litepie-datepicker
             as-single
             i18n="ru"
             :options="options"
             :disableDate="true"
-            :placeholder="label"
+            :placeholder="placeholder"
             :formatter="formatter"
             :auto-apply="true"
             :modelValue="String(modelValue)"
