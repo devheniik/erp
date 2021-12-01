@@ -96,7 +96,7 @@ const handle = async (obj) => {
     }
 
 
-    response != false ? app.appContext.config.globalProperties.$toast(JSON.parse(JSON.stringify(response))) : null
+    // response != false ? app.appContext.config.globalProperties.$toast(JSON.parse(JSON.stringify(response))) : null
 }
 </script>
 
