@@ -1,8 +1,7 @@
 <template>
     <div class="flex" id="litepie-datepicker">
         <litepie-datepicker
-            :key="render"
-            ref="litepie"
+            :key="render" 
             as-single
             i18n="ru"
             :options="options"
