@@ -21,7 +21,7 @@
                 <p class="text-sm font-medium whitespace-nowrap truncate text-gray-900">
                   {{ message }} 
                 </p>
-                 <p class="mt-1 text-sm  text-primary-400" @click="window ? $open(link) : $router.push(link)">
+                 <p class="mt-1 text-sm  text-primary-400" @click="window ? $open($router.resolve(link)) : $router.push(link)">
                   {{ link_label }}
                 </p> 
               </div>
