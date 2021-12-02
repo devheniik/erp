@@ -86,12 +86,13 @@
 
  // * hooks
  import dataLoad from '.././hooks/reload'
-
+0
  // * props & emits init
 
  const props = defineProps({
      config: Array,
      name: String,
+     label: String,
      route_name: String,
      links: String,
      api: String,
