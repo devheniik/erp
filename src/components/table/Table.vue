@@ -43,7 +43,7 @@
                                 </Switch>
                             </td>
                             <td v-for="(field, i) in col.value" :key="i" class="px-4 py-2 whitespace-nowrap text-base font-light text-left text-gray-900">
-                                <div v-if="typeof(field) === 'object'" class="text-primary-400 hover:underline cursor-pointer" @click="field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
+                                <div v-if="typeof(field) === 'object'" class="text-primary-400 hover:underline cursor-pointer" @click="modalSelect ? $emit('select', field.data) : field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
                                     {{field?.label}}
                                 </div>
                                 <div v-else>
