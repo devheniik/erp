@@ -1,5 +1,5 @@
 <template>
-    <div class="mr-4 border-b  ">
+    <!-- <div class="mr-4 border-b  ">
         <div>
             <div class="flex justify-end items-center">
                 <button class="btn-circle-primary-md">Добавить</button>
@@ -129,6 +129,9 @@
                 <button class="btn-circle-primary-md">Добавить</button>
             </div>
         </div>
+    </div> -->
+    <div class="h-full w-full flex items-center justify-center font-bold text-lg">
+        Dashboard
     </div>
 </template>
 
