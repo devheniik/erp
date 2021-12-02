@@ -46,6 +46,7 @@
             <input
                 :value="Number(modelValue)"
                 type="text"
+                hidden="true"
                 :required="required"
                 :name="id"
                 :id="id"

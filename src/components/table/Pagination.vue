@@ -17,7 +17,7 @@
                 <div class="mt-1 flex rounded-md shadow-sm w-full">
                     <div class="relative flex items-stretch flex-grow focus-within:z-10 w-full">
                         <label for="name" class="absolute -top-3 left-2 -mt-px inline-block px-1 bg-white text-sm font-medium text-gray-700 ">Изменить  длину страницы</label>
-                        <input type="text" name="email" id="email" :value="limit" @input="$emit('update:limit', $event.target.value); $emit('change')" class="focus:ring-primary-500 focus:border-primary-500 block  rounded-md   sm:text-sm border-gray-300 w-full" placeholder="10"
+                        <input type="text" name="email" id="email" :value="limit" @input="update_limit($event.target.value)" class="focus:ring-primary-500 focus:border-primary-500 block  rounded-md   sm:text-sm border-gray-300 w-full" placeholder="10"
                         />
                     </div>
                 </div>
@@ -26,9 +26,9 @@
                 <div class="mt-1 flex rounded-md shadow-sm w-full">
                     <div class="relative flex items-stretch flex-grow focus-within:z-10 w-full">
                         <label for="name" class="absolute -top-3 left-2 -mt-px inline-block px-1 bg-white text-sm font-medium text-gray-700 ">Перейти на страницу (доступно от 0 до {{ pagination.total_pages }})</label>
-                        <input type="text" name="email" id="email" :value="page" @input="$emit('update:page', $event.target.value)" class="focus:ring-primary-500 focus:border-primary-500 block rounded-none rounded-l-md   sm:text-sm border-gray-300 w-full" placeholder="10" />
+                        <input type="text" name="email" id="email" :value="page" @input="update_page($event.target.value)" class="focus:ring-primary-500 focus:border-primary-500 block rounded-none rounded-l-md   sm:text-sm border-gray-300 w-full" placeholder="10" />
                     </div>
-                    <button type="button" @click="$emit('change')" class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500">
+                    <button type="button" @click="change" class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500">
                             <span>Перейти</span>
                         </button>
                 </div>
@@ -182,6 +182,24 @@ const save_headers = () => {
     emit('update:headers', local_headers)
     emit('change')
 }
+
+const update_limit = e => {
+    emit('update:limit', e)
+    emit('change')
+    console.log(e)
+}
+
+const update_page = e => {
+    emit('update:page', e)
+    // emit('change')
+    console.log(e);
+}
+
+const change = () => { 
+    emit('change') 
+}
+
+
 
 
 const handle = (isIncrement, value) => {

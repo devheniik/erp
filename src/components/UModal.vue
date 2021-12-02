@@ -124,17 +124,16 @@ const save = async (e) => {
     let valid = true
     form.value.forEach(e => {
         
-        if (e['required']) {
-            if (!(e['hidden'] ? Number(e['value']) : e['value'])) {
-                let label = null
-                console.log(e)
+        if (e['required']) {     
+            if (!(e['hidden'] ? (Number(e['value']) != 0) : e['value'])) {
+                let label = null 
                 app.appContext.config.globalProperties.$toast({ component: 'toast', data: { type: 'warning', message: e['labels'] ? e['labels'][0]?.textContent : e['name'] } })
                 valid = false
             }
         }
     })
     if (valid) {
-        await post(e.api, formData)
+        await post(e.api, formData)  
     }
 }
 </script>
