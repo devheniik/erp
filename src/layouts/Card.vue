@@ -77,7 +77,7 @@
 </template>
 
 <script setup>
- import { ref, watch, computed } from 'vue'
+ import { ref, watch, computed,  onBeforeUpdate } from 'vue'
  import store from "@/store"
  // * router init 
  import { useRoute, useRouter } from 'vue-router'
@@ -86,7 +86,7 @@
 
  // * hooks
  import dataLoad from '.././hooks/reload'
-0
+
  // * props & emits init
 
  const props = defineProps({
@@ -128,11 +128,18 @@
      load
  } = dataLoad(props.links)
 
- const handle_link = (data) => {
+ const handle_link = (data) => { 
      route.params.id ? store.commit('update_card', { name: props.ls_name, id: data.params.id }) : ''
      router.push(data)
      emit('reload', data.params.id)
  }
+
+  onBeforeUpdate(() => { 
+      console.log(route.params.id)
+      if (route.params.id == 0) {
+          handle_link({ name: props.route_name, params: { id: data.value.last } })
+      }
+  })
 
 
 
