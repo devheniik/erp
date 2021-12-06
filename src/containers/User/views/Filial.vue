@@ -14,7 +14,7 @@
         </div>
         <ul role="list" class=" grid grid-cols-2 divide-y divide-y-reverse divide-gray-200 mt-4 cursor-pointer">
             <li v-for="filial in data.data" :key="filial.uid" class="py-1.5 flex">
-                <p class="text-sm text-primary-400 w-full text-center" @click="set(`system/filial/select/${filial.uid.value}`)" >{{ filial.sokrash }}</p>
+                <p class="text-sm text-primary-400 w-full text-center" @click="set(`system/filials/select/${filial.uid.value}`)" >{{ filial.sokrash }}</p>
             </li>
         </ul>
     </div>

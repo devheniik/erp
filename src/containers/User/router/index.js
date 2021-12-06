@@ -37,7 +37,7 @@ export default [
         }
     },
     {
-        path: '/filial',
+        path: '/filials',
         name: 'filial',
         component: () => import('@user/views/Filial.vue'),
         meta: {
