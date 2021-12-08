@@ -1,5 +1,5 @@
 <template>
-<div v-if="!isLoad" class="p-5">
+<div v-if="!isLoad && data" class="p-5">
     <div v-if="data?.tabs?.length">
         <div class="w-full">
             <!-- <div class="sm:hidden">
