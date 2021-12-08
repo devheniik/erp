@@ -28,9 +28,9 @@ export default async function (email, password) {
 
             //reload
             localStorage.access_token = await response.data.access_token  
-            // setTimeout(() => {
-            //     window.location.href = '/'
-            // }, 400)
+            setTimeout(() => {
+                window.location.href = '/'
+            }, 400)
             
         })
         .catch(function (error) {
