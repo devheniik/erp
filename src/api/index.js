@@ -5,10 +5,15 @@ import { toast } from '../plugins/toast'
 export default async function (route, req) {
     try {
         let response = {}
+        let cookie
 
         //console.log(route);
         //if (req) {
-        const cookie = JSON.parse(localStorage.cookie)
+        if (localStorage.cookie) {
+            cookie = JSON.parse(localStorage.cookie)   
+        }
+
+
         response = await axios.post(route, { ...req, cookie: cookie})
         // } else {
         //     response = await axios.post(route) 
