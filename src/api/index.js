@@ -8,10 +8,18 @@ export default async function (route, req) {
 
         //console.log(route);
         //if (req) {
-        response = await axios.post(route, req)
+        const cookie = JSON.parse(localStorage.cookie)
+        response = await axios.post(route, { ...req, cookie: cookie})
         // } else {
         //     response = await axios.post(route) 
         // }   
+        console.log(response.data.cookie)
+
+        if (response.data?.cookie) { 
+            console.log('clone cookie') 
+            localStorage.cookie = JSON.stringify(response.data.cookie)
+        }
+
         if (response?.data?.component?.includes('toast') && typeof(response.data?.data?.message) == 'string') { 
             toast(JSON.parse(JSON.stringify(response.data)))
         }
