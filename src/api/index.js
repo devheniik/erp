@@ -24,7 +24,7 @@ export default async function (route, req) {
             toast(JSON.parse(JSON.stringify(response.data)))
         }
 
-        return JSON.parse(JSON.stringify(response.data))
+        return response.data
     } catch (error) {
         console.log(JSON.stringify(error))
         toast({ compoennt: 'toast', data: { message: error.message, type: 'danger' } })
