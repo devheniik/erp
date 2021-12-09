@@ -5,7 +5,7 @@ export default [
         component: () => import('@firm/views/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'firm-view'
         }
@@ -16,7 +16,7 @@ export default [
     //     component: () => import('@sale/views/firm/List.vue'),
     //     meta: {
     //         layout: 'SideMenu',
-    //         requreAuth: false,
+    //         requreAuth: true,
     //         permition: null,
     //         uname: 'sales-firm-view'
     //     }
@@ -27,7 +27,7 @@ export default [
         component: () => import('@firm/views/Update.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'firm-update'
         }

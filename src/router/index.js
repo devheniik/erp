@@ -11,6 +11,9 @@ import operation from '@operation/router'
 import firm from '@firm/router'
 import finance from '@finance/router'
 
+// * post
+import post from "../api/index"
+
 
 const routes = [ ...dashboard, ...user, ...person, ...permitions, ...sale, ...product, ...operation, ...firm, ...finance ]
  
@@ -28,17 +31,33 @@ const router = createRouter({
 
 
 router.beforeEach(async (to, from, next) => {
-    if (!store.state.auth && to.meta.requireAuth) {
+    console.log('store.state.auth', store.state.user.auth);
+    if (!store.state.user.auth && to.meta.requreAuth) {
         try { 
-            store.dispatch('auth')
-        } catch {
+          // store.commit('permitions/updateRole', role)
+          // store.commit('permitions/updatePermitions', roles)
+          const auth = await post('/auth/check_token') 
+
+          if (auth.data.status == false) {
             next('/login')
+          } else {
+            store.commit('auth') 
+            next()
+          }
+
+          
+          // store.getters['permitions/permition'](to.meta.permition) ? next() : next('/login')
+          // nav()
+        } catch {
+          next('/login')
         }
-    } else if (store.state.auth && to.meta.requireAuth) {
-       // store.getters['permitions/permition'](to.meta.permition) ? next() : next('/login')
-    } else { 
+      } 
+    //   else if (store.state.auth && to.meta.requireAuth) {
+    //     store.getters['permitions/permition'](to.meta.permition) ? next() : next('/login')
+    //   } 
+      else {
         next()
-    }
+      }
 })
 
 export default router

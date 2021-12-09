@@ -5,7 +5,7 @@ export default [
         component: () => import('../views/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'roles-view'
         }
@@ -16,7 +16,7 @@ export default [
     //     component: () => import('@person/views/Update.vue'),
     //     meta: {
     //         layout: 'SideMenu',
-    //         requreAuth: false,
+    //         requreAuth: true,
     //         permition: null,
     //         uname: 'person-update'
     //     }

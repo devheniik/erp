@@ -5,7 +5,7 @@ export default [
     //     component: () => import('@finance/views/List.vue'),
     //     meta: {
     //         layout: 'SideMenu',
-    //         requreAuth: false,
+    //         requreAuth: true,
     //         permition: null,
     //         uname: 'finance-view'
     //     }
@@ -16,7 +16,7 @@ export default [
     //     component: () => import('@sale/views/finances/List.vue'),
     //     meta: {
     //         layout: 'SideMenu',
-    //         requreAuth: false,
+    //         requreAuth: true,
     //         permition: null,
     //         uname: 'sales-finance-view'
     //     }
@@ -27,7 +27,7 @@ export default [
         component: () => import('@finance/views/Advance/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'finance-advance-reports-view'
         }
@@ -38,7 +38,7 @@ export default [
         component: () => import('@finance/views/Advance/Update.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'finance-advance-reports-update'
         }
@@ -49,7 +49,7 @@ export default [
         component: () => import('@finance/views/Tax/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'finance-tax-invoices-view'
         }

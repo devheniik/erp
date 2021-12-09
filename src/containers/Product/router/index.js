@@ -6,7 +6,7 @@ export default [
         component: () => import('@product/views/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'product-view'
         }
@@ -23,7 +23,7 @@ export default [
         },
         meta: {
             layout: 'Empty',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'product-create'
         }
@@ -37,7 +37,7 @@ export default [
         component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'product-update'
         }

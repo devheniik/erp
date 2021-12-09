@@ -6,7 +6,7 @@ export default [
         component: () => import('@sale/views/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'order-view'
         }
@@ -20,7 +20,7 @@ export default [
         component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-update'
         }
@@ -37,7 +37,7 @@ export default [
         component: () => import('../../../components/table/DoubleViewerApi.vue'), 
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-product-view'
         }
@@ -48,7 +48,7 @@ export default [
         component: () => import('@sale/views/Product/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-product-update'
         }
@@ -62,7 +62,7 @@ export default [
         component: () => import('@sale/views/Shipment/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-shipment-view'
         }
@@ -75,7 +75,7 @@ export default [
         component: () => import('@firm/views/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-firm-view'
         }
@@ -87,7 +87,7 @@ export default [
         component: () => import('@firm/views/Update.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-firm-update'
         }
@@ -103,7 +103,7 @@ export default [
         },
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-operation-658-view'
         }
@@ -118,7 +118,7 @@ export default [
         },
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-operation-660-view'
         }
@@ -133,7 +133,7 @@ export default [
         },
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-operation-657-view'
         }
@@ -148,7 +148,7 @@ export default [
         },
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-operation-659-view'
         }
@@ -163,7 +163,7 @@ export default [
         },
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-operation-754-view'
         }
@@ -178,7 +178,7 @@ export default [
         },
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'sale-operation-686-view'
         }
@@ -193,7 +193,7 @@ export default [
         component: () => import('@sale/components/productreservation.vue'),
         meta: {
             layout: 'Empty',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'product-reserv'
         }

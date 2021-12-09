@@ -19,7 +19,7 @@ export default [
         component: () => import('../../../components/UModal.vue'),
         meta: {
             layout: 'Empty',
-            requreAuth: false,
+            requreAuth: true,
             permition: null
         }
     },
@@ -32,7 +32,7 @@ export default [
         component: () => import('../../../components/Finder.vue'),
         meta: {
             layout: 'Empty',
-            requreAuth: false,
+            requreAuth: true,
             permition: null
         }
     },
@@ -42,7 +42,7 @@ export default [
         component: () => import('@user/views/Filial.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null, 
             uname: 'filial'
         }
@@ -53,7 +53,7 @@ export default [
         component: () => import('@user/views/404.vue'), 
         meta: {
             layout: 'Empty',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             group: null
         }

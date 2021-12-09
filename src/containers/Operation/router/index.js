@@ -5,7 +5,7 @@ export default [
         component: () => import('@operation/views/List.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'operation-view'
         }
@@ -16,7 +16,7 @@ export default [
     //     component: () => import('@sale/views/operation/List.vue'),
     //     meta: {
     //         layout: 'SideMenu',
-    //         requreAuth: false,
+    //         requreAuth: true,
     //         permition: null,
     //         uname: 'sales-operation-view'
     //     }
@@ -30,7 +30,7 @@ export default [
         component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'operation-update'
         }
@@ -44,7 +44,7 @@ export default [
         component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
-            requreAuth: false,
+            requreAuth: true,
             permition: null,
             uname: 'operation-update'
         }
