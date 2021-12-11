@@ -18,7 +18,7 @@
                                 </Switch>
                             </th>
                             <th v-for="(header, i) in headers" :key="i" v-show="header.show" @click="$emit('sort', header.value)" scope="col" class="px-4 py-2 text-left text-xs font-normal text-gray-500 uppercase tracking-wider  ">
-                                <div class="flex flex-row items-center">
+                                <div class="flex  cursor-pointer flex-row items-center">
                                     <span class="whitespace-nowrap flex flex-row items-center w-full text-left">
                                             {{ header.label }}
                                         <arrow-narrow-up-icon

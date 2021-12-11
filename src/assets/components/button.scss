@@ -1,37 +1,37 @@
 
     .button-hover-primary{
-        @apply inline-flex whitespace-nowrap items-center px-4 py-2 border-2 border-primary-600 text-xs font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-4 py-2 border-2 border-primary-600 text-xs font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
     }
 
     .btn{
-        @apply inline-flex whitespace-nowrap items-center px-4 py-2 border-2 border-primary-600 text-xs font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-4 py-2 border-2 border-primary-600 text-xs font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
     }
 
     .btn-nr-danger{
-        @apply inline-flex items-center px-4 py-2 border  shadow-sm text-base font-medium rounded-md text-white bg-danger-600 hover:bg-danger-700 focus:ring-danger-500
+        @apply inline-flex cursor-pointer items-center px-4 py-2 border  shadow-sm text-base font-medium rounded-md text-white bg-danger-600 hover:bg-danger-700 focus:ring-danger-500
     }
  
 
     .btn-lg{
-        @apply inline-flex whitespace-nowrap items-center px-4 py-2 border-2 border-primary-600 font-medium rounded-md shadow-sm text-gray-50 bg-primary-600 hover:bg-primary-700 hover:text-gray-100 focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-4 py-2 border-2 border-primary-600 font-medium rounded-md shadow-sm text-gray-50 bg-primary-600 hover:bg-primary-700 hover:text-gray-100 focus:outline-none 
     } 
     
     .button-hover-primary-color{
-        @apply inline-flex whitespace-nowrap items-center px-4 py-2 border-2 border-primary-900 text-xs font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-4 py-2 border-2 border-primary-900 text-xs font-medium rounded-full shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
     }
 
     .button-cube-hover-primary{
-        @apply inline-flex whitespace-nowrap items-center px-2 py-2 border-2 border-primary-600 text-xs font-medium rounded-md shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-2 py-2 border-2 border-primary-600 text-xs font-medium rounded-md shadow-sm text-primary-600 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
     }
 
     .button-cube-hover-danger{
-        @apply inline-flex whitespace-nowrap items-center px-2 py-2 border-2 border-danger-600 text-xs font-medium rounded-md shadow-sm text-danger-600 bg-white hover:bg-danger-600 hover:text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-2 py-2 border-2 border-danger-600 text-xs font-medium rounded-md shadow-sm text-danger-600 bg-white hover:bg-danger-600 hover:text-white focus:outline-none 
     }
 
     .button-hover-box-primary{
-        @apply inline-flex whitespace-nowrap items-center justify-center w-[32px] h-[32px] border  text-xs font-medium rounded-md text-gray-500 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center justify-center w-[32px] h-[32px] border  text-xs font-medium rounded-md text-gray-500 bg-white hover:bg-primary-600 hover:text-white focus:outline-none 
     }
 
     .button-hover-primary-active{
-        @apply inline-flex whitespace-nowrap items-center px-4 py-2 border-2 border-primary-500 text-xs font-medium rounded-full shadow-sm bg-primary-500 text-white focus:outline-none 
+        @apply inline-flex cursor-pointer whitespace-nowrap items-center px-4 py-2 border-2 border-primary-500 text-xs font-medium rounded-full shadow-sm bg-primary-500 text-white focus:outline-none 
     }

@@ -22,7 +22,7 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr> 
-                                    <th v-for="(h, i) in data.table_header" :key="i" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th v-for="(h, i) in data.table_header" :key="i" scope="col" class="px-6 cursor-pointer py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         {{h}}
                                     </th>
                                 </tr>

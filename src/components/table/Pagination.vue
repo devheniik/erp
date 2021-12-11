@@ -86,7 +86,7 @@
     </div>
     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div class="flex flex-row items-center ">
-            <div @click="settings = !settings" class="rounded-sm z-10 relative bg-primary-500  text-gray-50 hover:bg-primary-600 inline-flex items-center px-2 py-2  text-sm font-medium mr-5 ">
+            <div @click="settings = !settings" class="rounded-sm cursor-pointer z-10 relative bg-primary-500  text-gray-50 hover:bg-primary-600 inline-flex items-center px-2 py-2  text-sm font-medium mr-5 ">
                 <CogIcon class="h-4 w-4" />
             </div>
             <p class="text-sm text-gray-700">
@@ -98,40 +98,40 @@
         </div>
         <div>
             <nav class="relative z-0 inline-flex rounded-md  shadow-sm space-x-1" aria-label="Pagination">
-                <button :disabled="!(page - 1 > 0)" @click="handle(true, -1)" class="relative inline-flex items-center min-w-[34px] px-2 py-2 rounded-sm   bg-white text-sm font-medium text-gray-500 hover:bg-gray-300"> 
+                <button :disabled="!(page - 1 > 0)" @click="handle(true, -1)" class="relative inline-flex  cursor-pointer items-center min-w-[34px] px-2 py-2 rounded-sm   bg-white text-sm font-medium text-gray-500 hover:bg-gray-300"> 
                         <ChevronLeftIcon class="h-4 w-4" />
                     </button>
-                <div v-if="page - 2 > 1" @click="handle(false, 1)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
+                <div v-if="page - 2 > 1" @click="handle(false, 1)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
                     1
                 </div>
-                <div v-if="page - 2 > 2" @click="handle(false, 2)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
+                <div v-if="page - 2 > 2" @click="handle(false, 2)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
                     2
                 </div>
-                <span v-if="page - 3 > 3" class="relative inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm    bg-white text-sm font-medium text-gray-700">
+                <span v-if="page - 3 > 3" class="relative inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm    bg-white text-sm font-medium text-gray-700">
                         ...
                     </span>
-                <div v-if="page - 2 > 0" @click="handle(true, -2)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
+                <div v-if="page - 2 > 0" @click="handle(true, -2)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
                     {{ page - 2 }}
                 </div>
-                <div v-if="page - 1 > 0" @click="handle(true, -1)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
+                <div v-if="page - 1 > 0" @click="handle(true, -1)" aria-current="page" :class="['z-10 relative bg-white  text-gray-500 hover:bg-gray-300 inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium']">
                     {{ page - 1 }}
                 </div>
-                <div class=" z-10 bg-primary-500  text-white hidden md:inline-flex relative items-center  py-2 px-2 min-w-[34px] justify-center rounded-sm text-sm font-medium">
+                <div class=" z-10 bg-primary-500  text-white hidden md:inline-flex  cursor-pointer relative items-center  py-2 px-2 min-w-[34px] justify-center rounded-sm text-sm font-medium">
                     {{ page }}
                 </div>
-                <div v-if="page + 1 < pagination.total_pages" @click="handle(true, 1)" class="bg-white  text-gray-500 hover:bg-gray-300 relative inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium">
+                <div v-if="page + 1 < pagination.total_pages" @click="handle(true, 1)" class="bg-white  text-gray-500 hover:bg-gray-300 relative inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium">
                     {{ page + 1 }}
                 </div>
-                <span v-if="pagination.total_pages > page + 2" class="relative inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm    bg-white text-sm font-medium text-gray-700">
+                <span v-if="pagination.total_pages > page + 2" class="relative inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm    bg-white text-sm font-medium text-gray-700">
                         ...
                 </span>
-                <div v-if="pagination.total_pages - 1 > page" @click="handle(false, pagination.total_pages - 1)" class="bg-white  text-gray-500 hover:bg-gray-300 relative inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium">
+                <div v-if="pagination.total_pages - 1 > page" @click="handle(false, pagination.total_pages - 1)" class="bg-white  text-gray-500 hover:bg-gray-300 relative inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium">
                     {{ pagination.total_pages - 1 }}
                 </div>
-                <div v-if="pagination.total_pages > page" @click="handle(false, pagination.total_pages)" class="bg-white  text-gray-500 hover:bg-gray-300 relative inline-flex items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium">
+                <div v-if="pagination.total_pages > page" @click="handle(false, pagination.total_pages)" class="bg-white  text-gray-500 hover:bg-gray-300 relative inline-flex  cursor-pointer items-center py-2 px-2 min-w-[34px] justify-center rounded-sm   text-sm font-medium">
                     {{ pagination.total_pages }}
                 </div>
-                <button :disabled="page + 1 > pagination.total_pages" @click="handle(true, +1)" class="relative inline-flex items-center min-w-[34px] px-2 py-2 rounded-sm   bg-white text-sm font-medium text-gray-500 hover:bg-gray-300">
+                <button :disabled="page + 1 > pagination.total_pages" @click="handle(true, +1)" class="relative inline-flex  cursor-pointer items-center min-w-[34px] px-2 py-2 rounded-sm   bg-white text-sm font-medium text-gray-500 hover:bg-gray-300">
                     <ChevronRightIcon class="h-4 w-4" />
                 </button>
             </nav>

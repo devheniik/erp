@@ -7,14 +7,14 @@
         <!-- <div class="hidden sm:block w-full"> -->
             <nav class="relative z-50 shadow bg-gray-100 flex justify-start divide-gray-200 w-full" aria-label="Tabs">
                 <div v-for="(tab, tabIdx) in tabs" :key="tab.name" @click="clear(tabIdx, !tab.current)">
-                    <a :class="[tab.current ? 'text-gray-900 bg-gray-200' : 'text-gray-800 hover:text-gray-900', 'mx-0.5 px-2 h-6 flex items-center text-sm font-medium justify-center hover:bg-gray-200 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
+                    <a :class="[tab.current ? 'text-gray-900 bg-gray-200' : 'text-gray-800 hover:text-gray-900', 'mx-0.5 cursor-pointer px-2 h-6 flex items-center text-sm font-medium justify-center hover:bg-gray-200 focus:z-10']" :aria-current="tab.current ? 'page' : undefined">
                         <span>{{ tab.name }}</span>
                     </a> 
                     <div v-if="tab.child.length > 0 && tab.current" class="flex flex-col absolute rounded-lg bg-gray-100 bg-opacity-95 p-1 m-1 border">
                         <div v-for="(subTab, subTabIdx) in  tab.child" :key="subTabIdx">
                             <div v-if="subTab.type === 'divider'" class="my-1 mx-3  h-[1px] bg-gray-400">
                             </div>
-                            <div v-else @click="handle(subTab)" class="text-gray-800 text-left font-medium hover:text-gray-100 rounded-lg hover:bg-primary-500 ">
+                            <div v-else @click="handle(subTab)" class="text-gray-800 cursor-pointer text-left font-medium hover:text-gray-100 rounded-lg hover:bg-primary-500 ">
                                 <a class="px-3">
                                     <span class="text-sm whitespace-nowrap truncate">{{ subTab.name }}</span>
                                 </a>

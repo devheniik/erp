@@ -45,7 +45,7 @@
         <div class="hidden sm:block">
             <div class="border-gray-200 sm:mb-4 lg:mb-0 bg-white">
                 <nav class="flex rounded-md bg-gray-200 p-0.5" aria-label="Tabs">
-                    <a v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" type="button" :class="[b.active ? 'bg-gradient-to-t from-primary-100 via-primary-400 to-primary-100 shadow-md text-gray-50' : 'text-gray-800 ', 'px-3 rounded-md  flex  items-center py-2 h-[28px] font-medium text-sm']">{{ b.label }}</a>
+                    <a v-for="(b, i) in buttons" @click="handleClick(i)" :key="i" type="button" :class="[b.active ? 'bg-gradient-to-t from-primary-100 via-primary-400 to-primary-100 shadow-md text-gray-50' : 'text-gray-800 ', 'px-3 cursor-pointer rounded-md  flex  items-center py-2 h-[28px] font-medium text-sm']">{{ b.label }}</a>
                      <!-- (i == (buttons.length - 1) && i == 0 ) ? 'rounded-md' : i == 0 ? 'rounded-l-md' : i == (buttons.length - 1) ? 'rounded-r-md' : '' -->
                 </nav>
             </div>
