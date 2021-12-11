@@ -20,8 +20,7 @@ flatpickr.setDefaults(
     static : true
   }
 )
-
-console.log(Maska)
+ 
  
 
 import PrimeVue from 'primevue/config'

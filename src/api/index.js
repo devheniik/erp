@@ -6,22 +6,31 @@ export default async function (route, req) {
     try {
         let response = {}
         let cookie
+ 
+        
 
-        //console.log(route);
-        //if (req) {
-        if (localStorage.cookie) {
-            cookie = JSON.parse(localStorage.cookie)   
-        }
+        // if (localStorage.cookie) {
+        //     cookie = JSON.parse(localStorage.cookie)   
+        // }
 
+        // var oReq = new XMLHttpRequest(); 
+        // oReq.addEventListener("load", transferComplete, false);
 
-        response = await axios.post(route, { ...req, cookie: cookie})
-        // } else {
-        //     response = await axios.post(route) 
-        // }   
-        console.log(response.data.cookie)
+        // oReq.open("post", `https://api.stuzer.link/v1/${route}`, req);
 
-        if (response.data?.cookie) { 
-            console.log('clone cookie') 
+        // oReq.setRequestHeader('Authorization', "Bearer " + localStorage.access_token)
+        // oReq.send();
+
+        // function transferComplete(evt) {
+        //     console.log(oReq.getAllResponseHeaders());
+        //   }
+ 
+        response = await axios.post(route, req)
+
+        // console.log(response.headers);
+        
+
+        if (response.data?.cookie) {  
             localStorage.cookie = JSON.stringify(response.data.cookie)
         }
 

@@ -87,7 +87,7 @@
         <pane size="13" class="hidden lg:flex lg:flex-shrink-0 hide-scroll overflow-y-auto w-full">
             <div class="flex flex-col w-full">
                 <!-- Sidebar component, swap this element with another sidebar if you like -->
-                <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100  ">
+                <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
                     <div class="hide-scroll flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
                         <div class="flex items-center justify-start ml-2 flex-shrink-0 text-gray-800">
                             <!-- https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg -->

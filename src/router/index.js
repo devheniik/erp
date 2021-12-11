@@ -30,13 +30,12 @@ const router = createRouter({
 })
 
 
-router.beforeEach(async (to, from, next) => {
-    console.log('store.state.auth', store.state.user.auth);
+router.beforeEach(async (to, from, next) => { 
     if (!store.state.user.auth && to.meta.requreAuth) {
         try { 
           // store.commit('permitions/updateRole', role)
           // store.commit('permitions/updatePermitions', roles)
-          const auth = await post('/auth/check_token') 
+          const auth = await post('auth/check_token') 
 
           if (auth.data.status == false) {
             next('/login')
