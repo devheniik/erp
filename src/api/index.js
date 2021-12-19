@@ -26,12 +26,9 @@ export default async function (route, req) {
         //   }
  
         response = await axios.post(route, req)
-
-        // console.log(response.headers);
-        
-
-        if (response.data?.cookie) {  
-            localStorage.cookie = JSON.stringify(response.data.cookie)
+  
+        if (response.headers['x-trans-cookie']) {  
+            localStorage.cookie = JSON.stringify(response.headers['x-trans-cookie'])
         }
 
         if (response?.data?.component?.includes('toast') && typeof(response.data?.data?.message) == 'string') { 
