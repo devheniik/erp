@@ -16,14 +16,14 @@
                         </div>
                     </TransitionChild>
                     <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                        <div class="flex-shrink-0 flex items-center px-4">
+                        <!-- <div class="flex-shrink-0 flex items-center px-4">
                             <img class="h-8 w-auto" :src="logo" alt="Workflow" />
-                        </div>
-                        <nav class="mt-5 flex-1" aria-label="Sidebar">
+                        </div> -->
+                        <nav class="mt-1 flex-1" aria-label="Sidebar">
                             <div class="px-2 space-y-1 ">
                                 <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="cursor-pointer">
                                     <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
-                                        <div class="flex flex-wrap items-center">
+                                        <div class="flex items-center truncate whitespace-nowrap">
                                             <component :is="item.icon" :class="[item.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" /> {{ item.name }}
                                         </div>
                                         <ChevronDownIcon class="h-3 w-3 scale-90" v-if="item.current && item.child.length > 0" />
@@ -64,12 +64,12 @@
                                     <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" />
                                 </div>
                                 <div class="ml-3">
-                                    <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">
-                                        Whitney Francis
+                                    <p class="text-base cursor-pointer font-medium text-gray-700 group-hover:text-gray-900">
+                                        Пользователь
                                     </p>
-                                    <p class="text-base font-medium text-gray-500 group-hover:text-gray-700">
-                                        View profile
-                                    </p>
+                                    <router-link as="p" :to="'/login'" class="text-base cursor-pointer font-medium text-gray-500 group-hover:text-gray-700">
+                                        Выйти
+                                    </router-link>
                                 </div>
                             </div>
                         </a>
@@ -93,7 +93,7 @@
                             <!-- https://ua.dst.roto-frank.com/fileadmin/assets/UA/00_Global/Mizol_%D0%BB%D0%BE%D0%B3%D0%BE.jpg -->
                             <!-- <CogIcon class="h-12 w-12 mr-3" /> -->
                             <div class="flex flex-col pl-10 ">
-                                <span class="font-extrabold text-2xl">EUROZOL</span>
+                                <span class="font-extrabold text-2xl">EUROIZOL</span>
                                 <span class="font-light text-base -mt-2">BUILD IT</span>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                             <div class="px-2 space-y-1 ">
                                 <div v-for="(item, i) in navigation" :key="item.name" :href="i" class="cursor-pointer">
                                     <div @click="!item.current ? handleClick(item) : item.current = false" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-800 hover:bg-gray-200 hover:text-gray-900', 'group flex items-center justify-between px-2 py-1.5 text-base rounded-md truncate whitespace-nowrap']">
-                                        <div class="flex flex-wrap items-center">
+                                        <div class="flex items-center truncate whitespace-nowrap">
                                             <component :is="item.icon" :class="[item.current ? 'text-primary-600' : 'text-primary-400 group-hover:text-primary-600', 'mr-4 flex-shrink-0 h-4 w-4']" aria-hidden="true" /> {{ item.name }}
                                         </div>
                                         <ChevronDownIcon class="h-3 w-3 scale-90" v-if="item.current && item.child.length > 0" />
@@ -142,10 +142,10 @@
                                     <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" />
                                 </div>
                                 <div class="ml-3">
-                                    <p class="text-base font-medium text-gray-900 group-hover:text-gray-100" @click="$toast({component: 'toast', data: {type: 'warning', message: `text`}})">
+                                    <p class="text-base cursor-pointer font-medium text-gray-800 group-hover:text-gray-900" @click="$toast({component: 'toast', data: {type: 'warning', message: `text`}})">
                                         Пользователь
                                     </p> 
-                                    <router-link as="p" :to="'/login'" class="text-xs font-medium text-gray-900 group-hover:text-gray-200">
+                                    <router-link as="p" :to="'/login'" class="text-xs  cursor-pointer font-medium text-gray-800 group-hover:text-gray-900">
                                         Выйти
                                     </router-link>
                                 </div>
@@ -162,7 +162,7 @@
                         <div class="flex items-center justify-start ml-2 flex-shrink-0 text-gray-800">
                             <!-- <CogIcon class="h-12 w-12 mr-3" /> -->
                             <div class="flex flex-col">
-                                <span class="font-extrabold text-2xl">EUROZOL</span>
+                                <span class="font-extrabold text-2xl">EUROIZOL</span>
                                 <span class="font-medium text-base -mt-2">BUILD IT</span>
                             </div>
                         </div>
