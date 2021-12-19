@@ -7,6 +7,8 @@ export default async function (route, req) {
         let response = {}
         let cookie
 
+        console.log(JSON.parse(localStorage.cookie))
+
 
 
         // if (localStorage.cookie) {
@@ -25,10 +27,10 @@ export default async function (route, req) {
         //     console.log(oReq.getAllResponseHeaders());
         //   }
 
-        response = await axios.post(route, req)
+        response = await axios.post(route, req, { headers: { 'X-Trans-Cookie': localStorage.cookie } })
 
         if (response.headers['x-trans-cookie']) {
-            localStorage.cookie = JSON.stringify(response.headers['x-trans-cookie'])
+            localStorage.cookie = response.headers['x-trans-cookie']
         }
 
         if (response?.data?.component?.includes('toast') && typeof (response.data?.data?.message) == 'string') {
