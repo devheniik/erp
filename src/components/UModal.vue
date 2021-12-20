@@ -84,7 +84,8 @@ import {
     getCurrentInstance
 } from 'vue'
 const app = getCurrentInstance()
-
+import {useRouter} from 'vue-router' 
+const router = useRouter()
 import get from '@/hooks/get'
 
 const props = defineProps({
@@ -133,7 +134,10 @@ const save = async (e) => {
         }
     })
     if (valid) {
-        await post(e.api, formData)  
+        const response = await post(e.api, formData)
+        if (response.redirect) {
+            router.push(response.redirect) 
+        }
     }
 }
 </script>
