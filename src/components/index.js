@@ -38,6 +38,7 @@ import Empty from './table/Empty.vue'
 import Row from './table/Row.vue'
 import ListInput from './filters/InputSearch.vue'
 import InputDate from './forms/InputDate.vue'
+import Print from './Print.vue'
 
 // cells
 import InputCell from './table/Cells/InputCell.vue'
@@ -48,6 +49,7 @@ export default app => {
   app.component('input-date', InputDate)
   app.component('list-input', ListInput)
   app.component('finder', Finder)
+  app.component('print', Print)
   app.component('row', Row)
   app.component('empty', Empty)
   app.component('group', Group)

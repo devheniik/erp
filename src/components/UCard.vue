@@ -1,6 +1,6 @@
 <template>
 <div v-if="!isLoad" class="h-full">
-    <layout v-model:config="data.tabs" @reload="load({ id: $event })" v-bind="data.global"> 
+    <layout v-model:config="data.tabs" @update:config="check_print()" @reload="load({ id: $event })" v-bind="data.global"> 
         <div class="card">
             <component v-for="(component, i) in data.tabs" :key="i" v-show="component.active" :is="component.component" v-bind="component.config">
             </component>
@@ -31,7 +31,15 @@ export default {
         api: String
     },
     setup(props) {
-        const route = useRoute()
+        const route = useRoute() 
+
+        const check_print = () => {
+            if (data.value.tabs.find(e => e.active)?.config?.url) {
+                window.open(data.value.tabs.find(e => e.active).config.url, '_blank')  
+            }
+        }
+
+        
 
         const rid = ref(route.params.id)
 
@@ -47,6 +55,7 @@ export default {
 
         return {
             data,
+            check_print,
             load,
             isLoad
         }
