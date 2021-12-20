@@ -38,8 +38,8 @@
                         Колонки
                     </span>
                 <div class="grid grid-cols-3 gap-4 w-full">
-                    <div class="py-2 flex flex-row justify-between pr-32" v-for="(h, i) in local_headers" :key="i">
-                        <p class="text-gray-800">
+                    <div class="py-2 flex flex-row justify-between pr-12" v-for="(h, i) in local_headers" :key="i">
+                        <p class="text-gray-800 whitespace-nowrap truncate">
                             {{ h.label }}
                         </p>
                         <Switch @click="h.show = !h.show" :class="[h.show ? 'bg-primary-600' : 'bg-gray-200', 'relative z-0 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500']">
