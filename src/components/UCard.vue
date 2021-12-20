@@ -36,6 +36,10 @@ export default {
         const check_print = () => {
             if (data.value.tabs.find(e => e.active)?.config?.url) {
                 window.open(data.value.tabs.find(e => e.active).config.url, '_blank')  
+                data.value.tabs.forEach(e => {
+                  e.active = false  
+                })
+                data.value.tabs[0].active = true
             }
         }
 
