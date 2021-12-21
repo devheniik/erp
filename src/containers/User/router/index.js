@@ -48,6 +48,20 @@ export default [
         }
     },
     {
+        path: '/print/:api',
+        name: 'print',
+        props: (route) => ({
+            api: route.params.api
+         }), 
+        component: () => import('../../../components/PrintPage.vue'),
+        meta: {
+            layout: 'Empty',
+            requreAuth: true,
+            permition: null, 
+            uname: 'filial'
+        }
+    },
+    {
         path: '/:pathMatch(.*)*',
         name: 'Not Found',
         component: () => import('@user/views/404.vue'), 

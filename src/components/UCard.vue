@@ -13,10 +13,11 @@
 import {
     ref,
     computed,
-    defineAsyncComponent
+    defineAsyncComponent,
+    getCurrentInstance
 } from 'vue'
 import {
-    useRoute
+    useRoute, useRouter
 } from 'vue-router'
 import get from '@/hooks/get'
 import layout from '.././layouts/Card.vue'
@@ -32,10 +33,15 @@ export default {
     },
     setup(props) {
         const route = useRoute() 
+        const router = useRouter() 
+        const app = getCurrentInstance()
+
 
         const check_print = () => {
             if (data.value.tabs.find(e => e.active)?.config?.url) {
-                window.open(data.value.tabs.find(e => e.active).config.url, '_blank')  
+                window.open(router.resolve({ name: 'print', params: { api: data.value.tabs.find(e => e.active).config.url }}).href, '_blank') 
+                // app.appContext.config.globalProperties.$open(router.resolve({ name: 'print', params: { api: data.value.tabs.find(e => e.active).config.url }}))
+                // router.push({ name: 'print', params: { api: data.value.tabs.find(e => e.active).config.url }}))
                 data.value.tabs.forEach(e => {
                   e.active = false  
                 })

@@ -5,10 +5,7 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
-const props = defineProps({
-    url: String
-}) 
+import {ref} from 'vue' 
  
 </script>
 
