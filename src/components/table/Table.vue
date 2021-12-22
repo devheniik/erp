@@ -34,8 +34,8 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <tr v-for="col in body" :key="col.uid" :class="t_color(col.color)">
-                            <td v-show="row" class="px-4 py-2 whitespace-nowrap text-left text-base text-primary-600 hover:underline cursor-pointer">
-                                <row></row>
+                            <td v-if="col?.row?.length" class="px-4 py-2 whitespace-nowrap text-left text-base text-primary-600 hover:underline cursor-pointer">
+                                <row :data="col.row"></row>
                             </td>
                             <td v-show="select" class="px-4 py-2 whitespace-nowrap text-left text-base text-primary-600 hover:underline cursor-pointer">
                                 <Switch v-model="col.selected" :class="[col.selected ? 'bg-primary-600' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500']">
