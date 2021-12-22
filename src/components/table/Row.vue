@@ -52,7 +52,7 @@ const handle = (item) => {
         app.appContext.config.globalProperties.$open(router.resolve(item.data))
     }
     if (item.type == 'post') {
-        post(item.data.name, item.data.params)
+        post(item.data.api, item.data.params)
     }
 }
 
