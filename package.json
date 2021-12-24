@@ -9,7 +9,10 @@
   "dependencies": {
     "@headlessui/vue": "^1.4.1",
     "@heroicons/vue": "^1.0.4",
+    "@panhezeng/vue-tinymce": "^3.0.3",
     "@tailwindcss/forms": "^0.3.4",
+    "@tinymce/tinymce-vue": "^4.0.5",
+    "@vueup/vue-quill": "^1.0.0-beta.7",
     "axios": "^0.21.4",
     "dayjs": "^1.10.7",
     "flatpickr": "^4.6.9",
@@ -26,6 +29,7 @@
     "vue": "^3.1.5",
     "vue-flatpickr-component": "^9.0.5",
     "vue-router": "^4.0.10",
+    "vue3-tinymce": "^2.4.0",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

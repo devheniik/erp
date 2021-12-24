@@ -15,7 +15,7 @@ export default ({ mode }) => {
 
   return defineConfig({
     server: {
-      host: "erpstorm.de",
+      //host: "erpstorm.de",
       port: 3000,
       https: true,
     },

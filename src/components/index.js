@@ -15,6 +15,7 @@ import RollUp from "./table/RollUp.vue"
 import Date from "./filters/Date.vue"
 import Loading from "./loading/Loading.vue"
 import Field from "./forms/Field.vue"
+import Quil from "./forms/Quil.vue"
 import InputText from "./forms/InputText.vue"
 import InputSelect from "./forms/InputSelect.vue"
 import InputSwitch from "./forms/InputSwitch.vue"
@@ -50,6 +51,7 @@ export default app => {
   app.component('list-input', ListInput)
   app.component('finder', Finder)
   app.component('print', Print)
+  app.component('quill', Quil)
   app.component('row', Row)
   app.component('empty', Empty)
   app.component('group', Group)

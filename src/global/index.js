@@ -5,7 +5,6 @@ import * as headlessui from "@headlessui/vue"
 import VueFlatPickr from 'vue-flatpickr-component'
 import flatpickr from "flatpickr"
 import { Russian } from "flatpickr/dist/l10n/ru.js"
- 
 
 import LitepieDatepicker from 'jonya-datepicker'
 
@@ -19,7 +18,7 @@ flatpickr.setDefaults(
     time_24hr: true,
     static : true
   }
-)
+) 
  
  
 
@@ -29,8 +28,7 @@ import PrimeVue from 'primevue/config'
 export default app => { 
 
   app.use(LitepieDatepicker)
-  app.use(PrimeVue) 
-
+  app.use(PrimeVue)  
   app.use(Maska)
  
 
