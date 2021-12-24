@@ -4,8 +4,15 @@
             v-if="!hideLabel" 
             class="block text-sm font-medium text-gray-700 pl-1"
         >{{ label ? label : name }}</label>
-        <vue-tinymce style="height:700px;"  v-model="value" :config="{ language: 'ru' }" />
-
+        <editor
+                api-key="no-api-key"
+                v-model="value"
+                :init="{
+                menubar: false,
+                plugins: 'lists link image emoticons',
+                toolbar: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image emoticons'
+                }"
+            />
         <label :for="id" class="block text-sm font-medium text-gray-700 sr-only">{{ label }}</label>
             <input
                 :value="value"
@@ -21,8 +28,8 @@
 
 <script setup>
 import {ref} from 'vue'
-import  VueTinymce from "@panhezeng/vue-tinymce"
-
+// import  VueTinymce from "@panhezeng/vue-tinymce"
+import Editor from '@tinymce/tinymce-vue'
 
 const props = defineProps({
     id: String,
