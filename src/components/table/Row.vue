@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Menu as="div" class="relative inline-block text-left">
+        <Menu as="div" class="inline-block text-left">
             <div>
                 <MenuButton
                     class="rounded-full flex items-center text-gray-400 hover:text-gray-600"
@@ -19,7 +19,7 @@
                 leave-to-class="transform opacity-0 scale-95"
             >
                 <MenuItems
-                    class="z-40 origin-top-right absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+                    class="z-40 ml-10 origin-top-right absolute left-0  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
                 >
                     <div v-for="(group, i) in data" :key="i" class="py-1">
                         <MenuItem v-for="(item, i) in group" :key="i" v-slot="{ active }">

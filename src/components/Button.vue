@@ -11,7 +11,7 @@
     import post from '@api'
     import {getCurrentInstance} from 'vue'
 
-    const emit = defineEmits(['save'])
+    const emit = defineEmits(['save', 'select_all_and_up','select_selected_and_up'])
     const props = defineProps({
         type: String,  
         action: String,
@@ -31,6 +31,12 @@
         }
         if (props.action == 'window-backend') { 
             window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
+        } 
+        if (props.action == 'select_selected_and_up') { 
+            emit('select_selected_and_up')
+        }
+        if (props.action == 'select_all_and_up') { 
+            emit('select_all_and_up')
         }
     }
 

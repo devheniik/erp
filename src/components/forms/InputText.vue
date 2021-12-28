@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <label
-      v-if="!hideLabel"
-      :for="name"
-      class="block text-sm font-medium text-gray-700 pl-1"
-      >{{ label ? label : name }}</label
+<div>
+    <label v-if="!hideLabel" :for="name" class="block text-sm font-medium text-gray-700 pl-1">{{ label ? label : name }}</label
     >
     <div>
+    <div class="sr-only"> 
+    {{input.value}}
+    </div>
       <input
         ref="input"
         :required="required"
@@ -37,22 +36,22 @@
 <script setup>
 import { ref } from 'vue'
 const props = defineProps({
-  id: String,
-  name: String,
-  hideLabel: {
-    type: Boolean,
-    default: false
-  },
-  label: String,
-  type: String,
-  pattern: [String, JSON],
-  required: Boolean,
-  disabled: {
-    type: Boolean,
-    default: false
-  },
-  placeholder: String,
-  modelValue: [String, Number]
+    id: String,
+    name: String,
+    hideLabel: {
+        type: Boolean,
+        default: false
+    },
+    label: String,
+    type: String,
+    pattern: [String, JSON],
+    required: Boolean,
+    disabled: {
+        type: Boolean,
+        default: false
+    },
+    placeholder: String,
+    modelValue: [String, Number]
 })
 const emit = defineEmits(['update:modelValue'])
 
@@ -60,19 +59,21 @@ const input = ref('input')
 const valid = ref(true)
 
 const handler = (event) => {
-  if (props.type == 'number') {
-    console.log(JSON.stringify(event))
-    if (/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/.exec(event)) {
-      emit('update:modelValue', event)
-      valid.value = true
-      return
+    if (event.length) {
+        if (props.type == 'number') {
+            if (/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/.exec(event)) {
+                console.log(event);
+                emit('update:modelValue', event)
+                valid.value = true
+                return
+            }
+            input.value = 1 //props.modelValue
+            valid.value = false
+            return
+        }
     }
-    input.value = props.modelValue
-    valid.value = false
-    return
-  }
 
-  emit('update:modelValue', event)
+    emit('update:modelValue', event)
 }
 </script>
 

@@ -37,6 +37,20 @@ export default [
         }
     },
     {
+        path: '/viewer/:api',
+        name: 'viewer',
+        props: (route) => ({ 
+            ...route.params,
+            params: route.query 
+         }), 
+        component: () => import('../../../components/table/Viewer.vue'),
+        meta: {
+            layout: 'Empty',
+            requreAuth: true,
+            permition: null
+        }
+    },
+    {
         path: '/filials',
         name: 'filial',
         component: () => import('@user/views/Filial.vue'),

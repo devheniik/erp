@@ -1,7 +1,7 @@
 <template>
 <div :key="render_key" class="h-full w-full">
     <div v-if="!isLoad && data" class="w-full min-h-full flex flex-col justify-between">
-        <div ref="form" class="w-full h-full">
+        <form ref="form" class="w-full h-full">
 
             <!-- BAR -->
             <div class="w-full" v-if=data.bar>
@@ -53,8 +53,7 @@
             <div class="w-full my-5 mx-2" v-if="data?.components?.end?.length">
                 <component v-for="(component, i) in data.components.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
             </div>
-        </div>
-
+        </form> 
         <!-- Pagination -->
         <div class="w-full mb-1.5">
             <pagination v-if="data.meta?.pagination" @change="load" v-model:headers="data.headers" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
@@ -117,14 +116,18 @@ const select = (data) => {
 // * edit 
 const form = ref(null)
 const edit = async (e) => {
-    const formData = new FormData(form.value) 
+    console.log(form.value);
+    const formData = new FormData(form.value)  
     if (e) {
        for (const [key, value] of Object.entries(e)) {
            formData.append(key, value)
         }
     } 
+ 
     // formData.append(e)
-    await post('products/catalog/list', formData)
+    if (data.value.edit_api) {
+        await post(data.value.edit_api, formData) 
+    }
     // await post(data.edit_api, formData)
 }
 

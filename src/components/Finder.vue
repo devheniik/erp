@@ -16,7 +16,12 @@
           <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5">
             <search v-model="request.TFILTR" :data="{ label: 'Поиск' }" @keyup.enter="load()" @update:modelValue="request.TFILTR=$event"></search>
           </div>
-            <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <!-- Buttons -->
+            <div v-if="data.buttons?.length" class="flex justify-end ml-2.5 mr-5 mt-4">
+                <ubutton @select_all_and_up="select_values(true)" @select_selected_and_up="select_values(false)" v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton>
+            </div>
+          <utable class="my-4" :headers="data.table_header" :body="data.data"></utable>
+            <!-- <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
@@ -40,11 +45,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <empty v-if="data.data.length == 0" v-bind="{ title: 'Создайте заказ' }"></empty> 
                         
                     </div>
                 </div>
-            </div>
+            </div> -->
+                        <empty v-if="data.data.length == 0" v-bind="{ title: 'Создайте заказ' }"></empty> 
           <pagination @change="load"
                       v-model:header="data.header"
                       :pagination="paginationTransformer(data.pagination)"
@@ -59,9 +64,14 @@
 
 <script setup>
   import Tree from 'primevue/tree'
-  import router from '@/router'
+  import post from '@api' 
     import finder from '@/hooks/finder'
     import {ref, getCurrentInstance} from 'vue'
+import { useRoute, useRouter } from 'vue-router' 
+const route = useRoute()
+const router = useRouter()
+
+const select_options = ref(JSON.parse(route.query.selectable))
 
     const props = defineProps({
       params: Object,
@@ -78,12 +88,33 @@
 
     const request = ref(props.params)
 
+    
+
     const {
       data,
       load,
-      isLoad
-      
-    } = finder(props.custom ? props.api : 'finder', request.value)
+      isLoad 
+    } = finder(props.custom ? props.api : 'finder', request.value, route.query)
+
+    const data_transform = (array) => {
+      return array.map(e => {
+        return {
+          selected: false,
+          row: [],
+          value: e
+        } 
+      })
+    }
+
+    const header_transform = (array) => {
+      return array.map(e => {
+        return {
+          label: e, 
+          show: true, 
+        } 
+      })
+    }
+
 
     console.log(props);
 
@@ -108,6 +139,18 @@
         total_pages: pagination.total_pages
       }
     }
+
+    const select_values = async (all) => { 
+      if (all) { 
+        select_options.value.data.query[select_options.value.var_name] = data.value.data.map(e => e.value[0]).join(',')
+      } else { 
+        select_options.value.data.query[select_options.value.var_name] = data.value.data.filter(e => e.selected).map(e => e.value[0]).join(';')
+      } 
+      console.log(select_options.value.data);
+      router.push(select_options.value.data)
+    } 
+
+ 
 
     const onNodeSelect = (e) => {
       if (!e.children) {
