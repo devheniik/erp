@@ -144,7 +144,7 @@ const select_options = ref(JSON.parse(route.query.selectable))
       if (all) { 
         select_options.value.data.query[select_options.value.var_name] = data.value.data.map(e => e.value[0]).join(',')
       } else { 
-        select_options.value.data.query[select_options.value.var_name] = data.value.data.filter(e => e.selected).map(e => e.value[0]).join(';')
+        select_options.value.data.query[select_options.value.var_name] = data.value.data.filter(e => e.selected).map(e => e.value[0]).join(',')
       } 
       console.log(select_options.value.data);
       router.push(select_options.value.data)

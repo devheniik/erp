@@ -39,11 +39,14 @@ const app = getCurrentInstance()
 
 
 const props = defineProps({
+    tags: Boolean,
     params: Object,
     action_param_name: String,
     promt_param_name: String,
     data: Array
 })
+
+
 
 const emit = defineEmits(['reload'])
 
@@ -53,6 +56,49 @@ const show_modal = ref(false)
 
 const params = ref(props.params)
 const tabs = ref(props.data)
+
+if (props.tags || true) {
+    tabs.value.push({
+        name: 'Метки',
+        child: [
+            {
+                name: 'Отметить все',
+                disabled: false,
+                type: 'emit',
+                value: 'select_all',
+                url: '',
+                params: {}
+            },
+            {
+                name: 'Очистить',
+                disabled: false,
+                type: 'emit',
+                value: 'select_all',
+                url: '',
+                params: {}
+            },
+            { 
+                type: 'divider', 
+            },
+            {
+                name: 'Сохранить в файле',
+                disabled: false,
+                type: 'emit',
+                value: 'select_all',
+                url: '',
+                params: {}
+            },
+            {
+                name: 'Восстановить из файла',
+                disabled: false,
+                type: 'emit',
+                value: 'select_all',
+                url: '',
+                params: {}
+            },
+        ]
+    })
+}
 
 
 const clear = (i, bool) => {
