@@ -5,7 +5,7 @@
 
             <!-- BAR -->
             <div class="w-full" v-if=data.bar>
-                <bar v-bind=data.bar.config :data=data.bar.data @reload=load()>
+                <bar v-bind=data.bar.config :data=data.bar.data :body_data="data.data" @metki="data = $event" @reload=load()>
                 </bar>
             </div>
 

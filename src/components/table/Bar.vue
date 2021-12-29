@@ -39,6 +39,7 @@ const app = getCurrentInstance()
 
 
 const props = defineProps({
+    body_data: Array,
     tags: Boolean,
     params: Object,
     action_param_name: String,
@@ -56,49 +57,50 @@ const show_modal = ref(false)
 
 const params = ref(props.params)
 const tabs = ref(props.data)
+const body_data = ref(props.body_data)
 
-if (props.tags || true) {
-    tabs.value.push({
-        name: 'Метки',
-        child: [
-            {
-                name: 'Отметить все',
-                disabled: false,
-                type: 'emit',
-                value: 'select_all',
-                url: '',
-                params: {}
-            },
-            {
-                name: 'Очистить',
-                disabled: false,
-                type: 'emit',
-                value: 'select_all',
-                url: '',
-                params: {}
-            },
-            { 
-                type: 'divider', 
-            },
-            {
-                name: 'Сохранить в файле',
-                disabled: false,
-                type: 'emit',
-                value: 'select_all',
-                url: '',
-                params: {}
-            },
-            {
-                name: 'Восстановить из файла',
-                disabled: false,
-                type: 'emit',
-                value: 'select_all',
-                url: '',
-                params: {}
-            },
-        ]
-    })
-}
+// if (props.tags || true) {
+//     tabs.value.push({
+//         name: 'Метки',
+//         child: [
+//             {
+//                 name: 'Отметить все',
+//                 disabled: false,
+//                 type: 'select_all_metki',
+//                 value: 'select_all',
+//                 url: '',
+//                 params: {}
+//             },
+//             {
+//                 name: 'Очистить',
+//                 disabled: false,
+//                 type: 'clear_all_metki',
+//                 value: 'select_all',
+//                 url: '',
+//                 params: {}
+//             },
+//             { 
+//                 type: 'divider', 
+//             },
+//             {
+//                 name: 'Сохранить в файле',
+//                 disabled: false,
+//                 type: 'emit',
+//                 value: 'select_all',
+//                 url: '',
+//                 params: {}
+//             },
+//             {
+//                 name: 'Восстановить из файла',
+//                 disabled: false,
+//                 type: 'emit',
+//                 value: 'select_all',
+//                 url: '',
+//                 params: {}
+//             },
+//         ]
+//     })
+// }
 
 
 const clear = (i, bool) => {
@@ -123,6 +125,33 @@ const handle = async (obj) => {
             params.value[props.promt_param_name] = value
             params.value[props.action_param_name] = obj.value
             response = await send(obj.url, params.value)
+            break;
+        
+        case 'clear_all_metki': 
+            params.value['TLISTMULTISELECT'] = body_data.value.map(e => e.uid)
+            params.value['POSTER'] = obj.value
+            response = await send(obj.url, params.value)
+            break;
+ 
+        case 'select_all_metki': 
+            params.value['TLISTMULTISELECT'] = body_data.value.map(e => e.uid)
+            params.value['POSTER'] = obj.value
+            response = await send(obj.url, params.value)
+            break;
+
+
+        case 'save_metki': 
+            params.value['TLISTMULTISELECT'] = body_data.value.filter(e => e.selected).map(e => e.uid)
+            params.value['POSTER'] = obj.value
+            response = await send(obj.url, params.value) 
+            break;
+
+
+        case 'save_metki': 
+            params.value['TLISTMULTISELECT'] = null
+            params.value['POSTER'] = obj.value
+            response = await send(obj.url, params.value)
+            emit('metki', response)
             break;
 
         case 'action':
