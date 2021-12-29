@@ -128,26 +128,26 @@ const handle = async (obj) => {
             break;
         
         case 'clear_all_metki': 
-            params.value['TLISTMULTISELECT'] = body_data.value.map(e => e.uid)
+            params.value['TLISTMULTISELECT'] = body_data.value.map(e => e.uid).join(',')
             params.value['POSTER'] = obj.value
             response = await send(obj.url, params.value)
             break;
  
         case 'select_all_metki': 
-            params.value['TLISTMULTISELECT'] = body_data.value.map(e => e.uid)
+            params.value['TLISTMULTISELECT'] = body_data.value.map(e => e.uid).join(',')
             params.value['POSTER'] = obj.value
             response = await send(obj.url, params.value)
             break;
 
 
         case 'save_metki': 
-            params.value['TLISTMULTISELECT'] = body_data.value.filter(e => e.selected).map(e => e.uid)
+            params.value['TLISTMULTISELECT'] = body_data.value.filter(e => e.selected).map(e => e.uid).join(',')
             params.value['POSTER'] = obj.value
             response = await send(obj.url, params.value) 
             break;
 
 
-        case 'save_metki': 
+        case 'load_metki': 
             params.value['TLISTMULTISELECT'] = null
             params.value['POSTER'] = obj.value
             response = await send(obj.url, params.value)
