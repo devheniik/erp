@@ -39,7 +39,7 @@ const app = getCurrentInstance()
 
 
 const props = defineProps({
-    table_data: Array,
+    table_data: Object,
     tags: Boolean,
     params: Object,
     action_param_name: String,
@@ -150,6 +150,7 @@ const handle = async (obj) => {
         case 'load_metki': 
             params.value['TLISTMULTISELECT'] = null
             params.value['POSTER'] = obj.value
+            console.log(table_data.value);
             response = await send(obj.url, {...params.value, ...table_data.value})
             emit('metki', response)
             break;
