@@ -35,13 +35,13 @@
                 <!-- :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" -->
                 <div :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
                     <group noLabel v-if="filter.filter_type == 'group'" :readonly="filter.readonly" v-bind="filter.bind" v-model="filter.value" @update:modelValue="load"></group>
-                    <component v-else @change="load" @touch="load" v-model="filter.value" :data="filter" :start_data="data.filters" :is="filter.filter_type"></component>
+                    <component v-else @change="load" @touch="load" v-model="filter.value" v-bind="filter" :data="filter" :start_data="data.filters" :is="filter.filter_type"></component>
                 </div>
             </div>
 
             <!-- Buttons -->
             <div v-if="data.buttons?.length" class="flex justify-end ml-2.5 mr-5 mt-5">
-                <ubutton v-for="(button, i) in data.buttons" :key="i" v-bind="button"> </ubutton>
+                <ubutton v-for="(button, i) in data.buttons" @save="save($event)" :key="i" v-bind="button"> </ubutton>
             </div>
 
             <!-- Table -->
