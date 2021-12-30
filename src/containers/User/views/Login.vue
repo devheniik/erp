@@ -12,11 +12,11 @@
           <div><label class="sr-only" for="email-address">Email address</label><input
               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
               id="email-address" v-model="email" name="email" type="email" autocomplete="email"
-              placeholder="Email address"></div>
+              placeholder="Логин"></div>
           <div><label class="sr-only" for="password">Password</label><input
               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
               id="password" v-model="password" name="password" type="password" autocomplete="current-password"
-              placeholder="Password"></div>
+              placeholder="Пароль"></div>
         </div>
         <div class="flex items-center justify-between">
           <div class="flex items-center"><input
