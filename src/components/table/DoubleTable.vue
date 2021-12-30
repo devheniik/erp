@@ -57,6 +57,7 @@
             if (typeof(selected.value) == 'object') {
                 emit('select-params', selected.value.params)
                 emit('select', selected.value.api) 
+                updateRender() 
                 return
             }
             emit('select', selected.value)
