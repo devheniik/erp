@@ -22,88 +22,9 @@
 </template>
 
 <script setup>
-const data = [
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ],
-    [  
-        {
-            label: 'Label',
-            value: 1
-        },
-        {
-            label: 'Label',
-            value: 1
-        }
-    ]
-]
+const props = defineProps({
+    data: Array
+})
 </script>
 
 <style lang="scss" scoped>

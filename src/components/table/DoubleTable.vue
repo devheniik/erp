@@ -40,7 +40,7 @@
         // rollup: Boolean
     })
 
-    const emit = defineEmits(['select'])
+    const emit = defineEmits(['select', 'select-params'])
 
     const selected = ref(null)
 

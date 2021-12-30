@@ -28,10 +28,7 @@
             <!-- Components Start -->
             <div v-if="data.components?.start.length" class="w-full my-5 mx-2">
                 <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" @edit="edit($event)" :is="component.component"></component>
-            </div>
-            <div class="w-[98%] my-5 mx-2">
-                <simple-table></simple-table>
-            </div>
+            </div> 
             
             <!-- Filters -->
             <div v-if="filter_show && data.filters?.length" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
@@ -48,7 +45,7 @@
             </div>
 
             <!-- Table -->
-            <div class="my-5 mr-5">
+            <div v-if="data.hide_table ? !data.hide_table : true" class="my-5 mr-5">
                 <utable  @sort="sort($event)" :v-bind="{ row: data.show_row_select ?? false, select: data.show_row_burgers ?? false }" :modalSelect=modalSelect @select="select($event)" :headers="data.headers" v-model:body="data.data" :sort="data.sort"></utable>
             </div>
 
@@ -58,7 +55,7 @@
             </div>
         </form> 
         <!-- Pagination -->
-        <div class="w-full mb-1.5">
+        <div v-if="data.hide_table ? !data.hide_table : true" class="w-full mb-1.5">
             <pagination v-if="data.meta?.pagination" @change="load" v-model:headers="data.headers" :pagination="data.meta.pagination" v-model:page="data.page" v-model:limit="data.limit"></pagination>
         </div>
     </div>
