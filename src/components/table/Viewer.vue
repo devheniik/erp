@@ -29,6 +29,9 @@
             <div v-if="data.components?.start.length" class="w-full my-5 mx-2">
                 <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" @edit="edit($event)" :is="component.component"></component>
             </div>
+            <div class="w-[98%] my-5 mx-2">
+                <simple-table></simple-table>
+            </div>
             
             <!-- Filters -->
             <div v-if="filter_show && data.filters?.length" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">

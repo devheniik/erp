@@ -40,7 +40,7 @@ import Row from './table/Row.vue'
 import ListInput from './filters/InputSearch.vue'
 import InputDate from './forms/InputDate.vue'
 import Print from './Print.vue'
-
+import SimpleTable from './table/SimpleTable.vue'
 // cells
 import InputCell from './table/Cells/InputCell.vue'
 
@@ -49,6 +49,7 @@ export default app => {
   app.component('input-cell', InputCell)
   app.component('input-date', InputDate)
   app.component('list-input', ListInput)
+  app.component('simple-table', SimpleTable)
   app.component('finder', Finder)
   app.component('print', Print)
   app.component('quill', Quil)
