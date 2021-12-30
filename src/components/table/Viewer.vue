@@ -25,12 +25,6 @@
                 </div>
             </div>
 
-            <!-- Components Start -->
-            <div v-if="data.components?.start.length" class="w-full my-5 mx-2">
-                <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" @edit="edit($event)" :is="component.component"></component>
-            </div> 
-            
-            <!-- Filters -->
             <div v-if="filter_show && data.filters?.length" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 mr-5 ml-2.5 mt-3">
                 <!-- :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" -->
                 <div :class="[filter.filter_type == 'list-input' ? 'col-span-2' : '']" v-for="(filter, i) in data.filters" :key="i" v-show="filter.filter_show">
@@ -38,6 +32,14 @@
                     <component v-else @change="load" @touch="load" v-model="filter.value" v-bind="filter" :data="filter" :start_data="data.filters" :is="filter.filter_type"></component>
                 </div>
             </div>
+
+            <!-- Components Start -->
+            <div v-if="data.components?.start.length" class="w-full my-5 mx-2">
+                <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" @edit="edit($event)" :is="component.component"></component>
+            </div> 
+            
+            <!-- Filters -->
+            
 
             <!-- Buttons -->
             <div v-if="data.buttons?.length" class="flex justify-end ml-2.5 mr-5 mt-5">
