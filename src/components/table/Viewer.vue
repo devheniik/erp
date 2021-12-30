@@ -12,7 +12,7 @@
             <!-- Titles and clear button -->
             <div class="w-full flex flex-row items-center  ml-2.5 mt-3 justify-between">
                 <p class="text-2xl text-gray-700 whitespace-nowrap">{{ data.title ?? 'Таблица' }}</p>
-                <div>
+                <div v-if="data.hide_table ? !data.hide_table : true">
                     <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-2 rounded-full shadow-sm text-primary-500 hover:bg-gray-100 hover:shadow-md">
                         <FilterIcon class="h-5 w-5" aria-hidden="true" />
                     </button>
