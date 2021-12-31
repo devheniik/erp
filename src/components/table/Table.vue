@@ -52,6 +52,9 @@
                                 <div v-else-if="typeof(field) === 'object'" class="text-primary-400 hover:underline cursor-pointer" @click="modalSelect ? $emit('select', field.data) : field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
                                     {{field?.label}}
                                 </div>
+                                <div class="text-primary-400 hover:underline cursor-pointer" v-else-if="finder && i == 1 && typeof(field) !== 'object'" @click="$emit('select', col.value)" >
+                                    {{field}}
+                                </div>
                                 <div v-else>
                                     {{ field }}
                                 </div>
@@ -83,6 +86,7 @@ const props = defineProps({
     select: Boolean,
     body: Array,
     modalSelect: Boolean,
+    finder: Boolean,
     sort: Object
 })
 
