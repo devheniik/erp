@@ -3,6 +3,9 @@
     <modal v-model="show_modal" width="w-6/12">
         <component :params="params" :is="modal_name" @ready="ready($event)"></component>
     </modal>
+    <pre>
+        {{form}}
+    </pre>
     <div class="w-full flex items-center mb-5">
         <!-- <div class="hidden sm:block w-full"> -->
             <nav class="relative z-50 shadow bg-gray-100 flex justify-start divide-gray-200 w-full" aria-label="Tabs">
@@ -41,6 +44,7 @@ const app = getCurrentInstance()
 const props = defineProps({
     table_data: Object,
     tags: Boolean,
+    form: Object,
     params: Object,
     action_param_name: String,
     promt_param_name: String,
@@ -49,7 +53,7 @@ const props = defineProps({
 
 
 
-const emit = defineEmits(['reload'])
+const emit = defineEmits(['reload','metki'])
 
 const modal_name = ref(null)
 
@@ -136,14 +140,26 @@ const handle = async (obj) => {
         case 'select_all_metki': 
             params.value['TLISTMULTISELECT'] = table_data.value.data.map(e => e.uid).join(',')
             params.value['POSTER'] = obj.value
-            response = await send(obj.url, params.value)
+            const formData = new FormData(props.form)   
+            if (params.value) {
+            for (const [key, value] of Object.entries(params.value)) {
+                formData.append(key, value)
+                }
+            }  
+            response = await send(obj.url, formData)
             break;
 
 
         case 'save_metki': 
             params.value['TLISTMULTISELECT'] = table_data.value.data.filter(e => e.selected).map(e => e.uid).join(',')
             params.value['POSTER'] = obj.value
-            response = await send(obj.url, params.value) 
+            const form2Data = new FormData(props.form)   
+            if (params.value) {
+            for (const [key, value] of Object.entries(params.value)) {
+                form2Data.append(key, value)
+                }
+            }  
+            response = await send(obj.url, form2Data) 
             break;
 
 

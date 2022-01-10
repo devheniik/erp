@@ -5,7 +5,7 @@
 
             <!-- BAR -->
             <div class="w-full" v-if=data.bar>
-                <bar v-bind=data.bar.config :data=data.bar.data :table_data="data" @metki="data = $event" @reload=load()>
+                <bar v-bind=data.bar.config :data=data.bar.data :table_data="data" :form="form" @metki="data = $event" @reload=load()>
                 </bar>
             </div>
 
@@ -117,6 +117,7 @@ const select = (data) => {
 
 // * edit 
 const form = ref(null)
+
 const save = async (e) => { 
     const formData = new FormData(form.value)  
     if (e.params) {
