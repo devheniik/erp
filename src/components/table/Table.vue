@@ -90,7 +90,7 @@ const props = defineProps({
     sort: Object
 })
 
-const isRow = ref(props?.body[0]?.row?.length > 0)
+const isRow = ref(props?.body.length ? props?.body[0]?.row?.length > 0 : false)
 
 
 const app = getCurrentInstance()
