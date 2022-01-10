@@ -2,10 +2,7 @@
 <div class="w-full">
     <modal v-model="show_modal" width="w-6/12">
         <component :params="params" :is="modal_name" @ready="ready($event)"></component>
-    </modal>
-    <pre>
-        {{form}}
-    </pre>
+    </modal> 
     <div class="w-full flex items-center mb-5">
         <!-- <div class="hidden sm:block w-full"> -->
             <nav class="relative z-50 shadow bg-gray-100 flex justify-start divide-gray-200 w-full" aria-label="Tabs">
