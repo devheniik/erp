@@ -29,6 +29,11 @@
         if (props.action == 'save') {  
             emit('save', props.data)
         }
+        
+        if (props.action == 'post') {  
+            post(props.data.api, props.data.query)
+        }
+        
         if (props.action == 'window-backend') { 
             window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
         } 

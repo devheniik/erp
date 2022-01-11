@@ -49,7 +49,7 @@
                                 <div v-if="typeof(field) === 'object' && field?.component">
                                     <component :is="field.component" v-bind="field.config" v-model="field.value"></component>
                                 </div>
-                                <div v-else-if="typeof(field) === 'object'" class="text-primary-400 hover:underline cursor-pointer" @click="modalSelect ? $emit('select', field.data) : field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
+                                <div v-else-if="typeof(field) === 'object'" class="text-primary-400 hover:underline cursor-pointer" @click="modalSelect ? $emit('select', field.data) : field.type == 'post' ? send(field) : field.type == 'new-window' ? $open($router.resolve(field.data)) : field.type == 'window' ? $open($router.resolve({ name: field.name, params: field.params })) : field.type == 'select_api_params' ? $emit('select',field.data) : null">
                                     {{field?.label}}
                                 </div>
                                 <div class="text-primary-400 hover:underline cursor-pointer" v-else-if="finder && i == 1 && typeof(field) !== 'object'" @click="$emit('select', col.value)" >
@@ -75,6 +75,7 @@
 <script setup>
 import router from "@/router"
 import t_color from '@/functions/t_color'
+import post from "@api"
 import {
     ref,
     computed,
@@ -113,6 +114,11 @@ const isAllSelect = computed(() => {
 
     return res
 })
+
+const send = async (data) => {
+    await post (data.data.api, data.data.params)
+
+}
 
 const allSelect = (bool) => {
     let data = props.body
