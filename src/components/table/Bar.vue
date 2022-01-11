@@ -163,9 +163,8 @@ const handle = async (obj) => {
         case 'load_metki': 
             params.value['TLISTMULTISELECT'] = null
             params.value['POSTER'] = obj.value 
-            params.value = { ...params.value, ...obj.params}
-            console.log(obj);
-            response = await send(obj.url, {...params.value, ...table_data.value})
+            params.value = { ...params.value, ...obj.params} 
+            response = await send(obj.url, { ...params.value, ...table_data.value, })
             emit('metki', response)
             break;
 

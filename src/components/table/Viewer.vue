@@ -1,11 +1,11 @@
 <template>
 <div :key="render_key" class="h-full w-full">
-    <div v-if="!isLoad && data" class="w-full min-h-full flex flex-col justify-between">
+    <div v-if="!isLoad && data" class="w-full min-h-full flex flex-col justify-between" :key="render">
         <form ref="form" @submit.prevent class="w-full h-full">
 
             <!-- BAR -->
             <div class="w-full" v-if=data.bar>
-                <bar v-bind=data.bar.config :data=data.bar.data :table_data="data" :form="form" @metki="data = $event" @reload=load()>
+                <bar v-bind=data.bar.config :data=data.bar.data :table_data="data" :form="form" @metki="data = $event;render++" @reload=load()>
                 </bar>
             </div>
 
@@ -106,7 +106,7 @@ const {
 
 
 // * props & emits init
-
+const render = ref(1)
 
 const select = (data) => {
     if (props.modalSelect) {
