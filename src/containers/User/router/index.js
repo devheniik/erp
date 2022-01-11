@@ -23,6 +23,20 @@ export default [
             permition: null
         }
     },
+    
+    {
+        path: '/ucard/:api/:id',
+        name: 'ucard',
+        props: (route) => {
+            api: route.api
+        }, 
+        component: () => import('../../../components/UCard.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: true,
+            permition: null
+        }
+    },
     {
         path: '/finder',
         name: 'finder',
