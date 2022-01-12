@@ -23,7 +23,20 @@ export default [
             permition: null
         }
     },
-    
+    {
+        path: '/dbviewerapi/:api',
+        name: 'dbviewerapi',
+        props: (route) => ({
+            api: route.params.api,
+            params: route.query
+         }), 
+        component: () => import('../../../components/table/DoubleViewerApi.vue'), 
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: true,
+            permition: null
+        }
+    }, 
     {
         path: '/ucard/:api/:id',
         name: 'ucard',
