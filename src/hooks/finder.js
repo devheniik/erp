@@ -31,11 +31,16 @@ export default function (_route, body, custom) {
           }
         }
         data.value.data = data.value.data.map(e => {
+          if (data.value.type != 'tree') {
             return {
               selected: false,
               row: [],
               value: e
             } 
+          } else {
+            return e
+          }
+            
           })
 
 
