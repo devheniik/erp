@@ -12,7 +12,7 @@ const props = defineProps({
 }) 
 
 const doc = ref()
-axios.get(props.api, props.query).then(r => doc.value = r)
+axios.get(`${props.api, props.query}${(new URLSearchParams(props.query)).toString()}`).then(r => doc.value = r)
  
 </script>
 
