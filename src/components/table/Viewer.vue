@@ -16,7 +16,7 @@
                     <button @click="filter_show = !filter_show" type="button" class="inline-flex items-center  p-2 mr-2 rounded-full shadow-sm text-primary-500 hover:bg-gray-100 hover:shadow-md">
                         <FilterIcon class="h-5 w-5" aria-hidden="true" />
                     </button>
-                    <button @click="load" type="button" class="inline-flex items-center  p-2 mr-2 rounded-full shadow-sm text-success-500 hover:bg-gray-100 hover:shadow-md">
+                    <button @click="load().then(r => render_key++)" type="button" class="inline-flex items-center  p-2 mr-2 rounded-full shadow-sm text-success-500 hover:bg-gray-100 hover:shadow-md">
                         <RefreshIcon class="h-5 w-5" aria-hidden="true" />
                     </button>
                     <button @click="reLoad(); render_key++" type="button" class="inline-flex items-center  p-2 mr-5 rounded-full shadow-sm text-danger-500 hover:bg-gray-100 hover:shadow-md">
