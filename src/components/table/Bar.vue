@@ -120,7 +120,11 @@ const ready = (response) => {
 
 const handle = async (obj) => {
     let response = false
+    if (obj.params) {
+        params.value = { ...params.value, ...obj.params } 
+    }
     switch (obj.type) {
+        
         case 'promt':
             const value = prompt(obj.promt_message ?? '')
             params.value[props.promt_param_name] = value
@@ -150,6 +154,7 @@ const handle = async (obj) => {
         case 'save_metki': 
             params.value['TLISTMULTISELECT'] = table_data.value.data.filter(e => e.selected).map(e => e.uid).join(',')
             params.value['POSTER'] = obj.value
+            
             const form2Data = new FormData(props.form)   
             if (params.value) {
             for (const [key, value] of Object.entries(params.value)) {

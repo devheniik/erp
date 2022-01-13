@@ -37,6 +37,11 @@
         if (props.action == 'window-backend') { 
             window.open(`${import.meta.env.VITE_PORT}${props.data.api}${props.data.params ? '?' : ''}${(new URLSearchParams(props.data.params)).toString()}`, `${import.meta.env.VITE_PORT}${props.data.api}${(new URLSearchParams(props.data.params)).toString()}`, 'width=900,height=750')
         } 
+        if (props.action == 'window-html') { 
+            console.log(`${props.data.params.api}${(new URLSearchParams(props.data.query)).toString()}`);
+
+            window.open(`${props.data.params.api}${(new URLSearchParams(props.data.query)).toString()}`, 'width=900,height=750')
+        } 
         if (props.action == 'select_selected_and_up') { 
             emit('select_selected_and_up')
         }

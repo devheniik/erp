@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <form ref="form">
+            <form ref="form" @submit.prevent>
                 <div v-for="(tab, i) in data.tabs" :key="i">
                     <div
                         v-show="tab.active"
@@ -76,7 +76,7 @@
                 </div>
             </form>
         </div>
-        <form v-else ref="form">
+        <form v-else ref="form" @submit.prevent>
             <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
                 <div v-for="section in data.sections" :key="section.id" class="rounded-lg">
                     <h1 class>
