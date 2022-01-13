@@ -43,9 +43,11 @@ import Print from './Print.vue'
 import SimpleTable from './table/SimpleTable.vue'
 // cells
 import InputCell from './table/Cells/InputCell.vue'
-
+import HTML from './Html.vue'
 
 export default app => {
+  app.component('html', HTML)
+  app.component('input-cell', InputCell)
   app.component('input-cell', InputCell)
   app.component('input-date', InputDate)
   app.component('list-input', ListInput)

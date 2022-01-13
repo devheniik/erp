@@ -40,10 +40,24 @@ export default [
     {
         path: '/ucard/:api/:id',
         name: 'ucard',
-        props: (route) => {
+        props: (route) => ({
             api: route.api
-        }, 
+        }), 
         component: () => import('../../../components/UCard.vue'),
+        meta: {
+            layout: 'SideMenu',
+            requreAuth: true,
+            permition: null
+        }
+    },
+    {
+        path: '/html/:api',
+        name: 'html',
+        props: (route) => ({
+            api: route.api,
+            query: route.query
+        }), 
+        component: () => import('../../../components/Html.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: true,
