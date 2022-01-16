@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+import {useRouter} from 'vue-router'
+const router = useRouter()
 import { ref ,getCurrentInstance} from 'vue'
     const app = getCurrentInstance()
 const props = defineProps({
