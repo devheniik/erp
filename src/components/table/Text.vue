@@ -6,7 +6,7 @@
 
 <script setup>
     const props = defineProps({
-        data: Object
+        data: String
     })
 </script>
 
