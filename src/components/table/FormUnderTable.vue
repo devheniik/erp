@@ -28,7 +28,11 @@ const value = ref(props.data.input.value)
 
 const handle = () => {
     let window = props.data.window
+    console.log(window);
+
     window[props.data.input.name] = value.value
+    console.log(props.data.input.name);
+    console.log(window);
     app.appContext.config.globalProperties.$open(router.resolve(window))
 
 }
