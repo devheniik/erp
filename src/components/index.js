@@ -44,8 +44,12 @@ import SimpleTable from './table/SimpleTable.vue'
 // cells
 import InputCell from './table/Cells/InputCell.vue'
 import HTML from './Html.vue'
+import Text from './table/Text.vue'
+import FormUnderTable from '../components/table/FormUnderTable.vue'
 
 export default app => {
+  app.component('form-under-table', FormUnderTable)
+  app.component('text', Text)
   app.component('html', HTML)
   app.component('input-cell', InputCell)
   app.component('input-cell', InputCell)

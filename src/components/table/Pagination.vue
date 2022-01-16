@@ -86,7 +86,7 @@
     </div>
     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div class="flex flex-row items-center ">
-            <div @click="settings = !settings" class="rounded-sm cursor-pointer z-10 relative bg-primary-500  text-gray-50 hover:bg-primary-600 inline-flex items-center px-2 py-2  text-sm font-medium mr-5 ">
+            <div @click="settings = !settings" class="rounded-sm cursor-pointer  relative bg-primary-500  text-gray-50 hover:bg-primary-600 inline-flex items-center px-2 py-2  text-sm font-medium mr-5 ">
                 <CogIcon class="h-4 w-4" />
             </div>
             <p class="text-sm text-gray-700">
