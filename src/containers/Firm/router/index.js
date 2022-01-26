@@ -24,7 +24,10 @@ export default [
     {
         path: '/firm/:id',
         name: 'firm-update',
-        component: () => import('@firm/views/Update.vue'),
+        component: () => import('../../../components/UCard.vue'),
+        props: () => {
+            api: 'firms/show' 
+        },
         meta: {
             layout: 'SideMenu',
             requreAuth: true,
