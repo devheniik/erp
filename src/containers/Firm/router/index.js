@@ -22,12 +22,12 @@ export default [
     //     }
     // },
     {
-        path: '/firm/:id',
+        path: '/firms/:id',
         name: 'firm-update',
-        component: () => import('../../../components/UCard.vue'),
-        props: () => {
-            api: 'firms/show' 
+        props: {
+            api: 'firms/show'
         },
+        component: () => import('../../../components/UCard.vue'),
         meta: {
             layout: 'SideMenu',
             requreAuth: true,
