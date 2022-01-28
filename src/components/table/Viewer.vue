@@ -34,7 +34,7 @@
             </div>
 
             <!-- Components Start -->
-            <div v-if="data.components?.start.length" class="w-full my-5 mx-2">
+            <div v-if="data?.components?.start.length" class="w-full my-5 mx-2">
                 <component v-for="(component, i) in data.components?.start" :key="i" :data="component.data" v-bind="component.config" @edit="edit($event)" :is="component.component"></component>
             </div> 
             
@@ -54,7 +54,6 @@
             <!-- Compoents End -->
             <div class="w-full my-5 mx-2 space-y-2" v-if="data?.components?.end?.length || true">
                 <component @save="save" v-for="(component, i) in data.components.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
-                 
             </div>
         </form> 
         <!-- Pagination -->
