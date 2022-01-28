@@ -172,8 +172,14 @@ const props = defineProps({
         type: Array,
         default: () => []
     },
-    page: Number,
-    limit: [Number, String]
+    page: {
+        type: [Number, String],
+        default: 1
+    }, 
+    limit: {
+        type: [Number, String],
+        default: 10
+    },
 })
 
 const local_headers = ref(_.cloneDeep(props.headers))
