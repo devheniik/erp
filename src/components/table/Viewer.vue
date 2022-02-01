@@ -53,7 +53,7 @@
 
             <!-- Compoents End -->
             <div class="w-full my-5 mx-2 space-y-2" v-if="data?.components?.end?.length || true">
-                <component @save="save" v-for="(component, i) in data.components.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
+                <component @save="save" v-for="(component, i) in data?.components?.end" :key="i" :data="component.data" v-bind="component.config" :is="component.component"></component>
             </div>
         </form> 
         <!-- Pagination -->
